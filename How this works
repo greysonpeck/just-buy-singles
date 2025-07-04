@@ -1,0 +1,18 @@
+1. Load index
+2. [scripts.js]
+    ### CURRENCY STUFF
+    - When DOM is loaded, check if there's a currency cookie.
+        > if currency cookie is CAD, initialize CAD (set toggle, booster value, currency mode).
+        > if currency cookie is USD, initialize USD ("")
+        > if no currency cookie, initialize USD.
+    - When DOM is loaded, add click event listener to the currency toggle.
+        > if toggle click: run initializeMoney(), which checks currency cookie and runs above initialization steps.
+    ### SET STUFF
+    - When DOM is loaded, check if there's a set cookie.
+        > if set is MH3, run setMH3();
+        > if set is DSK, run setDSK();
+        > if no set cookie yet, set MH3 cookie, then run setMH3();
+    - WHAT DOES A setXXX() function do?
+        > Sets text (name of set, link to other set)
+        > Clears card slots and makes set-specific card slots
+        > Runs clearUp() to reset money data.

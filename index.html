@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<!-- Slider logic from https://codepen.io/antonynyt/pen/JjBGejW -->
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script type="text/javascript">
+      function codeAddress() {
+          alert('ok');
+      }
+      window.onload = codeAddress;
+      </script>
+    <link rel="stylesheet" href="./src/output.css" />
+    <link rel="stylesheet" href="./src/slider.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <script src="./src/logic-mh3.js"></script>
+    <script src="./src/logic-fdn.js"></script>
+    <script src="./src/logic-dsk.js"></script>
+    <script src="./src/logic-fin.js"></script>
+    <script src="./src/scripts.js"></script>
+    <script src="./src/money.js"></script>
+    <script src="./src/slider_logic.js"></script>
+    <title>Just Buy Singles</title>
+    <script defer src="https://cloud.umami.is/script.js" data-website-id="d01d8a5f-624c-4611-823f-9187feb883d4" data-domains="justbuysingles.com">umami.disable();
+    </script>
+
+  </head>
+  <body>
+    <div id="set-selector" class="flex flex-col hidden">
+        <a href="#" id="set-toggle-1"></a>
+        <a href="#" id="set-toggle-2"></a>
+        <a href="#" id="set-toggle-3"></a>
+      </div>
+      <div id="current-set"></div>
+    <div class="top-actions flex  gap-2 mr-2 mt-2">
+        <button id="about" class="text-[14px] h-fit ml-auto px-2 py-1 gap-2 items-center flex cursor-pointer top-0 right-0 hover:underline rounded-sm ring-1 ring-white">
+            About
+            <!-- <svg width="20" height="20" viewBox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M13.5 25V24.9027L14.7941 24.0757V15.8784C14.7941 15.3432 14.7706 14.9054 14.7235 14.5649C14.6922 14.2243 14.6294 13.9486 14.5353 13.7378C14.4412 13.527 14.3078 13.3649 14.1353 13.2514C13.9784 13.1378 13.7667 13.0324 13.5 12.9351V12.8378H18.2059V22.1297C18.2059 22.6162 18.2216 23.0135 18.2529 23.3216C18.3 23.6297 18.3706 23.8892 18.4647 24.1C18.5588 24.3108 18.6843 24.473 18.8412 24.5865C19.0137 24.7 19.2333 24.8054 19.5 24.9027V25H13.5ZM16.4647 11.6703C16.3863 11.4919 16.2529 11.2892 16.0647 11.0622C15.8922 10.8189 15.6882 10.5838 15.4529 10.3568C15.2333 10.1297 15.0137 9.92703 14.7941 9.74865C14.5745 9.57027 14.3784 9.44865 14.2059 9.38378V9.28649L16.4647 7H16.5588L18.8176 9.28649V9.38378C18.6608 9.44865 18.4647 9.57027 18.2294 9.74865C18.0098 9.92703 17.7824 10.1297 17.5471 10.3568C17.3275 10.5838 17.1235 10.8189 16.9353 11.0622C16.7627 11.2892 16.6373 11.4919 16.5588 11.6703H16.4647Z" fill="white" fill-opacity="0.8"/>
+            <circle cx="16.5" cy="16.5" r="15" stroke="white" stroke-opacity="0.8" stroke-width="3"/>
+            </svg> -->
+        </button>
+        <div class="flex flex-col"><a id="kofi" class="text-[14px] mr-2 block w-fit px-2 py-1 gap-2 rounded-sm ring-1 ring-white hover:underline" target="#" href="https://ko-fi.com/justbuysingles">Help me buy a Genji Glove on <img class="inline pb-0.5 w-10" src="img/kofi_logo.svg" alt="ko-fi"></a>
+            <img id="kofi-single" class="hidden items-center w-52 shadow-2xl rounded-xl absolute top-12 z-10" src="https://cards.scryfall.io/large/front/f/7/f724dde1-84b0-4e3b-a9b8-44cd22bb9f79.jpg" alt="a $6 single">
+        </div>
+        
+
+    </div>
+
+    <div id="about-container" class="hidden fixed bg-gray-900/50 top-0 left-0 w-full h-lvh z-20">
+        <div id="about-modal" class="mx-auto p-6 pb-4 max-w-[560px] min-w-[300px] mt-16 bg-emerald-800 rounded-lg shadow-2xl ring-2 ring-white/80">
+            <div id="main-info">
+                <h3 class="text-2xl mb-2 font-bold">Ripping packs is fun.</h3>
+                <p>It’s a lot less fun when you get totally wrecked and add a new stack of expensive draft chaff to your “to sort” pile. And odds are, you’re gonna get wrecked.</p>
+                <p>This website tries to provide some of that lever-pulling dopamine, with added detail on exactly how it’s a losing game. At least until you hit big.             The cycle of “it’s so over” and “we’re so back” goes on...</p>
+                <p>Good luck on your packs!</p>
+                <p class="small mt-8">Here’s <span id="explainer" class="font-bold underline cursor-pointer">an explainer</span> on how this all works.</p>
+                <p class="small">If you have any feedback or just this this is neat, say hi <a target="#" href="https://bsky.app/profile/gpwaltz.bsky.social">on bluesky</a>!</p>
+            </div>
+            <div id="sub-info" class="hidden">
+<p>Detailed pull rates for Magic booster packs are <a target="#" href="https://magic.wizards.com/en/news/feature/collecting-final-fantasy">published here</a>. This website uses that information to generate a “realistic” pack, with randomization that matches the published pull rates for each card slot.</p>
+<p>Each card is generated from a unique query to Scryfall <a target="#" href="https://scryfall.com/search?q=set%3Afin+rarity%3Am+is%3Aborderless">like this</a>. I’ve done my best to translate WotC’s descriptions into accurate Scryfall queries, but things may not be 100% perfect.</p>
+
+                <p id="back-to-main" class="font-bold cursor-pointer underline">Back</p>
+            </div>  
+        </div>
+    </div>
+    <main class="mx-auto px-1 pt-8 sm:pt-20 flex flex-col">
+
+      <!-- BLOCK THING -->
+
+      <div class="items-center mx-auto flex flex-col md:flex-row">
+        <div class="mb-6">
+          <h1 class="text-3xl md:text-5xl font-bold text-nowrap pb-3">Just Buy Singles</h1>
+          <h2 id="set-header" class="text-xl md:text-3xl text-nowrap font-light tracking-[.3em] sm:pb-2 text-center">MODERN HORIZONS 3</h1>
+            <p id="booster-type" class="mt-2 text-md font-light uppercase tracking-widest text-center w-fit px-8 mx-auto py-1.5">PLAY BOOSTER</p>
+        </div>
+
+        <!-- DATA BLOCK -->
+        <div class="relative data-area  min-w-[350px] flex flex-col pt-2 pb-3 px-4 m-2 mb-6 sm:ml-12 rounded-md text-nowrap">
+          <div id="data-loading" class="block data-loader rounded-md -z-10 opacity-0">
+            <p class="absolute top-2/5 w-full text-center opacity-80 font-bold">Loading <span id="cards-loading"></span> cards...</p>
+          </div>
+          <!-- SLIDER  -->
+          <div id="sound-slider__container" class="flex items-center mb-2">
+            <input class="rounded-lg w-full" type="range" value="5" min="0" max="100" step="1" id="sound-slider" />
+            <p class="hidden" id="volume">30</p>
+            <!-- <span class="ml-4 font-bold italic text-xl opacity-75 text-nowrap">Rip it!</span> -->
+          </div>
+          
+          <div class="flex flex-row">
+            <!-- <span class="price-cut w-full px-3 py-1 mb-1 text-sm font-medium rounded-sm text-red-900 text-center">Adjusting for early-days inflation, prices cut by 50%</span> -->
+          </div>
+          <div class="flex flex-row">
+            <span class="w-full font-light">Price per booster</span>
+            <span id="pricePerBooster" class="font-semibold">$8.00</span>
+          </div>
+          <div class="flex flex-row">
+            <span class="w-full font-light">Boosters bought</span>
+            <span class="font-semibold-4 pr-1">×</span>
+            <span id="boosters-bought" class="font-semibold">--</span>
+          </div>
+          <div class="flex flex-row">
+            <span class="w-full font-light">Total card value</span>
+            <span id="running-sum" class="font-semibold text-nowrap"></span>
+          </div>
+          <hr class="my-2 opacity-40">
+          <div class="flex flex-row items-center">
+            <label class="switch -left-2">
+              <input type="checkbox">
+              <span id="currency" class="toggle round "></span>
+            </label>
+            
+            <span class="w-full font-light pr-2 text-right">Net value</span>
+            <div id="current-money" class="font-semibold inline rounded-xl w-auto px-3 bg-opacity-75">
+              $ --</div>
+          </div>
+
+    <!-- Investigate -->
+    <button id="investigate" class="opacity-0 text-md mt-2 rounded-sm flex justify-center py-2 gap-2 ring-1 bg-gray-100/20 hover:bg-gray-100/30 cursor-pointer" onClick="investigate()">
+        <svg width="20" height="23" viewBox="0 0 20 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M19.5443 19.6531L13.9998 14.1085L13.4961 14.6125L12.3238 13.44C13.3136 12.2402 13.9089 10.7031 13.9089 9.0298C13.9089 5.20136 10.7943 2.08691 6.96584 2.08691C3.13739 2.08691 0.0229492 5.20158 0.0229492 9.0298C0.0229492 12.8582 3.13739 15.9725 6.96584 15.9725C8.60917 15.9725 10.1196 15.3976 11.3096 14.44L12.4894 15.6196L11.9856 16.1231L17.5301 21.6676C17.8081 21.9456 18.1727 22.0847 18.5372 22.0847C18.9016 22.0847 19.2658 21.9456 19.5441 21.6676C20.1005 21.1111 20.1005 20.2094 19.5443 19.6531ZM1.44739 9.02958C1.44739 5.98669 3.92295 3.51091 6.96584 3.51091C10.009 3.51091 12.4845 5.98669 12.4845 9.02958C12.4845 12.0725 10.009 14.548 6.96584 14.548C3.92295 14.548 1.44739 12.0727 1.44739 9.02958Z" fill="white"/>
+            </svg>
+            
+            
+            
+            Investigate
+        </button>
+        </div>
+      </div>
+
+
+                      <!-- Single you didn't buy slot -->
+                       <div id="snark-and-single" class="z-10 fixed left-1/2 w-[255px] -ml-[120px]">
+                        <div id="snark" class="hidden z-10 w-[360px] mx-auto -ml-[60px] text-lg text-center relative font-bold py-3 px-2 text-shadow-lg/100">For $<span id="ghost-price"></span>, you could have just bought this <span id="ghost-foil"></span><span id="ghost-treatment"></span><span id="ghost-name"></span>.<p class="text-xs font-normal mt-2">Current price via TCGplayer or Cardmarket, non-discounted.</p></div>
+                        <div id="single-holder" class="fixed text-center w-[240px] h-[335px] shrink-0 rounded-xl -bottom-40 opacity-0">
+                            <div class="shine-holder h-[347px]">
+                            <!-- <div class="slot-label">The single</div> -->
+                                <div class="perspective-midrange">
+                                    <div class="both-cards-single flipped">
+                                        <div id="ghost-card" class="effect-block absolute card-face" height="auto">
+                                            <div id="ghost-blank" class="effect-block" width="240px" height="auto">
+                                                <img id="ghost-textured" class="absolute" src="" alt="">
+                                                <!-- <img id="ghost-textured" class="absolute" src="./img/textured-foil.png" alt=""> -->
+
+                                                <div id="foil-holder" class=""></div>
+                                                <img id="ghost-image" class="card-default -z-10 rounded-xl" width="240px" height="auto" src="./img/card_default4.png" alt="some" />
+                                            </div>
+                                            
+                                            
+                                        </div>
+                                        <img class="card card-back card-face rounded-xl backface-hidden rotate-y-180" src="./img/card_default4.png" />
+                                    </div>
+                                    </div>
+    
+                                <div class="shine"></div>
+                            </div>
+                
+                            <!-- <div id="ghost-price" class=""></div> -->
+                          <div id="--" class=""></div>
+                        </div>  
+                       </div>
+
+
+
+
+
+
+    <!-- CARD SECTION STARTS HERE -->
+      <div id="card-section" class="flex flex-wrap gap-2 sm:gap-6 mx-auto mb-12 justify-center text-sm sm:text-base max-w-[1080px]">
+        
+
+    </main>
+    <div class="shade opacity-0 -z-10"></div>
+
+  </body>
+</html>

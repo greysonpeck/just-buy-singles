@@ -1,0 +1,34 @@
+1. If null price, use USD foil or other. See "Fury".
+
+Data issues
+Wildcard slot, retro frame.
+https://magic.wizards.com/en/news/feature/collecting-modern-horizons-3
+WotC says "24 Rares, 8 Mythics", but search shows 27 Rares, 9 Mythics. Above this description, WotC does refer to Retros as 27 Rare, 9 Mythic which is what I find.
+
+July 7 CORS error
+https://medium.com/@dtkatz/3-ways-to-fix-the-cors-error-and-how-access-control-allow-origin-works-d97d55946d9
+
+July 9 Clean up foil treatment naming/clutter on both Ghost Card and Foil Wildcard.
+
+July 9 Snark Box trim "//" from DFCs
+
+Sep 16 - Do Lands appear in the Wildcard slot? Which ones?
+
+-   DFC logic exists in DSK code. Clean up?
+-   Double check: is Terramorphic Expanse valid in the Common slot? (check commonPull and wildcardPull)
+-   Rare and Mythic, and Wildcard includes the Collector Booster Japan stuff...
+
+Nov 29, starting Foundations Collector work
+
+---
+
+FINAL FANTASY TODOS
+
+-   Randomize chocobo color
+-   Enable SERIALIZED CHOCOBO?
+
+-   THE SINGLE price checking, apply discount.
+
+FINAL FANTASY BASICS:
+
+-
