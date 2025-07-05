@@ -272,19 +272,19 @@ document.addEventListener(
         currentMoneyElement = document.getElementById("current-money");
         const toggle = document.getElementById("currency");
 
-        // if (getCookie("currentSet")) {
-        //     if (getCookie("currentSet") == "'MH3'") {
-        //         setMH3();
-        //     } else if (getCookie("currentSet") == "'DSK'") {
-        //         setDSK();
-        //     } else if (getCookie("currentSet") == "'FIN'") {
-        //         setFIN();
-        //     } else {
-        //         setFDN();
-        //     }
-        // } else {
-        //     setFIN();
-        // }
+        if (getCookie("currentSet")) {
+            if (getCookie("currentSet") == "'MH3'") {
+                setMH3();
+            } else if (getCookie("currentSet") == "'DSK'") {
+                setDSK();
+            } else if (getCookie("currentSet") == "'FIN'") {
+                setFIN();
+            } else {
+                setFDN();
+            }
+        } else {
+            setFIN();
+        }
 
         // Pull the set that's in the cookie
         const pullSet = "set" + currentSet;

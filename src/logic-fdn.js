@@ -20,14 +20,6 @@ function setFDN() {
     document.getElementById("set-header").innerText = "FOUNDATIONS";
     document.getElementById("booster-type").innerText = boosterType_FDN + " Booster";
 
-    document.getElementById("set-toggle-1").innerText = "go modern horizons 3";
-    document.getElementById("set-toggle-1").addEventListener("click", () => {
-        setMH3();
-    });
-    document.getElementById("set-toggle-2").innerText = "go duskmourn";
-    document.getElementById("set-toggle-2").addEventListener("click", () => {
-        setDSK();
-    });
     document.body.style.backgroundImage = "url(img/FDN_bg.png)";
     clearSlots();
     makeFDNSlots();

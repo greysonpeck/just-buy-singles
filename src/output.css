@@ -807,7 +807,7 @@ body {
   background-position: center;
   font-family: "Raleway", sans-serif;
   color: #ffffff;
-  margin: 8px 0;
+  margin: 0;
 }
 svg {
   pointer-events: none;
@@ -1031,22 +1031,22 @@ input:checked + .slider:before {
   z-index: -6;
 }
 .top-pos-1 {
-  top: 34px;
+  top: 38px;
 }
 .top-pos-2 {
-  top: 74px;
+  top: 76px;
 }
 .top-pos-3 {
   top: 114px;
 }
 .top-pos-4 {
-  top: 154px;
+  top: 152px;
 }
 .top-pos-5 {
-  top: 194px;
+  top: 190px;
 }
 .top-pos-6 {
-  top: 234px;
+  top: 228px;
 }
 .effect-block {
   position: relative;
@@ -1184,7 +1184,7 @@ input:checked + .slider:before {
 }
 .h-cards-3 {
   margin-top: -2px;
-  height: 406px;
+  height: 412px;
 }
 @media (max-width: 480px) {
   .both-cards, .both-cards-single, .card-face, .card-default, .foil-hold, .snark-and-single {
