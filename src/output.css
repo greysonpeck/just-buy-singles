@@ -54,6 +54,7 @@
     --color-emerald-800: oklch(43.2% 0.095 166.913);
     --color-rose-500: oklch(64.5% 0.246 16.439);
     --color-slate-700: oklch(37.2% 0.044 257.287);
+    --color-slate-900: oklch(20.8% 0.042 265.755);
     --color-slate-950: oklch(12.9% 0.042 264.695);
     --color-gray-100: oklch(96.7% 0.003 264.542);
     --color-gray-900: oklch(21% 0.034 264.665);
@@ -479,6 +480,18 @@
     background-color: color-mix(in srgb, oklch(21% 0.034 264.665) 50%, transparent);
     @supports (color: color-mix(in lab, red, red)) {
       background-color: color-mix(in oklab, var(--color-gray-900) 50%, transparent);
+    }
+  }
+  .bg-gray-900\/80 {
+    background-color: color-mix(in srgb, oklch(21% 0.034 264.665) 80%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, var(--color-gray-900) 80%, transparent);
+    }
+  }
+  .bg-gray-900\/90 {
+    background-color: color-mix(in srgb, oklch(21% 0.034 264.665) 90%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, var(--color-gray-900) 90%, transparent);
     }
   }
   .bg-rose-500 {
