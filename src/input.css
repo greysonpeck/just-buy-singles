@@ -363,6 +363,11 @@ input:checked + .slider:before {
     background-size: cover;
 }
 
+.mana-gradient {
+    background-image: url("../img/manafoil.png");
+    background-size: cover;
+}
+
 .foil-in-list {
     width: 240px;
     height: 335px;

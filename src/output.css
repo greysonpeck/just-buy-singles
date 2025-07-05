@@ -7,7 +7,6 @@
       --tw-rotate-z: rotateZ(0);
       --tw-skew-x: skewX(0);
       --tw-skew-y: skewY(0);
-      --tw-border-style: solid;
       --tw-leading: initial;
       --tw-font-weight: initial;
       --tw-tracking: initial;
@@ -457,10 +456,6 @@
   .rounded-xl {
     border-radius: var(--radius-xl);
   }
-  .border {
-    border-style: var(--tw-border-style);
-    border-width: 1px;
-  }
   .bg-emerald-500 {
     background-color: var(--color-emerald-500);
   }
@@ -553,9 +548,6 @@
   }
   .text-right {
     text-align: right;
-  }
-  .align-middle {
-    vertical-align: middle;
   }
   .text-2xl {
     font-size: var(--text-2xl);
@@ -1042,6 +1034,10 @@ input:checked + .slider:before {
   background-image: url("../img/surge.png");
   background-size: cover;
 }
+.mana-gradient {
+  background-image: url("../img/manafoil.png");
+  background-size: cover;
+}
 .foil-in-list {
   width: 240px;
   height: 335px;
@@ -1219,11 +1215,6 @@ input:checked + .slider:before {
   syntax: "*";
   inherits: false;
   initial-value: skewY(0);
-}
-@property --tw-border-style {
-  syntax: "*";
-  inherits: false;
-  initial-value: solid;
 }
 @property --tw-leading {
   syntax: "*";

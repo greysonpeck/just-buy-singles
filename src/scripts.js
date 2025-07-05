@@ -95,7 +95,7 @@ let USDollar = new Intl.NumberFormat("en-US", {
 function ghostSlide() {
     const singleHolder = document.getElementById("single-holder");
     singleHolder.classList.add("opacity-100");
-    ghostDataGrab(ghostLinkHalf_FIN, topOutLink_FIN);
+    ghostDataGrab(ghostLinkHalf_FDN, topOutLink_FDN);
 
     const investigateButton = document.getElementById("investigate");
     investigateButton.classList.remove("hidden");
@@ -108,10 +108,10 @@ function ghostSlide() {
         let infopopID = content.closest(".card-info").id.replace("-label", "");
         if (infopopID === "uncommon-set") {
             content.querySelector(".infopop-name").textContent = window.cardInfo?.["uncommon"][0];
-            content.querySelector(".infopop-rarity").textContent = "Appears " + window.cardInfo?.["common"][1] + " of the time. ";
+            content.querySelector(".infopop-rarity").textContent = window.cardInfo?.["uncommon"][1];
         } else if (infopopID === "common-set") {
             content.querySelector(".infopop-name").textContent = window.cardInfo?.["common"][0];
-            content.querySelector(".infopop-rarity").textContent = "Appears " + window.cardInfo?.["uncommon"][1] + " of the time. ";
+            content.querySelector(".infopop-rarity").textContent = window.cardInfo?.["common"][1];
         } else {
             content.querySelector(".infopop-name").textContent = window.cardInfo?.[infopopID][0];
             content.querySelector(".infopop-type").textContent = window.cardInfo?.[infopopID][1];
@@ -554,6 +554,10 @@ function setGhostData() {
         ghostFoilElement.innerText = "surge foil ";
         ghostPrice = convertCurrency(Number(ghostCard.prices.usd_foil)).toFixed(0);
         ghostFoilHolderElement.classList.add("foil-gradient", "surge-gradient");
+    } else if (ghostCard.promo_types.includes("manafoil") && ghostCard.prices.usd_foil) {
+        ghostFoilElement.innerText = "mana foil ";
+        ghostPrice = convertCurrency(Number(ghostCard.prices.usd_foil)).toFixed(0);
+        ghostFoilHolderElement.classList.add("foil-gradient", "mana-gradient");
     } else if (ghostCard.prices.usd_foil && ghostCard.prices.usd == null) {
         ghostFoilElement.innerText = "foil ";
         ghostPrice = convertCurrency(Number(ghostCard.prices.usd_foil)).toFixed(0);
@@ -744,6 +748,7 @@ function sumTotals() {
         cardsLoadingNumber.innerText = cardsRemaining;
 
         if (checkIfFinished()) {
+            console.log("chekcing if finished");
             clearInterval(timeout);
             isFinished = true;
 
