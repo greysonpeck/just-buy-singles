@@ -30,7 +30,7 @@
 
   </head>
   <body>
-    <div id="set-selector" class="flex flex-col">
+    <div id="set-selector" class="flex flex-col hidden">
         <a href="#" id="set-toggle-1"></a>
         <a href="#" id="set-toggle-2"></a>
         <a href="#" id="set-toggle-3"></a>
@@ -73,15 +73,32 @@
 
       <!-- BLOCK THING -->
 
-      <div class="items-center mx-auto flex flex-col md:flex-row">
-        <div class="mb-6">
-          <h1 class="text-3xl md:text-5xl font-bold text-nowrap pb-3">Just Buy Singles</h1>
-          <h2 id="set-header" class="text-xl md:text-3xl text-nowrap font-light tracking-[.3em] sm:pb-2 text-center">MODERN HORIZONS 3</h1>
-            <p id="booster-type" class="mt-2 text-md font-light uppercase tracking-widest text-center w-fit px-8 mx-auto py-1.5">PLAY BOOSTER</p>
+      <div class="mx-auto flex flex-col md:flex-row">
+        <div class="mt-12 mb-6">
+            <h1 class="text-3xl md:text-5xl font-bold text-nowrap pb-6">Just Buy Singles</h1>
+            <div class="flex">          
+                <h2 id="set-header" class="mr-auto text-xl md:text-3xl text-nowrap font-light tracking-[.3em] sm:mb-2">MODERN HORIZONS 3</h1>
+                <div class="relative">
+                    <button id="more" class="h-fit ring-white ring-1 py-1 px-3 rounded-sm hover:bg-white/20 cursor-pointer">MORE</button>
+                    <div id="set-list" class="hidden flex flex-col mt-2 shadow-2xl text-base w-auto gap-2 p-2 absolute right-0 bg-white/20 rounded-md whitespace-nowrap">
+                        <button id="set-FDN" class="set-button flex items-center text-left  bg-slate-700/50 px-4 py-2 rounded-sm"><span class="w-full">Foundations</span><svg class="set-check hidden" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M14.8592 1.33439C14.5739 1.34382 14.3033 1.46858 14.105 1.68221C11.3824 4.52132 8.46809 7.77452 5.74797 10.6456L1.86519 7.31887C1.75653 7.20808 1.62692 7.122 1.48458 7.06611C1.34224 7.01023 1.19029 6.98577 1.03838 6.99426C0.886467 7.00275 0.73791 7.04402 0.602145 7.11545C0.466381 7.18687 0.346374 7.28689 0.249746 7.40916C0.153119 7.53142 0.081983 7.67327 0.0408557 7.82567C-0.000271682 7.97808 -0.0104915 8.13771 0.0108452 8.29445C0.032182 8.45118 0.0846091 8.60159 0.164797 8.73612C0.244985 8.87064 0.351182 8.98635 0.476642 9.07588L5.13941 13.0715C5.34967 13.2525 5.61721 13.3455 5.8898 13.3323C6.16238 13.3191 6.42047 13.2007 6.61367 13.0001C9.56179 9.92592 12.7617 6.32397 15.6649 3.29652C15.8249 3.13581 15.9341 2.92831 15.9782 2.70153C16.0223 2.47475 15.9991 2.23939 15.9118 2.02663C15.8244 1.81386 15.677 1.63374 15.489 1.51012C15.301 1.3865 15.0814 1.32522 14.8592 1.33439Z" fill="#37383F" fill-opacity="0.8"/>
+                            </svg>
+                            </button>
+                        <button id="set-FIN" class="set-button flex items-center text-left bg-slate-700/50 px-4 py-2 rounded-sm"><span class="w-full">Final Fantasy</span><svg class="set-check hidden" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M14.8592 1.33439C14.5739 1.34382 14.3033 1.46858 14.105 1.68221C11.3824 4.52132 8.46809 7.77452 5.74797 10.6456L1.86519 7.31887C1.75653 7.20808 1.62692 7.122 1.48458 7.06611C1.34224 7.01023 1.19029 6.98577 1.03838 6.99426C0.886467 7.00275 0.73791 7.04402 0.602145 7.11545C0.466381 7.18687 0.346374 7.28689 0.249746 7.40916C0.153119 7.53142 0.081983 7.67327 0.0408557 7.82567C-0.000271682 7.97808 -0.0104915 8.13771 0.0108452 8.29445C0.032182 8.45118 0.0846091 8.60159 0.164797 8.73612C0.244985 8.87064 0.351182 8.98635 0.476642 9.07588L5.13941 13.0715C5.34967 13.2525 5.61721 13.3455 5.8898 13.3323C6.16238 13.3191 6.42047 13.2007 6.61367 13.0001C9.56179 9.92592 12.7617 6.32397 15.6649 3.29652C15.8249 3.13581 15.9341 2.92831 15.9782 2.70153C16.0223 2.47475 15.9991 2.23939 15.9118 2.02663C15.8244 1.81386 15.677 1.63374 15.489 1.51012C15.301 1.3865 15.0814 1.32522 14.8592 1.33439Z" fill="#37383F" fill-opacity="0.8"/>
+                            </svg></button>
+                        <button id="set-EOE" class="set-button flex items-center text-left bg-slate-700/20 px-4 py-2 rounded-sm"><span>Edge of Eternities (soon)</span></button>
+                    </div>
+                </div>
+
+            </div>
+
+            <p id="booster-type" class="text-md font-light uppercase tracking-widest w-fit ">PLAY BOOSTER</p>
         </div>
 
         <!-- DATA BLOCK -->
-        <div class="relative data-area  min-w-[350px] flex flex-col pt-2 pb-3 px-4 m-2 mb-6 sm:ml-12 rounded-md text-nowrap">
+        <div class="relative data-area  min-w-[350px] flex flex-col pt-2 pb-3 px-4 m-2 mb-6 sm:ml-16 rounded-md text-nowrap">
           <div id="data-loading" class="block data-loader rounded-md -z-10 opacity-0">
             <p class="absolute top-2/5 w-full text-center opacity-80 font-bold">Loading <span id="cards-loading"></span> cards...</p>
           </div>

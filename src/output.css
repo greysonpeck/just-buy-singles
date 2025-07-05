@@ -53,6 +53,7 @@
     --color-emerald-500: oklch(69.6% 0.17 162.48);
     --color-emerald-800: oklch(43.2% 0.095 166.913);
     --color-rose-500: oklch(64.5% 0.246 16.439);
+    --color-slate-700: oklch(37.2% 0.044 257.287);
     --color-slate-950: oklch(12.9% 0.042 264.695);
     --color-gray-100: oklch(96.7% 0.003 264.542);
     --color-gray-900: oklch(21% 0.034 264.665);
@@ -311,11 +312,17 @@
   .mt-8 {
     margin-top: calc(var(--spacing) * 8);
   }
+  .mt-12 {
+    margin-top: calc(var(--spacing) * 12);
+  }
   .mt-16 {
     margin-top: calc(var(--spacing) * 16);
   }
   .mr-2 {
     margin-right: calc(var(--spacing) * 2);
+  }
+  .mr-auto {
+    margin-right: auto;
   }
   .mb-0 {
     margin-bottom: calc(var(--spacing) * 0);
@@ -477,11 +484,32 @@
   .bg-rose-500 {
     background-color: var(--color-rose-500);
   }
+  .bg-slate-700\/20 {
+    background-color: color-mix(in srgb, oklch(37.2% 0.044 257.287) 20%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, var(--color-slate-700) 20%, transparent);
+    }
+  }
+  .bg-slate-700\/50 {
+    background-color: color-mix(in srgb, oklch(37.2% 0.044 257.287) 50%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, var(--color-slate-700) 50%, transparent);
+    }
+  }
   .bg-slate-950\/70 {
     background-color: color-mix(in srgb, oklch(12.9% 0.042 264.695) 70%, transparent);
     @supports (color: color-mix(in lab, red, red)) {
       background-color: color-mix(in oklab, var(--color-slate-950) 70%, transparent);
     }
+  }
+  .bg-white\/20 {
+    background-color: color-mix(in srgb, #fff 20%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, var(--color-white) 20%, transparent);
+    }
+  }
+  .p-2 {
+    padding: calc(var(--spacing) * 2);
   }
   .p-6 {
     padding: calc(var(--spacing) * 6);
@@ -498,14 +526,8 @@
   .px-4 {
     padding-inline: calc(var(--spacing) * 4);
   }
-  .px-8 {
-    padding-inline: calc(var(--spacing) * 8);
-  }
   .py-1 {
     padding-block: calc(var(--spacing) * 1);
-  }
-  .py-1\.5 {
-    padding-block: calc(var(--spacing) * 1.5);
   }
   .py-2 {
     padding-block: calc(var(--spacing) * 2);
@@ -543,8 +565,14 @@
   .pb-4 {
     padding-bottom: calc(var(--spacing) * 4);
   }
+  .pb-6 {
+    padding-bottom: calc(var(--spacing) * 6);
+  }
   .text-center {
     text-align: center;
+  }
+  .text-left {
+    text-align: left;
   }
   .text-right {
     text-align: right;
@@ -556,6 +584,10 @@
   .text-3xl {
     font-size: var(--text-3xl);
     line-height: var(--tw-leading, var(--text-3xl--line-height));
+  }
+  .text-base {
+    font-size: var(--text-base);
+    line-height: var(--tw-leading, var(--text-base--line-height));
   }
   .text-lg {
     font-size: var(--text-lg);
@@ -610,6 +642,9 @@
   }
   .text-nowrap {
     text-wrap: nowrap;
+  }
+  .whitespace-nowrap {
+    white-space: nowrap;
   }
   .text-red-900 {
     color: var(--color-red-900);
@@ -689,6 +724,16 @@
       }
     }
   }
+  .hover\:bg-white\/20 {
+    &:hover {
+      @media (hover: hover) {
+        background-color: color-mix(in srgb, #fff 20%, transparent);
+        @supports (color: color-mix(in lab, red, red)) {
+          background-color: color-mix(in oklab, var(--color-white) 20%, transparent);
+        }
+      }
+    }
+  }
   .hover\:underline {
     &:hover {
       @media (hover: hover) {
@@ -696,9 +741,14 @@
       }
     }
   }
-  .sm\:ml-12 {
+  .sm\:mb-2 {
     @media (width >= 40rem) {
-      margin-left: calc(var(--spacing) * 12);
+      margin-bottom: calc(var(--spacing) * 2);
+    }
+  }
+  .sm\:ml-16 {
+    @media (width >= 40rem) {
+      margin-left: calc(var(--spacing) * 16);
     }
   }
   .sm\:hidden {
@@ -719,11 +769,6 @@
   .sm\:pt-20 {
     @media (width >= 40rem) {
       padding-top: calc(var(--spacing) * 20);
-    }
-  }
-  .sm\:pb-2 {
-    @media (width >= 40rem) {
-      padding-bottom: calc(var(--spacing) * 2);
     }
   }
   .sm\:text-base {
@@ -828,10 +873,6 @@ svg {
 }
 h2, #booster-type {
   font-family: "Oswald", sans-serif;
-}
-#booster-type {
-  background: #38cfdd;
-  background: linear-gradient(90deg, rgba(56, 207, 221, 0.38) 17%, rgba(255, 255, 255, 0.42) 100%);
 }
 .toggle {
   display: inline-block;

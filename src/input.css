@@ -99,10 +99,10 @@ h2,
     font-family: "Oswald", sans-serif;
 }
 
-#booster-type {
+/* #booster-type {
     background: #38cfdd;
     background: linear-gradient(90deg, rgba(56, 207, 221, 0.38) 17%, rgba(255, 255, 255, 0.42) 100%);
-}
+} */
 
 .toggle {
     display: inline-block;

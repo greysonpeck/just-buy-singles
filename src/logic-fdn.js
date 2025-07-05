@@ -28,10 +28,11 @@ function setFDN() {
     document.getElementById("set-toggle-2").addEventListener("click", () => {
         setDSK();
     });
-    document.body.style.backgroundImage = "url(img/FDN_bg.jpg)";
+    document.body.style.backgroundImage = "url(img/FDN_bg.png)";
     clearSlots();
     makeFDNSlots();
     clearMoney();
+    buttonRefresh();
 }
 
 function makeFDNSlots() {
@@ -224,7 +225,6 @@ async function commonPull_FDN() {
 
         //  Create Common Sum Element
         commonSum = commonSum + commonPrice;
-        console.log(commonSum);
 
         //  Push price to price array
         myPrices.push(commonPrice);
@@ -480,7 +480,6 @@ async function foilPull_FDN() {
     //  When card has loaded...Flip and wait accordingly
     let foilStack = foilImageElement.parentElement;
     foilStack = document.getElementById("foil-image").closest(".both-cards");
-    console.log(foilStack);
     foilImageElement.addEventListener("load", cardImageLoaded(foilImageElement, foilImagePrimary, foilStack));
 
     //  Add foil effect

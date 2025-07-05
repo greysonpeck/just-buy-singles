@@ -37,6 +37,7 @@ function setFIN() {
     clearSlots();
     makeFINSlots();
     clearMoney();
+    buttonRefresh();
 }
 
 function makeFINSlots() {

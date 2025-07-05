@@ -155,6 +155,7 @@ document.addEventListener(
         const shade = document.querySelector(".shade");
         const kofi = document.getElementById("kofi");
         const kofiSingle = document.getElementById("kofi-single");
+        const more = document.getElementById("more");
 
         const aboutContainer = document.getElementById("about-container");
         const aboutModal = document.getElementById("about-modal");
@@ -203,7 +204,7 @@ document.addEventListener(
             if (!activeAbout) return;
             if (!aboutModal.contains(event.target) && event.target !== aboutButton) {
                 aboutContainer.classList.add("hidden");
-                subI = false;
+                getSubInfo = false;
             }
         });
 
@@ -211,6 +212,22 @@ document.addEventListener(
             if (activeAbout && event.key === "Escape") {
                 aboutContainer.classList.add("hidden");
                 activeAbout = false;
+            }
+        });
+
+        // More button
+        const setList = document.getElementById("set-list");
+        let setListOpen = false;
+        more.addEventListener("click", () => {
+            setListOpen = true;
+            setList.classList.remove("hidden");
+        });
+
+        // Clicking outside More button
+        document.addEventListener("click", function (event) {
+            if (!more.contains(event.target) && setListOpen) {
+                setList.classList.add("hidden");
+                setListOpen = false;
             }
         });
 
@@ -255,20 +272,33 @@ document.addEventListener(
         currentMoneyElement = document.getElementById("current-money");
         const toggle = document.getElementById("currency");
 
-        if (getCookie("currentSet")) {
-            if (getCookie("currentSet") == "'MH3'") {
-                setMH3();
-            } else if (getCookie("currentSet") == "'DSK'") {
-                setDSK();
-            } else if (getCookie("currentSet") == "'FIN'") {
-                setFIN();
-            } else {
-                setFDN();
-            }
+        // if (getCookie("currentSet")) {
+        //     if (getCookie("currentSet") == "'MH3'") {
+        //         setMH3();
+        //     } else if (getCookie("currentSet") == "'DSK'") {
+        //         setDSK();
+        //     } else if (getCookie("currentSet") == "'FIN'") {
+        //         setFIN();
+        //     } else {
+        //         setFDN();
+        //     }
+        // } else {
+        //     setFIN();
+        // }
+
+        // Pull the set that's in the cookie
+        const pullSet = "set" + currentSet;
+
+        if (typeof window[pullSet] === "function") {
+            window[pullSet]();
         } else {
-            // In the case of no cookie, set FIN
-            setFIN();
+            console.error(`Function ${pullSet} does not exist.`);
         }
+
+        // Style the set selector
+        // const currentButton = document.getElementById("set-" + currentSet);
+        // currentButton.classList.remove("bg-slate-700/50");
+        // currentButton.classList.add("bg-slate-700/20");
 
         function initializeCAD() {
             currencyMode = "CAD";
@@ -314,6 +344,7 @@ document.addEventListener(
             myPrices = [];
             document.getElementById("boosters-bought").innerText = "--";
             document.getElementById("current-money").innerText = "$ --";
+
             currentMoneyElement.classList.remove("bg-rose-500", "bg-emerald-500", "px-3");
 
             // Initialize to CAD settings if toggled while on USD and vice-versa.
@@ -337,6 +368,31 @@ document.addEventListener(
     false
 );
 
+function buttonRefresh() {
+    // Make set selectors buttons
+    const setButtons = document.getElementsByClassName("set-button");
+    for (button of setButtons) {
+        const buttonSet = "set" + button.id.slice(-3);
+        button.classList.add("cursor-pointer");
+        button.addEventListener("click", () => {
+            window[buttonSet]();
+        });
+
+        if (currentSet === button.id.slice(-3)) {
+            button.classList.remove("bg-slate-700/50");
+            button.classList.add("bg-slate-700/20");
+            button.querySelector(".set-check").classList.remove("hidden");
+        } else if (button.id.slice(-3) === "EOE") {
+            // Skip EOE, under construction
+        } else {
+            // Style non-active sets
+            button.classList.add("bg-slate-700/50");
+            button.classList.remove("bg-slate-700/20");
+            button.querySelector(".set-check").classList.add("hidden");
+        }
+    }
+}
+
 // Card maker
 function clearMoney() {
     currentSetElement = document.getElementById("current-set");
@@ -352,6 +408,8 @@ function clearMoney() {
         myPrices = [];
         document.getElementById("boosters-bought").innerText = "--";
         document.getElementById("current-money").innerText = "$ --";
+        document.getElementById("running-sum").innerText = "";
+
         currentMoneyElement.classList.remove("bg-rose-500", "bg-emerald-500", "px-3");
     }
 
@@ -360,7 +418,7 @@ function clearMoney() {
 
 function clearSlots() {
     const cardSection = document.getElementById("card-section");
-    while (cardSection.childElementCount > 1) {
+    while (cardSection.childElementCount > 0) {
         cardSection.removeChild(cardSection.lastChild);
     }
 
@@ -639,10 +697,10 @@ async function ghostDataGrab(ghostLinkHalf, topOutLink) {
         }
     }
 
-    console.log("Looking for a single between " + boosterSpendBottom + " and " + boosterSpendTop);
+    // console.log("Looking for a single between " + boosterSpendBottom + " and " + boosterSpendTop);
 
     ghostLinkConstructed = ghostLinkHalf + "%28USD>" + boosterSpendBottom + "+and+USD<" + boosterSpendTop + "%29&unique=cards";
-    console.log("GHOST CONSTRUCTED: " + ghostLinkConstructed);
+    // console.log("GHOST CONSTRUCTED: " + ghostLinkConstructed);
 
     fetch(topOutLink)
         .then((response) => {
