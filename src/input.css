@@ -373,6 +373,14 @@ input:checked + .slider:before {
     height: 335px;
 }
 
+.foil-height-3 {
+    height: 418px;
+}
+
+.foil-height-5 {
+    height: 494px;
+}
+
 .ghost-effect {
     position: absolute;
     top: 0;
@@ -550,6 +558,20 @@ input:checked + .slider:before {
 
     #about-modal {
         max-width: 320px;
+    }
+
+    .top-nav {
+        top: 0;
+        bottom: auto;
+    }
+
+    .bottom-nav {
+        top: auto;
+        bottom: 0;
+    }
+
+    .foil-in-list {
+        height: 418px;
     }
 
     .h-cards-3 {

@@ -165,6 +165,22 @@ document.addEventListener(
         const getSubInfo = document.getElementById("explainer");
         const backToMainInfo = document.getElementById("back-to-main");
 
+        // Top actions scroll, reposition
+        window.addEventListener("scroll", function () {
+            const topActions = document.getElementById("top-actions");
+            const scrollThreshold = 50; // pixels
+            console.log(window.scrollY);
+
+            if (window.scrollY > scrollThreshold) {
+                console.log("ding");
+                topActions.classList.remove("top-nav");
+                topActions.classList.add("bottom-nav");
+            } else {
+                topActions.classList.remove("bottom-nav");
+                topActions.classList.add("top-nav");
+            }
+        });
+
         // Click info, get modal
         aboutButton.addEventListener("click", function (e) {
             umamiAnalytics("About modal");
@@ -549,7 +565,8 @@ function makeSlot(id, label, hasFoil, quantity) {
                 card.classList.remove(topVar);
 
                 const foilMulti = document.createElement("div");
-                foilMulti.classList.add("foil-hold", "foil-gradient", "foil-in-list");
+
+                foilMulti.classList.add("foil-hold", "foil-gradient", "w-[240px]", "foil-in-list");
                 bothContainer.insertBefore(foilMulti, card);
             }
         }
