@@ -313,13 +313,14 @@ document.addEventListener(
         }
 
         // Pull the set that's in the cookie
-        const pullSet = "set" + currentSet;
+        // const pullSet = "set" + currentSet;
 
-        if (typeof window[pullSet] === "function") {
-            window[pullSet]();
-        } else {
-            console.error(`Function ${pullSet} does not exist.`);
-        }
+        // if (typeof window[pullSet] === "function") {
+        //     window[pullSet]();
+        //     document.getElementById("pricePerBooster").innerText = USDollar.format(boosterValue);
+        // } else {
+        //     console.error(`Function ${pullSet} does not exist.`);
+        // }
 
         // Style the set selector
         // const currentButton = document.getElementById("set-" + currentSet);
@@ -399,6 +400,7 @@ function buttonRefresh() {
     document.getElementById("msrp").innerText = "MSRP: " + USDollar.format(msrp) + " USD";
     // Make set selectors buttons
     const setButtons = document.getElementsByClassName("set-button");
+    document.getElementById("pricePerBooster").innerText = USDollar.format(boosterValue);
 
     for (button of setButtons) {
         const buttonSet = "set" + button.id.slice(-3);
