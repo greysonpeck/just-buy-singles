@@ -13,6 +13,7 @@ function setFIN() {
     document.cookie = "currentSet = 'FIN'";
     boosterValue = 100;
     CAN_boosterValue = 160;
+    msrp = 37.99;
 
     priceCutActive = true;
     priceCut = 1;
@@ -20,20 +21,7 @@ function setFIN() {
     document.getElementById("set-header").innerText = "FINAL FANTASY";
     document.getElementById("booster-type").innerText = boosterType_FIN + " Booster";
 
-    document.getElementById("set-toggle-1").innerText = "go foundations";
-    document.getElementById("set-toggle-1").addEventListener("click", () => {
-        setFDN();
-    });
-    document.getElementById("set-toggle-2").innerText = "go duskmourn";
-    document.getElementById("set-toggle-2").addEventListener("click", () => {
-        setDSK();
-    });
-    document.getElementById("set-toggle-3").innerText = "go modern horizons 3";
-    document.getElementById("set-toggle-3").addEventListener("click", () => {
-        setDSK();
-    });
     document.body.style.backgroundImage = "url(img/FIN_bg2_dark.jpg)";
-
     clearSlots();
     makeFINSlots();
     clearMoney();

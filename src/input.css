@@ -23,7 +23,7 @@ svg {
 #about-modal {
     color: #ffffffd8;
     background: rgba(70, 70, 70, 0.85);
-    background: linear-gradient(142deg, rgba(92, 91, 92, 0.38) 0%, rgba(40, 40, 40, 0.85) 100%);
+    background: linear-gradient(142deg, rgba(90, 83, 101, 0.38) 0%, rgba(44, 31, 47, 0.85) 100%);
     backdrop-filter: blur(8px);
 }
 
@@ -32,6 +32,16 @@ svg {
     background: rgba(46, 42, 60, 0.85);
     background: linear-gradient(142deg, rgba(90, 83, 101, 0.38) 0%, rgba(44, 31, 47, 0.85) 100%);
     backdrop-filter: blur(8px);
+}
+
+#set-list {
+    background: rgba(70, 70, 70, 0.85);
+
+    background: linear-gradient(142deg, rgba(90, 83, 101, 0.7) 0%, rgba(44, 31, 47, 0.95) 100%);
+}
+
+.set-button:hover {
+    background-color: #ffffff22;
 }
 
 #about-modal a {
@@ -568,6 +578,7 @@ input:checked + .slider:before {
     .bottom-nav {
         top: auto;
         bottom: 0;
+        background-color: #101828d6;
     }
 
     .foil-in-list {

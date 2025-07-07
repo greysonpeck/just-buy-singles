@@ -36,7 +36,7 @@
         <a href="#" id="set-toggle-3"></a>
       </div>
       <div id="current-set"></div>
-    <div id="top-actions" class="top-nav fixed w-full flex  gap-2 mr-2 py-2 z-20 bg-gray-900/90">
+    <div id="top-actions" class="top-nav fixed w-full flex  gap-2 mr-2 py-2 z-20">
         <button id="about" class="text-[14px] h-fit ml-auto px-2 py-1 gap-2 items-center flex cursor-pointer top-0 right-0 hover:underline rounded-sm ring-1 ring-white">
             About
             <!-- <svg width="20" height="20" viewBox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -80,15 +80,17 @@
                 <h2 id="set-header" class="mr-auto text-xl md:text-3xl text-nowrap font-light tracking-[.3em] sm:mb-2">SET NAME</h1>
                 <div class="relative">
                     <button id="more" class="h-fit ring-white ring-1 py-1 px-3 rounded-sm hover:bg-white/20 cursor-pointer">MORE</button>
-                    <div id="set-list" class="hidden flex flex-col mt-2 shadow-2xl text-base w-auto gap-2 p-2 absolute right-0 bg-white/20 rounded-md whitespace-nowrap z-20">
-                        <button id="set-FDN" class="set-button flex items-center text-left  bg-slate-700/50 px-4 py-2 rounded-sm"><span class="w-full">Foundations</span><svg class="set-check hidden" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M14.8592 1.33439C14.5739 1.34382 14.3033 1.46858 14.105 1.68221C11.3824 4.52132 8.46809 7.77452 5.74797 10.6456L1.86519 7.31887C1.75653 7.20808 1.62692 7.122 1.48458 7.06611C1.34224 7.01023 1.19029 6.98577 1.03838 6.99426C0.886467 7.00275 0.73791 7.04402 0.602145 7.11545C0.466381 7.18687 0.346374 7.28689 0.249746 7.40916C0.153119 7.53142 0.081983 7.67327 0.0408557 7.82567C-0.000271682 7.97808 -0.0104915 8.13771 0.0108452 8.29445C0.032182 8.45118 0.0846091 8.60159 0.164797 8.73612C0.244985 8.87064 0.351182 8.98635 0.476642 9.07588L5.13941 13.0715C5.34967 13.2525 5.61721 13.3455 5.8898 13.3323C6.16238 13.3191 6.42047 13.2007 6.61367 13.0001C9.56179 9.92592 12.7617 6.32397 15.6649 3.29652C15.8249 3.13581 15.9341 2.92831 15.9782 2.70153C16.0223 2.47475 15.9991 2.23939 15.9118 2.02663C15.8244 1.81386 15.677 1.63374 15.489 1.51012C15.301 1.3865 15.0814 1.32522 14.8592 1.33439Z" fill="#37383F" fill-opacity="0.8"/>
-                            </svg>
-                            </button>
-                        <button id="set-FIN" class="set-button flex items-center text-left bg-slate-700/50 px-4 py-2 rounded-sm"><span class="w-full">Final Fantasy</span><svg class="set-check hidden" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M14.8592 1.33439C14.5739 1.34382 14.3033 1.46858 14.105 1.68221C11.3824 4.52132 8.46809 7.77452 5.74797 10.6456L1.86519 7.31887C1.75653 7.20808 1.62692 7.122 1.48458 7.06611C1.34224 7.01023 1.19029 6.98577 1.03838 6.99426C0.886467 7.00275 0.73791 7.04402 0.602145 7.11545C0.466381 7.18687 0.346374 7.28689 0.249746 7.40916C0.153119 7.53142 0.081983 7.67327 0.0408557 7.82567C-0.000271682 7.97808 -0.0104915 8.13771 0.0108452 8.29445C0.032182 8.45118 0.0846091 8.60159 0.164797 8.73612C0.244985 8.87064 0.351182 8.98635 0.476642 9.07588L5.13941 13.0715C5.34967 13.2525 5.61721 13.3455 5.8898 13.3323C6.16238 13.3191 6.42047 13.2007 6.61367 13.0001C9.56179 9.92592 12.7617 6.32397 15.6649 3.29652C15.8249 3.13581 15.9341 2.92831 15.9782 2.70153C16.0223 2.47475 15.9991 2.23939 15.9118 2.02663C15.8244 1.81386 15.677 1.63374 15.489 1.51012C15.301 1.3865 15.0814 1.32522 14.8592 1.33439Z" fill="#37383F" fill-opacity="0.8"/>
-                            </svg></button>
-                        <button id="set-EOE" class="set-button flex items-center text-left bg-slate-700/20 px-4 py-2 rounded-sm"><span>Edge of Eternities (soon)</span></button>
+                    <div id="set-list" class="hidden flex flex-wrap  justify-center min-w-11/12 sm:min-w-1/2 mt-2 shadow-2xl ring-2 ring-white text-base w-auto gap-6 p-8 fixed top-1/2 left-1/2 -translate-1/2 rounded-md whitespace-nowrap z-20">
+                        <button id="set-FDN" class="set-button gap-2 flex flex-col sm:w-fit max-w-[200px] w-32 items-center text-left   px-4 py-2 rounded-sm"><span class="w-full text-center font-bold">Foundations</span>
+                            <img src="img/booster_FDN_CB.png" alt="">
+                        </button>
+                        <button id="set-FIN" class="set-button gap-2 flex flex-col sm:w-fit min-w-[100px] max-w-[200px] w-32 items-center text-left  px-4 py-2 rounded-sm"><span class="w-full text-center font-bold">Final Fantasy</span>
+                            <img src="img/booster_FIN_CB.png" alt="">
+                        </button>
+                        <button id="set-EOE" class="set-button gap-2 flex flex-col sm:w-fit min-w-[100px] max-w-[200px] w-32 items-center text-left  px-4 py-2 rounded-sm"><span class="w-full text-center font-bold">Edge of Eternities</span>
+                            <img src="img/booster_EOE_CB.png" alt="">
+
+                        </button>
                     </div>
                 </div>
 
@@ -114,7 +116,7 @@
           </div>
           <div class="flex flex-row">
             <span class="w-full font-light">Price per booster</span>
-            <span id="pricePerBooster" class="font-semibold">$8.00</span>
+            <div class="flex flex-col"><span id="pricePerBooster" class="font-semibold text-right">$8.00 </span><span id="msrp" class="text-xs"></span></div>
           </div>
           <div class="flex flex-row">
             <span class="w-full font-light">Boosters bought</span>
@@ -153,7 +155,7 @@
 
                       <!-- Single you didn't buy slot -->
                        <div id="snark-and-single" class="z-10 fixed left-1/2 w-[255px] -ml-[120px]">
-                        <div id="snark" class="hidden z-10 w-[360px] mx-auto -ml-[60px] text-lg text-center relative font-bold py-3 px-2 text-shadow-lg/100">For $<span id="ghost-price"></span>, you could have just bought this <span id="ghost-foil"></span><span id="ghost-treatment"></span><span id="ghost-name"></span>.<p class="text-xs font-normal mt-2">Current price via TCGplayer or Cardmarket, non-discounted.</p></div>
+                        <div id="snark" class="hidden z-10 w-[360px] mx-auto -ml-[60px] text-lg text-center relative font-bold py-3 px-2 text-shadow-lg/100">For $<span id="ghost-price"></span>, you could have just bought this <span id="ghost-foil"></span><span id="ghost-treatment"></span><span id="ghost-name"></span>.<p class="text-xs font-normal mt-2">Current price via TCGplayer or Cardmarket.</p></div>
                         <div id="single-holder" class="fixed text-center w-[240px] h-[335px] shrink-0 rounded-xl -bottom-40 opacity-0">
                             <div class="shine-holder h-[347px]">
                             <!-- <div class="slot-label">The single</div> -->
@@ -188,9 +190,11 @@
 
 
     <!-- CARD SECTION STARTS HERE -->
-      <div id="card-section" class="flex flex-wrap gap-2 sm:gap-6 mx-auto mb-12 justify-center text-sm sm:text-base max-w-[1080px]">
-        
 
+    <div id="card-section" class="flex flex-wrap gap-2 sm:gap-6 mx-auto mb-12 justify-center text-sm sm:text-base max-w-[1080px]">
+        <div class="w-full">This booster: <span id="this-booster"></span><span id="booster-commentary" class="text-sm"></span></div>
+
+    </div>
     </main>
     <div class="shade opacity-0 -z-10"></div>
 

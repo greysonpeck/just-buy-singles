@@ -13,6 +13,7 @@ function setFDN() {
     document.cookie = "currentSet = 'FDN'";
     boosterValue = 40;
     CAN_boosterValue = 60;
+    msrp = 24.99;
 
     priceCutActive = true;
     priceCut = 1;

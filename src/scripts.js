@@ -1,4 +1,4 @@
-packTotal = 0;
+packsTotal = 0;
 boostersBought = 0;
 commonSum = 0;
 uncommonSum = 0;
@@ -8,6 +8,16 @@ cardBack_URL = "img/card_default4.png";
 activeInvestigation = false;
 activeAbout = false;
 activeSubInfo = false;
+
+const ghostLinkHalf = {
+    FIN: ghostLinkHalf_FIN,
+    FDN: ghostLinkHalf_FDN,
+};
+
+const topOutLink = {
+    FIN: topOutLink_FIN,
+    FDN: topOutLink_FDN,
+};
 
 function umamiAnalytics(umamiEvent) {
     try {
@@ -95,7 +105,7 @@ let USDollar = new Intl.NumberFormat("en-US", {
 function ghostSlide() {
     const singleHolder = document.getElementById("single-holder");
     singleHolder.classList.add("opacity-100");
-    ghostDataGrab(ghostLinkHalf_FDN, topOutLink_FDN);
+    ghostDataGrab(ghostLinkHalf[currentSet], topOutLink[currentSet]);
 
     const investigateButton = document.getElementById("investigate");
     investigateButton.classList.remove("hidden");
@@ -169,10 +179,8 @@ document.addEventListener(
         window.addEventListener("scroll", function () {
             const topActions = document.getElementById("top-actions");
             const scrollThreshold = 50; // pixels
-            console.log(window.scrollY);
 
             if (window.scrollY > scrollThreshold) {
-                console.log("ding");
                 topActions.classList.remove("top-nav");
                 topActions.classList.add("bottom-nav");
             } else {
@@ -236,6 +244,7 @@ document.addEventListener(
         let setListOpen = false;
         more.addEventListener("click", () => {
             setListOpen = true;
+            dimBackground();
             setList.classList.remove("hidden");
         });
 
@@ -243,6 +252,7 @@ document.addEventListener(
         document.addEventListener("click", function (event) {
             if (!more.contains(event.target) && setListOpen) {
                 setList.classList.add("hidden");
+                shade.classList.add("opacity-0", "-z-10");
                 setListOpen = false;
             }
         });
@@ -354,7 +364,7 @@ document.addEventListener(
         function initializeMoney() {
             // Initialize all values
             boostersBought = 0;
-            packTotal = 0;
+            packsTotal = 0;
             commonSum = 0;
             uncommonSum = 0;
             myPrices = [];
@@ -374,6 +384,7 @@ document.addEventListener(
                 document.getElementById("pricePerBooster").innerText = USDollar.format(boosterValue);
                 window.location.reload();
             }
+
             toggle.classList.toggle("on");
         }
 
@@ -385,8 +396,10 @@ document.addEventListener(
 );
 
 function buttonRefresh() {
+    document.getElementById("msrp").innerText = "MSRP: " + USDollar.format(msrp) + " USD";
     // Make set selectors buttons
     const setButtons = document.getElementsByClassName("set-button");
+
     for (button of setButtons) {
         const buttonSet = "set" + button.id.slice(-3);
         button.classList.add("cursor-pointer");
@@ -395,16 +408,12 @@ function buttonRefresh() {
         });
 
         if (currentSet === button.id.slice(-3)) {
-            button.classList.remove("bg-slate-700/50");
-            button.classList.add("bg-slate-700/20");
-            button.querySelector(".set-check").classList.remove("hidden");
+            button.classList.add("bg-white/20");
         } else if (button.id.slice(-3) === "EOE") {
             // Skip EOE, under construction
         } else {
             // Style non-active sets
-            button.classList.add("bg-slate-700/50");
-            button.classList.remove("bg-slate-700/20");
-            button.querySelector(".set-check").classList.add("hidden");
+            button.classList.remove("bg-white/20");
         }
     }
 }
@@ -418,7 +427,7 @@ function clearMoney() {
     function initializeMoney() {
         // Initialize all values
         boostersBought = 0;
-        packTotal = 0;
+        packsTotal = 0;
         commonSum = 0;
         uncommonSum = 0;
         myPrices = [];
@@ -434,7 +443,7 @@ function clearMoney() {
 
 function clearSlots() {
     const cardSection = document.getElementById("card-section");
-    while (cardSection.childElementCount > 0) {
+    while (cardSection.childElementCount > 1) {
         cardSection.removeChild(cardSection.lastChild);
     }
 
@@ -717,7 +726,7 @@ async function ghostDataGrab(ghostLinkHalf, topOutLink) {
     // console.log("Looking for a single between " + boosterSpendBottom + " and " + boosterSpendTop);
 
     ghostLinkConstructed = ghostLinkHalf + "%28USD>" + boosterSpendBottom + "+and+USD<" + boosterSpendTop + "%29&unique=cards";
-    // console.log("GHOST CONSTRUCTED: " + ghostLinkConstructed);
+    // console.log("GHOST LINK HALF: " + ghostLinkHalf);
 
     fetch(topOutLink)
         .then((response) => {
@@ -834,13 +843,43 @@ function sumTotals() {
             commonSumElement.innerText = "$" + commonSum.toFixed(2);
             commonSum = 0;
 
+            let thisPack = 0;
+
             //  Sum up all prices in array
             myPrices.forEach((num) => {
-                packTotal += num;
+                packsTotal += num;
+                thisPack += num;
             });
-            runningSum.innerText = USDollar.format(packTotal);
+            runningSum.innerText = USDollar.format(packsTotal);
 
-            let netTotal = packTotal - boosterTotalValue;
+            //  Show pack total
+            let thisBooster = document.getElementById("this-booster");
+            thisBooster.innerText = USDollar.format(thisPack);
+
+            //  Pack commentary
+            let packRatio = thisPack / boosterValue;
+            let packComment = "";
+            if (packRatio <= 0.25) {
+                packComment = "Oh that's awful";
+            } else if (packRatio <= 0.5) {
+                packComment = "That's not good.";
+            } else if (packRatio <= 0.75) {
+                packComment = "That's pretty mid.";
+            } else if (packRatio <= 1) {
+                packComment = "It could be worse.";
+            } else if (packRatio <= 1.25) {
+                packComment = "That's alright";
+            } else if (packRatio <= 1.5) {
+                packComment = "That's actually pretty decent.";
+            } else if (packRatio <= 1.75) {
+                packComment = "That's pretty great!";
+            } else {
+                packComment = "That's incredible!!";
+            }
+
+            document.getElementById("booster-commentary").innerText = " (" + packComment + ")";
+
+            let netTotal = packsTotal - boosterTotalValue;
             currentMoneyElement.innerText = USDollar.format(netTotal);
             currentMoneyElement.classList.add("px-3");
 
