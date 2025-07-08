@@ -25,7 +25,7 @@ function setFDN() {
     clearSlots();
     makeFDNSlots();
     clearMoney();
-    buttonRefresh();
+    changeSet();
 }
 
 function makeFDNSlots() {

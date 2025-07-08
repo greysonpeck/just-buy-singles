@@ -101,7 +101,7 @@ svg {
     top: 0;
     backdrop-filter: blur(3px);
     transition-property: opacity;
-    transition-duration: 1000ms;
+    transition-duration: 500ms;
 }
 
 h2,
@@ -519,7 +519,17 @@ input:checked + .slider:before {
 
 .h-cards-3 {
     margin-top: -2px;
-    height: 412px;
+    height: 406px;
+}
+
+.h-cards-4 {
+    margin-top: -2px;
+    height: 448px;
+}
+
+.h-cards-5 {
+    margin-top: -2px;
+    height: 486px;
 }
 
 /* Mobile sizing stuff  */
@@ -589,6 +599,16 @@ input:checked + .slider:before {
         margin-top: -2px;
         height: 492px;
     }
+
+    .h-cards-4 {
+        margin-top: -2px;
+        height: 532px;
+    }
+
+    .h-cards-5 {
+        margin-top: -2px;
+        height: 569px;
+    }
 }
 
 #snark {
@@ -599,5 +619,5 @@ input:checked + .slider:before {
 
 #investigate {
     transition-property: opacity;
-    transition-duration: 2s;
+    transition-duration: 1s;
 }

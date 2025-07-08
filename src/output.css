@@ -450,6 +450,9 @@
   .transform {
     transform: var(--tw-rotate-x) var(--tw-rotate-y) var(--tw-rotate-z) var(--tw-skew-x) var(--tw-skew-y);
   }
+  .cursor-default {
+    cursor: default;
+  }
   .cursor-pointer {
     cursor: pointer;
   }
@@ -912,7 +915,7 @@ svg {
   top: 0;
   backdrop-filter: blur(3px);
   transition-property: opacity;
-  transition-duration: 1000ms;
+  transition-duration: 500ms;
 }
 h2, #booster-type {
   font-family: "Oswald", sans-serif;
@@ -1233,7 +1236,15 @@ input:checked + .slider:before {
 }
 .h-cards-3 {
   margin-top: -2px;
-  height: 412px;
+  height: 406px;
+}
+.h-cards-4 {
+  margin-top: -2px;
+  height: 448px;
+}
+.h-cards-5 {
+  margin-top: -2px;
+  height: 486px;
 }
 @media (max-width: 480px) {
   .both-cards, .both-cards-single, .card-face, .card-default, .foil-hold, .snark-and-single {
@@ -1285,13 +1296,21 @@ input:checked + .slider:before {
     margin-top: -2px;
     height: 492px;
   }
+  .h-cards-4 {
+    margin-top: -2px;
+    height: 532px;
+  }
+  .h-cards-5 {
+    margin-top: -2px;
+    height: 569px;
+  }
 }
 #snark {
   text-shadow: 0px 1px 16px var(--tw-text-shadow-color, oklab(from rgb(0 0 0 / 0.1) l a b / 100%)), 0px 3px 16px var(--tw-text-shadow-color, oklab(from rgb(0 0 0 / 0.1) l a b / 80%));
 }
 #investigate {
   transition-property: opacity;
-  transition-duration: 2s;
+  transition-duration: 1s;
 }
 @property --tw-translate-x {
   syntax: "*";

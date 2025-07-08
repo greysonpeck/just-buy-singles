@@ -25,7 +25,7 @@ function setFIN() {
     clearSlots();
     makeFINSlots();
     clearMoney();
-    buttonRefresh();
+    changeSet();
 }
 
 function makeFINSlots() {
@@ -178,7 +178,7 @@ async function defaultRarePull_FIN() {
         //  set:fin rarity:m
         defaultRareType = "Default Frame, Mythic (Foil)";
         defaultRareRarity = "12.25%";
-        defaultRareLink = "https://api.scryfall.com/cards/random?q=set%3Afin+rarity%3Am";
+        defaultRareLink = "https://api.scryfall.com/cards/random?q=set%3Afin+rarity%3Am+%28-CN%3A552+AND+-CN%3A553%29+-is%3Aboosterfun";
     }
 
     let response = await fetch(defaultRareLink);

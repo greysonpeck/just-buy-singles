@@ -8,6 +8,7 @@ cardBack_URL = "img/card_default4.png";
 activeInvestigation = false;
 activeAbout = false;
 activeSubInfo = false;
+firstLoad = true;
 
 const ghostLinkHalf = {
     FIN: ghostLinkHalf_FIN,
@@ -108,8 +109,15 @@ function ghostSlide() {
     ghostDataGrab(ghostLinkHalf[currentSet], topOutLink[currentSet]);
 
     const investigateButton = document.getElementById("investigate");
-    investigateButton.classList.remove("hidden");
-    investigateButton.classList.remove("opacity-0");
+    investigateButton.classList.remove("hidden", "opacity-0", "cursor-default");
+    investigateButton.classList.add("cursor-pointer");
+
+    if (firstLoad === true) {
+        investigateButton.addEventListener("click", () => {
+            investigate();
+        });
+        firstLoad = false;
+    }
 
     // Set Infopop Data
     const infopopsContent = document.querySelectorAll(".infopop-content");
@@ -133,24 +141,27 @@ function ghostSlide() {
 }
 
 //  Toggle pop-ups on button press.
+
 function investigate() {
     const infopops = document.querySelectorAll(".infopop-wrapper");
     const investigateButton = document.getElementById("investigate");
 
     if (activeInvestigation) {
+        console.log("think it's active, making it false");
         infopops.forEach((infopop) => {
             infopop.classList.add("hidden");
             infopop.classList.add("opacity-0");
-            investigateButton.innerText = "Investigate";
         });
+        investigateButton.innerText = "Investigate";
         activeInvestigation = false;
     } else {
+        console.log("think it's false, making it active");
         infopops.forEach((infopop) => {
             infopop.classList.remove("hidden");
             infopop.classList.remove("opacity-0");
-            investigateButton.innerText = "Hide";
         });
-        umamiAnalytics("Investigate");
+        investigateButton.innerText = "Hide";
+        // umamiAnalytics("Investigate");
         activeInvestigation = true;
     }
 }
@@ -256,6 +267,9 @@ document.addEventListener(
                 setListOpen = false;
             }
         });
+
+        const investigateButton = document.getElementById("investigate");
+        investigateButton.onclick = null;
 
         let singleClicked = false;
 
@@ -396,7 +410,7 @@ document.addEventListener(
     false
 );
 
-function buttonRefresh() {
+function changeSet() {
     document.getElementById("msrp").innerText = "MSRP: " + USDollar.format(msrp) + " USD";
     // Make set selectors buttons
     const setButtons = document.getElementsByClassName("set-button");
@@ -418,6 +432,24 @@ function buttonRefresh() {
             button.classList.remove("bg-white/20");
         }
     }
+
+    // Clear Investigate
+    // const infopops = document.querySelectorAll(".infopop-wrapper");
+    const investigateButton = document.getElementById("investigate");
+    const infopops = document.querySelectorAll(".infopop-wrapper");
+
+    if (activeInvestigation) {
+        infopops.forEach((infopop) => {
+            infopop.classList.add("hidden");
+            infopop.classList.add("opacity-0");
+        });
+    } else {
+        // Do nothing
+    }
+    investigateButton.innerText = "Investigate";
+    investigateButton.classList.add("opacity-0");
+
+    activeInvestigation = false;
 }
 
 // Card maker
@@ -445,7 +477,7 @@ function clearMoney() {
 
 function clearSlots() {
     const cardSection = document.getElementById("card-section");
-    while (cardSection.childElementCount > 1) {
+    while (cardSection.childElementCount > 0) {
         cardSection.removeChild(cardSection.lastChild);
     }
 
@@ -636,26 +668,29 @@ function setGhostData() {
     const ghostFoilElement = document.getElementById("ghost-foil");
 
     // If only foil price exists...show foil gradient
+
+    ghostFoilHolderElement.classList.add("foil-gradient");
+    ghostPrice = convertCurrency(Number(ghostCard.prices.usd_foil)).toFixed(0);
+
     if (ghostCard.promo_types.includes("surgefoil") && ghostCard.prices.usd_foil) {
         ghostFoilElement.innerText = "surge foil ";
-        ghostPrice = convertCurrency(Number(ghostCard.prices.usd_foil)).toFixed(0);
-        ghostFoilHolderElement.classList.add("foil-gradient", "surge-gradient");
+        ghostFoilHolderElement.classList.add("surge-gradient");
+        ghostFoilHolderElement.classList.remove("mana-gradient");
     } else if (ghostCard.promo_types.includes("manafoil") && ghostCard.prices.usd_foil) {
         ghostFoilElement.innerText = "mana foil ";
-        ghostPrice = convertCurrency(Number(ghostCard.prices.usd_foil)).toFixed(0);
-        ghostFoilHolderElement.classList.add("foil-gradient", "mana-gradient");
+        ghostFoilHolderElement.classList.add("mana-gradient");
+        ghostFoilHolderElement.classList.remove("surge-gradient");
+    } else if (ghostCard.promo_types.includes("fracturefoil") && ghostCard.prices.usd_foil) {
+        ghostFoilElement.innerText = "fracture foil ";
+        ghostFoilHolderElement.classList.remove("surge-gradient", "mana-gradient");
     } else if (ghostCard.prices.usd_foil && ghostCard.prices.usd == null) {
         ghostFoilElement.innerText = "foil ";
-        ghostPrice = convertCurrency(Number(ghostCard.prices.usd_foil)).toFixed(0);
-        // ghostTexturedElement.classList.add("block");
-        // ghostTexturedElement.classList.remove("hidden");
-        ghostFoilHolderElement.classList.add("foil-gradient");
+        ghostFoilHolderElement.classList.remove("surge-gradient", "mana-gradient");
 
         //  If foil price exists and it's within price range...show foil gradient.
     } else if (ghostCard.foil && ghostCard.prices.usd_foil >= boosterSpendBottom && ghostCard.prices.usd_foil <= boosterSpendTop) {
         ghostFoilElement.innerText = "foil ";
-        ghostPrice = convertCurrency(Number(ghostCard.prices.usd_foil)).toFixed(0);
-        ghostFoilHolderElement.classList.add("foil-gradient");
+        ghostFoilHolderElement.classList.remove("surge-gradient", "mana-gradient");
 
         //  If the card is foil, but the non-foil price exists and is within range..."".
     } else if (ghostCard.foil && ghostCard.prices.usd >= boosterSpendBottom && ghostCard.prices.usd <= boosterSpendTop) {
@@ -664,6 +699,7 @@ function setGhostData() {
         ghostFoilElement.innerText = "";
         ghostTexturedElement.classList.remove("block");
         ghostTexturedElement.classList.add("hidden");
+        ghostPrice = convertCurrency(Number(ghostCard.prices.usd)).toFixed(0);
         ghostFoilHolderElement.classList.remove("foil-gradient");
 
         //  Otherwise, also nothing.
@@ -683,6 +719,8 @@ function setGhostData() {
         ghostTreatment = "borderless ";
     } else if (ghostCard.finishes[0] == "etched") {
         ghostTreatment = "etched ";
+    } else if (ghostCard.frame_effects[0] == "showcase") {
+        ghostTreatment = "showcase ";
     } else {
         ghostTreatment = "";
     }
@@ -856,7 +894,7 @@ function sumTotals() {
 
             //  Show pack total
             let thisBooster = document.getElementById("this-booster");
-            thisBooster.innerText = USDollar.format(thisPack);
+            // thisBooster.innerText = USDollar.format(thisPack);
 
             //  Pack commentary
             let packRatio = thisPack / boosterValue;
@@ -879,7 +917,7 @@ function sumTotals() {
                 packComment = "That's incredible!!";
             }
 
-            document.getElementById("booster-commentary").innerText = " (" + packComment + ")";
+            // document.getElementById("booster-commentary").innerText = " (" + packComment + ")";
 
             let netTotal = packsTotal - boosterTotalValue;
             currentMoneyElement.innerText = USDollar.format(netTotal);
