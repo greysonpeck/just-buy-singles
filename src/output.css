@@ -1014,7 +1014,7 @@ input:checked + .slider:before {
   }
 }
 .data-loader {
-  margin: 0px -12px;
+  margin: -16px -16px;
   position: absolute;
   top: 0;
   left: 0;

@@ -226,7 +226,7 @@ input:checked + .slider:before {
 }
 
 .data-loader {
-    margin: 0px -12px;
+    margin: -16px -16px;
     position: absolute;
     /* Sit on top of the page content */
     /* width: 100%; */
