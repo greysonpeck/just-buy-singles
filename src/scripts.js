@@ -669,7 +669,7 @@ function setGhostData() {
         document.getElementById("ghost-foil").innerText = "";
         document.getElementById("ghost-treatment").innerText = "";
         document.getElementById("ghost-name").innerText = "";
-        document.getElementById("ghost-image").src = "../img/failed.png";
+        document.getElementById("ghost-image").src = "img/failed.png";
 
         return;
     } else {
@@ -862,7 +862,7 @@ async function ghostDataGrab(ghostLinkHalf, topOutLink) {
 
     //  Insert Name
     const ghostNameElement = document.getElementById("ghost-name");
-    ghostNameElement.innerText = ghostName ? ghostName : "";
+    ghostNameElement.innerText = ghostName ? ghostName + "." : "";
     // ghostNameElement.innerText = ghostName;
 
     if (ghostPrice) {
