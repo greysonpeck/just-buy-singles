@@ -8,6 +8,7 @@ cardBack_URL = "img/card_default4.png";
 activeInvestigation = false;
 activeAbout = false;
 activeSubInfo = false;
+activeFeedback = false;
 firstLoad = true;
 failSwitch = false;
 
@@ -183,6 +184,11 @@ document.addEventListener(
         const aboutContainer = document.getElementById("about-container");
         const aboutModal = document.getElementById("about-modal");
         const aboutButton = document.getElementById("about");
+
+        const feedbackContainer = document.getElementById("feedback-container");
+        const feedbackModal = document.getElementById("feedback-modal");
+        const feedbackButton = document.getElementById("feedback");
+
         const mainInfo = document.getElementById("main-info");
         const subInfo = document.getElementById("sub-info");
         const getSubInfo = document.getElementById("explainer");
@@ -202,7 +208,14 @@ document.addEventListener(
             }
         });
 
-        // Click info, get modal
+        // Click Feedback, get modal
+        feedbackButton.addEventListener("click", function (e) {
+            umamiAnalytics("Feedback");
+            feedbackContainer.classList.remove("hidden");
+            activeFeedback = true;
+        });
+
+        // Click About, get modal
         aboutButton.addEventListener("click", function (e) {
             umamiAnalytics("About modal");
             aboutContainer.classList.remove("hidden");
@@ -235,6 +248,21 @@ document.addEventListener(
             subInfo.classList.add("hidden");
             mainInfo.classList.remove("hidden");
             viewSubInfo = false;
+        });
+
+        document.addEventListener("click", function (event) {
+            if (!activeFeedback) return;
+            if (!feedbackModal.contains(event.target) && event.target !== feedbackButton) {
+                feedbackContainer.classList.add("hidden");
+                activeFeedback = false;
+            }
+        });
+
+        document.addEventListener("keydown", (event) => {
+            if (activeAbout && event.key === "Escape") {
+                aboutContainer.classList.add("hidden");
+                activeAbout = false;
+            }
         });
 
         document.addEventListener("click", function (event) {

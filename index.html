@@ -37,18 +37,27 @@
       </div>
       <div id="current-set"></div>
     <div id="top-actions" class="top-nav fixed w-full flex  gap-2 mr-2 py-2 z-20">
-        <button id="about" class="text-[14px] h-fit ml-auto px-2 py-1 gap-2 items-center flex cursor-pointer top-0 right-0 hover:underline rounded-sm ring-1 ring-white">
-            About
-            <!-- <svg width="20" height="20" viewBox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M13.5 25V24.9027L14.7941 24.0757V15.8784C14.7941 15.3432 14.7706 14.9054 14.7235 14.5649C14.6922 14.2243 14.6294 13.9486 14.5353 13.7378C14.4412 13.527 14.3078 13.3649 14.1353 13.2514C13.9784 13.1378 13.7667 13.0324 13.5 12.9351V12.8378H18.2059V22.1297C18.2059 22.6162 18.2216 23.0135 18.2529 23.3216C18.3 23.6297 18.3706 23.8892 18.4647 24.1C18.5588 24.3108 18.6843 24.473 18.8412 24.5865C19.0137 24.7 19.2333 24.8054 19.5 24.9027V25H13.5ZM16.4647 11.6703C16.3863 11.4919 16.2529 11.2892 16.0647 11.0622C15.8922 10.8189 15.6882 10.5838 15.4529 10.3568C15.2333 10.1297 15.0137 9.92703 14.7941 9.74865C14.5745 9.57027 14.3784 9.44865 14.2059 9.38378V9.28649L16.4647 7H16.5588L18.8176 9.28649V9.38378C18.6608 9.44865 18.4647 9.57027 18.2294 9.74865C18.0098 9.92703 17.7824 10.1297 17.5471 10.3568C17.3275 10.5838 17.1235 10.8189 16.9353 11.0622C16.7627 11.2892 16.6373 11.4919 16.5588 11.6703H16.4647Z" fill="white" fill-opacity="0.8"/>
-            <circle cx="16.5" cy="16.5" r="15" stroke="white" stroke-opacity="0.8" stroke-width="3"/>
-            </svg> -->
+        <button id="feedback" class="text-[14px] h-fit ml-auto px-2 py-1 gap-2 items-center flex cursor-pointer top-0 right-0 hover:underline rounded-sm ">
+            Data issue?
         </button>
-        <div class="flex flex-col"><a id="kofi" class="text-[14px] mr-2 block w-fit px-2 py-1 gap-2 rounded-sm ring-1 ring-white hover:underline" target="#" href="https://ko-fi.com/justbuysingles">Help me buy a Genji Glove on <img class="inline pb-0.5 w-10" src="img/kofi_logo.svg" alt="ko-fi"></a>
+        <button id="about" class="text-[14px] h-fit px-2 py-1 gap-2 items-center flex cursor-pointer top-0 right-0 hover:underline rounded-sm">
+            About
+        </button>
+        <div class="flex flex-col"><a id="kofi" class="text-[14px] mr-2 block w-fit px-2 py-1 gap-2 rounded-sm ring-1 ring-white hover:underline" target="#" href="https://ko-fi.com/justbuysingles">Support this on <img class="inline pb-0.5 w-10" src="img/kofi_logo.svg" alt="ko-fi">!</a>
             <img id="kofi-single" class="hidden items-center w-52 shadow-2xl rounded-xl absolute top-12 z-10" src="https://cards.scryfall.io/large/front/f/7/f724dde1-84b0-4e3b-a9b8-44cd22bb9f79.jpg" alt="a $6 single">
         </div>
         
 
+    </div>
+
+    <div id="feedback-container" class="hidden fixed bg-gray-900/50 top-0 left-0 w-full h-lvh z-20">
+        <div id="feedback-modal" class="mx-auto p-6 pb-4 max-w-[560px] min-w-[300px] mt-16 bg-emerald-800 rounded-lg shadow-2xl ring-2 ring-white/80">
+            <div id="main-info">
+                <h3 class="text-2xl mb-2 font-bold">See something odd?</h3>
+                <p>I've tried my best to match up the published <a class="underline" target="#" href="https://magic.wizards.com/en/news/feature/collecting-foundations">pull-rates</a> with the corresponding card pools/treatments, but errors can happen. Would you mind letting me know <a class="underline" target="#" href="https://docs.google.com/forms/d/1DLg092MoupwnFnzb_Gul85BxNe6k6k49tdDisNVkfow/edit#settings">on this brief Google form?</a></p>
+                <p>Thanks for your help!</p>
+            </div>
+        </div>
     </div>
 
     <div id="about-container" class="hidden fixed bg-gray-900/50 top-0 left-0 w-full h-lvh z-20">
