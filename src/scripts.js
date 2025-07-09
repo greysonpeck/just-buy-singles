@@ -441,6 +441,7 @@ document.addEventListener(
 );
 
 function changeSet() {
+    umamiAnalytics("Loaded set: " + window.setName);
     document.getElementById("msrp").innerText = "MSRP: " + USDollar.format(msrp) + " USD";
     // Make set selectors buttons
     const setButtons = document.getElementsByClassName("set-button");
@@ -448,13 +449,10 @@ function changeSet() {
 
     // Remove single
     if (!firstLoad) {
-        console.log("step 1");
         document.getElementById("single-holder").classList.add("hidden");
     } else if (document.getElementById("single-holder").classList.contains("hidden")) {
-        console.log("step 2");
         document.getElementById("single-holder").classList.remove("hidden");
     } else {
-        console.log("step 3");
     }
 
     for (button of setButtons) {

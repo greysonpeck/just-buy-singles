@@ -11,7 +11,7 @@ window.cardInfo = window.cardInfo || {};
 function setFIN() {
     currentSet = "FIN";
     document.cookie = "currentSet = 'FIN'";
-    boosterValue = 500;
+    boosterValue = 100;
     CAN_boosterValue = 160;
     msrp = 37.99;
 

@@ -264,8 +264,8 @@
   .right-0 {
     right: calc(var(--spacing) * 0);
   }
-  .-bottom-40 {
-    bottom: calc(var(--spacing) * -40);
+  .-bottom-48 {
+    bottom: calc(var(--spacing) * -48);
   }
   .-left-2 {
     left: calc(var(--spacing) * -2);
@@ -793,9 +793,9 @@
       width: fit-content;
     }
   }
-  .sm\:min-w-1\/2 {
+  .sm\:min-w-3\/4 {
     @media (width >= 40rem) {
-      min-width: calc(1/2 * 100%);
+      min-width: calc(3/4 * 100%);
     }
   }
   .sm\:gap-6 {
@@ -1016,6 +1016,7 @@ input:checked + .slider:before {
 .data-loader {
   margin: 0px -12px;
   position: absolute;
+  width: 100%;
   top: 0;
   left: 0;
   right: 0;

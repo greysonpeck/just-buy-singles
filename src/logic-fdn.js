@@ -11,7 +11,7 @@ window.cardInfo = window.cardInfo || {};
 function setFDN() {
     currentSet = "FDN";
     document.cookie = "currentSet = 'FDN'";
-    boosterValue = 90;
+    boosterValue = 40;
     CAN_boosterValue = 60;
     msrp = 24.99;
 
