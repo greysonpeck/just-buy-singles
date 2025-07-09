@@ -11,7 +11,7 @@ window.cardInfo = window.cardInfo || {};
 function setFDN() {
     currentSet = "FDN";
     document.cookie = "currentSet = 'FDN'";
-    boosterValue = 40;
+    boosterValue = 90;
     CAN_boosterValue = 60;
     msrp = 24.99;
 
@@ -381,7 +381,7 @@ async function nfRareMythic_FDN() {
         let card = await response.json();
         nfRareMythicName = card.name;
         window.cardInfo[`raremythic-nf-${l}`] = [nfRareMythicName, nfRareMythicType, nfRareMythicRarity];
-        nfRareMythicPrice = convertCurrency(card.prices.usd_foil * priceCut);
+        nfRareMythicPrice = convertCurrency(card.prices.usd * priceCut);
 
         // TO FIX: figure out if DFC....
         nfRareMythicImagePrimary = card.image_uris.normal;
@@ -415,7 +415,7 @@ async function foilPull_FDN() {
     var foilLink = "";
 
     // Override roll
-    // foilRoll = 99.02;
+    // foilRoll = 99.1;
 
     if (foilRoll <= 34.5) {
         // set:fdn rarity:r is:borderless
@@ -425,7 +425,7 @@ async function foilPull_FDN() {
     } else if (foilRoll <= 41.3) {
         foilType = "Borderless, Mythic (Foil)";
         foilRarity = "6.8%";
-        foilLink = "https://api.scryfall.com/cards/random?q=set%3Afdn+rarity%3Ar+is%3Aborderless";
+        foilLink = "https://api.scryfall.com/cards/random?q=set%3Afdn+rarity%3Am+is%3Aborderless";
     } else if (foilRoll <= 70.9) {
         foilType = "Extended-art, Rare (Foil)";
         foilRarity = "29.6%";
@@ -433,7 +433,7 @@ async function foilPull_FDN() {
     } else if (foilRoll <= 74.5) {
         foilType = "Extended-art, Mythic (Foil)";
         foilRarity = "3.6%";
-        foilLink = "https://api.scryfall.com/cards/random?q=set%3Afdn+rarity%3Ar+is%3Aextendedart+-CN%3A729";
+        foilLink = "https://api.scryfall.com/cards/random?q=set%3Afdn+rarity%3Am+is%3Aextendedart+-CN%3A729";
     } else if (foilRoll <= 82.9) {
         foilType = "Mana-foil, Rare";
         foilRarity = "8.4%";
