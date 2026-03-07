@@ -11,26 +11,89 @@
       }
       window.onload = codeAddress;
       </script>
-    <link rel="stylesheet" href="./src/output.css" />
-    <link rel="stylesheet" href="./src/slider.css" />
+    <link rel="stylesheet" href="./src/output.css?v=1.24" />
+    <link rel="stylesheet" href="./src/slider.css?v=1.24" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
-    <script src="./src/logic-mh3.js"></script>
-    <script src="./src/logic-fdn.js"></script>
-    <script src="./src/logic-dsk.js"></script>
-    <script src="./src/logic-fin.js"></script>
-    <script src="./src/scripts.js"></script>
-    <script src="./src/money.js"></script>
-    <script src="./src/slider_logic.js"></script>
+    <script src="./src/logic-mh3.js?v=1.24"></script>
+    <script src="./src/logic-fdn.js?v=1.24"></script>
+    <script src="./src/logic-dsk.js?v=1.24"></script>
+    <script src="./src/logic-fin.js?v=1.24"></script>
+    <script src="./src/logic-eoe.js?v=1.24"></script>
+    <script src="./src/logic-spm.js?v=1.24"></script>
+    <script src="./src/logic-tla.js?v=1.24"></script>
+    <script src="./src/logic-ecl.js?v=1.24"></script>
+    <script src="./src/ads.js?v=1.24"></script>
+
+
+    <script src="./src/scripts.js?v=1.24"></script>
+    <script src="./src/settings.js?v=1.24"></script>
+    <script src="./src/money.js?v=1.24"></script>
+    <script src="./src/slider_logic.js?v=1.24"></script>
     <title>Just Buy Singles</title>
-    <script defer src="https://cloud.umami.is/script.js" data-website-id="d01d8a5f-624c-4611-823f-9187feb883d4" data-domains="justbuysingles.com">
+    <script defer src="https://cloud.umami.is/script.js?v=1.24" data-website-id="d01d8a5f-624c-4611-823f-9187feb883d4" data-domains="justbuysingles.com">
     umami.disable();
     </script>
-
+<!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1084747507972985"
+     crossorigin="anonymous"></script> -->
   </head>
   <body>
+
+   <!-- Footer ad container -->
+
+    <!-- Consent banner -->
+    <!-- <div id="consent-banner">
+        <span>This site uses cookies for ads. Do you accept?</span>
+        <div>
+            <button id="accept-consent">Accept</button>
+            <button id="decline-consent">Decline</button>
+        </div>
+    </div> -->
+
+
+    <!-- Google ad stuff 
+    <script>
+        function loadFooterAd() {
+            const adHolder = document.getElementById("ad-holder-footer");
+            adHolder.innerHTML = `
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1084747507972985" crossorigin="anonymous"><\/script>
+                <ins class="adsbygoogle"
+                    style="display:inline-block;width:970px;height:90px"
+                    data-ad-client="ca-pub-1084747507972985"
+                    data-ad-slot="6762269685"
+                    data-full-width-responsive="true"></ins>
+                <script>(adsbygoogle = window.adsbygoogle || []).push({});<\/script>
+            `;
+        }
+
+        function setUserConsent(granted) {
+            localStorage.setItem("adConsent", granted ? "granted" : "denied");
+            document.getElementById("consent-banner").style.display = "none";
+            if (granted) loadFooterAd();
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const acceptBtn = document.getElementById("accept-consent");
+            const declineBtn = document.getElementById("decline-consent");
+
+            acceptBtn.addEventListener("click", () => setUserConsent(true));
+            declineBtn.addEventListener("click", () => setUserConsent(false));
+
+            const storedConsent = localStorage.getItem("adConsent");
+            if (storedConsent === "granted") {
+                document.getElementById("consent-banner").style.display = "none";
+                loadFooterAd();
+            } else if (storedConsent === "denied") {
+                document.getElementById("consent-banner").style.display = "none";
+            }
+        });
+    </script> -->
+<!-- End ad stuff -->
+
+
+
     <div id="set-selector" class="flex flex-col hidden">
         <a href="#" id="set-toggle-1"></a>
         <a href="#" id="set-toggle-2"></a>
@@ -38,21 +101,29 @@
       </div>
       <div id="current-set"></div>
     <div id="top-actions" class="top-nav fixed w-full flex  gap-2 mr-2 py-2 z-20">
-        <button id="feedback" class="text-[14px] h-fit ml-auto px-2 py-1 gap-2 items-center flex cursor-pointer top-0 right-0 hover:underline rounded-sm ">
+        <button id="feedback" class="text-[14px] h-fit ml-auto px-2 py-[5px] gap-2 items-center flex cursor-pointer top-0 right-0 hover:underline rounded-sm ">
             Data issue?
         </button>
-        <button id="about" class="text-[14px] h-fit px-2 py-1 gap-2 items-center flex cursor-pointer top-0 right-0 hover:underline rounded-sm">
+        <button id="about" class="text-[14px] w-fit h-fit px-2 py-[5px] mr-2 gap-2 items-center flex cursor-pointer top-0 right-0 hover:underline rounded-sm">
             About
         </button>
-        <div class="flex flex-col"><a id="kofi" class="text-[14px] mr-2 block w-fit px-2 py-1 gap-2 rounded-sm ring-1 ring-white hover:underline" target="#" href="https://ko-fi.com/justbuysingles">Support this on <img class="inline pb-0.5 w-10" src="img/kofi_logo.svg" alt="ko-fi">!</a>
-            <img id="kofi-single" class="hidden items-center w-52 shadow-2xl rounded-xl absolute top-12 z-10" src="https://cards.scryfall.io/large/front/f/7/f724dde1-84b0-4e3b-a9b8-44cd22bb9f79.jpg" alt="a $6 single">
+        <div class="flex flex-col"><a id="kofi" class="text-[14px] flex items-center mr-2 w-fit px-2 py-1 gap-2 rounded-sm ring-1 ring-white hover:underline" target="#" href="https://ko-fi.com/justbuysingles"><span>Help me buy a single</span> <svg width="22" height="19" viewBox="0 0 22 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M8.79548 18.4632C5.59317 18.4632 2.98843 17.003 1.46176 14.3512C0.110125 12.0267 0 9.50907 0 6.69592C0 5.02813 0.492082 3.57606 1.42235 2.49631C2.27726 1.50461 3.48863 0.862197 4.83388 0.687264C6.43069 0.481007 8.41585 0.463867 10.4798 0.463867C13.8386 0.463867 14.7874 0.505827 16.1089 0.640574C17.8669 0.818465 19.3461 1.48748 20.3858 2.5755C21.4419 3.68066 22 5.15638 22 6.84485V7.18411C22 10.0652 20.1111 12.4765 17.4785 13.1319C17.282 13.6047 17.0386 14.0751 16.7506 14.5384L16.743 14.5503C15.8157 16.0118 13.6357 18.4639 9.46029 18.4639H8.79491L8.79548 18.4632Z" fill="white"/>
+<path d="M15.971 2.05145C14.7231 1.92439 13.8496 1.88184 10.4803 1.88184C8.31728 1.88184 6.48691 1.90311 5.01065 2.094C3.05564 2.34872 1.3916 3.87527 1.3916 6.6961C1.3916 9.51695 1.53708 11.7012 2.66035 13.6309C3.92912 15.8364 6.05045 17.045 8.79605 17.045H9.46143C12.8306 17.045 14.661 15.2212 15.5762 13.7792C15.9715 13.1427 16.2625 12.5068 16.4497 11.8703C18.8417 11.6581 20.6095 9.64339 20.6095 7.18367V6.84445C20.6095 4.19381 18.9044 2.34872 15.9715 2.05145H15.971Z" fill="white"/>
+<path d="M1.3912 6.6961C1.3912 3.87527 3.05524 2.34872 5.01023 2.094C6.48708 1.90311 8.31748 1.88184 10.4799 1.88184C13.8492 1.88184 14.7226 1.92439 15.9705 2.05145C18.9034 2.34814 20.6085 4.19324 20.6085 6.84445V7.18367C20.6085 9.64395 18.8408 11.6587 16.4487 11.8703C16.2615 12.5068 15.9705 13.1427 15.5753 13.7792C14.66 15.2212 12.8297 17.045 9.46042 17.045H8.79507C6.04949 17.045 3.92813 15.8364 2.65937 13.6309C1.5361 11.7012 1.39062 9.55888 1.39062 6.6961" fill="#202020"/>
+<path d="M2.95077 6.71722C2.95077 9.45298 3.11712 11.2129 3.99057 12.8459C4.98865 14.7335 6.79818 15.4546 8.85751 15.4546H9.50199C12.2059 15.4546 13.5163 14.1183 14.2443 12.9522C14.5979 12.3583 14.9098 11.7011 15.0761 10.8737L15.2007 10.3436H15.9496C17.6136 10.3436 19.0486 8.9654 19.0486 7.2048V6.88683C19.0486 4.9147 17.8425 3.87511 15.7415 3.62099C14.5562 3.51521 13.849 3.47266 10.4793 3.47266C8.21243 3.47266 6.59012 3.49393 5.36308 3.68483C3.63703 3.93954 2.9502 4.93595 2.9502 6.71722" fill="white"/>
+<path d="M15.2012 8.18037C15.2012 8.43509 15.3884 8.62599 15.721 8.62599C16.7818 8.62599 17.3642 8.01076 17.3642 6.99307C17.3642 5.97538 16.7818 5.33887 15.721 5.33887C15.3884 5.33887 15.2012 5.52977 15.2012 5.78448V8.18098V8.18037Z" fill="#202020"/>
+<path d="M4.98934 8.05243C4.98934 9.30355 5.6756 10.3851 6.54906 11.2337C7.13154 11.8065 8.04674 12.4004 8.67038 12.7821C8.8576 12.888 9.04482 12.9518 9.25293 12.9518C9.50267 12.9518 9.71019 12.888 9.87714 12.7821C10.5014 12.4004 11.416 11.8065 11.9776 11.2337C12.8719 10.3856 13.5582 9.30416 13.5582 8.05243C13.5582 6.69491 12.5602 5.48633 11.125 5.48633C10.2725 5.48633 9.68991 5.93193 9.25293 6.54655C8.8576 5.93133 8.25483 5.48633 7.40166 5.48633C5.94569 5.48633 4.98877 6.69491 4.98877 8.05243" fill="#FF5A16"/>
+</svg>
+</a>
+            <img id="kofi-single" class="jbs-background hidden items-center w-52 shadow-2xl rounded-xl absolute right-2 top-12 z-10" src="https://cards.scryfall.io/large/front/f/7/f724dde1-84b0-4e3b-a9b8-44cd22bb9f79.jpg" alt="a $6 single">
         </div>
         
 
     </div>
 
     <div id="feedback-container" class="hidden fixed bg-gray-900/50 top-0 left-0 w-full h-lvh z-20">
-        <div id="feedback-modal" class="mx-auto p-6 pb-4 max-w-[560px] min-w-[300px] mt-16 bg-emerald-800 rounded-lg shadow-2xl ring-2 ring-white/80">
+        <div id="feedback-modal" class="jbs-background mx-auto p-6 pb-4 max-w-[560px] min-w-[300px] mt-16 bg-emerald-800 rounded-lg shadow-2xl ring-2 ring-white/80">
             <div id="main-info">
                 <h3 class="text-2xl mb-2 font-bold">See something odd?</h3>
                 <p>I've tried my best to match up the published <a class="underline" target="#" href="https://magic.wizards.com/en/news/feature/collecting-foundations">pull-rates</a> with the corresponding card pools/treatments, but errors can happen. Would you mind letting me know <a class="underline" target="#" href="https://docs.google.com/forms/d/1DLg092MoupwnFnzb_Gul85BxNe6k6k49tdDisNVkfow/edit#settings">on this brief Google form?</a></p>
@@ -62,7 +133,7 @@
     </div>
 
     <div id="about-container" class="hidden fixed bg-gray-900/50 top-0 left-0 w-full h-lvh z-20">
-        <div id="about-modal" class="mx-auto p-6 pb-4 max-w-[560px] min-w-[300px] mt-16 bg-emerald-800 rounded-lg shadow-2xl ring-2 ring-white/80">
+        <div id="about-modal" class="jbs-background mx-auto p-6 pb-4 max-w-[560px] min-w-[300px] mt-16 bg-emerald-800 rounded-lg shadow-2xl ring-2 ring-white/80">
             <div id="main-info">
                 <h3 class="text-2xl mb-2 font-bold">Ripping packs is fun.</h3>
                 <p>It’s a lot less fun when you get totally wrecked and add a new stack of expensive draft chaff to your “to sort” pile. And odds are, you’re gonna get wrecked.</p>
@@ -79,33 +150,49 @@
             </div>  
         </div>
     </div>
+
+
+
+
     <main class="mx-auto px-1 pt-8 sm:pt-20 flex flex-col">
 
       <!-- BLOCK THING -->
 
       <div class="mx-auto flex px-4 flex-col md:flex-row">
         <div class="mt-6 mb-6">
-            <h1 class="text-3xl md:text-5xl font-bold text-nowrap pb-6">Just Buy Singles</h1>
+            <h1 class="hidden sm:block text-3xl md:text-5xl font-bold text-nowrap pb-6">Just Buy Singles</h1>
             <div class="flex">          
-                <h2 id="set-header" class="mr-auto text-2xl md:text-3xl text-nowrap font-light tracking-[.3em] sm:mb-2">SET NAME</h1>
+                <h2 id="set-header" class="mr-auto text-2xl md:text-3xl text-wrap font-light tracking-[.3em] mb-2">SET NAME</h1>
             </div>
 
-            <p id="booster-type" class="text-lg font-light uppercase tracking-widest w-fit ">PLAY BOOSTER</p>
-                            <div class="relative">
-                    <button id="more" class="h-fit ring-white ring-1 py-1 px-3 mt-4 rounded-sm hover:bg-white/20 cursor-pointer">Change set</button>
-                    <div id="set-list" class="hidden flex flex-wrap  justify-center min-w-11/12 sm:min-w-3/4 mt-2 shadow-2xl ring-2 ring-white text-base w-auto gap-6 p-8 fixed top-1/2 left-1/2 -translate-1/2 rounded-md whitespace-nowrap z-20">
-                        <button id="set-FDN" class="set-button gap-2 flex flex-col sm:w-fit max-w-[200px] w-32 items-center text-left   px-4 py-2 rounded-sm"><span class="w-full text-center font-bold">Foundations</span>
-                            <img src="img/booster_FDN_CB.png" alt="">
-                        </button>
-                        <button id="set-FIN" class="set-button gap-2 flex flex-col sm:w-fit min-w-[100px] max-w-[200px] w-32 items-center text-left  px-4 py-2 rounded-sm"><span class="w-full text-center font-bold">Final Fantasy</span>
-                            <img src="img/booster_FIN_CB.png" alt="">
-                        </button>
-                        <button id="set-EOE" class="set-button gap-2 flex flex-col sm:w-fit min-w-[100px] max-w-[200px] w-32 items-center text-left  px-4 py-2 rounded-sm"><span class="w-full text-center font-bold flex justify-center">Edge of Eternities</span>
-                            <img src="img/booster_EOE_CB.png" alt="">
-
-                        </button>
-                    </div>
+            <div id="booster-types" class="flex gap-4">
+                <button id="collector-booster" class="text-lg px-3 py-1  rounded-sm font-light uppercase tracking-widest w-fit cursor-pointer">COLLECTOR BOOSTER</button>
+                <button id="play-booster" class="hidden px-3 py-1  rounded-sm text-lg font-light uppercase tracking-widest w-fit cursor-pointer">PLAY BOOSTER</button>
+                <div class="relative ml-auto">
+                <button id="more" class="h-fit ring-white ring-1 py-1 px-3 rounded-sm bg-gray-100/20 hover:bg-gray-100/30 cursor-pointer m">Change set</button>
+                <div id="set-list" class="hidden flex flex-wrap  justify-center min-w-11/12 sm:min-w-3/4 mt-2 shadow-2xl ring-2 ring-white text-base w-auto gap-6 p-8 fixed top-1/2 left-1/2 -translate-1/2 rounded-md whitespace-nowrap z-20 max-h-[80vh] overflow-y-auto">
+                    <button id="set-ECL" class="set-button gap-2 flex flex-col sm:w-fit min-w-[100px] max-w-[200px] w-32 items-center text-left  px-4 py-2 rounded-sm"><span class="text-wrap w-full text-center font-bold flex justify-center">Lorwyn Eclipsed</span>
+                        <img src="img/booster_ECL_BOTH.png" alt="">
+                    </button>
+                    <button id="set-TLA" class="set-button gap-2 flex flex-col sm:w-fit min-w-[100px] max-w-[200px] w-32 items-center text-left  px-4 py-2 rounded-sm"><span class="text-wrap w-full text-center font-bold flex justify-center">Avatar: The Last Airbender</span>
+                        <img src="img/booster_TLA_BOTH.png" alt="">
+                    </button>
+                    <button id="set-SPM" class="set-button gap-2 flex flex-col sm:w-fit min-w-[100px] max-w-[200px] w-32 items-center text-left  px-4 py-2 rounded-sm"><span class="text-wrap w-full text-center font-bold flex justify-center">Marvel's Spider-Man</span>
+                        <img src="img/booster_SPM_BOTH.png" alt="">
+                    </button>
+                    <button id="set-EOE" class="set-button gap-2 flex flex-col sm:w-fit min-w-[100px] max-w-[200px] w-32 items-center text-left  px-4 py-2 rounded-sm"><span class="w-full text-center font-bold flex justify-center">Edge of Eternities</span>
+                        <img src="img/booster_EOE_BOTH.png" alt="">
+                    </button>
+                    <button id="set-FIN" class="set-button gap-2 flex flex-col sm:w-fit min-w-[100px] max-w-[200px] w-32 items-center text-left  px-4 py-2 rounded-sm"><span class="w-full text-center font-bold">Final Fantasy</span>
+                        <img src="img/booster_FIN_CB.png" alt="">
+                    </button>
+                    <button id="set-FDN" class="set-button gap-2 flex flex-col sm:w-fit max-w-[200px] w-32 items-center text-left   px-4 py-2 rounded-sm"><span class="w-full text-center font-bold">Foundations</span>
+                        <img src="img/booster_FDN_CB.png" alt="">
+                    </button>
                 </div>
+            </div>
+            </div>
+            
         </div>
 
         <!-- DATA BLOCK -->
@@ -121,23 +208,62 @@
           </div>
           
           <div class="flex flex-row">
-            <!-- <span class="price-cut w-full px-3 py-1 mb-1 text-sm font-medium rounded-sm text-red-900 text-center">Adjusting for early-days inflation, prices cut by 50%</span> -->
+            <span id="alert-message" class="hidden w-full px-3 py-1 mb-1 text-xs font-bold rounded-sm text-red-900 text-center">This set is new! Some card pricing data may be missing.</span>
           </div>
-          <div class="flex flex-row">
+          <div class="flex flex-row pr-4">
             <span class="w-full font-light">Price per booster</span>
-            <div class="flex flex-col"><span id="pricePerBooster" class="font-semibold text-right">$8.00 </span><span id="msrp" class="text-xs"></span></div>
-          </div>
-          <div class="flex flex-row">
+            <div class="flex flex-col items-end">
+                <div id="edit-price" class="-mr-5 relative flex items-center gap-1 hover:underline cursor-pointer">
+                    <span id="pricePerBooster" class="font-semibold text-right">$8.00 </span>
+                    <svg class="opacity-70" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0_676_184)">
+                    <path d="M10.0001 3.33326L12.6668 5.99993M14.1161 4.54126C14.4686 4.18888 14.6666 3.71091 14.6667 3.2125C14.6668 2.71409 14.4688 2.23607 14.1165 1.8836C13.7641 1.53112 13.2861 1.33307 12.7877 1.33301C12.2893 1.33295 11.8113 1.53088 11.4588 1.88326L2.56145 10.7826C2.40667 10.9369 2.29219 11.127 2.22812 11.3359L1.34745 14.2373C1.33022 14.2949 1.32892 14.3562 1.34369 14.4145C1.35845 14.4728 1.38873 14.5261 1.43132 14.5686C1.4739 14.6111 1.5272 14.6413 1.58556 14.656C1.64392 14.6707 1.70516 14.6693 1.76279 14.6519L4.66479 13.7719C4.87357 13.7084 5.06357 13.5947 5.21812 13.4406L14.1161 4.54126Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </g>
+                    <defs>
+                    <clipPath id="clip0_676_184">
+                    <rect width="16" height="16" fill="white"/>
+                    </clipPath>
+                    </defs>
+                    </svg>
+                        <!-- Price per booster settings -->
+                        <!-- <div id="price-modal-container" class="hidden absolute top-6 right-0 bg-gray-900/50 z-20">
+                            <div id="price-modal" class="jbs-background mx-auto p-4 pb-4 w-[250px] bg-emerald-800 rounded-lg shadow-2xl ring-2 ring-white/80">
+                                <div>
+                                    <div class="flex justify-between">
+                                        <p id="modal-price" class="font-bold text-3xl">--</p>
+                                        <div class="flex flex-end gap-2">
+                                            <button id="price-down" class="text-3xl p-2 h-10 w-10 leading-0 ring-white ring-1 rounded-sm bg-gray-50/10 hover:bg-gray-50/20 cursor-pointer"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M4.5835 11H17.4168" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+</button>
+                                            <button id="price-up" class="text-3xl p-2 h-10 w-10 leading-0 ring-white ring-1 rounded-sm bg-gray-50/10 hover:bg-gray-50/20 cursor-pointer"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M4.5835 11.0002H17.4168M11.0002 4.5835V17.4168" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
+                        </div>
+                        <span id="msrp" class="text-xs">MSRP: --</span></div>
+          
+          
+        
+        
+        </div>
+
+          <div class="flex flex-row pr-4">
             <span class="w-full font-light">Boosters bought</span>
             <span class="font-semibold-4 pr-1">×</span>
             <span id="boosters-bought" class="font-semibold">--</span>
           </div>
-          <div class="flex flex-row">
-            <span class="w-full font-light">Total card value</span>
+          <div class="flex flex-row pr-4">
+            <span class="w-full font-light">Total card value <span class="text-sm">(> $1)</span></span>
             <span id="running-sum" class="font-semibold text-nowrap"></span>
           </div>
           <hr class="my-2 opacity-40">
-          <div class="flex flex-row items-center">
+          <div class="flex flex-row pr-4 items-center">
             <label class="switch -left-2">
               <input type="checkbox">
               <span id="currency" class="toggle round "></span>
@@ -159,6 +285,19 @@
             Investigate
         </button>
         </div>
+
+        <!-- <div id="ad-holder-top" class="ad-holder mb-4 m-auto sm:hidden">
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1084747507972985"
+     crossorigin="anonymous"></script>
+        <ins class="adsbygoogle"
+            style="display:inline-block;width:320px;height:50px;"
+            data-ad-client="ca-pub-1084747507972985"
+            data-ad-slot="1234567890"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+        </div> -->
+        
       </div>
 
 
@@ -202,10 +341,21 @@
 
     <div id="card-section" class="flex flex-wrap gap-2 sm:gap-6 mx-auto mb-12 justify-center text-sm sm:text-base max-w-[1080px]">
         <!-- <div class="w-full">This booster: <span id="this-booster"></span><span id="booster-commentary" class="text-sm"></span></div> -->
-
+        <!-- <div id="ad-holder-middle"></div> -->
     </div>
     </main>
+
+
+ <!-- Footer ad container (hidden until consent) -->
+    <div id="ad-holder-footer" class="ad-holder  flex justify-center w-full"></div>
+
+    <footer class="mt-8 mb-12 opacity-85">
+        <p class="text-xs max-w-[800px] m-auto pb-3 px-6 ">Magic: the Gathering card graphics on this website are copyright Wizards of the Coast, LLC, a subsidiary of Hasbro, Inc. justbuysingles.com is not produced by, endorsed by, supported by, or affiliated with Wizards of the Coast.</p>
+        <p class="text-xs max-w-[800px] m-auto pb-3 px-6 ">Secondary market card pricing and listed card treatments are sourced from Scryfall - no guarantees are made for price accuracy. The booster simulation was created by justbuysingles.com and no guarantee is made for the accuracy of simulated results (which cards appear and at what frequency).</p>    
+    </footer>
     <div class="shade opacity-0 -z-10"></div>
+    <div class="light-shade opacity-0 -z-10"></div>
+
 
   </body>
 </html>

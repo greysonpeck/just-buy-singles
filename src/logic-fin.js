@@ -1,29 +1,49 @@
 const ghostLinkHalf_FIN = "https://api.scryfall.com/cards/random?q=%28set%3Afin+OR+set%3Afic+OR+set%3Afca%29+";
 const topOutLink_FIN = "https://api.scryfall.com/cards/search?order=usd&q=%28set%3Afin+OR+set%3Afic+OR+set%3Afca%29+unique%3Aprints+USD%3E%3D15";
-const boosterType_FIN = "Collector";
 
 window.setName = "FIN";
-window.FIN = {
-    totalCards: 15,
-};
+
 window.cardInfo = window.cardInfo || {};
 
+function setFIN_Money() {
+    if (getCookie("currentBoosterType") === "PLAY") {
+        //Nothing yet...
+    } else {
+        document.cookie = "currentBoosterType = COLLECTOR";
+        window.FDN = {
+            totalCards: 15,
+        };
+        boosterValue = getCookie("boosterValue_FIN") ? getCookie("boosterValue_FIN") : 100;
+        CAD_boosterValue = getCookie("boosterValue_CAD_FIN") ? getCookie("boosterValue_CAD_FIN") : 160;
+        msrp = 24.99;
+
+        console.log("should be making FIN slots");
+        makeFINSlots();
+
+        document.cookie = "boosterValue_FIN = " + boosterValue;
+        document.cookie = "boosterValue_CAD_FIN = " + CAD_boosterValue;
+    }
+}
+
 function setFIN() {
+    document.cookie = "currentBoosterType = COLLECTOR";
+
     currentSet = "FIN";
-    document.cookie = "currentSet = 'FIN'";
-    boosterValue = 100;
-    CAN_boosterValue = 160;
-    msrp = 37.99;
+    document.cookie = "currentSet = FIN";
+    window.boosterType = "COLLECTOR";
+
+    boosterCheck("collector");
 
     priceCutActive = true;
     priceCut = 1;
 
     document.getElementById("set-header").innerText = "FINAL FANTASY";
-    document.getElementById("booster-type").innerText = boosterType_FIN + " Booster";
 
     document.body.style.backgroundImage = "url(img/FIN_bg2_dark.jpg)";
     clearSlots();
-    makeFINSlots();
+
+    setFIN_Money();
+
     clearMoney();
     changeSet();
 }
@@ -50,8 +70,6 @@ function pullFIN() {
         // Reset the slider
         const slider = document.querySelector("#sound-slider");
         slider.value = 10;
-
-        // ghostPull_FIN();
 
         commonPull_FIN();
 
@@ -108,7 +126,6 @@ async function commonPull_FIN() {
 
     // Set Sum on page, clear value.
     commonSumElement.innerText = "$" + commonSum;
-    // commonSum = 0;
 }
 
 async function uncommonPull_FIN() {
@@ -172,13 +189,14 @@ async function defaultRarePull_FIN() {
         //  set:fin rarity:r
         defaultRareType = "Default Frame, Rare (Foil)";
         defaultRareRarity = "87.75%";
-        defaultRareLink = "https://api.scryfall.com/cards/random?q=set%3Afin+rarity%3Ar";
+        defaultRareLink = "https://api.scryfall.com/cards/random?q=set%3Afin+rarity%3Ar+has%3Afoil";
     } else {
         //  1 Traditional foil default frame Mythic (12.25%)
         //  set:fin rarity:m
         defaultRareType = "Default Frame, Mythic (Foil)";
         defaultRareRarity = "12.25%";
-        defaultRareLink = "https://api.scryfall.com/cards/random?q=set%3Afin+rarity%3Am+%28-CN%3A552+AND+-CN%3A553%29+-is%3Aboosterfun";
+        defaultRareLink =
+            "https://api.scryfall.com/cards/random?q=set%3Afin+rarity%3Am+%28-CN%3A552+AND+-CN%3A553%29+-is%3Aboosterfun+game%3Apaper&unique=cards";
     }
 
     let response = await fetch(defaultRareLink);
@@ -426,8 +444,7 @@ function bfRareSingleRoll(allowFoil = true) {
         //  Ignore colorful Chocobos!
         bfRareType = "Booster Fun, Mythic";
         bfRareRarity = "3.8%";
-        bfRareLink =
-            "https://api.scryfall.com/cards/random?q=set%3Afin+is%3Aboosterfun+rarity%3Am+unique%3Aart+%28-CN%3D551+AND+-CN%3D551a+AND+-CN%3D551b+AND+-CN%3D551c+AND+-CN%3D551d+AND+-CN%3D551e+AND+-CN%3D551f%29&unique=cards";
+        bfRareLink = "https://api.scryfall.com/cards/random?q=set%3Afin+is%3Aboosterfun+rarity%3Ar+unique%3Aart&unique=cards";
     } else if (bfRareRoll <= 45.1) {
         //  set:fin frame:extendedart type:legendary rarity:r unique:art
         bfRareType = "Extended-art Legendary Creature, Rare";
@@ -664,7 +681,7 @@ async function foilOrChocoPull_FIN() {
         //  set:fin rarity:r is:borderless (CN<320 OR CN>373)
         fchocoType = "Borderless, Rare (Foil)";
         fchocoRarity = "31.6%";
-        chocoRareLink = "https://api.scryfall.com/cards/random?q=set%3Afin+rarity%3Ar+is%3Aborderless+%28CN<320+OR+CN>373%29";
+        chocoRareLink = "https://api.scryfall.com/cards/random?q=set%3Afin+rarity%3Ar+is%3Aborderless+%28CN<320+OR+CN>373%29+CN<565";
     } else if (chocoRareRoll <= 81.6) {
         //  Traditional foil main set borderless Mythic (5.6%, 9 cards)
         //  set:fin rarity:m is:borderless (CN>=375 AND CN<=406)

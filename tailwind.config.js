@@ -1,10 +1,6 @@
-/** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["./**/*.{html,js}"],
-  theme: {
-    extend: {
-      inset: {
-      }
-    }
-  }
+  safelist: [
+    { pattern: /h-\[\d+px\]/ },
+  ],
 };

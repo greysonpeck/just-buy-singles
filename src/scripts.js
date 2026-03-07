@@ -3,7 +3,7 @@ boostersBought = 0;
 commonSum = 0;
 uncommonSum = 0;
 currencyMode = "";
-currentSet = "FIN";
+currentSet = "SPM";
 cardBack_URL = "img/card_default4.png";
 activeInvestigation = false;
 activeAbout = false;
@@ -15,11 +15,19 @@ failSwitch = false;
 const ghostLinkHalf = {
     FIN: ghostLinkHalf_FIN,
     FDN: ghostLinkHalf_FDN,
+    EOE: ghostLinkHalf_EOE,
+    SPM: ghostLinkHalf_SPM,
+    TLA: ghostLinkHalf_TLA,
+    ECL: ghostLinkHalf_ECL,
 };
 
 const topOutLink = {
     FIN: topOutLink_FIN,
     FDN: topOutLink_FDN,
+    EOE: topOutLink_EOE,
+    SPM: topOutLink_SPM,
+    TLA: topOutLink_TLA,
+    ECL: topOutLink_ECL,
 };
 
 function umamiAnalytics(umamiEvent) {
@@ -61,7 +69,23 @@ function pullBooster() {
         pullMH3();
     } else if (currentSet === "FIN") {
         pullFIN();
-    } else {
+    } else if (currentSet === "EOE" && getCookie("currentBoosterType") === "COLLECTOR") {
+        pullEOE();
+    } else if (currentSet === "EOE" && getCookie("currentBoosterType") === "PLAY") {
+        pullEOE_Play();
+    } else if (currentSet === "SPM" && getCookie("currentBoosterType") === "COLLECTOR") {
+        pullSPM();
+    } else if (currentSet === "SPM" && getCookie("currentBoosterType") === "PLAY") {
+        pullSPM_Play();
+    } else if (currentSet === "TLA" && getCookie("currentBoosterType") === "COLLECTOR") {
+        pullTLA();
+    } else if (currentSet === "TLA" && getCookie("currentBoosterType") === "PLAY") {
+        pullTLA_Play();
+    } else if (currentSet === "ECL" && getCookie("currentBoosterType") === "COLLECTOR") {
+        pullECL();
+    } else if (currentSet === "ECL" && getCookie("currentBoosterType") === "PLAY") {
+        pullECL_Play();
+    }else {
         pullFDN();
     }
 }
@@ -127,12 +151,16 @@ function ghostSlide() {
 
     infopopsContent.forEach((content) => {
         let infopopID = content.closest(".card-info").id.replace("-label", "");
+
         if (infopopID === "uncommon-set") {
             content.querySelector(".infopop-name").textContent = window.cardInfo?.["uncommon"][0];
             content.querySelector(".infopop-rarity").textContent = window.cardInfo?.["uncommon"][1];
         } else if (infopopID === "common-set") {
             content.querySelector(".infopop-name").textContent = window.cardInfo?.["common"][0];
             content.querySelector(".infopop-rarity").textContent = window.cardInfo?.["common"][1];
+        } else if (infopopID === "commonsup-set") {
+            content.querySelector(".infopop-name").textContent = window.cardInfo?.["commonsup"][0];
+            content.querySelector(".infopop-rarity").textContent = window.cardInfo?.["commonsup"][1];
         } else {
             content.querySelector(".infopop-name").textContent = window.cardInfo?.[infopopID][0];
             content.querySelector(".infopop-type").textContent = window.cardInfo?.[infopopID][1];
@@ -150,7 +178,6 @@ function investigate() {
     const investigateButton = document.getElementById("investigate");
 
     if (activeInvestigation) {
-        console.log("think it's active, making it false");
         infopops.forEach((infopop) => {
             infopop.classList.add("hidden");
             infopop.classList.add("opacity-0");
@@ -158,7 +185,6 @@ function investigate() {
         investigateButton.innerText = "Investigate";
         activeInvestigation = false;
     } else {
-        console.log("think it's false, making it active");
         infopops.forEach((infopop) => {
             infopop.classList.remove("hidden");
             infopop.classList.remove("opacity-0");
@@ -224,7 +250,8 @@ document.addEventListener(
 
         // Hover kofi link, show single
         kofi.addEventListener("mouseover", function (e) {
-            kofiSingle.classList.remove("hidden");
+            // Hiding the hover for now
+            // kofiSingle.classList.remove("hidden");
         });
         kofi.addEventListener("mouseout", function (e) {
             kofiSingle.classList.add("hidden");
@@ -303,7 +330,12 @@ document.addEventListener(
 
         let singleClicked = false;
 
-        let cardsRemaining = setName.totalCards;
+        if (getCookie("currentBoosterType") === "COLLECTOR") {
+            cardsRemaining = setName.totalCards;
+        } else {
+            cardsRemaining = setName.totalCards_PLAY;
+        }
+
         const cardsLoadingNumber = document.getElementById("cards-loading");
         cardsLoadingNumber.innerText = cardsRemaining;
 
@@ -343,17 +375,29 @@ document.addEventListener(
         const toggle = document.getElementById("currency");
 
         if (getCookie("currentSet")) {
-            if (getCookie("currentSet") == "'MH3'") {
+            if (getCookie("currentSet") == "MH3") {
                 setMH3();
-            } else if (getCookie("currentSet") == "'DSK'") {
+            } else if (getCookie("currentSet") == "DSK") {
                 setDSK();
-            } else if (getCookie("currentSet") == "'FIN'") {
+            } else if (getCookie("currentSet") == "FIN") {
                 setFIN();
-            } else {
+            } else if (getCookie("currentSet") == "EOE") {
+                setEOE();
+            } else if (getCookie("currentSet") == "SPM") {
+                setSPM();
+            } else if (getCookie("currentSet") == "FDN") {
                 setFDN();
+            } else if (getCookie("currentSet") == "TLA") {
+                setTLA();
+            } else if (getCookie("currentSet") == "ECL") {
+                setECL();
+            }else {
+                setECL();
             }
         } else {
-            setFIN();
+            console.log("run 3");
+
+            setECL();
         }
 
         // Pull the set that's in the cookie
@@ -375,11 +419,9 @@ document.addEventListener(
             currencyMode = "CAD";
             umamiAnalytics("Convert to CAD");
             toggle.classList.add("toggle-cad");
-            boosterValue = CAN_boosterValue;
+            boosterValue = CAD_boosterValue;
             document.getElementById("pricePerBooster").innerText = USDollar.format(boosterValue);
             currentMoneyElement.classList.remove("px-3");
-            console.log("Initializing cad...");
-            console.log("currency mode = " + currencyMode);
         }
 
         function initializeUSD() {
@@ -391,8 +433,7 @@ document.addEventListener(
         // If USD cookie, do nothing, load as normal.
         // If no cookie yet, set cookie
         if (getCookie("currencyMode")) {
-            if (getCookie("currencyMode") == "'CAD'") {
-                console.log("Canadian Loonie gang");
+            if (getCookie("currencyMode") == "CAD") {
                 initializeCAD();
                 toggle.classList.toggle("on");
             } else {
@@ -401,7 +442,7 @@ document.addEventListener(
             }
         } else {
             currencyMode = "USD";
-            document.cookie = "currencyMode = 'USD'";
+            document.cookie = "currencyMode = USD";
             initializeUSD();
         }
 
@@ -419,13 +460,13 @@ document.addEventListener(
             currentMoneyElement.classList.remove("bg-rose-500", "bg-emerald-500", "px-3");
 
             // Initialize to CAD settings if toggled while on USD and vice-versa.
-            if (getCookie("currencyMode") == "'USD'") {
+            if (getCookie("currencyMode") == "USD") {
                 initializeCAD();
-                document.cookie = "currencyMode = 'CAD'";
+                document.cookie = "currencyMode = CAD";
                 window.location.reload();
             } else {
                 initializeUSD();
-                document.cookie = "currencyMode = 'USD'";
+                document.cookie = "currencyMode = USD";
                 document.getElementById("pricePerBooster").innerText = USDollar.format(boosterValue);
                 window.location.reload();
             }
@@ -436,16 +477,82 @@ document.addEventListener(
         toggle.addEventListener("click", () => {
             initializeMoney();
         });
+
+        document.getElementById("msrp").innerText = "MSRP: " + USDollar.format(msrp) + " USD";
+
+        function boosterToggle() {
+            clearSlots();
+
+            boosterCheck(window.boosterType);
+
+            if (getCookie("currentBoosterType") === "COLLECTOR") {
+                collectorButton.classList.add("booster-active");
+                playButton.classList.remove("booster-active");
+            } else {
+                playButton.classList.add("booster-active");
+                collectorButton.classList.remove("booster-active");
+                playButton.classList.add("booster-active");
+            }
+
+            if (getCookie("currentBoosterType") === "COLLECTOR") {
+                cardsRemaining = setName.totalCards;
+            } else {
+                cardsRemaining = setName.totalCards_PLAY;
+            }
+
+            setID = getCookie("currentSet");
+            const moneySet = "set" + setID + "_Money";
+            window[moneySet]();
+
+            document.getElementById("msrp").innerText = "MSRP: " + USDollar.format(msrp) + " USD";
+
+            cookieSearch =
+                "boosterValue" +
+                (getCookie("currencyMode") === "CAD" ? "_CAD_" : "_") +
+                getCookie("currentSet") +
+                (getCookie("currentBoosterType") === "PLAY" ? "_PLAY" : "");
+
+            console.log(cookieSearch);
+            console.log("bing: " + getCookie(cookieSearch));
+
+            document.getElementById("pricePerBooster").innerText = USDollar.format(getCookie(cookieSearch));
+        }
+
+        // boosterToggle();
+
+        collectorButton.addEventListener("click", () => {
+            console.log("collector");
+            document.cookie = "currentBoosterType = COLLECTOR";
+            boosterToggle();
+        });
+
+        playButton.addEventListener("click", () => {
+            console.log("play");
+            document.cookie = "currentBoosterType = PLAY";
+            boosterToggle();
+        });
+
+        // Responsive button name
+        document.querySelectorAll("#booster-types>button").forEach((label) => {
+            if (window.screen.width <= 960) {
+                label.innerText = label.innerText.replace(" BOOSTER", "");
+            } else {
+                // nothing
+            }
+        });
     },
     false
 );
 
 function changeSet() {
-    umamiAnalytics("Loaded set: " + window.setName);
-    document.getElementById("msrp").innerText = "MSRP: " + USDollar.format(msrp) + " USD";
-    // Make set selectors buttons
-    const setButtons = document.getElementsByClassName("set-button");
-    document.getElementById("pricePerBooster").innerText = USDollar.format(boosterValue);
+    umamiAnalytics("Select set: " + currentSet);
+    boosterTotalValue = 0;
+
+    if (currencyMode === "CAD") {
+        boosterValue = CAD_boosterValue;
+    } else {
+        // It's USD...
+    }
 
     // Remove single
     if (!firstLoad) {
@@ -453,23 +560,6 @@ function changeSet() {
     } else if (document.getElementById("single-holder").classList.contains("hidden")) {
         document.getElementById("single-holder").classList.remove("hidden");
     } else {
-    }
-
-    for (button of setButtons) {
-        const buttonSet = "set" + button.id.slice(-3);
-        button.classList.add("cursor-pointer");
-        button.addEventListener("click", () => {
-            window[buttonSet]();
-        });
-
-        if (currentSet === button.id.slice(-3)) {
-            button.classList.add("bg-white/20");
-        } else if (button.id.slice(-3) === "EOE") {
-            // Skip EOE, under construction
-        } else {
-            // Style non-active sets
-            button.classList.remove("bg-white/20");
-        }
     }
 
     // Clear Investigate
@@ -489,6 +579,48 @@ function changeSet() {
     investigateButton.classList.add("opacity-0");
 
     activeInvestigation = false;
+
+    // Alert for EOE
+    alertMessage = document.getElementById("alert-message");
+    // currentSet === "EOE" ? alertMessage.classList.remove("hidden") : alertMessage.classList.add("hidden");
+
+    // Make set selectors buttons
+    const setButtons = document.getElementsByClassName("set-button");
+
+    for (button of setButtons) {
+        const buttonSet = "set" + button.id.slice(-3);
+
+        if (currentSet === button.id.slice(-3)) {
+            button.classList.add("bg-white/20");
+            button.classList.add("cursor-pointer");
+            button.addEventListener("click", () => {
+                window[buttonSet]();
+            });
+        } else if (button.id.slice(-3) === "XXX") {
+            // Skip EOE, under construction
+        } else {
+            // Style non-active sets
+            button.classList.remove("bg-white/20");
+            button.classList.add("cursor-pointer");
+            button.addEventListener("click", () => {
+                window[buttonSet]();
+            });
+        }
+    }
+
+    playButton = document.getElementById("play-booster");
+    collectorButton = document.getElementById("collector-booster");
+
+    if (getCookie("currentBoosterType") === "COLLECTOR") {
+        collectorButton.classList.add("booster-active");
+        playButton.classList.remove("booster-active");
+    } else {
+        playButton.classList.add("booster-active");
+        collectorButton.classList.remove("booster-active");
+        playButton.classList.add("booster-active");
+    }
+
+    document.getElementById("pricePerBooster").innerText = USDollar.format(boosterValue);
 }
 
 // Card maker
@@ -512,6 +644,26 @@ function clearMoney() {
     }
 
     initializeMoney();
+
+    // Smaller text slot labels if long
+    document.querySelectorAll(".slot-label").forEach((label) => {
+        const len = label.textContent.trim().length;
+
+        if (len > 19) {
+            label.classList.add("text-sm");
+        } else {
+            label.classList.add("text-base");
+        }
+    });
+}
+
+function boosterCheck(type) {
+    playBoosterButton = document.getElementById("play-booster");
+    if (type === "both") {
+        playBoosterButton.classList.remove("hidden");
+    } else {
+        //
+    }
 }
 
 function clearSlots() {
@@ -524,6 +676,18 @@ function clearSlots() {
     document.getElementById("snark").classList.add("hidden");
     document.getElementById("ghost-image").src = cardBack_URL;
     // document.getElementById("foil-holder").style.display = "none";
+
+    if (window.boosterType === "both") {
+        // Do nothing
+    } else if (window.boosterType === "collector") {
+        document.getElementById("play-booster").classList.add("hidden");
+    } else {
+        document.getElementById("play-booster").classList.add("hidden");
+    }
+
+    playButton = document.getElementById("play-booster");
+
+    boosterCheck(window.boosterType);
 }
 
 function makeSlot(id, label, hasFoil, quantity) {
@@ -538,7 +702,7 @@ function makeSlot(id, label, hasFoil, quantity) {
 
     const cardInfo = document.createElement("div");
     cardInfo.id = id + "-label";
-    cardInfo.classList.add("card-info", "flex", "items-end", "sm:text-base", "text-xs", "pb-1.5");
+    cardInfo.classList.add("card-info", "flex", "items-center", "sm:text-base", "text-xs", "pb-1.5");
     const infoPopWrapper =
         '<div class="infopop-wrapper hidden w-0 justify-center align-center"> <div id="infopop-' +
         id +
@@ -584,7 +748,7 @@ function makeSlot(id, label, hasFoil, quantity) {
     if (quantity) {
         // Quantity stuff
         const cardSet = document.createElement("div");
-        let stackHeightValue = quantity * 40 + 412;
+        let stackHeightValue = quantity * 40 + 324;
         cardSet.id = id + "-set";
         cardSet.classList.add("mb-1", "sm:pt-0", "card-info");
 
@@ -680,16 +844,41 @@ function makeSlot(id, label, hasFoil, quantity) {
         bothCards.append(cardImg);
         bothCards.append(cardBack);
     }
+
+    // Put an ad
+    // if (cardSection.childElementCount === 4) {
+    //     // Create the container <ins>
+    //     var adMid = document.createElement("ins");
+    //     adMid.className = "adsbygoogle";
+    //     adMid.style = "display:inline-block;width:970px;height:90px";
+    //     adMid.setAttribute("data-ad-client", "ca-pub-1084747507972985"); // your AdSense publisher ID
+    //     adMid.setAttribute("data-ad-slot", "1234567890"); // your Ad unit slot ID
+    //     // adMid.setAttribute("data-ad-format", "auto");
+    //     // adMid.setAttribute("data-full-width-responsive", "true");
+
+    //     // Create Ad Holder
+    //     adHolder = document.createElement("div");
+    //     adHolder.id = "ad-holder-middle";
+    //     adHolder.classList.add("ad-holder", "flex", "justify-center", "w-full", "min-h-[90px]");
+    //     cardSection.appendChild(adHolder);
+
+    //     // Insert the ad into the DOM
+    //     adHolder.insertAdjacentElement("beforeend", adMid);
+
+    //     // Tell AdSense to render the ad
+    //     // Delay rendering to ensure width is calculated
+    //     setTimeout(() => {
+    //         (adsbygoogle = window.adsbygoogle || []).push({});
+    //     }, 50);
+    // }
 }
 
 function setGhostData() {
-    console.log("setting ghost data");
     ghostFoilHolderElement = document.getElementById("foil-holder");
     ghostTexturedElement = document.getElementById("ghost-textured");
     snarkError = document.getElementById("snark-error");
 
     if (failSwitch) {
-        console.log("it is error");
         snarkError.innerText = "Tried to find a single for close to the dollar amount you sunk into packs...but came up empty!";
         document.getElementById("ghost-price").innerText = "";
         document.getElementById("ghost-foil").innerText = "";
@@ -700,7 +889,7 @@ function setGhostData() {
         return;
     } else {
         snarkError.innerText = "";
-        console.log("no error");
+        // No error
     }
 
     if (ghostName.includes(",")) {
@@ -728,17 +917,28 @@ function setGhostData() {
     ghostFoilHolderElement.classList.add("foil-gradient");
     ghostPrice = "For $" + ghostPrice + ", you could have just bought this ";
 
-    if (ghostCard.promo_types.includes("surgefoil") && ghostCard.prices.usd_foil) {
-        ghostFoilElement.innerText = "surge foil ";
-        ghostFoilHolderElement.classList.add("surge-gradient");
-        ghostFoilHolderElement.classList.remove("mana-gradient");
-    } else if (ghostCard.promo_types.includes("manafoil") && ghostCard.prices.usd_foil) {
-        ghostFoilElement.innerText = "mana foil ";
-        ghostFoilHolderElement.classList.add("mana-gradient");
-        ghostFoilHolderElement.classList.remove("surge-gradient");
-    } else if (ghostCard.promo_types.includes("fracturefoil") && ghostCard.prices.usd_foil) {
-        ghostFoilElement.innerText = "fracture foil ";
-        ghostFoilHolderElement.classList.remove("surge-gradient", "mana-gradient");
+    ghostHasPromoTypes = "promo_types" in ghostCard;
+    if (ghostHasPromoTypes) {
+        if (ghostCard.promo_types.includes("surgefoil") && ghostCard.prices.usd_foil) {
+            ghostFoilElement.innerText = "surge foil ";
+            ghostFoilHolderElement.classList.add("surge-gradient");
+            ghostFoilHolderElement.classList.remove("mana-gradient");
+        } else if (ghostCard.promo_types.includes("manafoil") && ghostCard.prices.usd_foil) {
+            ghostFoilElement.innerText = "mana foil ";
+            ghostFoilHolderElement.classList.add("mana-gradient");
+            ghostFoilHolderElement.classList.remove("surge-gradient");
+        } else if (ghostCard.promo_types.includes("galaxyfoil") && ghostCard.prices.usd_foil) {
+            ghostFoilElement.innerText = "galaxy foil ";
+            ghostFoilHolderElement.classList.add("galaxy-gradient");
+            ghostFoilHolderElement.classList.remove("surge-gradient");
+        } else if (ghostCard.promo_types.includes("fracturefoil") && ghostCard.prices.usd_foil) {
+            ghostFoilElement.innerText = "fracture foil ";
+            ghostFoilHolderElement.classList.remove("surge-gradient", "mana-gradient", "galaxy-gradient");
+        } else {
+            //has promo types, but not the ones we're looking for....
+            ghostFoilElement.innerText = "";
+            ghostFoilHolderElement.classList.remove("foil-gradient");
+        }
     } else if (ghostCard.prices.usd_foil && ghostCard.prices.usd == null) {
         ghostFoilElement.innerText = "foil ";
         ghostFoilHolderElement.classList.remove("surge-gradient", "mana-gradient");
@@ -750,32 +950,30 @@ function setGhostData() {
 
         //  If the card is foil, but the non-foil price exists and is within range..."".
     } else if (ghostCard.foil && ghostCard.prices.usd >= boosterSpendBottom && ghostCard.prices.usd <= boosterSpendTop) {
-        // console.log("The single is regular");
         // ghostFoilHolderElement.classList.remove("foil-gradient");
         ghostFoilElement.innerText = "";
         ghostTexturedElement.classList.remove("block");
         ghostTexturedElement.classList.add("hidden");
-        ghostPrice = convertCurrency(Number(ghostCard.prices.usd)).toFixed(0);
         ghostFoilHolderElement.classList.remove("foil-gradient");
-
         //  Otherwise, also nothing.
     } else {
-        console.log("The single is super regular and not in range.");
         ghostFoilElement.innerText = "";
         ghostTexturedElement.classList.remove("block");
         ghostTexturedElement.classList.add("hidden");
         ghostFoilHolderElement.classList.remove("foil-gradient");
     }
 
+    console.log(ghostCard.name);
+
     if (ghostCard.frame == "1997") {
         ghostTreatment = "retro frame ";
         // } else if (ghostCard.promo_types[0]) {
         //   ghostTreatment = "borderless concept art ";
-    } else if (ghostCard.border_color == "borderless") {
+    } else if (ghostCard.border_color?.includes("borderless")) {
         ghostTreatment = "borderless ";
-    } else if (ghostCard.finishes[0] == "etched") {
+    } else if (ghostCard.finishes?.includes("etched")) {
         ghostTreatment = "etched ";
-    } else if (ghostCard.frame_effects[0] == "showcase") {
+    } else if (ghostCard.frame_effects?.includes("showcase")) {
         ghostTreatment = "showcase ";
     } else {
         ghostTreatment = "";
@@ -795,15 +993,12 @@ function setGhostData() {
 async function ghostDataGrab(ghostLinkHalf, topOutLink) {
     // Set prices and link
 
+    console.log(topOutLink);
+
     // Add Boosters Bought
-    totalBoosterSpend = boostersBought * boosterValue;
-    boosterSpendTop = convertToUSD(totalBoosterSpend + totalBoosterSpend * 0.15);
-    boosterSpendBottom = convertToUSD(totalBoosterSpend - totalBoosterSpend * 0.15);
-
-    // boosterSpendTop = 400;
-    // boosterSpendBottom = 401;
-
-    // console.log("Looking for a single between " + boosterSpendBottom + " and " + boosterSpendTop);
+    totalBoosterSpend = Number(boosterTotalValue);
+    boosterSpendTop = convertToUSD(totalBoosterSpend + totalBoosterSpend * 0.2);
+    boosterSpendBottom = convertToUSD(totalBoosterSpend - totalBoosterSpend * 0.2);
 
     ghostLinkConstructed = ghostLinkHalf + "%28USD>" + boosterSpendBottom + "+and+USD<" + boosterSpendTop + "%29&unique=cards";
     // console.log("GHOST LINK HALF: " + ghostLinkHalf);
@@ -820,8 +1015,7 @@ async function ghostDataGrab(ghostLinkHalf, topOutLink) {
         // First we set the Ghost Card to the TOP PRICE card
         .then((data) => {
             ghostCard = data.data[0];
-            isSurge = ghostCard.promo_types.includes("surgefoil");
-            console.log("promos: " + ghostCard.promo_types);
+            isSurge = ghostCard.promo_types?.includes("surgefoil") ?? false;
 
             if (ghostCard.prices.usd == !null) {
                 ghostPrice = convertCurrency(Number(ghostCard.prices.usd) * priceCut);
@@ -830,18 +1024,18 @@ async function ghostDataGrab(ghostLinkHalf, topOutLink) {
             } else {
                 ghostPrice = convertCurrency(Number(ghostCard.prices.usd_foil) * priceCut);
             }
-            console.log("Total Booster Spend: " + totalBoosterSpend + ". Top of the set: " + ghostPrice);
+            // console.log("Total Booster Spend: " + totalBoosterSpend + ". Top of the set: " + ghostPrice);
             if (totalBoosterSpend <= ghostPrice) {
                 ghostLink = ghostLinkConstructed;
-                console.log("Getting NON-TOP Card!");
+                // console.log("Getting NON-TOP Card!");
 
                 // Get the non-top card
-                console.log("Ghost link: " + ghostLinkConstructed);
+                // console.log("Ghost link: " + ghostLinkConstructed);
 
                 ghostCard = fetch(ghostLinkConstructed)
                     .then((response) => {
                         if (response.status === 404) {
-                            console.log("FAILING NOW");
+                            // console.log("FAILING NOW");
                             failSwitch = true;
                             setGhostData();
                             return;
@@ -851,17 +1045,40 @@ async function ghostDataGrab(ghostLinkHalf, topOutLink) {
                     })
                     .then((data) => {
                         if (failSwitch) {
-                            console.log("fail detected, clearing Card and Name. failSwitch turning false.");
+                            // console.log("fail detected, clearing Card and Name. failSwitch turning false.");
                             ghostCard = "";
                             ghostName = "";
                             ghostPrice = "";
                             setGhostData();
                             failSwitch = false;
                         } else {
-                            console.log("no fail detected. Setting Card and Name");
+                            // console.log("no fail detected. Setting Card and Name");
                             ghostCard = data;
                             ghostName = data.name;
                             setGhostData();
+
+                            //  Replace Img Source
+                            ghostImageElement = document.getElementById("ghost-image");
+
+                            //  Wait for manually Ghost Image to load, then set image.
+                            // await waitforme(2000);
+
+                            //  Insert Price
+                            const ghostPriceElement = document.getElementById("ghost-price");
+                            ghostPriceElement.innerText = ghostPrice ? ghostPrice : "";
+                            // ghostPriceElement.innerText = ghostPrice;
+
+                            //  Insert Name
+                            const ghostNameElement = document.getElementById("ghost-name");
+                            ghostNameElement.innerText = ghostName ? ghostName + "." : "";
+                            // ghostNameElement.innerText = ghostName;
+
+                            if (ghostPrice) {
+                                // We pulled a real card, set the iamge
+                                ghostImageElement.src = ghostImagePrimary;
+                            } else {
+                                // 404'd, don't overwrte the fail image.
+                            }
                         }
                     });
             } else {
@@ -874,33 +1091,10 @@ async function ghostDataGrab(ghostLinkHalf, topOutLink) {
         .catch((error) => {
             console.error(error);
         });
-
-    //  Replace Img Source
-    ghostImageElement = document.getElementById("ghost-image");
-
-    //  Wait for manually Ghost Image to load, then set image.
-    await waitforme(800);
-
-    //  Insert Price
-    const ghostPriceElement = document.getElementById("ghost-price");
-    ghostPriceElement.innerText = ghostPrice ? ghostPrice : "";
-    // ghostPriceElement.innerText = ghostPrice;
-
-    //  Insert Name
-    const ghostNameElement = document.getElementById("ghost-name");
-    ghostNameElement.innerText = ghostName ? ghostName + "." : "";
-    // ghostNameElement.innerText = ghostName;
-
-    if (ghostPrice) {
-        // We pulled a real card, set the iamge
-        ghostImageElement.src = ghostImagePrimary;
-    } else {
-        // 404'd, don't overwrte the fail image.
-    }
 }
 
 const setName = window[window.setName];
-let cardsRemaining = setName.totalCards;
+// let cardsRemaining = setName.totalCards;
 
 const cardImageLoaded = async (cardType, cardImagePrimary, cardStack) => {
     cardsRemaining--;
@@ -927,15 +1121,20 @@ function sumTotals() {
     const cardsLoadingNumber = document.getElementById("cards-loading");
     const runningSum = document.getElementById("running-sum");
 
-    cardsRemaining = setName.totalCards;
     cardsLoadingNumber.innerText = cardsRemaining;
 
-    boosterTotalValue = boostersBought * boosterValue;
+    boosterTotalValue = Number(boosterTotalValue) + (currencyMode === "CAD" ? Number(CAD_boosterValue) : Number(boosterValue));
+
     const boostersBoughtElement = document.getElementById("boosters-bought");
     boostersBoughtElement.innerText = boostersBought + (" (" + USDollar.format(boosterTotalValue) + ")");
 
     function checkIfFinished() {
-        return myPrices.length >= setName.totalCards;
+        if (getCookie("currentBoosterType") === "COLLECTOR") {
+            totalCards = setName.totalCards;
+        } else {
+            totalCards = setName.totalCards_PLAY;
+        }
+        return myPrices.length >= totalCards;
     }
 
     var timeout = setInterval(function () {
@@ -944,6 +1143,12 @@ function sumTotals() {
         if (checkIfFinished()) {
             clearInterval(timeout);
             isFinished = true;
+
+            if (getCookie("currentBoosterType") === "COLLECTOR") {
+                cardsRemaining = setName.totalCards;
+            } else {
+                cardsRemaining = setName.totalCards_PLAY;
+            }
 
             loadingOverlay.classList.remove("z-10", "loader-blur-effect");
             loadingOverlay.classList.add("-z-10", "opacity-0");
@@ -956,9 +1161,23 @@ function sumTotals() {
 
             //  Sum up all prices in array
             myPrices.forEach((num) => {
-                packsTotal += num;
-                thisPack += num;
+                if (num >= 1) {
+                    packsTotal += num;
+                    thisPack += num;
+                } else {
+                    // Ignore bulk
+                }
             });
+
+            // Smaller text slot labels if long
+            document.querySelectorAll(".price").forEach((price) => {
+                if (price.innerText === "$0.00") {
+                    price.innerText = "(no data!)";
+                } else {
+                    // fine price
+                }
+            });
+
             runningSum.innerText = USDollar.format(packsTotal);
 
             //  Show pack total
@@ -1010,5 +1229,15 @@ function sumTotals() {
     }, 100);
 
     // Reset "cards remaining" value a moment after the loader fades away
-    cardsLoadingNumber.innerText = setName.totalCards;
+    if (getCookie("currentBoosterType") === "COLLECTOR") {
+        cardsLoadingNumber.innerText = setName.totalCards;
+    } else {
+        cardsLoadingNumber.innerText = setName.totalCards_PLAY;
+    }
+
+
 }
+
+
+
+
