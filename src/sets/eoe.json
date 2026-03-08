@@ -1,0 +1,212 @@
+{
+  "code": "EOE",
+  "displayName": "EDGE OF ETERNITIES",
+  "backgroundImage": "img/EOE_bg_dark.jpg",
+  "boosterTypes": ["COLLECTOR", "PLAY"],
+  "boosters": {
+    "COLLECTOR": {
+      "totalCards": 15,
+      "msrp": 24.99,
+      "defaultUSD": 38,
+      "defaultCAD": 60,
+      "ghostCard": {
+        "randomQuery": "%28set%3Aeoe+or+set%3Aeos%29+unique%3Aprints+",
+        "topOutQuery": "%28set%3Aeoe+or+set%3Aeos%29+unique%3Aprints+USD%3E%3D15"
+      },
+      "slots": [
+        {
+          "id": "boosterfun",
+          "label": "Foil Booster Fun",
+          "isFoil": true,
+          "probabilities": [
+            { "maxRoll": 38.0,  "type": "Extended-art, Rare (Foil)",              "rarity": "38%",   "query": "set%3Aeoe+rarity%3Ar+%28CN>%3D317+AND+CN<%3D356%29&unique=cards",  "foilClass": "foil-gradient" },
+            { "maxRoll": 42.0,  "type": "Extended-art, Mythic (Foil)",            "rarity": "4%",    "query": "set%3Aeoe+rarity%3Am+%28CN>%3D317+AND+CN<%3D356%29&unique=cards",  "foilClass": "foil-gradient" },
+            { "maxRoll": 48.0,  "type": "Borderless Viewport, Rare (Foil)",       "rarity": "6%",    "query": "set%3Aeoe+rarity%3Ar+%28CN>%3D277+AND+CN<%3D286%29&unique=cards",  "foilClass": "foil-gradient" },
+            { "maxRoll": 51.0,  "type": "Borderless Viewport, Mythic (Foil)",     "rarity": "3%",    "query": "set%3Aeoe+rarity%3Am+%28CN>%3D277+AND+CN<%3D286%29&unique=cards",  "foilClass": "foil-gradient" },
+            { "maxRoll": 64.0,  "type": "Borderless Triumphant, Rare (Foil)",     "rarity": "13%",   "query": "set%3Aeoe+rarity%3Ar+%28CN>%3D287+AND+CN<%3D302%29&unique=cards",  "foilClass": "foil-gradient" },
+            { "maxRoll": 66.0,  "type": "Borderless Triumphant, Mythic (Foil)",   "rarity": "2%",    "query": "set%3Aeoe+rarity%3Am+%28CN>%3D287+AND+CN<%3D302%29&unique=cards",  "foilClass": "foil-gradient" },
+            { "maxRoll": 78.0,  "type": "Borderless Surreal Space, Rare (Foil)",  "rarity": "12%",   "query": "set%3Aeoe+rarity%3Ar+%28CN>%3D303+AND+CN<%3D316%29&unique=cards",  "foilClass": "foil-gradient" },
+            { "maxRoll": 80.0,  "type": "Borderless Surreal Space, Mythic (Foil)","rarity": "2%",    "query": "set%3Aeoe+rarity%3Am+%28CN>%3D303+AND+CN<%3D316%29&unique=cards",  "foilClass": "foil-gradient" },
+            { "maxRoll": 86.0,  "type": "Special Guests (Foil)",                  "rarity": "6%",    "query": "set%3Aspg+date%3A2025-08-01&unique=cards",                         "foilClass": "foil-gradient" },
+            { "maxRoll": 95.0,  "type": "Japan Showcase (Foil)",                  "rarity": "9%",    "query": "set%3Aeoe+%28CN>%3D357+AND+CN<%3D365%29&unique=cards",             "foilClass": "foil-gradient" },
+            { "maxRoll": 96.0,  "type": "Japan Showcase (Fracture Foil)",         "rarity": "1%",    "query": "set%3Aeoe+%28CN>%3D383+AND+CN<%3D392%29&unique=cards",             "foilClass": "foil-gradient" },
+            { "maxRoll": 98.0,  "type": "Borderless Viewport, Rare (Galaxy Foil)","rarity": "2%",    "query": "set%3Aeoe+rarity%3Ar+%28CN>%3D372+AND+CN<%3D381%29&unique=cards",  "foilClass": "galaxy-gradient" },
+            { "maxRoll": 100.0, "type": "Borderless Viewport, Mythic (Galaxy Foil)","rarity": "2%",  "query": "set%3Aeoe+rarity%3Am+%28CN>%3D372+AND+CN<%3D381%29&unique=cards",  "foilClass": "galaxy-gradient" }
+          ]
+        },
+        {
+          "id": "landstellar",
+          "label": "Stellar Sights Land",
+          "isFoil": true,
+          "probabilities": [
+            { "maxRoll": 36.0,  "type": "Stellar Sights Land, Rare",                  "rarity": "36%",   "query": "set%3Aeos+rarity%3Ar+%28CN>%3D1+AND+CN<%3D45%29&unique=cards",    "foilClass": null },
+            { "maxRoll": 45.0,  "type": "Stellar Sights Land, Mythic",                "rarity": "9%",    "query": "set%3Aeos+rarity%3Am+%28CN>%3D1+AND+CN<%3D45%29&unique=cards",    "foilClass": null },
+            { "maxRoll": 63.0,  "type": "Poster Stellar Sights Land, Rare",           "rarity": "18%",   "query": "set%3Aeos+rarity%3Ar+%28CN>%3D46+AND+CN<%3D90%29&unique=cards",   "foilClass": null },
+            { "maxRoll": 67.0,  "type": "Poster Stellar Sights Land, Mythic",         "rarity": "4%",    "query": "set%3Aeos+rarity%3Am+%28CN>%3D46+AND+CN<%3D90%29&unique=cards",   "foilClass": null },
+            { "maxRoll": 79.0,  "type": "Stellar Sights Land, Rare (Foil)",           "rarity": "12%",   "query": "set%3Aeos+rarity%3Ar+%28CN>%3D1+AND+CN<%3D45%29&unique=cards",    "foilClass": "foil-gradient" },
+            { "maxRoll": 82.0,  "type": "Stellar Sights Land, Mythic (Foil)",         "rarity": "3%",    "query": "set%3Aeos+rarity%3Am+%28CN>%3D1+AND+CN<%3D45%29&unique=cards",    "foilClass": "foil-gradient" },
+            { "maxRoll": 88.0,  "type": "Poster Stellar Sights Land, Rare (Foil)",    "rarity": "6%",    "query": "set%3Aeos+rarity%3Ar+%28CN>%3D46+AND+CN<%3D90%29&unique=cards",   "foilClass": "foil-gradient" },
+            { "maxRoll": 89.5,  "type": "Poster Stellar Sights Land, Mythic (Foil)",  "rarity": "1.5%",  "query": "set%3Aeos+rarity%3Am+%28CN>%3D46+AND+CN<%3D90%29&unique=cards",   "foilClass": "foil-gradient" },
+            { "maxRoll": 95.5,  "type": "Stellar Sights Land, Rare (Galaxy Foil)",    "rarity": "6%",    "query": "set%3Aeos+rarity%3Ar+%28CN>%3D91+AND+CN<%3D135%29&unique=cards",  "foilClass": ["foil-gradient", "galaxy-gradient"] },
+            { "maxRoll": 97.0,  "type": "Stellar Sights Land, Mythic (Galaxy Foil)",  "rarity": "1.5%",  "query": "set%3Aeos+rarity%3Am+%28CN>%3D91+AND+CN<%3D135%29&unique=cards",  "foilClass": ["foil-gradient", "galaxy-gradient"] },
+            { "maxRoll": 100.0, "type": "Poster Stellar Sights Land, Rare (Galaxy Foil)","rarity": "3%", "query": "set%3Aeos+rarity%3Ar+%28CN>%3D135+AND+CN<%3D180%29&unique=cards", "foilClass": ["foil-gradient", "galaxy-gradient"] }
+          ]
+        },
+        {
+          "id": "nfboosterfun",
+          "label": "Non-foil Booster Fun",
+          "isFoil": false,
+          "probabilities": [
+            { "maxRoll": 47.0,  "type": "Extended-art, Rare",              "rarity": "47%",  "query": "set%3Aeoe+rarity%3Ar+%28CN>%3D317+AND+CN<%3D356%29&unique=cards" },
+            { "maxRoll": 52.0,  "type": "Extended-art, Mythic",            "rarity": "5%",   "query": "set%3Aeoe+rarity%3Am+%28CN>%3D317+AND+CN<%3D356%29&unique=cards" },
+            { "maxRoll": 59.0,  "type": "Borderless Viewport, Rare",       "rarity": "7%",   "query": "set%3Aeoe+rarity%3Ar+%28CN>%3D277+AND+CN<%3D286%29&unique=cards" },
+            { "maxRoll": 63.0,  "type": "Borderless Viewport, Mythic",     "rarity": "4%",   "query": "set%3Aeoe+rarity%3Am+%28CN>%3D277+AND+CN<%3D286%29&unique=cards" },
+            { "maxRoll": 80.0,  "type": "Borderless Triumphant, Rare",     "rarity": "17%",  "query": "set%3Aeoe+rarity%3Ar+%28CN>%3D287+AND+CN<%3D302%29&unique=cards" },
+            { "maxRoll": 83.0,  "type": "Borderless Triumphant, Mythic",   "rarity": "3%",   "query": "set%3Aeoe+rarity%3Am+%28CN>%3D287+AND+CN<%3D302%29&unique=cards" },
+            { "maxRoll": 98.0,  "type": "Borderless Surreal Space, Rare",  "rarity": "15%",  "query": "set%3Aeoe+rarity%3Ar+%28CN>%3D303+AND+CN<%3D316%29&unique=cards" },
+            { "maxRoll": 100.0, "type": "Borderless Surreal Space, Mythic","rarity": "2%",   "query": "set%3Aeoe+rarity%3Am+%28CN>%3D303+AND+CN<%3D316%29&unique=cards" }
+          ]
+        },
+        {
+          "id": "nfcommander",
+          "label": "Non-foil Commander",
+          "isFoil": false,
+          "probabilities": [
+            { "maxRoll": 91.0,  "type": "Extended-art Commander, Rare",   "rarity": "91%", "query": "set%3Aeoc+rarity%3Ar+is%3Aextendedart" },
+            { "maxRoll": 100.0, "type": "Borderless Commander, Mythic",   "rarity": "9%",  "query": "set%3Aeoc+rarity%3Am+cn<5" }
+          ]
+        },
+        {
+          "id": "raremythic",
+          "label": "Foil Rare or Mythic",
+          "isFoil": true,
+          "probabilities": [
+            { "maxRoll": 86.0,  "type": "Default frame, Rare (Foil)",   "rarity": "86%", "query": "set%3Aeoe+rarity%3Ar+CN<286&unique=cards" },
+            { "maxRoll": 100.0, "type": "Default frame, Mythic (Foil)", "rarity": "14%", "query": "set%3Aeoe+rarity%3Am+CN<286&unique=cards" }
+          ]
+        },
+        {
+          "id": "landcelestial",
+          "label": "Full-Art Celestial Land",
+          "isFoil": true,
+          "probabilities": [
+            { "maxRoll": 34.5,  "type": "Full-art Celestial Basic Land (Foil)",        "rarity": "34.5%", "query": "set%3Aeoe+type%3Abasic+is%3Afullart",              "foilClass": "foil-gradient" },
+            { "maxRoll": 100.0, "type": "Full-art Celestial Basic Land (Galaxy Foil)", "rarity": "65.5%", "query": "set%3Aeoe+type%3Abasic+is%3Afullart+is%3Agalaxyfoil","foilClass": "galaxy-gradient" }
+          ]
+        },
+        {
+          "id": "uncommon",
+          "label": "Foil Uncommons",
+          "isFoil": true,
+          "count": 4,
+          "cardInfo": ["4 Main-set Uncommons", "Appears 100% of the time."],
+          "probabilities": [
+            { "maxRoll": 100.0, "type": "Uncommon (Foil)", "rarity": "100%", "query": "set%3Aeoe+rarity%3Au" }
+          ]
+        },
+        {
+          "id": "common",
+          "label": "Foil Commons",
+          "isFoil": true,
+          "count": 5,
+          "sumVar": "commonSum",
+          "cardInfo": ["5 Main-set Commons", "Appears 100% of the time."],
+          "probabilities": [
+            { "maxRoll": 100.0, "type": "Common (Foil)", "rarity": "100%", "query": "set%3Aeoe+rarity%3Ac+-type%3Abasic" }
+          ]
+        }
+      ]
+    },
+    "PLAY": {
+      "totalCards": 14,
+      "msrp": 5.49,
+      "defaultUSD": 6,
+      "defaultCAD": 8,
+      "ghostCard": {
+        "randomQuery": "%28set%3Aeoe+or+set%3Aeos%29+unique%3Aprints+",
+        "topOutQuery": "%28set%3Aeoe+or+set%3Aeos%29+unique%3Aprints+USD%3E%3D15"
+      },
+      "slots": [
+        {
+          "id": "foilwildcard",
+          "label": "Foil Wildcard",
+          "isFoil": true,
+          "probabilities": [
+            { "maxRoll": 58.0,  "type": "Default frame, Common (Foil)",    "rarity": "58%",   "query": "set%3Aeoe+rarity%3Ac+-type%3Abasic",               "priceKey": "usd" },
+            { "maxRoll": 90.0,  "type": "Default frame, Uncommon (Foil)",  "rarity": "32%",   "query": "set%3Aeoe+rarity%3Au",                              "priceKey": "usd" },
+            { "maxRoll": 96.4,  "type": "Default frame, Rare (Foil)",      "rarity": "6.4%",  "query": "set%3Aeoe+rarity%3Ar",                              "priceKey": "usd" },
+            { "maxRoll": 97.5,  "type": "Default frame, Mythic (Foil)",    "rarity": "1.1%",  "query": "set%3Aeoe+rarity%3Am+CN<262",                       "priceKey": "usd" },
+            { "maxRoll": 98.5,  "type": "Stellar Sights Land, Rare (Foil)","rarity": "1%",    "query": "set%3Aeos+rarity%3Ar",                              "priceKey": "usd" },
+            { "maxRoll": 99.0,  "type": "Stellar Sights Land, Mythic (Foil)","rarity": "0.5%","query": "set%3Aeos+rarity%3Am",                              "priceKey": "usd" },
+            { "maxRoll": 99.5,  "type": "Borderless Rare (Foil)",          "rarity": "0.5%",  "query": "set%3Aeoe+rarity%3Ar+%28CN>%3D277+AND+CN<%3D316%29","priceKey": "usd" },
+            { "maxRoll": 100.0, "type": "Borderless Mythic (Foil)",        "rarity": "0.5%",  "query": "set%3Aeoe+rarity%3Am+%28CN>%3D277+AND+CN<%3D316%29","priceKey": "usd" }
+          ]
+        },
+        {
+          "id": "raremythic",
+          "label": "Rare or Mythic",
+          "isFoil": false,
+          "probabilities": [
+            { "maxRoll": 80.4,  "type": "Default frame, Rare",              "rarity": "80.4%",  "query": "set%3Aeoe+rarity%3Ar+CN<286&unique=cards" },
+            { "maxRoll": 94.6,  "type": "Default frame, Mythic",            "rarity": "14.2%",  "query": "set%3Aeoe+rarity%3Am+CN<286&unique=cards" },
+            { "maxRoll": 96.6,  "type": "Borderless Triumphant, Rare",      "rarity": "2%",     "query": "set%3Aeoe+rarity%3Ar+%28CN>%3D287+AND+CN<%3D302%29" },
+            { "maxRoll": 97.05, "type": "Borderless Triumphant, Mythic",    "rarity": "0.45%",  "query": "set%3Aeoe+rarity%3Am+%28CN>%3D287+AND+CN<%3D302%29" },
+            { "maxRoll": 99.05, "type": "Surreal Space, Rare",              "rarity": "2%",     "query": "set%3Aeoe+rarity%3Ar+%28CN>%3D303+AND+CN<%3D316%29" },
+            { "maxRoll": 99.5,  "type": "Surreal Space, Mythic",            "rarity": "0.45%",  "query": "set%3Aeoe+rarity%3Am+%28CN>%3D303+AND+CN<%3D316%29" },
+            { "maxRoll": 100.0, "type": "Borderless Viewport, Mythic",      "rarity": "0.5%",   "query": "set%3Aeoe+rarity%3Am+%28CN>%3D277+AND+CN<%3D286%29" }
+          ]
+        },
+        {
+          "id": "wildcard",
+          "label": "Wildcard",
+          "isFoil": false,
+          "probabilities": [
+            { "maxRoll": 12.5,  "type": "Default frame, Common",                          "rarity": "12.5%",  "query": "set%3Aeoe+rarity%3Ac+-type%3Abasic" },
+            { "maxRoll": 75.0,  "type": "Default frame, Uncommon",                        "rarity": "62.5%",  "query": "set%3Aeoe+rarity%3Au" },
+            { "maxRoll": 85.6,  "type": "Default frame, Rare",                            "rarity": "10.6%",  "query": "set%3Aeoe+rarity%3Ar" },
+            { "maxRoll": 85.85, "type": "Default frame, Mythic",                          "rarity": "0.25%",  "query": "set%3Aeoe+rarity%3Am+CN<262" },
+            { "maxRoll": 95.85, "type": "Stellar Sights Land, Rare",                      "rarity": "10%",    "query": "set%3Aeos+rarity%3Ar" },
+            { "maxRoll": 98.35, "type": "Stellar Sights Land, Mythic",                    "rarity": "2.5%",   "query": "set%3Aeos+rarity%3Am" },
+            { "maxRoll": 99.35, "type": "Borderless Viewport, Rare",                      "rarity": "1%",     "query": "set%3Aeoe+rarity%3Ar+%28CN>%3D277+AND+CN<%3D286%29" },
+            { "maxRoll": 99.57, "type": "Borderless Viewport, Mythic",                    "rarity": "0.22%",  "query": "set%3Aeoe+rarity%3Am+%28CN>%3D277+AND+CN<%3D286%29" },
+            { "maxRoll": 99.79, "type": "Borderless Triumphant or Surreal Space, Rare",   "rarity": "0.22%",  "query": "set%3Aeoe+rarity%3Ar+%28CN>%3D287+AND+CN<%3D316%29" },
+            { "maxRoll": 100.0, "type": "Borderless Triumphant or Surreal Space, Mythic", "rarity": "0.21%",  "query": "set%3Aeoe+rarity%3Am+%28CN>%3D287+AND+CN<%3D316%29" }
+          ]
+        },
+        {
+          "id": "basicland",
+          "label": "Basic Land",
+          "isFoil": true,
+          "probabilities": [
+            { "maxRoll": 64.0,  "type": "Default frame Basic Land",              "rarity": "64%", "query": "set%3Aeoe+type%3Abasic+unique%3Aart+-is%3Afullart&unique=cards", "foilClass": null },
+            { "maxRoll": 80.0,  "type": "Default frame Basic Land (Foil)",       "rarity": "16%", "query": "set%3Aeoe+type%3Abasic+unique%3Aart+-is%3Afullart&unique=cards", "foilClass": "foil-gradient" },
+            { "maxRoll": 96.0,  "type": "Full-art Celestial Basic Land",         "rarity": "16%", "query": "set%3Aeoe+type%3Abasic+is%3Afullart",                           "foilClass": null },
+            { "maxRoll": 100.0, "type": "Full-art Celestial Basic Land (Foil)",  "rarity": "4%",  "query": "set%3Aeoe+type%3Abasic+is%3Afullart",                           "foilClass": "foil-gradient" }
+          ]
+        },
+        {
+          "id": "uncommon",
+          "label": "Uncommons",
+          "isFoil": false,
+          "count": 3,
+          "cardInfo": ["3 Main-set Uncommons", "Appears 100% of the time."],
+          "probabilities": [
+            { "maxRoll": 100.0, "type": "Uncommon", "rarity": "100%", "query": "set%3Aeoe+rarity%3Au" }
+          ]
+        },
+        {
+          "id": "common",
+          "label": "Commons",
+          "isFoil": false,
+          "count": 7,
+          "sumVar": "commonSum",
+          "cardInfo": ["6-7 Main-set Commons", "1 of 10 non-foil Special Guests cards will replace a common ~0.26% per card."],
+          "probabilities": [
+            { "maxRoll": 99.743, "type": "Common",          "rarity": "99.7%", "query": "set%3Aeoe+rarity%3Ac+-type%3Abasic" },
+            { "maxRoll": 100.0,  "type": "Special Guest",   "rarity": "0.26%", "query": "set%3Aspg+date%3A2025-08-01" }
+          ]
+        }
+      ]
+    }
+  }
+}

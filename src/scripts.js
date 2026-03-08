@@ -13,18 +13,14 @@ firstLoad = true;
 failSwitch = false;
 
 const ghostLinkHalf = {
-    FIN: ghostLinkHalf_FIN,
     FDN: ghostLinkHalf_FDN,
-    EOE: ghostLinkHalf_EOE,
     SPM: ghostLinkHalf_SPM,
     TLA: ghostLinkHalf_TLA,
     ECL: ghostLinkHalf_ECL,
 };
 
 const topOutLink = {
-    FIN: topOutLink_FIN,
     FDN: topOutLink_FDN,
-    EOE: topOutLink_EOE,
     SPM: topOutLink_SPM,
     TLA: topOutLink_TLA,
     ECL: topOutLink_ECL,
@@ -63,6 +59,17 @@ var activeCheck = false;
 function pullBooster() {
     // umamiAnalytics("Pull " + currentSet + " booster");
 
+    // Migrated sets: use JSON-driven engine
+    const _migratedConfig = _configCache[currentSet];
+    if (_migratedConfig) {
+        if (activeCheck) return;
+        activeCheck = true;
+        document.querySelector("#sound-slider").value = 10;
+        pullBoosterFromConfig(_migratedConfig, getCookie("currentBoosterType") || _migratedConfig.boosterTypes[0]);
+        return;
+    }
+
+    // Legacy sets (removed one-by-one as each migrates to JSON)
     if (currentSet === "DSK") {
         pullDSK();
     } else if (currentSet === "MH3") {
@@ -85,7 +92,7 @@ function pullBooster() {
         pullECL();
     } else if (currentSet === "ECL" && getCookie("currentBoosterType") === "PLAY") {
         pullECL_Play();
-    }else {
+    } else {
         pullFDN();
     }
 }
@@ -133,7 +140,23 @@ function ghostSlide() {
     const singleHolder = document.getElementById("single-holder");
     document.getElementById("single-holder").classList.remove("hidden");
     singleHolder.classList.add("opacity-100");
-    ghostDataGrab(ghostLinkHalf[currentSet], topOutLink[currentSet]);
+
+    // Migrated sets: pull ghost card data from JSON config
+    let _ghostLink, _topOutLinkVal;
+    const _migratedConfig = _configCache[currentSet];
+    if (_migratedConfig) {
+        const _bt = getCookie("currentBoosterType") || _migratedConfig.boosterTypes[0];
+        const _boosterConfig = _migratedConfig.boosters[_bt];
+        if (_boosterConfig && _boosterConfig.ghostCard) {
+            _ghostLink = "https://api.scryfall.com/cards/random?q=" + _boosterConfig.ghostCard.randomQuery;
+            _topOutLinkVal = "https://api.scryfall.com/cards/search?order=usd&q=" + _boosterConfig.ghostCard.topOutQuery;
+        }
+    } else {
+        _ghostLink = ghostLinkHalf[currentSet];
+        _topOutLinkVal = topOutLink[currentSet];
+    }
+    if (!_ghostLink) return;
+    ghostDataGrab(_ghostLink, _topOutLinkVal);
 
     const investigateButton = document.getElementById("investigate");
     investigateButton.classList.remove("hidden", "opacity-0", "cursor-default");
@@ -199,7 +222,7 @@ function investigate() {
 document.addEventListener(
     "DOMContentLoaded",
 
-    function init() {
+    async function init() {
         const singleHolder = document.getElementById("single-holder");
         const singleStack = document.querySelector(".both-cards-single");
         const shade = document.querySelector(".shade");
@@ -375,23 +398,24 @@ document.addEventListener(
         const toggle = document.getElementById("currency");
 
         if (getCookie("currentSet")) {
-            if (getCookie("currentSet") == "MH3") {
+            const _savedSet = getCookie("currentSet");
+            if (window.MIGRATED_SETS && window.MIGRATED_SETS.includes(_savedSet)) {
+                await initSet(_savedSet);
+            } else if (_savedSet == "MH3") {
                 setMH3();
-            } else if (getCookie("currentSet") == "DSK") {
-                setDSK();
-            } else if (getCookie("currentSet") == "FIN") {
-                setFIN();
-            } else if (getCookie("currentSet") == "EOE") {
-                setEOE();
-            } else if (getCookie("currentSet") == "SPM") {
+            } else if (_savedSet == "DSK") {
+                // handled by MIGRATED_SETS above
+            } else if (_savedSet == "FIN") {
+                // handled by MIGRATED_SETS above
+            } else if (_savedSet == "EOE") {
+                // handled by MIGRATED_SETS above
+            } else if (_savedSet == "SPM") {
                 setSPM();
-            } else if (getCookie("currentSet") == "FDN") {
-                setFDN();
-            } else if (getCookie("currentSet") == "TLA") {
+            } else if (_savedSet == "TLA") {
                 setTLA();
-            } else if (getCookie("currentSet") == "ECL") {
+            } else if (_savedSet == "ECL") {
                 setECL();
-            }else {
+            } else {
                 setECL();
             }
         } else {

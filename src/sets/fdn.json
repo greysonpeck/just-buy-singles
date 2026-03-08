@@ -1,0 +1,110 @@
+{
+  "code": "FDN",
+  "displayName": "FOUNDATIONS",
+  "backgroundImage": "img/FDN_bg.png",
+  "boosterTypes": ["COLLECTOR"],
+  "boosters": {
+    "COLLECTOR": {
+      "totalCards": 15,
+      "msrp": 24.99,
+      "defaultUSD": 40,
+      "defaultCAD": 60,
+      "ghostCard": {
+        "randomQuery": "set%3Afdn+unique%3Aprints+",
+        "topOutQuery": "set%3Afdn+unique%3Aprints+USD%3E%3D15"
+      },
+      "slots": [
+        {
+          "id": "foil",
+          "label": "Foil Wildcard",
+          "isFoil": true,
+          "probabilities": [
+            { "maxRoll": 34.5, "type": "Borderless, Rare (Foil)", "rarity": "34.5%", "query": "set%3Afdn+rarity%3Ar+is%3Aborderless", "foilClass": "foil-gradient" },
+            { "maxRoll": 41.3, "type": "Borderless, Mythic (Foil)", "rarity": "6.8%", "query": "set%3Afdn+rarity%3Am+is%3Aborderless", "foilClass": "foil-gradient" },
+            { "maxRoll": 70.9, "type": "Extended-art, Rare (Foil)", "rarity": "29.6%", "query": "set%3Afdn+rarity%3Ar+is%3Aextendedart+-CN%3A729", "foilClass": "foil-gradient" },
+            { "maxRoll": 74.5, "type": "Extended-art, Mythic (Foil)", "rarity": "3.6%", "query": "set%3Afdn+rarity%3Am+is%3Aextendedart+-CN%3A729", "foilClass": "foil-gradient" },
+            { "maxRoll": 82.9, "type": "Mana-foil, Rare", "rarity": "8.4%", "query": "set%3Afdn+rarity%3Ar+is%3Amanafoil", "foilClass": "mana-gradient" },
+            { "maxRoll": 84.5, "type": "Mana-foil, Mythic", "rarity": "1.6%", "query": "set%3Afdn+rarity%3Am+is%3Amanafoil", "foilClass": "mana-gradient" },
+            { "maxRoll": 90.0, "type": "Special Guests (Foil)", "rarity": "5.5%", "query": "set%3Aspg+date%3A2024-11-15", "foilClass": "foil-gradient" },
+            { "maxRoll": 99.0, "type": "Japan Showcase (Foil)", "rarity": "9.0%", "query": "set%3Afdn+rarity%3Am++is%3Ashowcase", "foilClass": "foil-gradient" },
+            { "maxRoll": 100.0, "type": "Japan Showcase (Fracture Foil)", "rarity": "1.0%", "query": "set%3Afdn+rarity%3Am+is%3Afracturefoil", "foilClass": "foil-gradient" }
+          ]
+        },
+        {
+          "id": "raremythic-1",
+          "label": "Foil Rare/Mythic #1",
+          "isFoil": true,
+          "probabilities": [
+            { "maxRoll": 85.7, "type": "Default frame, Rare (Foil)", "rarity": "85.7%", "query": "set%3Afdn+is%3Abooster+rarity%3Ar", "foilClass": "foil-gradient" },
+            { "maxRoll": 100.0, "type": "Default frame, Mythic (Foil)", "rarity": "14.3%", "query": "set%3Afdn+is%3Abooster+rarity%3Am", "foilClass": "foil-gradient" }
+          ]
+        },
+        {
+          "id": "raremythic-2",
+          "label": "Foil Rare/Mythic #2",
+          "isFoil": true,
+          "probabilities": [
+            { "maxRoll": 85.7, "type": "Default frame, Rare (Foil)", "rarity": "85.7%", "query": "set%3Afdn+is%3Abooster+rarity%3Ar", "foilClass": "foil-gradient" },
+            { "maxRoll": 100.0, "type": "Default frame, Mythic (Foil)", "rarity": "14.3%", "query": "set%3Afdn+is%3Abooster+rarity%3Am", "foilClass": "foil-gradient" }
+          ]
+        },
+        {
+          "id": "raremythic-nf-1",
+          "label": "Rare/Mythic #1",
+          "isFoil": false,
+          "probabilities": [
+            { "maxRoll": 46.2, "type": "Borderless, Rare", "rarity": "46.2%", "query": "set%3Afdn+rarity%3Ar+is%3Aborderless" },
+            { "maxRoll": 55.4, "type": "Borderless, Mythic", "rarity": "9.2%", "query": "set%3Afdn+is%3Aborderless+rarity%3Am" },
+            { "maxRoll": 95.2, "type": "Extended-art, Rare", "rarity": "39.8%", "query": "set%3Afdn+rarity%3Ar+is%3Aextendedart+-CN%3A729" },
+            { "maxRoll": 100.0, "type": "Extended-art, Mythic", "rarity": "4.8%", "query": "set%3Afdn+rarity%3Am+is%3Aextendedart" }
+          ]
+        },
+        {
+          "id": "raremythic-nf-2",
+          "label": "Rare/Mythic #2",
+          "isFoil": false,
+          "probabilities": [
+            { "maxRoll": 46.2, "type": "Borderless, Rare", "rarity": "46.2%", "query": "set%3Afdn+rarity%3Ar+is%3Aborderless" },
+            { "maxRoll": 55.4, "type": "Borderless, Mythic", "rarity": "9.2%", "query": "set%3Afdn+is%3Aborderless+rarity%3Am" },
+            { "maxRoll": 95.2, "type": "Extended-art, Rare", "rarity": "39.8%", "query": "set%3Afdn+rarity%3Ar+is%3Aextendedart+-CN%3A729" },
+            { "maxRoll": 100.0, "type": "Extended-art, Mythic", "rarity": "4.8%", "query": "set%3Afdn+rarity%3Am+is%3Aextendedart" }
+          ]
+        },
+        {
+          "id": "land",
+          "label": "Full-Art Basic Land",
+          "isFoil": true,
+          "probabilities": [
+            { "maxRoll": 100.0, "type": "Full-art basic land (Foil)", "rarity": "100%", "query": "set%3Afdn+type%3Abasic+is%3Afullart", "foilClass": "foil-gradient" }
+          ]
+        },
+        {
+          "id": "uncommon",
+          "label": "Foil Uncommons",
+          "debugLog": true,
+          "isFoil": true,
+          "count": 4,
+          "cardInfo": ["3 Main-set Uncommons", "8 borderless uncommons appear 7.3% of the time."],
+          "probabilities": [
+            { "maxRoll": 7.3, "type": "Borderless, Uncommon (Foil)", "rarity": "7.3%", "query": "set%3Afdn+rarity%3Au+is%3Aborderless" },
+            { "maxRoll": 100.0, "type": "Default frame, Uncommon (Foil)", "rarity": "92.7%", "query": "set%3Afdn+rarity%3Au+is%3Abooster" }
+          ]
+        },
+        {
+          "debugLog": true,
+          "id": "common",
+          "label": "Foil Commons",
+          "isFoil": true,
+          "count": 5,
+          "sumVar": "commonSum",
+          "cardInfo": ["5 Main-set commons", "10 common dual-lands appear 10.9% of the time, 2 borderless commons appear 2.1% of the time."],
+          "probabilities": [
+            { "maxRoll": 87.0, "type": "Main Set Common", "rarity": "87%", "query": "set%3Afdn+rarity%3Ac+%28cn<%3D253+or+cn%3D262%29" },
+            { "maxRoll": 97.9, "type": "Common Dual Lands", "rarity": "10.9%", "query": "set%3Afdn+rarity%3Ac+cn>%3D258+AND+cn<%3D271+AND+cn%21%3D262" },
+            { "maxRoll": 100.0, "type": "Common Borderless", "rarity": "2.1%", "query": "set%3Afdn+rarity%3Ac+border%3Aborderless" }
+          ]
+        }
+      ]
+    }
+  }
+}

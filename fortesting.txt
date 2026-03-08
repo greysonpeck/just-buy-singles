@@ -1,0 +1,10 @@
+To override:
+In a set's slot JSON, "rollOverride": 99.2
+
+To comment name and price:
+In a set's slot JSON, "debugLog": true
+
+
+---
+DIFFERENCES
+EOE uses backup images for EOE JP showcase in Japanese.

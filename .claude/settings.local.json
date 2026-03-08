@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls -la /Users/gpeck/repos/just-buy-singles/*.js)",
+      "Bash(wc -l /Users/gpeck/repos/just-buy-singles/src/*.js)",
+      "Bash(wc -l /Users/gpeck/repos/just-buy-singles/src/*.css)"
+    ]
+  }
+}

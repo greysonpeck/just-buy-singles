@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
     activePriceModal = false;
     // modalPrice.innerText = USDollar.format(boosterValue);
 
-    currentPrice.innerText = USDollar.format(boosterValue);
+    if (typeof boosterValue !== 'undefined') currentPrice.innerText = USDollar.format(boosterValue);
 
     // modalPrice.innerText = USDollar.format(boosterValue);
 

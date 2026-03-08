@@ -1,0 +1,171 @@
+{
+  "code": "FIN",
+  "displayName": "FINAL FANTASY",
+  "backgroundImage": "img/FIN_bg2_dark.jpg",
+  "boosterTypes": ["COLLECTOR"],
+  "boosters": {
+    "COLLECTOR": {
+      "totalCards": 15,
+      "msrp": 24.99,
+      "defaultUSD": 100,
+      "defaultCAD": 160,
+      "ghostCard": {
+        "randomQuery": "%28set%3Afin+OR+set%3Afic+OR+set%3Afca%29+",
+        "topOutQuery": "%28set%3Afin+OR+set%3Afic+OR+set%3Afca%29+unique%3Aprints+USD%3E%3D15"
+      },
+      "slots": [
+        {
+          "id": "fchoco",
+          "label": "Foil R, M, or Chocobo",
+          "isFoil": true,
+          "probabilities": [
+            { "maxRoll": 1.9,   "type": "Featured Artist, Rare (Foil)",                "rarity": "1.9%",  "query": "set%3Afin+rarity%3Ar+%28a%3A'akihiko+yoshida'+or+a%3A'toshitaka+matsuda'+or+a%3A'roberto+ferrari'%29",                                                                                                                                                                           "foilClass": "foil-gradient" },
+            { "maxRoll": 4.1,   "type": "Featured Artist, Mythic (Foil)",              "rarity": "2.2%",  "query": "set%3Afin+rarity%3Am+%28a%3A'yoshitaka+amano'+or+a%3A'toshiyuki+itahana'+or+a%3A'tetsuya+nomura'+or+a%3A'isamu+kamikokuryo'+or+a%3A'kazuya+takahashi'+or+a%3A'yusuke+mogi'%29",                                                                                               "foilClass": "foil-gradient" },
+            { "maxRoll": 40.6,  "type": "Borderless Woodblock, Rare (Foil)",           "rarity": "36.5%", "query": "set%3Afin+rarity%3Ar+%28CN>%3D324+AND+CN<%3D373%29",                                                                                                                                                                                                                         "foilClass": "foil-gradient" },
+            { "maxRoll": 44.4,  "type": "Borderless Woodblock, Mythic (Foil)",         "rarity": "3.8%",  "query": "set%3Afin+rarity%3Am+%28CN>%3D334+AND+CN<%3D359%29",                                                                                                                                                                                                                         "foilClass": "foil-gradient" },
+            { "maxRoll": 76.0,  "type": "Borderless, Rare (Foil)",                     "rarity": "31.6%", "query": "set%3Afin+rarity%3Ar+is%3Aborderless+%28CN<320+OR+CN>373%29+CN<565",                                                                                                                                                                                                         "foilClass": "foil-gradient" },
+            { "maxRoll": 81.6,  "type": "Borderless, Mythic (Foil)",                   "rarity": "5.6%",  "query": "set%3Afin+rarity%3Am+is%3Aborderless+%28CN>%3D375+AND+CN<%3D406%29",                                                                                                                                                                                                         "foilClass": "foil-gradient" },
+            { "maxRoll": 96.7,  "type": "Borderless Character, Rare (Surge Foil)",     "rarity": "15.1%", "query": "set%3Afin+has%3Asurge+is%3Aborderless+rarity%3Ar",                                                                                                                                                                                                                           "foilClass": ["foil-gradient", "surge-gradient"] },
+            { "maxRoll": 99.7,  "type": "Borderless Character, Mythic (Surge Foil)",   "rarity": "3.0%",  "query": "set%3Afin+rarity%3Am+%28CN>%3D519+AND+CN<%3D550%29",                                                                                                                                                                                                                         "foilClass": ["foil-gradient", "surge-gradient"] },
+            { "maxRoll": 100.0, "type": "Colorful Traveling Chocobo",                  "rarity": "< 1%",  "query": "set%3Afin+%28cn%3D551+OR+cn%3D551a+OR+cn%3D551b+OR+cn%3D551c+OR+cn%3D551d%29",                                                                                                                                                                                               "foilClass": "foil-gradient" }
+          ]
+        },
+        {
+          "id": "fca",
+          "label": "Through the Ages",
+          "isFoil": true,
+          "foilFlip": true,
+          "probabilities": [
+            { "maxRoll": 68.3,  "type": "Through the Ages, Uncommon", "rarity": "68.3%", "query": "set%3Afca+rarity%3Au" },
+            { "maxRoll": 94.0,  "type": "Through the Ages, Rare",     "rarity": "25.7%", "query": "set%3Afca+rarity%3Ar+-cn%3A'A-19'" },
+            { "maxRoll": 100.0, "type": "Through the Ages, Mythic",   "rarity": "6.0%",  "query": "set%3Afca+rarity%3Am" }
+          ]
+        },
+        {
+          "id": "bfr-1",
+          "label": "Booster Fun (R/M) #1",
+          "isFoil": true,
+          "foilGroup": "bfr",
+          "probabilities": [
+            { "maxRoll": 23.1,  "type": "Booster Fun, Rare",                                    "rarity": "23.1%", "query": "set%3Afin+is%3Aboosterfun+rarity%3Ar+unique%3Aart",                                                                                                                         "foilClass": null },
+            { "maxRoll": 26.9,  "type": "Booster Fun, Mythic",                                  "rarity": "3.8%",  "query": "set%3Afin+is%3Aboosterfun+rarity%3Ar+unique%3Aart",                                                                                                                         "foilClass": null },
+            { "maxRoll": 45.1,  "type": "Extended-art Legendary Creature, Rare",                "rarity": "18.2%", "query": "set%3Afin+frame%3Aextendedart+type%3Alegendary+rarity%3Ar+unique%3Aart",                                                                                                     "foilClass": null },
+            { "maxRoll": 48.0,  "type": "Extended-art Legendary Creature, Mythic",              "rarity": "2.9%",  "query": "set%3Afin+frame%3Aextendedart+type%3Alegendary+rarity%3Am+unique%3Aart",                                                                                                     "foilClass": null },
+            { "maxRoll": 50.9,  "type": "Commander Set Booster Fun, Rare",                      "rarity": "2.9%",  "query": "set%3Afic+is%3Aboosterfun+rarity%3Ar+unique%3Aart+%28CN>%3D194+AND+CN<%3D200%29",                                                                                           "foilClass": null },
+            { "maxRoll": 54.2,  "type": "Commander Set Booster Fun, Mythic",                    "rarity": "3.3%",  "query": "set%3Afic+is%3Aboosterfun+rarity%3Am+CN<215+unique%3Aart",                                                                                                                  "foilClass": null },
+            { "maxRoll": 65.8,  "type": "Commander Set Extended-art Non-Legendary, Rare",       "rarity": "11.6%", "query": "set%3Afic+rarity%3Ar+frame%3Aextendedart+-CN%3A228+%28-type%3A'legendary+creature'+AND+-type%3A'legendary+artifact+creature'%29",                                             "foilClass": null },
+            { "maxRoll": 89.4,  "type": "Commander Set Extended-art Legendary Creature, Rare",  "rarity": "23.6%", "query": "set%3Afic+frame%3Aextendedart+rarity%3Ar+%28type%3Alegendary+and+type%3Acreature%29",                                                                                        "foilClass": null },
+            { "maxRoll": 91.0,  "type": "Commander Set Extended-art Legendary Creature, Mythic","rarity": "1.6%",  "query": "set%3Afic+frame%3Aextendedart+rarity%3Am+%28type%3Alegendary+and+type%3Acreature%29",                                                                                        "foilClass": null },
+            { "maxRoll": 92.4,  "type": "Booster Fun, Rare (Foil)",                             "rarity": "1.4%",  "query": "set%3Afic+is%3Aboosterfun+rarity%3Ar+CN>%3D194",                                                                                                                            "foilClass": "foil-gradient" },
+            { "maxRoll": 98.2,  "type": "Commander Set Extended-art Booster Fun, Rare (Foil)",  "rarity": "5.8%",  "query": "set%3Afic+rarity%3Ar+frame%3Aextendedart+-CN%3A228+%28-type%3A'legendary+creature'+AND+-type%3A'legendary+artifact+creature'%29",                                             "foilClass": "foil-gradient" },
+            { "maxRoll": 99.0,  "type": "Commander Set Extended-art, Mythic (Foil)",            "rarity": "0.8%",  "query": "set%3Afic+rarity%3Am+is%3Aboosterfun+-is%3Aextendedart",                                                                                                                    "foilClass": "foil-gradient" },
+            { "maxRoll": 100.0, "type": "Commander Set Extended-art, Mythic (Surge Foil)",      "rarity": "1.0%",  "query": "set%3Afic+is%3Asurge+rarity%3Am+%28CN>%3D209+AND+CN<%3D217%29",                                                                                                              "foilClass": ["foil-gradient", "surge-gradient"] }
+          ]
+        },
+        {
+          "id": "bfr-2",
+          "label": "Booster Fun (R/M) #2",
+          "isFoil": true,
+          "foilGroup": "bfr",
+          "probabilities": [
+            { "maxRoll": 23.1,  "type": "Booster Fun, Rare",                                    "rarity": "23.1%", "query": "set%3Afin+is%3Aboosterfun+rarity%3Ar+unique%3Aart",                                                                                                                         "foilClass": null },
+            { "maxRoll": 26.9,  "type": "Booster Fun, Mythic",                                  "rarity": "3.8%",  "query": "set%3Afin+is%3Aboosterfun+rarity%3Ar+unique%3Aart",                                                                                                                         "foilClass": null },
+            { "maxRoll": 45.1,  "type": "Extended-art Legendary Creature, Rare",                "rarity": "18.2%", "query": "set%3Afin+frame%3Aextendedart+type%3Alegendary+rarity%3Ar+unique%3Aart",                                                                                                     "foilClass": null },
+            { "maxRoll": 48.0,  "type": "Extended-art Legendary Creature, Mythic",              "rarity": "2.9%",  "query": "set%3Afin+frame%3Aextendedart+type%3Alegendary+rarity%3Am+unique%3Aart",                                                                                                     "foilClass": null },
+            { "maxRoll": 50.9,  "type": "Commander Set Booster Fun, Rare",                      "rarity": "2.9%",  "query": "set%3Afic+is%3Aboosterfun+rarity%3Ar+unique%3Aart+%28CN>%3D194+AND+CN<%3D200%29",                                                                                           "foilClass": null },
+            { "maxRoll": 54.2,  "type": "Commander Set Booster Fun, Mythic",                    "rarity": "3.3%",  "query": "set%3Afic+is%3Aboosterfun+rarity%3Am+CN<215+unique%3Aart",                                                                                                                  "foilClass": null },
+            { "maxRoll": 65.8,  "type": "Commander Set Extended-art Non-Legendary, Rare",       "rarity": "11.6%", "query": "set%3Afic+rarity%3Ar+frame%3Aextendedart+-CN%3A228+%28-type%3A'legendary+creature'+AND+-type%3A'legendary+artifact+creature'%29",                                             "foilClass": null },
+            { "maxRoll": 89.4,  "type": "Commander Set Extended-art Legendary Creature, Rare",  "rarity": "23.6%", "query": "set%3Afic+frame%3Aextendedart+rarity%3Ar+%28type%3Alegendary+and+type%3Acreature%29",                                                                                        "foilClass": null },
+            { "maxRoll": 91.0,  "type": "Commander Set Extended-art Legendary Creature, Mythic","rarity": "1.6%",  "query": "set%3Afic+frame%3Aextendedart+rarity%3Am+%28type%3Alegendary+and+type%3Acreature%29",                                                                                        "foilClass": null },
+            { "maxRoll": 92.4,  "type": "Booster Fun, Rare (Foil)",                             "rarity": "1.4%",  "query": "set%3Afic+is%3Aboosterfun+rarity%3Ar+CN>%3D194",                                                                                                                            "foilClass": "foil-gradient" },
+            { "maxRoll": 98.2,  "type": "Commander Set Extended-art Booster Fun, Rare (Foil)",  "rarity": "5.8%",  "query": "set%3Afic+rarity%3Ar+frame%3Aextendedart+-CN%3A228+%28-type%3A'legendary+creature'+AND+-type%3A'legendary+artifact+creature'%29",                                             "foilClass": "foil-gradient" },
+            { "maxRoll": 99.0,  "type": "Commander Set Extended-art, Mythic (Foil)",            "rarity": "0.8%",  "query": "set%3Afic+rarity%3Am+is%3Aboosterfun+-is%3Aextendedart",                                                                                                                    "foilClass": "foil-gradient" },
+            { "maxRoll": 100.0, "type": "Commander Set Extended-art, Mythic (Surge Foil)",      "rarity": "1.0%",  "query": "set%3Afic+is%3Asurge+rarity%3Am+%28CN>%3D209+AND+CN<%3D217%29",                                                                                                              "foilClass": ["foil-gradient", "surge-gradient"] }
+          ]
+        },
+        {
+          "id": "bfr-3",
+          "label": "Booster Fun (R/M) #3",
+          "isFoil": true,
+          "foilGroup": "bfr",
+          "probabilities": [
+            { "maxRoll": 23.1,  "type": "Booster Fun, Rare",                                    "rarity": "23.1%", "query": "set%3Afin+is%3Aboosterfun+rarity%3Ar+unique%3Aart",                                                                                                                         "foilClass": null },
+            { "maxRoll": 26.9,  "type": "Booster Fun, Mythic",                                  "rarity": "3.8%",  "query": "set%3Afin+is%3Aboosterfun+rarity%3Ar+unique%3Aart",                                                                                                                         "foilClass": null },
+            { "maxRoll": 45.1,  "type": "Extended-art Legendary Creature, Rare",                "rarity": "18.2%", "query": "set%3Afin+frame%3Aextendedart+type%3Alegendary+rarity%3Ar+unique%3Aart",                                                                                                     "foilClass": null },
+            { "maxRoll": 48.0,  "type": "Extended-art Legendary Creature, Mythic",              "rarity": "2.9%",  "query": "set%3Afin+frame%3Aextendedart+type%3Alegendary+rarity%3Am+unique%3Aart",                                                                                                     "foilClass": null },
+            { "maxRoll": 50.9,  "type": "Commander Set Booster Fun, Rare",                      "rarity": "2.9%",  "query": "set%3Afic+is%3Aboosterfun+rarity%3Ar+unique%3Aart+%28CN>%3D194+AND+CN<%3D200%29",                                                                                           "foilClass": null },
+            { "maxRoll": 54.2,  "type": "Commander Set Booster Fun, Mythic",                    "rarity": "3.3%",  "query": "set%3Afic+is%3Aboosterfun+rarity%3Am+CN<215+unique%3Aart",                                                                                                                  "foilClass": null },
+            { "maxRoll": 65.8,  "type": "Commander Set Extended-art Non-Legendary, Rare",       "rarity": "11.6%", "query": "set%3Afic+rarity%3Ar+frame%3Aextendedart+-CN%3A228+%28-type%3A'legendary+creature'+AND+-type%3A'legendary+artifact+creature'%29",                                             "foilClass": null },
+            { "maxRoll": 89.4,  "type": "Commander Set Extended-art Legendary Creature, Rare",  "rarity": "23.6%", "query": "set%3Afic+frame%3Aextendedart+rarity%3Ar+%28type%3Alegendary+and+type%3Acreature%29",                                                                                        "foilClass": null },
+            { "maxRoll": 91.0,  "type": "Commander Set Extended-art Legendary Creature, Mythic","rarity": "1.6%",  "query": "set%3Afic+frame%3Aextendedart+rarity%3Am+%28type%3Alegendary+and+type%3Acreature%29",                                                                                        "foilClass": null },
+            { "maxRoll": 92.4,  "type": "Booster Fun, Rare (Foil)",                             "rarity": "1.4%",  "query": "set%3Afic+is%3Aboosterfun+rarity%3Ar+CN>%3D194",                                                                                                                            "foilClass": "foil-gradient" },
+            { "maxRoll": 98.2,  "type": "Commander Set Extended-art Booster Fun, Rare (Foil)",  "rarity": "5.8%",  "query": "set%3Afic+rarity%3Ar+frame%3Aextendedart+-CN%3A228+%28-type%3A'legendary+creature'+AND+-type%3A'legendary+artifact+creature'%29",                                             "foilClass": "foil-gradient" },
+            { "maxRoll": 99.0,  "type": "Commander Set Extended-art, Mythic (Foil)",            "rarity": "0.8%",  "query": "set%3Afic+rarity%3Am+is%3Aboosterfun+-is%3Aextendedart",                                                                                                                    "foilClass": "foil-gradient" },
+            { "maxRoll": 100.0, "type": "Commander Set Extended-art, Mythic (Surge Foil)",      "rarity": "1.0%",  "query": "set%3Afic+is%3Asurge+rarity%3Am+%28CN>%3D209+AND+CN<%3D217%29",                                                                                                              "foilClass": ["foil-gradient", "surge-gradient"] }
+          ]
+        },
+        {
+          "id": "defaultrare",
+          "label": "Foil Rare or Mythic",
+          "isFoil": true,
+          "probabilities": [
+            { "maxRoll": 87.75,  "type": "Default Frame, Rare (Foil)",   "rarity": "87.75%", "query": "set%3Afin+rarity%3Ar+has%3Afoil",                                                                              "foilClass": "foil-gradient" },
+            { "maxRoll": 100.0,  "type": "Default Frame, Mythic (Foil)", "rarity": "12.25%", "query": "set%3Afin+rarity%3Am+%28-CN%3A552+AND+-CN%3A553%29+-is%3Aboosterfun+game%3Apaper",                             "foilClass": "foil-gradient" }
+          ]
+        },
+        {
+          "id": "nfbfcu",
+          "label": "Booster Fun (C/U)",
+          "isFoil": false,
+          "probabilities": [
+            { "maxRoll": 66.7,  "type": "Extended-art Legendary, Uncommon",          "rarity": "66.7%", "query": "set%3Afin+frame%3Aextendedart+rarity%3Au+type%3Alegendary+-name%3D'Ragnarok%2C+Divine+Deliverance'" },
+            { "maxRoll": 71.7,  "type": "Booster Fun, Common",                       "rarity": "5.0%",  "query": "set%3Afin+is%3Aboosterfun+rarity%3Ac+-type%3Abasic" },
+            { "maxRoll": 98.4,  "type": "Booster Fun, Uncommon",                     "rarity": "26.7%", "query": "set%3Afin+is%3Aboosterfun+rarity%3Au+%28CN>%3D324+AND+CN<%3D373%29" },
+            { "maxRoll": 100.0, "type": "Alternate-art Secret Rendezvous, Uncommon", "rarity": "1.6%",  "query": "set%3Afic+%28CN>%3D217+AND+CN<%3D219%29+unique%3Aart" }
+          ]
+        },
+        {
+          "id": "foilbfcu",
+          "label": "Foil Booster Fun (C/U)",
+          "isFoil": true,
+          "probabilities": [
+            { "maxRoll": 13.75,  "type": "Booster Fun, Common (Foil)",                              "rarity": "13.75%", "query": "set%3Afin+%28CN%3D369+OR+CN%3D358+OR+CN%3D371%29",                         "foilClass": "foil-gradient" },
+            { "maxRoll": 86.5,   "type": "Booster Fun, Uncommon (Foil)",                            "rarity": "72.75%", "query": "set%3Afin+rarity%3Au+%28CN>%3D324+AND+CN<%3D373%29",                        "foilClass": "foil-gradient" },
+            { "maxRoll": 91.0,   "type": "Alternate-art Secret Rendezvous, Uncommon (Foil)",        "rarity": "4.5%",   "query": "set%3Afic+%28CN>%3D217+AND+CN<%3D219%29+unique%3Aart",                      "foilClass": "foil-gradient" },
+            { "maxRoll": 100.0,  "type": "Borderless Character Card, Uncommon (Surge Foil)",        "rarity": "9.0%",   "query": "set%3Afin+rarity%3Au+%28CN>%3D519+AND+CN<%3D550%29+-CN%3D526b",              "foilClass": ["foil-gradient", "surge-gradient"] }
+          ]
+        },
+        {
+          "id": "basicland",
+          "label": "Foil Basic Land",
+          "isFoil": true,
+          "probabilities": [
+            { "maxRoll": 100.0, "type": "Basic Land (Foil)", "rarity": "100%", "query": "set%3Afin+type%3Abasic+unique%3Aart", "foilClass": "foil-gradient" }
+          ]
+        },
+        {
+          "id": "uncommon",
+          "label": "Foil Uncommons",
+          "isFoil": true,
+          "count": 3,
+          "cardInfo": ["3 Main-set Uncommons", "Cid Highwind alt-art appears ~0.9% of the time."],
+          "probabilities": [
+            { "maxRoll": 0.917,  "type": "Cid Highwind Alt-art (Foil)", "rarity": "~0.9%", "query": "set%3Afin+cn>%3D407+and+cn<%3D416+unique%3Aart", "priceKey": "usd" },
+            { "maxRoll": 100.0,  "type": "Uncommon (Foil)",             "rarity": "99.1%", "query": "set%3Afin+rarity%3Au+-name%3D%27Ragnarok%27",     "priceKey": "usd" }
+          ]
+        },
+        {
+          "id": "common",
+          "label": "Foil Commons",
+          "isFoil": true,
+          "count": 3,
+          "sumVar": "commonSum",
+          "cardInfo": ["3 Main-set Commons", "Appears 100% of the time."],
+          "probabilities": [
+            { "maxRoll": 100.0, "type": "Common (Foil)", "rarity": "100%", "query": "set%3Afin+rarity%3Ac+-type%3Abasic", "priceKey": "usd" }
+          ]
+        }
+      ]
+    }
+  }
+}

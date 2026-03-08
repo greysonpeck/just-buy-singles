@@ -1,0 +1,85 @@
+{
+  "code": "DSK",
+  "displayName": "DUSKMOURN",
+  "backgroundImage": "img/DSK_bg.jpg",
+  "boosterTypes": ["COLLECTOR"],
+  "boosters": {
+    "COLLECTOR": {
+      "totalCards": 13,
+      "msrp": 4.99,
+      "defaultUSD": 5,
+      "defaultCAD": 7,
+      "ghostCard": {
+        "randomQuery": "set%3Adsk+unique%3Aprints+",
+        "topOutQuery": "set%3Adsk+unique%3Aprints+USD%3E%3D15"
+      },
+      "slots": [
+        {
+          "id": "rare",
+          "label": "Rare or Mythic",
+          "isFoil": false,
+          "probabilities": [
+            { "maxRoll": 75.0,  "type": "Rare",                  "rarity": "75%",   "query": "set%3Adsk+rarity%3Ar+-is%3Aboosterfun" },
+            { "maxRoll": 87.6,  "type": "Mythic",                "rarity": "12.6%", "query": "set%3Adsk+rarity%3Am+-is%3Aboosterfun" },
+            { "maxRoll": 95.8,  "type": "Rare - Booster Fun",    "rarity": "8.2%",  "query": "set%3Adsk+rarity%3Ar+is%3Aboosterfun+collectornumber<386" },
+            { "maxRoll": 97.2,  "type": "Mythic - Booster Fun",  "rarity": "1.4%",  "query": "set%3Adsk+%28game%3Apaper%29+rarity%3Am+is%3Aboosterfun" },
+            { "maxRoll": 99.7,  "type": "Rare - Lurking Evil",   "rarity": "2.5%",  "query": "set%3Adsk+%28collectornumber%3D289+OR+collectornumber%3D290+OR+collectornumber%3D292+OR+collectornumber%3D294+OR+collectornumber%3D296+OR+collectornumber%3D299+OR+collectornumber%3D301%29" },
+            { "maxRoll": 100.0, "type": "Mythic - Lurking Evil", "rarity": "0.3%",  "query": "set%3Adsk+%28collectornumber%3D293+or+collectornumber%3D298%29" }
+          ]
+        },
+        {
+          "id": "wildcard",
+          "label": "Wildcard",
+          "isFoil": false,
+          "probabilities": [
+            { "maxRoll": 91.7,  "type": "Common or Uncommon",  "rarity": "91.7%", "query": "set%3Adsk+%28rarity%3Ac+OR+rarity%3Au%29+unique%3Aart+%28-type%3Aland+or+name%3A'Terramorphic+Expanse'%29" },
+            { "maxRoll": 100.0, "type": "Rare or Mythic",      "rarity": "8.3%",  "query": "set%3Adsk+%28rarity%3Ar+or+rarity%3Am%29+-type%3Aland+unique%3Aart+collectornumber<386" }
+          ]
+        },
+        {
+          "id": "foil",
+          "label": "Foil Wildcard",
+          "isFoil": true,
+          "probabilities": [
+            { "maxRoll": 91.7,  "type": "Foil Common or Uncommon", "rarity": "91.7%", "query": "set%3Adsk+%28rarity%3Ac+OR+rarity%3Au%29+unique%3Aart+%28-type%3Aland+or+name%3A'Terramorphic+Expanse'%29", "foilClass": "foil-gradient" },
+            { "maxRoll": 100.0, "type": "Foil Rare or Mythic",     "rarity": "8.3%",  "query": "set%3Adsk+%28rarity%3Ar+or+rarity%3Am%29+-type%3Aland+unique%3Aart+collectornumber<386",                   "foilClass": "foil-gradient" }
+          ]
+        },
+        {
+          "id": "land",
+          "label": "Land or Common",
+          "isFoil": true,
+          "probabilities": [
+            { "maxRoll": 13.3,  "type": "Full-art basic (NF)",    "rarity": "13.3%", "query": "set%3Adsk+type%3Abasic+is%3Afullart",                                                                                   "foilClass": null },
+            { "maxRoll": 16.6,  "type": "Full-art basic (Foil)",  "rarity": "3.3%",  "query": "set%3Adsk+type%3Abasic+is%3Afullart",                                                                                   "foilClass": "foil-gradient" },
+            { "maxRoll": 43.3,  "type": "Basic land (NF)",        "rarity": "26.7%", "query": "set%3Adsk+type%3Abasic+unique%3Aart+-is%3Afullart",                                                                      "foilClass": null },
+            { "maxRoll": 50.0,  "type": "Basic land (Foil)",      "rarity": "6.7%",  "query": "set%3Adsk+type%3Abasic+unique%3Aart+-is%3Afullart",                                                                      "foilClass": "foil-gradient" },
+            { "maxRoll": 90.0,  "type": "Common dual-land (NF)",  "rarity": "40%",   "query": "set%3Adsk+type%3Aland+rarity%3Ac+-type%3Abasic+-name%3A%22Terramorphic+Expanse%22",                                     "foilClass": null },
+            { "maxRoll": 100.0, "type": "Common dual-land (Foil)","rarity": "10%",   "query": "set%3Adsk+type%3Aland+rarity%3Ac+-type%3Abasic+-name%3A%22Terramorphic+Expanse%22",                                     "foilClass": "foil-gradient" }
+          ]
+        },
+        {
+          "id": "uncommon",
+          "label": "Uncommons",
+          "isFoil": false,
+          "count": 3,
+          "cardInfo": ["3 Uncommons", "All uncommons in Duskmourn are eligible."],
+          "probabilities": [
+            { "maxRoll": 100.0, "type": "Uncommon", "rarity": "100%", "query": "set%3Adsk+%28game%3Apaper%29+rarity%3Au" }
+          ]
+        },
+        {
+          "id": "common",
+          "label": "Commons",
+          "isFoil": false,
+          "count": 6,
+          "sumVar": "commonSum",
+          "cardInfo": ["6 Commons", "Includes Terramorphic Expanse. Excludes other basic lands."],
+          "probabilities": [
+            { "maxRoll": 100.0, "type": "Common", "rarity": "100%", "query": "set%3Adsk+rarity%3Ac+%28-type%3Aland+OR+name%3A'Terramorphic+Expanse'%29" }
+          ]
+        }
+      ]
+    }
+  }
+}
