@@ -3,7 +3,8 @@
     "allow": [
       "Bash(ls -la /Users/gpeck/repos/just-buy-singles/*.js)",
       "Bash(wc -l /Users/gpeck/repos/just-buy-singles/src/*.js)",
-      "Bash(wc -l /Users/gpeck/repos/just-buy-singles/src/*.css)"
+      "Bash(wc -l /Users/gpeck/repos/just-buy-singles/src/*.css)",
+      "Bash(ls /Users/gpeck/repos/just-buy-singles/src/logic-*.js)"
     ]
   }
 }

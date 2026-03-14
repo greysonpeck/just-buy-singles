@@ -1,0 +1,227 @@
+{
+  "code": "SPM",
+  "displayName": "MARVEL'S SPIDER-MAN",
+  "backgroundImage": "img/SPM_bg_dark.png",
+  "boosterTypes": ["COLLECTOR", "PLAY"],
+  "boosters": {
+    "COLLECTOR": {
+      "totalCards": 15,
+      "msrp": 37.99,
+      "defaultUSD": 36,
+      "defaultCAD": 60,
+      "ghostCard": {
+        "randomQuery": "%28set%3Aspm+or+set%3Amar%29+date%3A2025-09-26+unique%3Aprints+",
+        "topOutQuery": "%28set%3Aspm+or+set%3Amar%29+date%3A2025-09-26+unique%3Aprints+USD%3E%3D15"
+      },
+      "slots": [
+        {
+          "id": "boosterfun",
+          "label": "Foil Booster Fun",
+          "isFoil": true,
+          "probabilities": [
+            { "maxRoll": 54.0,   "type": "Extended-art, Rare (Foil)",        "rarity": "54%",    "query": "set%3Aspm+rarity%3Ar+%28CN>%3D244+AND+CN<%3D283%29&unique=cards",  "foilClass": "foil-gradient" },
+            { "maxRoll": 59.7,   "type": "Extended-art, Mythic (Foil)",      "rarity": "5.7%",   "query": "set%3Aspm+rarity%3Am+%28CN>%3D244+AND+CN<%3D283%29&unique=cards",  "foilClass": "foil-gradient" },
+            { "maxRoll": 69.5,   "type": "Web-slinger, Rare (Foil)",         "rarity": "9.8%",   "query": "set%3Aspm+rarity%3Ar+%28CN>%3D208+AND+CN<%3D217%29&unique=cards",  "foilClass": "foil-gradient" },
+            { "maxRoll": 71.1,   "type": "Web-slinger, Mythic (Foil)",       "rarity": "1.6%",   "query": "set%3Aspm+rarity%3Am+%28CN>%3D208+AND+CN<%3D217%29&unique=cards",  "foilClass": "foil-gradient" },
+            { "maxRoll": 87.5,   "type": "Panel, Rare (Foil)",               "rarity": "16.4%",  "query": "set%3Aspm+rarity%3Ar+%28CN>%3D218+AND+CN<%3D231%29&unique=cards",  "foilClass": "foil-gradient" },
+            { "maxRoll": 90.7,   "type": "Panel, Mythic (Foil)",             "rarity": "3.2%",   "query": "set%3Aspm+rarity%3Am+%28CN>%3D218+AND+CN<%3D231%29&unique=cards",  "foilClass": "foil-gradient" },
+            { "maxRoll": 95.6,   "type": "Scene, Rare (Foil)",               "rarity": "4.9%",   "query": "set%3Aspm+rarity%3Ar+%28CN>%3D199+AND+CN<%3D207%29&unique=cards",  "foilClass": "foil-gradient" },
+            { "maxRoll": 96.5,   "type": "Scene, Mythic (Foil)",             "rarity": "0.9%",   "query": "set%3Aspm+rarity%3Am+%28CN>%3D199+AND+CN<%3D207%29&unique=cards",  "foilClass": "foil-gradient" },
+            { "maxRoll": 99.0,   "type": "Classic Comic, Mythic (Foil)",     "rarity": "2.5%",   "query": "set%3Aspm+rarity%3Am+%28CN>%3D232+AND+CN<%3D234%29&unique=cards",  "foilClass": "foil-gradient" },
+            { "maxRoll": 99.8,   "type": "Costume Change, Rare (Foil)",      "rarity": "0.8%",   "query": "set%3Aspm+rarity%3Ar+%28CN>%3D235+AND+CN<%3D241%29&unique=cards",  "foilClass": "foil-gradient" },
+            { "maxRoll": 99.975, "type": "The Soul Stone, Gauntlet (Foil)",  "rarity": "0.175%", "query": "set%3Aspm+rarity%3Am+CN%3D243&unique=cards",                       "foilClass": "foil-gradient" },
+            { "maxRoll": 100.0,  "type": "The Soul Stone, Headliner (Foil)", "rarity": "0.025%", "query": "set%3Aspm+rarity%3Am+CN%3D242&unique=cards",                       "foilClass": "foil-gradient" }
+          ]
+        },
+        {
+          "id": "sourcematerial",
+          "label": "Source Material",
+          "isFoil": true,
+          "probabilities": [
+            { "maxRoll": 75.0,  "type": "Source Material, Mythic",        "rarity": "75%", "query": "set%3Amar+date%3A2025-09-26&unique=cards", "foilClass": null },
+            { "maxRoll": 100.0, "type": "Source Material, Mythic (Foil)", "rarity": "25%", "query": "set%3Amar+date%3A2025-09-26&unique=cards", "foilClass": "foil-gradient" }
+          ]
+        },
+        {
+          "id": "boosterfun-nf-1",
+          "label": "Booster Fun #1",
+          "isFoil": false,
+          "probabilities": [
+            { "maxRoll": 50.8,  "type": "Extended-art, Rare",   "rarity": "50.8%", "query": "set%3Aspm+rarity%3Ar+%28CN>%3D244+AND+CN<%3D283%29&unique=cards" },
+            { "maxRoll": 56.2,  "type": "Extended-art, Mythic", "rarity": "5.4%",  "query": "set%3Aspm+rarity%3Am+%28CN>%3D244+AND+CN<%3D283%29&unique=cards" },
+            { "maxRoll": 65.4,  "type": "Web-slinger, Rare",    "rarity": "9.2%",  "query": "set%3Aspm+rarity%3Ar+%28CN>%3D208+AND+CN<%3D217%29&unique=cards" },
+            { "maxRoll": 66.9,  "type": "Web-slinger, Mythic",  "rarity": "1.5%",  "query": "set%3Aspm+rarity%3Am+%28CN>%3D208+AND+CN<%3D217%29&unique=cards" },
+            { "maxRoll": 82.3,  "type": "Panel, Rare",          "rarity": "15.4%", "query": "set%3Aspm+rarity%3Ar+%28CN>%3D218+AND+CN<%3D231%29&unique=cards" },
+            { "maxRoll": 85.4,  "type": "Panel, Mythic",        "rarity": "3.1%",  "query": "set%3Aspm+rarity%3Am+%28CN>%3D218+AND+CN<%3D231%29&unique=cards" },
+            { "maxRoll": 90.0,  "type": "Scene, Rare",          "rarity": "4.6%",  "query": "set%3Aspm+rarity%3Ar+%28CN>%3D199+AND+CN<%3D207%29&unique=cards" },
+            { "maxRoll": 90.8,  "type": "Scene, Mythic",        "rarity": "0.8%",  "query": "set%3Aspm+rarity%3Am+%28CN>%3D199+AND+CN<%3D207%29&unique=cards" },
+            { "maxRoll": 100.0, "type": "Scene Box, Rare",      "rarity": "9.2%",  "query": "set%3Aspe+rarity%3Ar+%28CN>%3D21+AND+CN<%3D26%29&unique=cards" }
+          ]
+        },
+        {
+          "id": "boosterfun-nf-2",
+          "label": "Booster Fun #2",
+          "isFoil": false,
+          "probabilities": [
+            { "maxRoll": 50.8,  "type": "Extended-art, Rare",   "rarity": "50.8%", "query": "set%3Aspm+rarity%3Ar+%28CN>%3D244+AND+CN<%3D283%29&unique=cards" },
+            { "maxRoll": 56.2,  "type": "Extended-art, Mythic", "rarity": "5.4%",  "query": "set%3Aspm+rarity%3Am+%28CN>%3D244+AND+CN<%3D283%29&unique=cards" },
+            { "maxRoll": 65.4,  "type": "Web-slinger, Rare",    "rarity": "9.2%",  "query": "set%3Aspm+rarity%3Ar+%28CN>%3D208+AND+CN<%3D217%29&unique=cards" },
+            { "maxRoll": 66.9,  "type": "Web-slinger, Mythic",  "rarity": "1.5%",  "query": "set%3Aspm+rarity%3Am+%28CN>%3D208+AND+CN<%3D217%29&unique=cards" },
+            { "maxRoll": 82.3,  "type": "Panel, Rare",          "rarity": "15.4%", "query": "set%3Aspm+rarity%3Ar+%28CN>%3D218+AND+CN<%3D231%29&unique=cards" },
+            { "maxRoll": 85.4,  "type": "Panel, Mythic",        "rarity": "3.1%",  "query": "set%3Aspm+rarity%3Am+%28CN>%3D218+AND+CN<%3D231%29&unique=cards" },
+            { "maxRoll": 90.0,  "type": "Scene, Rare",          "rarity": "4.6%",  "query": "set%3Aspm+rarity%3Ar+%28CN>%3D199+AND+CN<%3D207%29&unique=cards" },
+            { "maxRoll": 90.8,  "type": "Scene, Mythic",        "rarity": "0.8%",  "query": "set%3Aspm+rarity%3Am+%28CN>%3D199+AND+CN<%3D207%29&unique=cards" },
+            { "maxRoll": 100.0, "type": "Scene Box, Rare",      "rarity": "9.2%",  "query": "set%3Aspe+rarity%3Ar+%28CN>%3D21+AND+CN<%3D26%29&unique=cards" }
+          ]
+        },
+        {
+          "id": "raremythic",
+          "label": "Foil Rare or Mythic",
+          "isFoil": true,
+          "probabilities": [
+            { "maxRoll": 77.9,  "type": "Default frame, Rare (Foil)",          "rarity": "77.9%", "query": "set%3Aspm+rarity%3Ar+%28CN>%3D1+AND+CN<%3D198%29&unique=cards",  "foilClass": "foil-gradient" },
+            { "maxRoll": 88.9,  "type": "Default frame, Mythic (Foil)",        "rarity": "11%",   "query": "set%3Aspm+rarity%3Am+%28CN>%3D1+AND+CN<%3D198%29&unique=cards",  "foilClass": "foil-gradient" },
+            { "maxRoll": 96.3,  "type": "Welcome Deck, Rare (Foil)",           "rarity": "7.4%",  "query": "set%3Aspe+rarity%3Ar+%28CN>%3D2+AND+CN<%3D20%29&unique=cards",   "foilClass": "foil-gradient" },
+            { "maxRoll": 100.0, "type": "Welcome Deck, Mythic (Foil)",         "rarity": "3.7%",  "query": "set%3Aspe+rarity%3Am+%28CN>%3D2+AND+CN<%3D20%29&unique=cards",   "foilClass": "foil-gradient" }
+          ]
+        },
+        {
+          "id": "land",
+          "label": "Foil Full-Art Basic Land",
+          "isFoil": true,
+          "probabilities": [
+            { "maxRoll": 100.0, "type": "Full-art spiderweb basic land (Foil)", "rarity": "100%", "query": "set%3Aspm+type%3Abasic+%28CN>%3D189+AND+CN<%3D193%29&unique=cards", "foilClass": "foil-gradient" }
+          ]
+        },
+        {
+          "id": "uncommon",
+          "label": "Foil Uncommons",
+          "isFoil": true,
+          "count": 4,
+          "cardInfo": ["4 Uncommons", "Main set (87.3%), Welcome deck (7.9%), Scene (4.8%)."],
+          "probabilities": [
+            { "maxRoll": 87.3,  "type": "Default frame, Uncommon (Foil)",      "rarity": "87.3%", "query": "set%3Aspm+rarity%3Au&unique=cards" },
+            { "maxRoll": 95.2,  "type": "Welcome Deck, Uncommon (Foil)",       "rarity": "7.9%",  "query": "set%3Aspe+rarity%3Au+%28CN>%3D1+AND+CN<%3D198%29&unique=cards" },
+            { "maxRoll": 100.0, "type": "Scene, Uncommon (Foil)",              "rarity": "4.8%",  "query": "set%3Aspm+rarity%3Au+%28CN>%3D199+AND+CN<%3D207%29&unique=cards" }
+          ]
+        },
+        {
+          "id": "common",
+          "label": "Foil Commons",
+          "isFoil": true,
+          "count": 5,
+          "sumVar": "commonSum",
+          "cardInfo": ["5 Commons", "Main set (85.8%), Two-color land (9.4%), Welcome deck (4.8%)."],
+          "probabilities": [
+            { "maxRoll": 85.8,  "type": "Main set, Common (Foil)",        "rarity": "85.8%", "query": "set%3Aspm+rarity%3Ac+%28CN<181+OR+CN%3D188%29&unique=cards" },
+            { "maxRoll": 95.2,  "type": "Two-color land, Common (Foil)",  "rarity": "9.4%",  "query": "set%3Aspm+rarity%3Ac+%28CN>%3D181+AND+CN<%3D186%29&unique=cards" },
+            { "maxRoll": 100.0, "type": "Welcome deck, Common (Foil)",    "rarity": "4.8%",  "query": "set%3Aspe+rarity%3Ac&unique=cards" }
+          ]
+        }
+      ]
+    },
+    "PLAY": {
+      "totalCards": 14,
+      "msrp": 6.99,
+      "defaultUSD": 6,
+      "defaultCAD": 9,
+      "ghostCard": {
+        "randomQuery": "%28set%3Aspm+or+set%3Amar%29+date%3A2025-09-26+unique%3Aprints+",
+        "topOutQuery": "%28set%3Aspm+or+set%3Amar%29+date%3A2025-09-26+unique%3Aprints+USD%3E%3D15"
+      },
+      "slots": [
+        {
+          "id": "wildcard",
+          "label": "Foil Wildcard",
+          "isFoil": true,
+          "probabilities": [
+            { "maxRoll": 65.8,  "type": "Default frame, Common (Foil)",    "rarity": "65.8%", "query": "set%3Aspm+rarity%3Ac+%28CN<180+OR+CN%3D188%29&unique=cards" },
+            { "maxRoll": 89.9,  "type": "Default frame, Uncommon (Foil)",  "rarity": "24.1%", "query": "set%3Aspm+rarity%3Au&unique=cards" },
+            { "maxRoll": 97.7,  "type": "Default frame, Rare (Foil)",      "rarity": "7.8%",  "query": "set%3Aspm+rarity%3Ar&unique=cards" },
+            { "maxRoll": 98.8,  "type": "Default frame, Mythic (Foil)",    "rarity": "1.1%",  "query": "set%3Aspm+rarity%3Am&unique=cards" },
+            { "maxRoll": 98.95, "type": "Web-slinger, Rare (Foil)",        "rarity": "0.15%", "query": "set%3Aspm+rarity%3Ar+%28CN>%3D208+AND+CN<%3D217%29&unique=cards" },
+            { "maxRoll": 99.15, "type": "Web-slinger, Mythic (Foil)",      "rarity": "0.2%",  "query": "set%3Aspm+rarity%3Am+%28CN>%3D208+AND+CN<%3D217%29&unique=cards" },
+            { "maxRoll": 99.3,  "type": "Panel, Rare (Foil)",              "rarity": "0.15%", "query": "set%3Aspm+rarity%3Ar+%28CN>%3D218+AND+CN<%3D231%29&unique=cards" },
+            { "maxRoll": 99.5,  "type": "Panel, Mythic (Foil)",            "rarity": "0.2%",  "query": "set%3Aspm+rarity%3Am+%28CN>%3D218+AND+CN<%3D231%29&unique=cards" },
+            { "maxRoll": 99.65, "type": "Scene, Uncommon (Foil)",          "rarity": "0.15%", "query": "set%3Aspm+rarity%3Au+%28CN>%3D199+AND+CN<%3D207%29&unique=cards" },
+            { "maxRoll": 99.8,  "type": "Scene, Rare (Foil)",              "rarity": "0.15%", "query": "set%3Aspm+rarity%3Ar+%28CN>%3D199+AND+CN<%3D207%29&unique=cards" },
+            { "maxRoll": 100.0, "type": "Scene, Mythic (Foil)",            "rarity": "0.2%",  "query": "set%3Aspm+rarity%3Am+%28CN>%3D199+AND+CN<%3D207%29&unique=cards" }
+          ]
+        },
+        {
+          "id": "raremythic",
+          "label": "Rare or Mythic",
+          "isFoil": false,
+          "probabilities": [
+            { "maxRoll": 83.7,  "type": "Default frame, Rare",   "rarity": "83.7%", "query": "set%3Aspm+rarity%3Ar&unique=cards"},
+            { "maxRoll": 95.4,  "type": "Default frame, Mythic", "rarity": "11.7%", "query": "set%3Aspm+rarity%3Am&unique=cards"},
+            { "maxRoll": 96.6,  "type": "Web-slinger, Rare",     "rarity": "1.2%",  "query": "set%3Aspm+rarity%3Ar+%28CN>%3D208+AND+CN<%3D217%29&unique=cards"},
+            { "maxRoll": 96.7,  "type": "Web-slinger, Mythic",   "rarity": "0.1%",  "query": "set%3Aspm+rarity%3Am+%28CN>%3D208+AND+CN<%3D217%29&unique=cards"},
+            { "maxRoll": 98.8,  "type": "Panel, Rare",           "rarity": "2.1%",  "query": "set%3Aspm+rarity%3Ar+%28CN>%3D218+AND+CN<%3D231%29&unique=cards"},
+            { "maxRoll": 98.9,  "type": "Panel, Mythic",         "rarity": "0.1%",  "query": "set%3Aspm+rarity%3Am+%28CN>%3D218+AND+CN<%3D231%29&unique=cards"},
+            { "maxRoll": 99.9,  "type": "Scene, Rare",           "rarity": "1%",    "query": "set%3Aspm+rarity%3Ar+%28CN>%3D199+AND+CN<%3D207%29&unique=cards"},
+            { "maxRoll": 100.0, "type": "Scene, Mythic",         "rarity": "0.1%",  "query": "set%3Aspm+rarity%3Am+%28CN>%3D199+AND+CN<%3D207%29&unique=cards"}
+          ]
+        },
+        {
+          "id": "nfwildcard",
+          "label": "Non-Foil Wildcard",
+          "isFoil": false,
+          "probabilities": [
+            { "maxRoll": 65.8,  "type": "Default frame, Common",    "rarity": "65.8%", "query": "set%3Aspm+rarity%3Ac+%28CN<180+OR+CN%3D188%29&unique=cards" },
+            { "maxRoll": 89.9,  "type": "Default frame, Uncommon",  "rarity": "24.1%", "query": "set%3Aspm+rarity%3Au&unique=cards" },
+            { "maxRoll": 97.7,  "type": "Default frame, Rare",      "rarity": "7.8%",  "query": "set%3Aspm+rarity%3Ar&unique=cards" },
+            { "maxRoll": 98.8,  "type": "Default frame, Mythic",    "rarity": "1.1%",  "query": "set%3Aspm+rarity%3Am&unique=cards" },
+            { "maxRoll": 98.95, "type": "Web-slinger, Rare",        "rarity": "0.15%", "query": "set%3Aspm+rarity%3Ar+%28CN>%3D208+AND+CN<%3D217%29&unique=cards" },
+            { "maxRoll": 99.15, "type": "Web-slinger, Mythic",      "rarity": "0.2%",  "query": "set%3Aspm+rarity%3Am+%28CN>%3D208+AND+CN<%3D217%29&unique=cards" },
+            { "maxRoll": 99.3,  "type": "Panel, Rare",              "rarity": "0.15%", "query": "set%3Aspm+rarity%3Ar+%28CN>%3D218+AND+CN<%3D231%29&unique=cards" },
+            { "maxRoll": 99.5,  "type": "Panel, Mythic",            "rarity": "0.2%",  "query": "set%3Aspm+rarity%3Am+%28CN>%3D218+AND+CN<%3D231%29&unique=cards" },
+            { "maxRoll": 99.65, "type": "Scene, Uncommon",          "rarity": "0.15%", "query": "set%3Aspm+rarity%3Au+%28CN>%3D199+AND+CN<%3D207%29&unique=cards" },
+            { "maxRoll": 99.8,  "type": "Scene, Rare",              "rarity": "0.15%", "query": "set%3Aspm+rarity%3Ar+%28CN>%3D199+AND+CN<%3D207%29&unique=cards" },
+            { "maxRoll": 100.0, "type": "Scene, Mythic",            "rarity": "0.2%",  "query": "set%3Aspm+rarity%3Am+%28CN>%3D199+AND+CN<%3D207%29&unique=cards" }
+          ]
+        },
+        {
+          "id": "land",
+          "label": "Land",
+          "isFoil": true,
+          "probabilities": [
+            { "maxRoll": 40.0,  "type": "Two-color land",                 "rarity": "40%", "query": "set%3Aspm+rarity%3Ac+%28CN>%3D179+AND+CN<%3D187%29&unique=cards", "foilClass": null },
+            { "maxRoll": 50.0,  "type": "Two-color land (Foil)",          "rarity": "10%", "query": "set%3Aspm+rarity%3Ac+%28CN>%3D179+AND+CN<%3D187%29&unique=cards", "foilClass": "foil-gradient" },
+            { "maxRoll": 70.0,  "type": "Spiderweb basic land",           "rarity": "20%", "query": "set%3Aspm+type%3Abasic+is%3Afullart&unique=cards",                 "foilClass": null },
+            { "maxRoll": 75.0,  "type": "Spiderweb basic land (Foil)",    "rarity": "5%",  "query": "set%3Aspm+type%3Abasic+is%3Afullart&unique=cards",                 "foilClass": "foil-gradient" },
+            { "maxRoll": 95.0,  "type": "Default frame basic land",       "rarity": "20%", "query": "set%3Aspm+type%3Abasic&unique=cards",                              "foilClass": null },
+            { "maxRoll": 100.0, "type": "Default frame basic land (Foil)","rarity": "5%",  "query": "set%3Aspm+type%3Abasic&unique=cards",                              "foilClass": "foil-gradient" }
+          ]
+        },
+        {
+          "id": "uncommon",
+          "label": "Uncommons",
+          "isFoil": false,
+          "count": 3,
+          "cardInfo": ["3 Main-set Uncommons", "3 Uncommon scene cards can also be found in these slots."],
+          "probabilities": [
+            { "maxRoll": 100.0, "type": "Uncommon", "rarity": "100%", "query": "set%3Aspm+rarity%3Au+unique%3Aart&unique=cards" }
+          ]
+        },
+        {
+          "id": "common",
+          "label": "Commons",
+          "isFoil": false,
+          "count": 7,
+          "sumVar": "commonSum",
+          "cardInfo": ["6-7 Main-set Commons", "In every 1 of 24 Play Boosters, a borderless source material card replaces one of these Commons."],
+          "probabilities": [
+            { "maxRoll": 100.0, "type": "Common", "rarity": "100%", "query": "set%3Aspm+rarity%3Ac+%28CN<181+OR+CN%3D188%29&unique=cards" }
+          ],
+          "trailingCard": {
+            "probabilities": [
+              { "maxRoll": 95.833, "type": "Common",          "rarity": "95.8%", "query": "set%3Aspm+rarity%3Ac+%28CN<181+OR+CN%3D188%29&unique=cards" },
+              { "maxRoll": 100.0,  "type": "Source Material", "rarity": "4.2%",  "query": "set%3Amar+date%3A2025-09-26&unique=cards" }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

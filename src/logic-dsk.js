@@ -1,6 +1,6 @@
 function setDSK() {
     currentSet = "DSK";
-    document.cookie = "currentSet = 'DSK'";
+    localStorage.setItem('currentSet', 'DSK');
 
     document.getElementById("set-header").innerText = "DUSKMOURN";
     document.getElementById("set-toggle-1").innerText = "go foundations";

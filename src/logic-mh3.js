@@ -11,7 +11,7 @@ window.MH3 = {
 
 function setMH3() {
     currentSet = "MH3";
-    document.cookie = "currentSet = 'MH3'";
+    localStorage.setItem('currentSet', 'MH3');
     boosterValue = 8;
 
     document.getElementById("set-header").innerText = "MODERN HORIZONS 3";

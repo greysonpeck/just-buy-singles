@@ -3,7 +3,7 @@
 
 // List of set codes that have been migrated to JSON configs.
 // Add a code here after its JSON config is verified working.
-window.MIGRATED_SETS = ['FDN', 'DSK', 'FIN', 'EOE'];
+window.MIGRATED_SETS = ['FDN', 'FIN', 'EOE', 'SPM', 'TLA', 'ECL'];
 
 const _configCache = {};
 
@@ -19,19 +19,19 @@ async function loadSetConfig(code) {
 // Replaces setXxx() functions. Called from DOMContentLoaded set-restore and set-selector buttons.
 async function initSet(code, boosterType) {
     const config = await loadSetConfig(code);
-    const actualType = boosterType || getCookie('currentBoosterType') || config.boosterTypes[0];
+    const actualType = boosterType || localStorage.getItem('currentBoosterType') || config.boosterTypes[0];
 
     // Register compatibility shims so legacy callers (boosterToggle, changeSet) still work.
     window['set' + code] = () => initSet(code);
     window['set' + code + '_Money'] = () => {
-        const bt = getCookie('currentBoosterType') || config.boosterTypes[0];
+        const bt = localStorage.getItem('currentBoosterType') || config.boosterTypes[0];
         _initSetMoney(code, bt, config);
     };
 
     // State
     currentSet = code;
-    document.cookie = 'currentSet = ' + code;
-    document.cookie = 'currentBoosterType = ' + actualType;
+    localStorage.setItem('currentSet', code);
+    localStorage.setItem('currentBoosterType', actualType);
     window.boosterType = config.boosterTypes.length > 1 ? 'both' : 'COLLECTOR';
 
     boosterCheck(config.boosterTypes.length > 1 ? 'both' : 'collector');
@@ -66,8 +66,8 @@ function _initSetMoney(code, boosterType, config) {
     const cookieKey = 'boosterValue_' + code + playPart;
     const cadCookieKey = 'boosterValue_CAD_' + code + playPart;
 
-    boosterValue = getCookie(cookieKey) ? getCookie(cookieKey) : boosterConfig.defaultUSD;
-    CAD_boosterValue = getCookie(cadCookieKey) ? getCookie(cadCookieKey) : boosterConfig.defaultCAD;
+    boosterValue = localStorage.getItem(cookieKey) || boosterConfig.defaultUSD;
+    CAD_boosterValue = localStorage.getItem(cadCookieKey) || boosterConfig.defaultCAD;
     msrp = boosterConfig.msrp;
 
     // Make DOM slots
@@ -75,8 +75,8 @@ function _initSetMoney(code, boosterType, config) {
         makeSlot(slot.id, slot.label, slot.isFoil || false, slot.count || 0);
     }
 
-    document.cookie = cookieKey + ' = ' + boosterValue;
-    document.cookie = cadCookieKey + ' = ' + CAD_boosterValue;
+    localStorage.setItem(cookieKey, boosterValue);
+    localStorage.setItem(cadCookieKey, CAD_boosterValue);
 }
 
 // Replaces pullXxx() functions. Called from the hybrid pullBooster() in scripts.js.
@@ -217,10 +217,13 @@ async function _pullMultiSlot(slot) {
     let sumPrice = 0;
 
     for (let k = 1; k <= slot.count; k++) {
+        const isLastCard = k === slot.count;
+        const probs = (isLastCard && slot.trailingCard) ? slot.trailingCard.probabilities : slot.probabilities;
+
         const roll = slot.rollOverride !== undefined ? slot.rollOverride : getRandomNumber(0, 100);
 
-        let entry = slot.probabilities[slot.probabilities.length - 1];
-        for (const prob of slot.probabilities) {
+        let entry = probs[probs.length - 1];
+        for (const prob of probs) {
             if (roll <= prob.maxRoll) {
                 entry = prob;
                 break;

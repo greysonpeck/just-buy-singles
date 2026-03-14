@@ -16,39 +16,39 @@ document.addEventListener("DOMContentLoaded", () => {
     // modalPrice.innerText = USDollar.format(boosterValue);
 
     // Initialize?
-    let currentSet = getCookie("currentSet").replaceAll("'", "");
+    let currentSet = localStorage.getItem("currentSet");
 
     function priceChange() {
-        currentSet = getCookie("currentSet").replaceAll("'", "");
+        currentSet = localStorage.getItem("currentSet");
         if (currencyMode === "CAD") {
             currentPrice.innerText = USDollar.format(boosterValue);
             // modalPrice.innerText = USDollar.format(boosterValue);
-            if (getCookie("currentBoosterType") === "PLAY") {
-                document.cookie = "boosterValue_CAD_" + currentSet + "_PLAY=" + boosterValue;
+            if (localStorage.getItem("currentBoosterType") === "PLAY") {
+                localStorage.setItem("boosterValue_CAD_" + currentSet + "_PLAY", boosterValue);
             } else {
-                document.cookie = "boosterValue_CAD_" + currentSet + "=" + boosterValue;
+                localStorage.setItem("boosterValue_CAD_" + currentSet, boosterValue);
             }
             CAD_boosterValue = boosterValue;
         } else {
             currentPrice.innerText = USDollar.format(boosterValue);
             // modalPrice.innerText = USDollar.format(boosterValue);
-            if (getCookie("currentBoosterType") === "PLAY") {
-                document.cookie = "boosterValue_" + currentSet + "_PLAY=" + boosterValue;
+            if (localStorage.getItem("currentBoosterType") === "PLAY") {
+                localStorage.setItem("boosterValue_" + currentSet + "_PLAY", boosterValue);
             } else {
-                document.cookie = "boosterValue_" + currentSet + "=" + boosterValue;
+                localStorage.setItem("boosterValue_" + currentSet, boosterValue);
             }
         }
     }
 
     if (currencyMode === "CAD") {
         // if we have the cookie "boosterprice_CAN_[your set here]"
-        if (getCookie("boosterValue_CAD_" + currentSet)) {
+        if (localStorage.getItem("boosterValue_CAD_" + currentSet)) {
             // console.log("wow, we have it (CAD)");
         } else {
             // console.log("no, we do not have it (CAD)");
         }
     } else {
-        if (getCookie("boosterValue_" + currentSet)) {
+        if (localStorage.getItem("boosterValue_" + currentSet)) {
             // console.log("wow, we have it (USD)");
         } else {
             // console.log("no, we do not have it (USD)");

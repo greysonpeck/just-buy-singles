@@ -30,8 +30,8 @@
             { "maxRoll": 86.0,  "type": "Special Guests (Foil)",                  "rarity": "6%",    "query": "set%3Aspg+date%3A2025-08-01&unique=cards",                         "foilClass": "foil-gradient" },
             { "maxRoll": 95.0,  "type": "Japan Showcase (Foil)",                  "rarity": "9%",    "query": "set%3Aeoe+%28CN>%3D357+AND+CN<%3D365%29&unique=cards",             "foilClass": "foil-gradient" },
             { "maxRoll": 96.0,  "type": "Japan Showcase (Fracture Foil)",         "rarity": "1%",    "query": "set%3Aeoe+%28CN>%3D383+AND+CN<%3D392%29&unique=cards",             "foilClass": "foil-gradient" },
-            { "maxRoll": 98.0,  "type": "Borderless Viewport, Rare (Galaxy Foil)","rarity": "2%",    "query": "set%3Aeoe+rarity%3Ar+%28CN>%3D372+AND+CN<%3D381%29&unique=cards",  "foilClass": "galaxy-gradient" },
-            { "maxRoll": 100.0, "type": "Borderless Viewport, Mythic (Galaxy Foil)","rarity": "2%",  "query": "set%3Aeoe+rarity%3Am+%28CN>%3D372+AND+CN<%3D381%29&unique=cards",  "foilClass": "galaxy-gradient" }
+            { "maxRoll": 98.0,  "type": "Borderless Viewport, Rare (Galaxy Foil)","rarity": "2%",    "query": "set%3Aeoe+rarity%3Ar+%28CN>%3D372+AND+CN<%3D381%29&unique=cards",  "foilClass": ["foil-gradient", "galaxy-gradient"] },
+            { "maxRoll": 100.0, "type": "Borderless Viewport, Mythic (Galaxy Foil)","rarity": "2%",  "query": "set%3Aeoe+rarity%3Am+%28CN>%3D372+AND+CN<%3D381%29&unique=cards",  "foilClass": ["foil-gradient", "galaxy-gradient"] }
           ]
         },
         {
@@ -90,8 +90,8 @@
           "label": "Full-Art Celestial Land",
           "isFoil": true,
           "probabilities": [
-            { "maxRoll": 34.5,  "type": "Full-art Celestial Basic Land (Foil)",        "rarity": "34.5%", "query": "set%3Aeoe+type%3Abasic+is%3Afullart",              "foilClass": "foil-gradient" },
-            { "maxRoll": 100.0, "type": "Full-art Celestial Basic Land (Galaxy Foil)", "rarity": "65.5%", "query": "set%3Aeoe+type%3Abasic+is%3Afullart+is%3Agalaxyfoil","foilClass": "galaxy-gradient" }
+            { "maxRoll": 66.6,  "type": "Full-art Celestial Basic Land (Foil)",        "rarity": "66.6%", "query": "set%3Aeoe+type%3Abasic+is%3Afullart",              "foilClass": "foil-gradient" },
+            { "maxRoll": 100.0, "type": "Full-art Celestial Basic Land (Galaxy Foil)", "rarity": "33.3%", "query": "set%3Aeoe+type%3Abasic+is%3Afullart+is%3Agalaxyfoil","foilClass": ["foil-gradient", "galaxy-gradient"] }
           ]
         },
         {
@@ -200,11 +200,16 @@
           "isFoil": false,
           "count": 7,
           "sumVar": "commonSum",
-          "cardInfo": ["6-7 Main-set Commons", "1 of 10 non-foil Special Guests cards will replace a common ~0.26% per card."],
+          "cardInfo": ["6-7 Main-set Commons", "1 of 10 non-foil Special Guests cards will replace the last common 1.8% of the time."],
           "probabilities": [
-            { "maxRoll": 99.743, "type": "Common",          "rarity": "99.7%", "query": "set%3Aeoe+rarity%3Ac+-type%3Abasic" },
-            { "maxRoll": 100.0,  "type": "Special Guest",   "rarity": "0.26%", "query": "set%3Aspg+date%3A2025-08-01" }
-          ]
+            { "maxRoll": 100.0, "type": "Common", "rarity": "100%", "query": "set%3Aeoe+rarity%3Ac+-type%3Abasic" }
+          ],
+          "trailingCard": {
+            "probabilities": [
+              { "maxRoll": 98.2,  "type": "Common",        "rarity": "98.2%", "query": "set%3Aeoe+rarity%3Ac+-type%3Abasic" },
+              { "maxRoll": 100.0, "type": "Special Guest", "rarity": "1.8%",  "query": "set%3Aspg+date%3A2025-08-01" }
+            ]
+          }
         }
       ]
     }

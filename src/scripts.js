@@ -13,17 +13,11 @@ firstLoad = true;
 failSwitch = false;
 
 const ghostLinkHalf = {
-    FDN: ghostLinkHalf_FDN,
-    SPM: ghostLinkHalf_SPM,
-    TLA: ghostLinkHalf_TLA,
-    ECL: ghostLinkHalf_ECL,
+    MH3: ghostLinkHalf_MH3,
 };
 
 const topOutLink = {
-    FDN: topOutLink_FDN,
-    SPM: topOutLink_SPM,
-    TLA: topOutLink_TLA,
-    ECL: topOutLink_ECL,
+    MH3: topOutLink_MH3,
 };
 
 function umamiAnalytics(umamiEvent) {
@@ -65,7 +59,7 @@ function pullBooster() {
         if (activeCheck) return;
         activeCheck = true;
         document.querySelector("#sound-slider").value = 10;
-        pullBoosterFromConfig(_migratedConfig, getCookie("currentBoosterType") || _migratedConfig.boosterTypes[0]);
+        pullBoosterFromConfig(_migratedConfig, localStorage.getItem("currentBoosterType") || _migratedConfig.boosterTypes[0]);
         return;
     }
 
@@ -76,41 +70,27 @@ function pullBooster() {
         pullMH3();
     } else if (currentSet === "FIN") {
         pullFIN();
-    } else if (currentSet === "EOE" && getCookie("currentBoosterType") === "COLLECTOR") {
+    } else if (currentSet === "EOE" && localStorage.getItem("currentBoosterType") === "COLLECTOR") {
         pullEOE();
-    } else if (currentSet === "EOE" && getCookie("currentBoosterType") === "PLAY") {
+    } else if (currentSet === "EOE" && localStorage.getItem("currentBoosterType") === "PLAY") {
         pullEOE_Play();
-    } else if (currentSet === "SPM" && getCookie("currentBoosterType") === "COLLECTOR") {
+    } else if (currentSet === "SPM" && localStorage.getItem("currentBoosterType") === "COLLECTOR") {
         pullSPM();
-    } else if (currentSet === "SPM" && getCookie("currentBoosterType") === "PLAY") {
+    } else if (currentSet === "SPM" && localStorage.getItem("currentBoosterType") === "PLAY") {
         pullSPM_Play();
-    } else if (currentSet === "TLA" && getCookie("currentBoosterType") === "COLLECTOR") {
+    } else if (currentSet === "TLA" && localStorage.getItem("currentBoosterType") === "COLLECTOR") {
         pullTLA();
-    } else if (currentSet === "TLA" && getCookie("currentBoosterType") === "PLAY") {
+    } else if (currentSet === "TLA" && localStorage.getItem("currentBoosterType") === "PLAY") {
         pullTLA_Play();
-    } else if (currentSet === "ECL" && getCookie("currentBoosterType") === "COLLECTOR") {
+    } else if (currentSet === "ECL" && localStorage.getItem("currentBoosterType") === "COLLECTOR") {
         pullECL();
-    } else if (currentSet === "ECL" && getCookie("currentBoosterType") === "PLAY") {
+    } else if (currentSet === "ECL" && localStorage.getItem("currentBoosterType") === "PLAY") {
         pullECL_Play();
     } else {
         pullFDN();
     }
 }
 
-function getCookie(cname) {
-    let name = cname + "=";
-    let ca = document.cookie.split(";");
-    for (let i = 0; i < ca.length; i++) {
-        let c = ca[i];
-        while (c.charAt(0) == " ") {
-            c = c.substring(1);
-        }
-        if (c.indexOf(name) == 0) {
-            return c.substring(name.length, c.length);
-        }
-    }
-    return "";
-}
 
 function convertCurrency(value) {
     if (currencyMode == "CAD") {
@@ -145,7 +125,7 @@ function ghostSlide() {
     let _ghostLink, _topOutLinkVal;
     const _migratedConfig = _configCache[currentSet];
     if (_migratedConfig) {
-        const _bt = getCookie("currentBoosterType") || _migratedConfig.boosterTypes[0];
+        const _bt = localStorage.getItem("currentBoosterType") || _migratedConfig.boosterTypes[0];
         const _boosterConfig = _migratedConfig.boosters[_bt];
         if (_boosterConfig && _boosterConfig.ghostCard) {
             _ghostLink = "https://api.scryfall.com/cards/random?q=" + _boosterConfig.ghostCard.randomQuery;
@@ -353,7 +333,7 @@ document.addEventListener(
 
         let singleClicked = false;
 
-        if (getCookie("currentBoosterType") === "COLLECTOR") {
+        if (localStorage.getItem("currentBoosterType") === "COLLECTOR") {
             cardsRemaining = setName.totalCards;
         } else {
             cardsRemaining = setName.totalCards_PLAY;
@@ -397,8 +377,8 @@ document.addEventListener(
         currentMoneyElement = document.getElementById("current-money");
         const toggle = document.getElementById("currency");
 
-        if (getCookie("currentSet")) {
-            const _savedSet = getCookie("currentSet");
+        if (localStorage.getItem("currentSet")) {
+            const _savedSet = localStorage.getItem("currentSet");
             if (window.MIGRATED_SETS && window.MIGRATED_SETS.includes(_savedSet)) {
                 await initSet(_savedSet);
             } else if (_savedSet == "MH3") {
@@ -410,11 +390,11 @@ document.addEventListener(
             } else if (_savedSet == "EOE") {
                 // handled by MIGRATED_SETS above
             } else if (_savedSet == "SPM") {
-                setSPM();
+                // handled by MIGRATED_SETS above
             } else if (_savedSet == "TLA") {
-                setTLA();
+                // handled by MIGRATED_SETS above
             } else if (_savedSet == "ECL") {
-                setECL();
+                // handled by MIGRATED_SETS above
             } else {
                 setECL();
             }
@@ -456,8 +436,8 @@ document.addEventListener(
         // On load, if a CAD cookie exist, initialize to CAD and set toggle visually.
         // If USD cookie, do nothing, load as normal.
         // If no cookie yet, set cookie
-        if (getCookie("currencyMode")) {
-            if (getCookie("currencyMode") == "CAD") {
+        if (localStorage.getItem("currencyMode")) {
+            if (localStorage.getItem("currencyMode") == "CAD") {
                 initializeCAD();
                 toggle.classList.toggle("on");
             } else {
@@ -466,7 +446,7 @@ document.addEventListener(
             }
         } else {
             currencyMode = "USD";
-            document.cookie = "currencyMode = USD";
+            localStorage.setItem('currencyMode', 'USD');
             initializeUSD();
         }
 
@@ -484,13 +464,13 @@ document.addEventListener(
             currentMoneyElement.classList.remove("bg-rose-500", "bg-emerald-500", "px-3");
 
             // Initialize to CAD settings if toggled while on USD and vice-versa.
-            if (getCookie("currencyMode") == "USD") {
+            if (localStorage.getItem("currencyMode") == "USD") {
                 initializeCAD();
-                document.cookie = "currencyMode = CAD";
+                localStorage.setItem('currencyMode', 'CAD');
                 window.location.reload();
             } else {
                 initializeUSD();
-                document.cookie = "currencyMode = USD";
+                localStorage.setItem('currencyMode', 'USD');
                 document.getElementById("pricePerBooster").innerText = USDollar.format(boosterValue);
                 window.location.reload();
             }
@@ -509,7 +489,7 @@ document.addEventListener(
 
             boosterCheck(window.boosterType);
 
-            if (getCookie("currentBoosterType") === "COLLECTOR") {
+            if (localStorage.getItem("currentBoosterType") === "COLLECTOR") {
                 collectorButton.classList.add("booster-active");
                 playButton.classList.remove("booster-active");
             } else {
@@ -518,13 +498,13 @@ document.addEventListener(
                 playButton.classList.add("booster-active");
             }
 
-            if (getCookie("currentBoosterType") === "COLLECTOR") {
+            if (localStorage.getItem("currentBoosterType") === "COLLECTOR") {
                 cardsRemaining = setName.totalCards;
             } else {
                 cardsRemaining = setName.totalCards_PLAY;
             }
 
-            setID = getCookie("currentSet");
+            setID = localStorage.getItem("currentSet");
             const moneySet = "set" + setID + "_Money";
             window[moneySet]();
 
@@ -532,27 +512,27 @@ document.addEventListener(
 
             cookieSearch =
                 "boosterValue" +
-                (getCookie("currencyMode") === "CAD" ? "_CAD_" : "_") +
-                getCookie("currentSet") +
-                (getCookie("currentBoosterType") === "PLAY" ? "_PLAY" : "");
+                (localStorage.getItem("currencyMode") === "CAD" ? "_CAD_" : "_") +
+                localStorage.getItem("currentSet") +
+                (localStorage.getItem("currentBoosterType") === "PLAY" ? "_PLAY" : "");
 
             console.log(cookieSearch);
-            console.log("bing: " + getCookie(cookieSearch));
+            console.log("bing: " + localStorage.getItem(cookieSearch));
 
-            document.getElementById("pricePerBooster").innerText = USDollar.format(getCookie(cookieSearch));
+            document.getElementById("pricePerBooster").innerText = USDollar.format(localStorage.getItem(cookieSearch));
         }
 
         // boosterToggle();
 
         collectorButton.addEventListener("click", () => {
             console.log("collector");
-            document.cookie = "currentBoosterType = COLLECTOR";
+            localStorage.setItem('currentBoosterType', 'COLLECTOR');
             boosterToggle();
         });
 
         playButton.addEventListener("click", () => {
             console.log("play");
-            document.cookie = "currentBoosterType = PLAY";
+            localStorage.setItem('currentBoosterType', 'PLAY');
             boosterToggle();
         });
 
@@ -612,30 +592,35 @@ function changeSet() {
     const setButtons = document.getElementsByClassName("set-button");
 
     for (button of setButtons) {
-        const buttonSet = "set" + button.id.slice(-3);
+        const buttonCode = button.id.slice(-3);
+        if (buttonCode === "XXX") continue;
 
-        if (currentSet === button.id.slice(-3)) {
-            button.classList.add("bg-white/20");
-            button.classList.add("cursor-pointer");
-            button.addEventListener("click", () => {
+        // Replace node to clear any previously attached listeners
+        const fresh = button.cloneNode(true);
+        button.parentNode.replaceChild(fresh, button);
+
+        const buttonSet = "set" + buttonCode;
+        const callSet = () => {
+            if (window.MIGRATED_SETS && window.MIGRATED_SETS.includes(buttonCode)) {
+                initSet(buttonCode);
+            } else {
                 window[buttonSet]();
-            });
-        } else if (button.id.slice(-3) === "XXX") {
-            // Skip EOE, under construction
+            }
+        };
+
+        if (currentSet === buttonCode) {
+            fresh.classList.add("bg-white/20");
         } else {
-            // Style non-active sets
-            button.classList.remove("bg-white/20");
-            button.classList.add("cursor-pointer");
-            button.addEventListener("click", () => {
-                window[buttonSet]();
-            });
+            fresh.classList.remove("bg-white/20");
         }
+        fresh.classList.add("cursor-pointer");
+        fresh.addEventListener("click", callSet);
     }
 
     playButton = document.getElementById("play-booster");
     collectorButton = document.getElementById("collector-booster");
 
-    if (getCookie("currentBoosterType") === "COLLECTOR") {
+    if (localStorage.getItem("currentBoosterType") === "COLLECTOR") {
         collectorButton.classList.add("booster-active");
         playButton.classList.remove("booster-active");
     } else {
@@ -1153,7 +1138,7 @@ function sumTotals() {
     boostersBoughtElement.innerText = boostersBought + (" (" + USDollar.format(boosterTotalValue) + ")");
 
     function checkIfFinished() {
-        if (getCookie("currentBoosterType") === "COLLECTOR") {
+        if (localStorage.getItem("currentBoosterType") === "COLLECTOR") {
             totalCards = setName.totalCards;
         } else {
             totalCards = setName.totalCards_PLAY;
@@ -1168,7 +1153,7 @@ function sumTotals() {
             clearInterval(timeout);
             isFinished = true;
 
-            if (getCookie("currentBoosterType") === "COLLECTOR") {
+            if (localStorage.getItem("currentBoosterType") === "COLLECTOR") {
                 cardsRemaining = setName.totalCards;
             } else {
                 cardsRemaining = setName.totalCards_PLAY;
@@ -1253,7 +1238,7 @@ function sumTotals() {
     }, 100);
 
     // Reset "cards remaining" value a moment after the loader fades away
-    if (getCookie("currentBoosterType") === "COLLECTOR") {
+    if (localStorage.getItem("currentBoosterType") === "COLLECTOR") {
         cardsLoadingNumber.innerText = setName.totalCards;
     } else {
         cardsLoadingNumber.innerText = setName.totalCards_PLAY;

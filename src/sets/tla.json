@@ -1,0 +1,246 @@
+{
+  "code": "TLA",
+  "displayName": "AVATAR: THE LAST AIRBENDER",
+  "backgroundImage": "img/TLA_bg_dark.jpg",
+  "boosterTypes": ["COLLECTOR", "PLAY"],
+  "boosters": {
+    "COLLECTOR": {
+      "totalCards": 15,
+      "msrp": 37.99,
+      "defaultUSD": 42,
+      "defaultCAD": 60,
+      "ghostCard": {
+        "randomQuery": "%28set%3Atla+or+set%3Atle%29+date%3A2025-11-21+unique%3Aprints+",
+        "topOutQuery": "%28set%3Atla+or+set%3Atle%29+date%3A2025-11-21+unique%3Aprints+USD%3E%3D15"
+      },
+      "slots": [
+        {
+          "id": "boosterfun",
+          "label": "Foil Booster Fun",
+          "isFoil": true,
+          "probabilities": [
+            { "maxRoll": 12.8,   "type": "Scene, Rare (Foil)",                       "rarity": "12.8%",  "query": "set%3ATLA+rarity%3Ar+%28CN>%3D297+AND+CN<%3D315%29&unique=cards", "foilClass": "foil-gradient" },
+            { "maxRoll": 14.6,   "type": "Scene, Mythic (Foil)",                     "rarity": "1.8%",   "query": "set%3ATLA+rarity%3Am+%28CN>%3D297+AND+CN<%3D315%29&unique=cards", "foilClass": "foil-gradient" },
+            { "maxRoll": 26.0,   "type": "Field Notes, Rare (Foil)",                 "rarity": "11.4%",  "query": "set%3ATLA+rarity%3Ar+%28CN>%3D316+AND+CN<%3D330%29&unique=cards", "foilClass": "foil-gradient" },
+            { "maxRoll": 31.0,   "type": "Field Notes, Mythic (Foil)",               "rarity": "5%",     "query": "set%3ATLA+rarity%3Am+%28CN>%3D316+AND+CN<%3D330%29&unique=cards", "foilClass": "foil-gradient" },
+            { "maxRoll": 33.1,   "type": "Battle Pose, Rare (Foil)",                 "rarity": "2.1%",   "query": "set%3ATLA+rarity%3Ar+%28CN>%3D331+AND+CN<%3D335%29&unique=cards", "foilClass": "foil-gradient" },
+            { "maxRoll": 34.5,   "type": "Battle Pose, Mythic (Foil)",               "rarity": "1.4%",   "query": "set%3ATLA+rarity%3Am+%28CN>%3D331+AND+CN<%3D335%29&unique=cards", "foilClass": "foil-gradient" },
+            { "maxRoll": 34.95,  "type": "Neon Ink Battle Pose, Rare (Foil)",        "rarity": "0.45%",  "query": "set%3ATLA+rarity%3Ar+%28CN>%3D359+AND+CN<%3D362%29&unique=cards", "foilClass": "foil-gradient" },
+            { "maxRoll": 54.15,  "type": "Elemental Frame, Rare (Foil)",             "rarity": "19.2%",  "query": "set%3ATLA+rarity%3Ar+%28CN>%3D336+AND+CN<%3D353%29&unique=cards", "foilClass": "foil-gradient" },
+            { "maxRoll": 55.95,  "type": "Elemental Frame, Mythic (Foil)",           "rarity": "1.8%",   "query": "set%3ATLA+rarity%3Am+%28CN>%3D336+AND+CN<%3D353%29&unique=cards", "foilClass": "foil-gradient" },
+            { "maxRoll": 59.55,  "type": "Double-faced Saga, Mythic (Foil)",         "rarity": "3.6%",   "query": "set%3ATLA+rarity%3Am+%28CN>%3D354+AND+CN<%3D358%29&unique=cards", "foilClass": "foil-gradient" },
+            { "maxRoll": 99.45,  "type": "Extended-art, Rare (Foil)",                "rarity": "39.9%",  "query": "set%3ATLA+rarity%3Ar+%28CN>%3D364+AND+CN<%3D392%29&unique=cards", "foilClass": "foil-gradient" },
+            { "maxRoll": 99.9,   "type": "Extended-art, Mythic (Foil)",              "rarity": "0.45%",  "query": "set%3ATLA+rarity%3Am+%28CN>%3D364+AND+CN<%3D392%29&unique=cards", "foilClass": "foil-gradient" },
+            { "maxRoll": 100.0,  "type": "Raised Foil Avatar Aang (Foil)",           "rarity": "0.1%",   "query": "set%3ATLA+CN%3D363&unique=cards",                                "foilClass": "foil-gradient" }
+          ]
+        },
+        {
+          "id": "sourcematerial",
+          "label": "Source Material",
+          "isFoil": true,
+          "probabilities": [
+            { "maxRoll": 75.0,  "type": "Source Material",        "rarity": "75%", "query": "set%3ATLE+%28CN>%3D1+AND+CN<%3D61%29&unique=cards", "foilClass": null },
+            { "maxRoll": 100.0, "type": "Source Material (Foil)", "rarity": "25%", "query": "set%3ATLE+%28CN>%3D1+AND+CN<%3D61%29&unique=cards", "foilClass": "foil-gradient" }
+          ]
+        },
+        {
+          "id": "boosterfunnf",
+          "label": "Booster Fun",
+          "isFoil": false,
+          "probabilities": [
+            { "maxRoll": 7.8,   "type": "Scene, Rare",                      "rarity": "7.8%",   "query": "set%3ATLA+rarity%3Ar+%28CN>%3D297+AND+CN<%3D315%29&unique=cards" },
+            { "maxRoll": 8.9,   "type": "Scene, Mythic",                    "rarity": "1.1%",   "query": "set%3ATLA+rarity%3Am+%28CN>%3D297+AND+CN<%3D315%29&unique=cards" },
+            { "maxRoll": 15.8,  "type": "Field Notes, Rare",                "rarity": "6.9%",   "query": "set%3ATLA+rarity%3Ar+%28CN>%3D316+AND+CN<%3D330%29&unique=cards" },
+            { "maxRoll": 18.8,  "type": "Field Notes, Mythic",              "rarity": "3%",     "query": "set%3ATLA+rarity%3Am+%28CN>%3D316+AND+CN<%3D330%29&unique=cards" },
+            { "maxRoll": 20.1,  "type": "Battle Pose, Rare",                "rarity": "1.3%",   "query": "set%3ATLA+rarity%3Ar+%28CN>%3D331+AND+CN<%3D335%29&unique=cards" },
+            { "maxRoll": 20.75, "type": "Battle Pose, Mythic",              "rarity": "0.65%",  "query": "set%3ATLA+rarity%3Am+%28CN>%3D331+AND+CN<%3D335%29&unique=cards" },
+            { "maxRoll": 32.45, "type": "Elemental Frame, Rare",            "rarity": "11.7%",  "query": "set%3ATLA+rarity%3Ar+%28CN>%3D336+AND+CN<%3D353%29&unique=cards" },
+            { "maxRoll": 33.55, "type": "Elemental Frame, Mythic",          "rarity": "1.1%",   "query": "set%3ATLA+rarity%3Am+%28CN>%3D336+AND+CN<%3D353%29&unique=cards" },
+            { "maxRoll": 35.75, "type": "Double-faced Saga, Mythic",        "rarity": "2.2%",   "query": "set%3ATLA+rarity%3Am+%28CN>%3D354+AND+CN<%3D358%29&unique=cards" },
+            { "maxRoll": 59.95, "type": "Extended-art, Rare",               "rarity": "24.2%",  "query": "set%3ATLA+rarity%3Ar+%28CN>%3D364+AND+CN<%3D392%29&unique=cards" },
+            { "maxRoll": 60.6,  "type": "Extended-art, Mythic",             "rarity": "0.65%",  "query": "set%3ATLA+rarity%3Am+%28CN>%3D364+AND+CN<%3D392%29&unique=cards" },
+            { "maxRoll": 84.8,  "type": "Jumpstart Extended-art, Rare",     "rarity": "24.2%",  "query": "set%3ATLE+rarity%3Ar+%28CN>%3D171+and+CN<%3D209%29&unique=cards" },
+            { "maxRoll": 89.6,  "type": "Jumpstart Extended-art, Mythic",   "rarity": "4.8%",   "query": "set%3ATLE+rarity%3Am+%28CN>%3D171+and+CN<%3D209%29&unique=cards" },
+            { "maxRoll": 100.0, "type": "Scene Box, Rare",                  "rarity": "10.4%",  "query": "set%3Atle+rarity%3Ar+%28CN>%3D62+and+CN<%3D73%29&unique=cards" }
+          ]
+        },
+        {
+          "id": "raremythictle",
+          "label": "Foil TLE Rare or Mythic",
+          "isFoil": true,
+          "probabilities": [
+            { "maxRoll": 37.0,  "type": "Jumpstart, Rare (Foil)",           "rarity": "37%",    "query": "set%3ATLE+rarity%3Ar+%28CN>%3D74+AND+CN<%3D170%29&unique=cards",  "foilClass": "foil-gradient" },
+            { "maxRoll": 43.4,  "type": "Jumpstart, Mythic (Foil)",         "rarity": "6.4%",   "query": "set%3ATLE+rarity%3Am+%28CN>%3D74+AND+CN<%3D170%29&unique=cards",  "foilClass": "foil-gradient" },
+            { "maxRoll": 54.9,  "type": "Beginner Box, Rare (Foil)",        "rarity": "11.5%",  "query": "set%3ATLE+rarity%3Ar+%28CN>%3D210+AND+CN<%3D304%29&unique=cards", "foilClass": "foil-gradient" },
+            { "maxRoll": 87.3,  "type": "Extended-art, Rare (Foil)",        "rarity": "32.4%",  "query": "set%3ATLE+rarity%3Ar+%28CN>%3D171+AND+CN<%3D209%29&unique=cards", "foilClass": "foil-gradient" },
+            { "maxRoll": 100.0, "type": "Extended-art, Mythic (Foil)",      "rarity": "12.7%",  "query": "set%3ATLE+rarity%3Am+%28CN>%3D171+AND+CN<%3D209%29&unique=cards", "foilClass": "foil-gradient" }
+          ]
+        },
+        {
+          "id": "raremythic",
+          "label": "Foil Rare or Mythic",
+          "isFoil": true,
+          "probabilities": [
+            { "maxRoll": 85.7,  "type": "Default frame, Rare (Foil)",   "rarity": "85.7%", "query": "set%3ATLA+rarity%3Ar+%28CN>%3D1+AND+CN<%3D281%29+&unique=cards", "foilClass": "foil-gradient" },
+            { "maxRoll": 100.0, "type": "Default frame, Mythic (Foil)", "rarity": "14.3%", "query": "set%3ATLA+rarity%3Am+%28CN>%3D1+AND+CN<%3D281%29+&unique=cards", "foilClass": "foil-gradient" }
+          ]
+        },
+        {
+          "id": "land",
+          "label": "Foil Full-Art Basic Land",
+          "isFoil": true,
+          "probabilities": [
+            { "maxRoll": 50.0,  "type": "Appa basic land (Foil)",           "rarity": "50%", "query": "set%3ATLA+type%3Abasic+%28CN>%3D287+AND+CN<%3D291%29", "foilClass": "foil-gradient" },
+            { "maxRoll": 100.0, "type": "Avatar's Journey basic land (Foil)","rarity": "50%", "query": "set%3ATLA+type%3Abasic+%28CN>%3D292+AND+CN<%3D296%29", "foilClass": "foil-gradient" }
+          ]
+        },
+        {
+          "id": "uncommontlebf",
+          "label": "Foil TLE/BF Uncommon",
+          "isFoil": true,
+          "probabilities": [
+            { "maxRoll": 8.0,   "type": "Scene, Uncommon (Foil)",   "rarity": "8%",  "query": "set%3ATLA+rarity%3Au+%28CN>%3D297+AND+CN<%3D315%29+&unique=cards", "foilClass": "foil-gradient" },
+            { "maxRoll": 100.0, "type": "TLE/BF, Uncommon (Foil)",  "rarity": "92%", "query": "set%3ATLE+rarity%3Au+%28CN>%3D1+AND+CN<%3D304%29&unique=cards",   "foilClass": "foil-gradient" }
+          ]
+        },
+        {
+          "id": "uncommon",
+          "label": "Foil Uncommons",
+          "isFoil": true,
+          "count": 3,
+          "cardInfo": ["3 Main-set Uncommons", "Appears 100% of the time."],
+          "probabilities": [
+            { "maxRoll": 100.0, "type": "Uncommon (Foil)", "rarity": "100%", "query": "set%3ATLA+rarity%3Au+%28CN>%3D1+AND+CN<%3D281%29+&unique=cards" }
+          ]
+        },
+        {
+          "id": "commonsup",
+          "label": "Foil TLE Commons",
+          "isFoil": true,
+          "count": 2,
+          "cardInfo": ["2 TLE Commons", "Appears 100% of the time."],
+          "probabilities": [
+            { "maxRoll": 100.0, "type": "TLE Common (Foil)", "rarity": "100%", "query": "set%3ATLE+rarity%3Ac+&unique=cards" }
+          ]
+        },
+        {
+          "id": "common",
+          "label": "Foil Commons",
+          "isFoil": true,
+          "count": 3,
+          "sumVar": "commonSum",
+          "cardInfo": ["3 Main-set Commons", "Appears 100% of the time."],
+          "probabilities": [
+            { "maxRoll": 100.0, "type": "Common (Foil)", "rarity": "100%", "query": "set%3Atla+rarity%3Ac+%28CN>%3D1+AND+CN<%3D281%29+&unique=cards" }
+          ]
+        }
+      ]
+    },
+    "PLAY": {
+      "totalCards": 14,
+      "msrp": 6.99,
+      "defaultUSD": 6,
+      "defaultCAD": 9,
+      "ghostCard": {
+        "randomQuery": "%28set%3Atla+or+set%3Atle%29+date%3A2025-11-21+unique%3Aprints+",
+        "topOutQuery": "%28set%3Atla+or+set%3Atle%29+date%3A2025-11-21+unique%3Aprints+USD%3E%3D15"
+      },
+      "slots": [
+        {
+          "id": "wildcard",
+          "label": "Foil Wildcard",
+          "isFoil": true,
+          "probabilities": [
+            { "maxRoll": 53.9,  "type": "Default frame, Common (Foil)",                    "rarity": "53.9%",  "query": "set%3ATLA+rarity%3Ac+%28CN<%3D262+OR+CN%3D277%29+&unique=cards",                      "foilClass": "foil-gradient" },
+            { "maxRoll": 90.6,  "type": "Default frame, Uncommon (Foil)",                  "rarity": "36.7%",  "query": "set%3ATLA+rarity%3Au+%28CN<%3D296%29+&unique=cards",                                  "foilClass": "foil-gradient" },
+            { "maxRoll": 97.3,  "type": "Default frame, Rare (Foil)",                      "rarity": "6.7%",   "query": "set%3ATLA+rarity%3Ar+%28CN<%3D296%29+&unique=cards",                                  "foilClass": "foil-gradient" },
+            { "maxRoll": 98.5,  "type": "Default frame, Mythic (Foil)",                    "rarity": "1.2%",   "query": "set%3ATLA+rarity%3Am+%28CN<%3D296%29+&unique=cards",                                  "foilClass": "foil-gradient" },
+            { "maxRoll": 98.75, "type": "Scene, Uncommon (Foil)",                          "rarity": "0.25%",  "query": "set%3ATLA+rarity%3Au+%28CN>%3D297+AND+CN<%3D315%29+&unique=cards",                     "foilClass": "foil-gradient" },
+            { "maxRoll": 99.0,  "type": "Scene, Rare or Mythic (Foil)",                    "rarity": "0.25%",  "query": "set%3ATLA+%28rarity%3Ar+or+rarity%3Am%29+%28CN>%3D297+AND+CN<%3D315%29+&unique=cards", "foilClass": "foil-gradient" },
+            { "maxRoll": 99.25, "type": "Field Notes, Rare or Mythic (Foil)",              "rarity": "0.25%",  "query": "set%3ATLA+%28rarity%3Ar+or+rarity%3Am%29+%28CN>%3D316+AND+CN<%3D330%29+&unique=cards", "foilClass": "foil-gradient" },
+            { "maxRoll": 99.5,  "type": "Battle Pose, Rare or Mythic (Foil)",              "rarity": "0.25%",  "query": "set%3ATLA+%28CN>%3D331+AND+CN<%3D335%29+&unique=cards",                               "foilClass": "foil-gradient" },
+            { "maxRoll": 99.75, "type": "Elemental Frame, Rare or Mythic (Foil)",          "rarity": "0.25%",  "query": "set%3ATLA+%28CN>%3D336+AND+CN<%3D353%29+&unique=cards",                               "foilClass": "foil-gradient" },
+            { "maxRoll": 100.0, "type": "Borderless Double-faced Saga, Mythic (Foil)",     "rarity": "0.25%",  "query": "set%3ATLA+%28CN>%3D354+AND+CN<%3D358%29+&unique=cards",                               "foilClass": "foil-gradient" }
+          ]
+        },
+        {
+          "id": "raremythic",
+          "label": "Rare or Mythic",
+          "isFoil": false,
+          "probabilities": [
+            { "maxRoll": 80.0,  "type": "Default frame, Rare",                      "rarity": "80%",    "query": "set%3ATLA+rarity%3Ar+%28CN>%3D1+AND+CN<%3D296%29&order=cmc&as=grid&unique=cards"},
+            { "maxRoll": 92.6,  "type": "Default frame, Mythic",                    "rarity": "12.6%",  "query": "set%3ATLA+rarity%3Am+%28CN>%3D1+AND+CN<%3D296%29&order=cmc&as=grid&unique=cards"},
+            { "maxRoll": 94.2,  "type": "Scene, Rare",                              "rarity": "1.6%",   "query": "set%3ATLA+rarity%3Ar+%28CN>%3D297+AND+CN<%3D315%29&unique=cards"},
+            { "maxRoll": 94.55, "type": "Scene, Mythic",                            "rarity": "0.35%",  "query": "set%3ATLA+rarity%3Am+%28CN>%3D297+AND+CN<%3D315%29&unique=cards"},
+            { "maxRoll": 95.95, "type": "Field Notes, Rare",                        "rarity": "1.4%",   "query": "set%3ATLA+rarity%3Ar+%28CN>%3D316+AND+CN<%3D330%29&unique=cards"},
+            { "maxRoll": 96.3,  "type": "Field Notes, Mythic",                      "rarity": "0.35%",  "query": "set%3ATLA+rarity%3Am+%28CN>%3D316+AND+CN<%3D330%29&unique=cards"},
+            { "maxRoll": 96.65, "type": "Battle Pose, Rare or Mythic",              "rarity": "0.35%",  "query": "set%3ATLA+%28CN>%3D331+AND+CN<%3D335%29&unique=cards"},
+            { "maxRoll": 99.05, "type": "Elemental Frame, Rare",                    "rarity": "2.4%",   "query": "set%3ATLA+rarity%3Ar+%28CN>%3D336+AND+CN<%3D353%29&unique=cards"},
+            { "maxRoll": 99.65, "type": "Elemental Frame, Mythic",                  "rarity": "0.6%",   "query": "set%3ATLA+rarity%3Am+%28CN>%3D336+AND+CN<%3D353%29&unique=cards"},
+            { "maxRoll": 100.0, "type": "Double-faced Saga, Mythic",                "rarity": "0.35%",  "query": "set%3ATLA+rarity%3Am+%28CN>%3D354+AND+CN<%3D358%29&unique=cards"}
+          ]
+        },
+        {
+          "id": "nfwildcard",
+          "label": "Non-Foil Wildcard",
+          "isFoil": false,
+          "probabilities": [
+            { "maxRoll": 4.2,   "type": "Default frame, Common",                    "rarity": "4.2%",   "query": "set%3ATLA+rarity%3Ac+%28CN<%3D262+OR+CN%3D277%29+&unique=cards" },
+            { "maxRoll": 78.3,  "type": "Default frame, Uncommon",                  "rarity": "74.1%",  "query": "set%3ATLA+rarity%3Au+%28CN<%3D296%29+&unique=cards" },
+            { "maxRoll": 95.0,  "type": "Default frame, Rare",                      "rarity": "16.7%",  "query": "set%3ATLA+rarity%3Ar+%28CN<%3D296%29+&unique=cards" },
+            { "maxRoll": 97.6,  "type": "Default frame, Mythic",                    "rarity": "2.6%",   "query": "set%3ATLA+rarity%3Am+%28CN<%3D296%29+&unique=cards" },
+            { "maxRoll": 98.35, "type": "Scene, Uncommon",                          "rarity": "0.75%",  "query": "set%3ATLA+rarity%3Au+%28CN>%3D297+AND+CN<%3D315%29+&unique=cards" },
+            { "maxRoll": 98.68, "type": "Scene, Rare or Mythic",                    "rarity": "0.33%",  "query": "set%3ATLA+%28rarity%3Ar+or+rarity%3Am%29+%28CN>%3D297+AND+CN<%3D315%29+&unique=cards" },
+            { "maxRoll": 99.01, "type": "Field Notes, Rare or Mythic",              "rarity": "0.33%",  "query": "set%3ATLA+%28rarity%3Ar+or+rarity%3Am%29+%28CN>%3D316+AND+CN<%3D330%29+&unique=cards" },
+            { "maxRoll": 99.34, "type": "Battle Pose, Rare or Mythic",              "rarity": "0.33%",  "query": "set%3ATLA+%28CN>%3D331+AND+CN<%3D335%29+&unique=cards" },
+            { "maxRoll": 99.67, "type": "Elemental Frame, Rare or Mythic",          "rarity": "0.33%",  "query": "set%3ATLA+%28CN>%3D336+AND+CN<%3D353%29+&unique=cards" },
+            { "maxRoll": 100.0, "type": "Borderless Double-faced Saga, Mythic",     "rarity": "0.33%",  "query": "set%3ATLA+%28CN>%3D354+AND+CN<%3D358%29+&unique=cards" }
+          ]
+        },
+        {
+          "id": "land",
+          "label": "Land",
+          "isFoil": true,
+          "probabilities": [
+            { "maxRoll": 40.0,  "type": "Common dual-land",                          "rarity": "40%",   "query": "set%3ATLA+%28CN>%3D265+AND+CN<%3D281%29+ci%3D2&unique=cards", "foilClass": null },
+            { "maxRoll": 60.0,  "type": "Default frame basic land",                  "rarity": "20%",   "query": "set%3ATLA+%28CN>%3D282+AND+CN<%3D286%29&unique=cards",         "foilClass": null },
+            { "maxRoll": 70.0,  "type": "Avatar's Journey full-art basic land",      "rarity": "10%",   "query": "set%3ATLA+%28CN>%3D292+AND+CN<%3D296%29&unique=cards",         "foilClass": null },
+            { "maxRoll": 80.0,  "type": "Appa full-art basic land",                  "rarity": "10%",   "query": "set%3ATLA+%28CN>%3D287+AND+CN<%3D291%29&unique=cards",         "foilClass": null },
+            { "maxRoll": 90.0,  "type": "Common dual-land (Foil)",                   "rarity": "10%",   "query": "set%3ATLA+%28CN>%3D265+AND+CN<%3D281%29+ci%3D2&unique=cards", "foilClass": "foil-gradient" },
+            { "maxRoll": 95.0,  "type": "Default frame basic land (Foil)",           "rarity": "5%",    "query": "set%3ATLA+%28CN>%3D282+AND+CN<%3D286%29&unique=cards",         "foilClass": "foil-gradient" },
+            { "maxRoll": 97.5,  "type": "Avatar's Journey full-art basic land (Foil)","rarity": "2.5%", "query": "set%3ATLA+%28CN>%3D292+AND+CN<%3D296%29&unique=cards",         "foilClass": "foil-gradient" },
+            { "maxRoll": 100.0, "type": "Appa full-art basic land (Foil)",           "rarity": "2.5%",  "query": "set%3ATLA+%28CN>%3D287+AND+CN<%3D291%29&unique=cards",         "foilClass": "foil-gradient" }
+          ]
+        },
+        {
+          "id": "uncommon",
+          "label": "Uncommons",
+          "isFoil": false,
+          "count": 3,
+          "cardInfo": ["3 Main-set Uncommons", "3.6% scene uncommons can replace main-set uncommons."],
+          "probabilities": [
+            { "maxRoll": 96.4,  "type": "Main-set Uncommon",  "rarity": "96.4%", "query": "set%3ATLA+rarity%3Au+CN<297&unique=cards" },
+            { "maxRoll": 100.0, "type": "Scene Uncommon",     "rarity": "3.6%",  "query": "set%3ATLA+rarity%3Au+CN>297&unique=cards" }
+          ]
+        },
+        {
+          "id": "common",
+          "label": "Commons",
+          "isFoil": false,
+          "count": 7,
+          "sumVar": "commonSum",
+          "cardInfo": ["6-7 Main-set Commons", "In every 1 of 26 Play Boosters, a borderless source material card replaces one of these Commons."],
+          "probabilities": [
+            { "maxRoll": 100.0, "type": "Common", "rarity": "100%", "query": "set%3ATLA+rarity%3AC+%28CN<262+OR+CN%3D277%29&unique=cards" }
+          ],
+          "trailingCard": {
+            "probabilities": [
+              { "maxRoll": 96.154, "type": "Common",          "rarity": "96.2%", "query": "set%3ATLA+rarity%3AC+%28CN<262+OR+CN%3D277%29&unique=cards" },
+              { "maxRoll": 100.0,  "type": "Source Material", "rarity": "3.8%",  "query": "set%3ATLE+%28CN>%3D1+AND+CN<%3D61%29&unique=cards" }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

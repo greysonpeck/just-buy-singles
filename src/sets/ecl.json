@@ -1,0 +1,208 @@
+{
+  "code": "ECL",
+  "displayName": "LORWYN ECLIPSED",
+  "backgroundImage": "img/ECL_bg2_dark.jpg",
+  "boosterTypes": ["COLLECTOR", "PLAY"],
+  "boosters": {
+    "COLLECTOR": {
+      "totalCards": 15,
+      "msrp": 26.99,
+      "defaultUSD": 36,
+      "defaultCAD": 50,
+      "ghostCard": {
+        "randomQuery": "%28set%3Aecl+or+set%3Aspg%29+date%3A2026-01-23+unique%3Aprints+",
+        "topOutQuery": "%28set%3Aecl+or+set%3Aspg%29+date%3A2026-01-23+unique%3Aprints+USD%3E%3D15"
+      },
+      "slots": [
+        {
+          "id": "boosterfun",
+          "label": "Foil Booster Fun",
+          "isFoil": true,
+          "probabilities": [
+            { "maxRoll": 30.4,  "type": "Extended-art, Rare (Foil)",                  "rarity": "30.4%", "query": "set%3Aecl+rarity%3Ar+%28CN>%3D353+AND+CN<%3D381%29",             "foilClass": "foil-gradient" },
+            { "maxRoll": 57.6,  "type": "Fable Frame, Rare (Foil)",                   "rarity": "27.2%", "query": "set%3Aecl+rarity%3Ar+%28CN>%3D297+AND+CN<%3D346%29",             "foilClass": "foil-gradient" },
+            { "maxRoll": 64.9,  "type": "Fable Frame, Mythic (Foil)",                 "rarity": "7.3%",  "query": "set%3Aecl+rarity%3Am+%28CN>%3D297+AND+CN<%3D346%29",             "foilClass": "foil-gradient" },
+            { "maxRoll": 70.1,  "type": "Borderless Nonland, Rare (Foil)",            "rarity": "5.2%",  "query": "set%3Aecl+rarity%3Ar+%28CN>%3D284+AND+CN<%3D296%29",             "foilClass": "foil-gradient" },
+            { "maxRoll": 74.3,  "type": "Borderless Nonland, Mythic (Foil)",          "rarity": "4.2%",  "query": "set%3Aecl+rarity%3Am+%28CN>%3D284+AND+CN<%3D296%29",             "foilClass": "foil-gradient" },
+            { "maxRoll": 79.5,  "type": "Borderless Reversible Shock Land (Foil)",    "rarity": "5.2%",  "query": "set%3Aecl+rarity%3Ar+%28CN>%3D347+AND+CN<%3D351%29",             "foilClass": "foil-gradient" },
+            { "maxRoll": 90.0,  "type": "Special Guests (Foil)",                      "rarity": "10.5%", "query": "set%3Aspg+date%3A2026-01-23",                                    "foilClass": "foil-gradient" },
+            { "maxRoll": 99.0,  "type": "Japan Showcase (Foil)",                      "rarity": "9%",    "query": "set%3Aecl+%28CN>%3D382+AND+CN<%3D391%29",                       "foilClass": "foil-gradient" },
+            { "maxRoll": 100.0, "type": "Japan Showcase (Fracture Foil)",             "rarity": "1%",    "query": "set%3Aecl+%28CN>%3D392+AND+CN<%3D401%29",                       "foilClass": "foil-gradient" }
+          ]
+        },
+        {
+          "id": "boosterfunnf",
+          "label": "Booster Fun #1",
+          "isFoil": false,
+          "probabilities": [
+            { "maxRoll": 37.7,  "type": "Extended-art, Rare",                 "rarity": "37.7%", "query": "set%3Aecl+rarity%3Ar+%28CN>%3D353+AND+CN<%3D381%29&unique=cards" },
+            { "maxRoll": 71.4,  "type": "Fable Frame, Rare",                  "rarity": "33.7%", "query": "set%3Aecl+rarity%3Ar+%28CN>%3D297+AND+CN<%3D346%29&unique=cards" },
+            { "maxRoll": 80.5,  "type": "Fable Frame, Mythic",                "rarity": "9.1%",  "query": "set%3Aecl+rarity%3Am+%28CN>%3D297+AND+CN<%3D346%29&unique=cards" },
+            { "maxRoll": 93.5,  "type": "Borderless Nonland, Rare",           "rarity": "13%",   "query": "set%3Aecl+rarity%3Ar+%28CN>%3D284+AND+CN<%3D296%29&unique=cards" },
+            { "maxRoll": 98.0,  "type": "Borderless Nonland, Mythic",         "rarity": "4.5%",  "query": "set%3Aecl+rarity%3Am+%28CN>%3D284+AND+CN<%3D296%29&unique=cards" },
+            { "maxRoll": 100.0, "type": "Borderless Reversible Shock Land",   "rarity": "2%",    "query": "set%3Aecl+rarity%3Ar+%28CN>%3D347+AND+CN<%3D351%29&unique=cards" }
+          ]
+        },
+        {
+          "id": "boosterfuntwonf",
+          "label": "Booster Fun #2",
+          "isFoil": false,
+          "probabilities": [
+            { "maxRoll": 37.7,  "type": "Extended-art, Rare",                 "rarity": "37.7%", "query": "set%3Aecl+rarity%3Ar+%28CN>%3D353+AND+CN<%3D381%29&unique=cards" },
+            { "maxRoll": 71.4,  "type": "Fable Frame, Rare",                  "rarity": "33.7%", "query": "set%3Aecl+rarity%3Ar+%28CN>%3D297+AND+CN<%3D346%29&unique=cards" },
+            { "maxRoll": 80.5,  "type": "Fable Frame, Mythic",                "rarity": "9.1%",  "query": "set%3Aecl+rarity%3Am+%28CN>%3D297+AND+CN<%3D346%29&unique=cards" },
+            { "maxRoll": 93.5,  "type": "Borderless Nonland, Rare",           "rarity": "13%",   "query": "set%3Aecl+rarity%3Ar+%28CN>%3D284+AND+CN<%3D296%29&unique=cards" },
+            { "maxRoll": 98.0,  "type": "Borderless Nonland, Mythic",         "rarity": "4.5%",  "query": "set%3Aecl+rarity%3Am+%28CN>%3D284+AND+CN<%3D296%29&unique=cards" },
+            { "maxRoll": 100.0, "type": "Borderless Reversible Shock Land",   "rarity": "2%",    "query": "set%3Aecl+rarity%3Ar+%28CN>%3D347+AND+CN<%3D351%29&unique=cards" }
+          ]
+        },
+        {
+          "id": "nfcommander",
+          "label": "Non-foil Commander",
+          "isFoil": true,
+          "probabilities": [
+            { "maxRoll": 91.0,  "type": "Extended-art Commander, Rare",   "rarity": "91%", "query": "set%3AECC+rarity%3Ar+%28CN>%3D25+AND+CN<%3D44%29&unique=cards", "foilClass": null },
+            { "maxRoll": 100.0, "type": "Borderless Commander, Mythic",   "rarity": "9%",  "query": "set%3AECC+rarity%3Am+%28CN>%3D1+AND+CN<%3D4%29&unique=cards",   "foilClass": null }
+          ]
+        },
+        {
+          "id": "raremythic",
+          "label": "Foil Rare or Mythic",
+          "isFoil": true,
+          "probabilities": [
+            { "maxRoll": 85.7,  "type": "Default frame, Rare (Foil)",   "rarity": "85.7%", "query": "set%3Aecl+rarity%3Ar+CN<%3D268&unique=cards", "foilClass": "foil-gradient" },
+            { "maxRoll": 100.0, "type": "Default frame, Mythic (Foil)", "rarity": "14.3%", "query": "set%3Aecl+rarity%3Am+CN<%3D268&unique=cards", "foilClass": "foil-gradient" }
+          ]
+        },
+        {
+          "id": "land",
+          "label": "Foil Full-Art Basic Land",
+          "isFoil": true,
+          "probabilities": [
+            { "maxRoll": 100.0, "type": "Full-art basic land (Foil)", "rarity": "100%", "query": "set%3Aecl+%28CN>%3D274+AND+CN<%3D283%29+unique%3Aart", "foilClass": "foil-gradient" }
+          ]
+        },
+        {
+          "id": "uncommon",
+          "label": "Foil Uncommons",
+          "isFoil": true,
+          "count": 4,
+          "cardInfo": ["4 Main-set Uncommons", "Appears 100% of the time."],
+          "probabilities": [
+            { "maxRoll": 100.0, "type": "Uncommon (Foil)", "rarity": "100%", "query": "set%3Aecl+rarity%3Au+CN<%3D264&unique=cards" }
+          ]
+        },
+        {
+          "id": "common",
+          "label": "Foil Commons",
+          "isFoil": true,
+          "count": 5,
+          "sumVar": "commonSum",
+          "cardInfo": ["5 Main-set Commons", "Appears 100% of the time."],
+          "probabilities": [
+            { "maxRoll": 100.0, "type": "Common (Foil)", "rarity": "100%", "query": "set%3Aecl+rarity%3Ac+CN<%3D264&unique=cards" }
+          ]
+        }
+      ]
+    },
+    "PLAY": {
+      "totalCards": 14,
+      "msrp": 5.49,
+      "defaultUSD": 6,
+      "defaultCAD": 9,
+      "ghostCard": {
+        "randomQuery": "%28set%3Aecl+or+set%3Aspg%29+date%3A2026-01-23+unique%3Aprints+",
+        "topOutQuery": "%28set%3Aecl+or+set%3Aspg%29+date%3A2026-01-23+unique%3Aprints+USD%3E%3D15"
+      },
+      "slots": [
+        {
+          "id": "wildcard",
+          "label": "Foil Wildcard",
+          "isFoil": true,
+          "probabilities": [
+            { "maxRoll": 60.4,  "type": "Common (Foil)",                           "rarity": "60.4%", "query": "set%3Aecl+rarity%3Ac+CN<%3D268",                             "priceKey": "usd" },
+            { "maxRoll": 90.2,  "type": "Uncommon (Foil)",                         "rarity": "29.8%", "query": "set%3Aecl+rarity%3Au+CN<%3D268",                             "priceKey": "usd" },
+            { "maxRoll": 96.7,  "type": "Rare (Foil)",                             "rarity": "6.5%",  "query": "set%3Aecl+rarity%3Ar+CN<%3D268",                             "priceKey": "usd" },
+            { "maxRoll": 97.8,  "type": "Mythic (Foil)",                           "rarity": "1.1%",  "query": "set%3Aecl+rarity%3Am+CN<%3D268",                             "priceKey": "usd" },
+            { "maxRoll": 98.8,  "type": "Fable Frame, Uncommon (Foil)",            "rarity": "1%",    "query": "set%3Aecl+rarity%3Au+%28CN>%3D297+AND+CN<%3D346%29",         "priceKey": "usd" },
+            { "maxRoll": 99.8,  "type": "Fable Frame, Rare (Foil)",                "rarity": "1%",    "query": "set%3Aecl+rarity%3Ar+%28CN>%3D297+AND+CN<%3D346%29",         "priceKey": "usd" },
+            { "maxRoll": 99.84, "type": "Fable Frame, Mythic (Foil)",              "rarity": "0.04%", "query": "set%3Aecl+rarity%3Am+%28CN>%3D297+AND+CN<%3D346%29",         "priceKey": "usd" },
+            { "maxRoll": 99.9,  "type": "Borderless Nonland, Rare (Foil)",         "rarity": "0.06%", "query": "set%3Aecl+rarity%3Ar+%28CN>%3D284+AND+CN<%3D296%29",         "priceKey": "usd" },
+            { "maxRoll": 99.94, "type": "Borderless Nonland, Mythic (Foil)",       "rarity": "0.04%", "query": "set%3Aecl+rarity%3Am+%28CN>%3D284+AND+CN<%3D296%29",         "priceKey": "usd" },
+            { "maxRoll": 100.0, "type": "Borderless Reversible Shock Land (Foil)", "rarity": "0.06%", "query": "set%3Aecl+rarity%3Ar+%28CN>%3D347+AND+CN<%3D351%29",         "priceKey": "usd" }
+          ]
+        },
+        {
+          "id": "raremythic",
+          "label": "Rare or Mythic",
+          "isFoil": false,
+          "probabilities": [
+            { "maxRoll": 78.2,  "type": "Default frame, Rare",                 "rarity": "78.2%", "query": "set%3Aecl+rarity%3Ar+CN<%3D268"},
+            { "maxRoll": 91.8,  "type": "Default frame, Mythic",               "rarity": "13.6%", "query": "set%3Aecl+rarity%3Am+CN<%3D268"},
+            { "maxRoll": 96.4,  "type": "Fable Frame, Rare",                   "rarity": "4.6%",  "query": "set%3Aecl+rarity%3Ar+%28CN>%3D297+AND+CN<%3D346%29"},
+            { "maxRoll": 97.6,  "type": "Fable Frame, Mythic",                 "rarity": "1.2%",  "query": "set%3Aecl+rarity%3Am+%28CN>%3D297+AND+CN<%3D346%29"},
+            { "maxRoll": 98.45, "type": "Borderless Nonland, Rare",            "rarity": "0.85%", "query": "set%3Aecl+rarity%3Ar+%28CN>%3D284+AND+CN<%3D296%29"},
+            { "maxRoll": 99.15, "type": "Borderless Nonland, Mythic",          "rarity": "0.7%",  "query": "set%3Aecl+rarity%3Am+%28CN>%3D284+AND+CN<%3D296%29"},
+            { "maxRoll": 100.0, "type": "Borderless Reversible Shock Land",    "rarity": "0.85%", "query": "set%3Aecl+rarity%3Ar+%28CN>%3D347+AND+CN<%3D351%29"}
+          ]
+        },
+        {
+          "id": "nfwildcard",
+          "label": "Non-Foil Wildcard",
+          "isFoil": false,
+          "probabilities": [
+            { "maxRoll": 18.0,   "type": "Common",                              "rarity": "18%",    "query": "set%3Aecl+rarity%3Ac+CN<%3D268" },
+            { "maxRoll": 76.0,   "type": "Uncommon",                            "rarity": "58%",    "query": "set%3Aecl+rarity%3Au+CN<%3D268" },
+            { "maxRoll": 95.0,   "type": "Rare",                                "rarity": "19%",    "query": "set%3Aecl+rarity%3Ar+CN<%3D268" },
+            { "maxRoll": 97.0,   "type": "Mythic",                              "rarity": "2%",     "query": "set%3Aecl+rarity%3Am+CN<%3D268" },
+            { "maxRoll": 99.0,   "type": "Fable Frame, Uncommon",               "rarity": "2%",     "query": "set%3Aecl+rarity%3Au+%28CN>%3D297+AND+CN<%3D346%29" },
+            { "maxRoll": 99.375, "type": "Fable Frame, Rare",                   "rarity": "0.375%", "query": "set%3Aecl+rarity%3Ar+%28CN>%3D297+AND+CN<%3D346%29" },
+            { "maxRoll": 99.625, "type": "Fable Frame, Mythic",                 "rarity": "0.25%",  "query": "set%3Aecl+rarity%3Am+%28CN>%3D297+AND+CN<%3D346%29" },
+            { "maxRoll": 99.75,  "type": "Borderless Nonland, Rare",            "rarity": "0.125%", "query": "set%3Aecl+rarity%3Ar+%28CN>%3D284+AND+CN<%3D296%29" },
+            { "maxRoll": 99.875, "type": "Borderless Nonland, Mythic",          "rarity": "0.125%", "query": "set%3Aecl+rarity%3Am+%28CN>%3D284+AND+CN<%3D296%29" },
+            { "maxRoll": 100.0,  "type": "Borderless Reversible Shock Land",    "rarity": "0.125%", "query": "set%3Aecl+rarity%3Ar+%28CN>%3D347+AND+CN<%3D351%29" }
+          ]
+        },
+        {
+          "id": "uncommon",
+          "label": "Uncommons",
+          "isFoil": false,
+          "count": 3,
+          "cardInfo": ["3 Main-set Uncommons", "10 Uncommon fable frame cards can also be found in these slots (10% chance)."],
+          "probabilities": [
+            { "maxRoll": 90.0,  "type": "Main-set Uncommon",       "rarity": "90%", "query": "set%3Aecl+rarity%3Au" },
+            { "maxRoll": 100.0, "type": "Fable Frame, Uncommon",   "rarity": "10%", "query": "set%3Aecl+rarity%3Au+%28CN>%3D297+AND+CN<%3D346%29" }
+          ]
+        },
+        {
+          "id": "common",
+          "label": "Commons",
+          "isFoil": false,
+          "count": 7,
+          "sumVar": "commonSum",
+          "cardInfo": ["6-7 Main-set Commons", "In every 1 of 55 Play Boosters, a Special Guests card replaces one of these Commons."],
+          "probabilities": [
+            { "maxRoll": 100.0, "type": "Common", "rarity": "100%", "query": "set%3Aecl+rarity%3Ac+-type%3Abasic" }
+          ],
+          "trailingCard": {
+            "probabilities": [
+              { "maxRoll": 98.182, "type": "Common",          "rarity": "98.2%", "query": "set%3Aecl+rarity%3Ac+-type%3Abasic" },
+              { "maxRoll": 100.0,  "type": "Special Guest",   "rarity": "1.8%",  "query": "set%3Aspg+date%3A2026-01-23" }
+            ]
+          }
+        },
+        {
+          "id": "land",
+          "label": "Land",
+          "isFoil": true,
+          "probabilities": [
+            { "maxRoll": 40.0,  "type": "Basic land",                    "rarity": "40%", "query": "set%3Aecl+type%3Abasic",                                                                              "foilClass": null },
+            { "maxRoll": 50.0,  "type": "Basic land (Foil)",             "rarity": "10%", "query": "set%3Aecl+type%3Abasic",                                                                              "foilClass": "foil-gradient" },
+            { "maxRoll": 90.0,  "type": "Full-art basic land",           "rarity": "40%", "query": "set%3Aecl+type%3Abasic+%28CN>%3D274+AND+CN<%3D283%29+unique%3Aart&unique=cards",                      "foilClass": null },
+            { "maxRoll": 100.0, "type": "Full-art basic land (Foil)",    "rarity": "10%", "query": "set%3Aecl+type%3Abasic+%28CN>%3D274+AND+CN<%3D283%29+unique%3Aart&unique=cards",                      "foilClass": "foil-gradient" }
+          ]
+        }
+      ]
+    }
+  }
+}
