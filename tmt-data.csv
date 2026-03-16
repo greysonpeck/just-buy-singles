@@ -1,0 +1,477 @@
+Set Code,CN,Card name,Rarity,Type
+TMT,1,Actions News Crew,C,Default
+TMT,2,"Agent Bishop, Man in Black",R,Default
+TMT,3,"April O'Neil, Kunoichi Trainee",C,Default
+TMT,4,Dimensional Exile,U,Default
+TMT,5,East Wind Avatar ,C,Default
+TMT,6,Featherbrained Filcher,U,Default
+TMT,7,Grounded for Life,C,Default
+TMT,8,Hamato Guardian Stance,C,Default
+TMT,9,High-Flying Ace,C,Default
+TMT,10,"Jennika, Bad Apple Big Sister",C,Default
+TMT,11,"Koya, Death from Above",U,Default
+TMT,12,The Last Ronin's Technique,U,Default
+TMT,13,Leader's Talent,R,Default
+TMT,14,"Leonard, Big Brother",C,Default
+TMT,15,"Leonardo, Cutting Edge",R,Default
+TMT,16,"Leonardo, Leader in Blue",U,Default
+TMT,17,"Leonardo, Sewer Samurai",M,Default
+TMT,18,Leonardo's Technique,R,Default
+TMT,19,"Lita, Little Orphan Amphibian",U,Default
+TMT,20,Make Your Move,C,Default
+TMT,21,Mighty  Mutanimals,U,Default
+TMT,22,Prehistoric Pet,R,Default
+TMT,23,Quintessential Katana,U,Default
+TMT,24,"Sally Pride, Lioness Leader",R,Default
+TMT,25,Triceraton Commander,M,Default
+TMT,26,Turncoat Kunoichi,R,Default
+TMT,27,Turtles Forever,R,Default
+TMT,28,Uneasy Alliance,C,Default
+TMT,29,"April O'Neil, Hacktivist",R,Default
+TMT,30,"April, Reporter of the Weird",U,Default
+TMT,31,Bespoke Bo,U,Default
+TMT,32,Buzz Bots,C,Default
+TMT,33,Crustacean Commando,C,Default
+TMT,34,Does Machines,R,Default
+TMT,35,"Donatello, Gadget Master",R,Default
+TMT,36,"Donatello, Mutant Mechanic",M,Default
+TMT,37,"Donatello, Turtle Techie",C,Default
+TMT,38,"Donatello, Way with Machines",U,Default
+TMT,39,Donatello's Technique ,U,Default
+TMT,40,Fugitive Droid,U,Default
+TMT,41,"Kitsune, Dragon's Daughter",R,Default
+TMT,42,Kitsune's Technique,R,Default
+TMT,43,"Krang, Master Mind",R,Default
+TMT,44,Metalhead,U,Default
+TMT,45,Mind Transfer Protocol,C,Default
+TMT,46,Mondo Gecko,M,Default
+TMT,47,Negate,C,Default
+TMT,48,Ooze Spill,U,Default
+TMT,49,"Ray Fillet, Man Ray",U,Default
+TMT,50,"Renet, Temporal Apprentice",R,Default
+TMT,51,Retro-Mutation,C,Default
+TMT,52,Return to the Sewers,C,Default
+TMT,53,Sewer-veillance Cam,C,Default
+TMT,54,"Stockman, Mad Fly-entist",C,Default
+TMT,55,Turtles in Time,M,Default
+TMT,56,Utrom Scientists,C,Default
+TMT,57,Anchovy & Banana Pizza,C,Default
+TMT,58,"Armaggon, Future Shark",R,Default
+TMT,59,"Bebop, Warthog Warrior",C,Default
+TMT,60,The Cloning of Shredder,M,Default
+TMT,61,Death in the Family,U,Default
+TMT,62,Dream Beavers,U,Default
+TMT,63,Foot Mystic,C,Default
+TMT,64,Insectoid Exterminator,C,Default
+TMT,65,"Lord Dregg, Insect Invador",U,Default
+TMT,66,"Madame Null, Power Broker",R,Default
+TMT,67,Ninja Teen,R,Default
+TMT,68,"Oroku Saki, Shredder Rising",C,Default
+TMT,69,Pain 101,C,Default
+TMT,70,Paramecia Coloniex,U,Default
+TMT,71,"Rat King, Verminister",R,Default
+TMT,72,"Savanti Romero, Time's Exile",R,Default
+TMT,73,"Shark Shredder, Killer Clone",R,Default
+TMT,74,"Shredder, Unrelenting",U,Default
+TMT,75,Shredder's Armor,U,Default
+TMT,76,Shredder's Revenge,C,Default
+TMT,77,Shredder's Technique,U,Default
+TMT,78,South Wind Avatar,R,Default
+TMT,79,"Splinter, Hamato Yoshi",U,Default
+TMT,80,Splinter's Technique ,R,Default
+TMT,81,Squirrelanoids,C,Default
+TMT,82,Stomped by the Foot,C,Default
+TMT,83,Super Shredder,M,Default
+TMT,84,Tunnel Rats,C,Default
+TMT,85,Bot Bashing Time,C,Default
+TMT,86,Broadcast Takeover,M,Default
+TMT,87,"Casey Jones, Jury-Rig Justiciar",U,Default
+TMT,88,"Casey Jones, Vigilante",R,Default
+TMT,89,Cool but Rude,R,Default
+TMT,90,"General Traag, Heart of Stone",U,Default
+TMT,91,Hard-Won Jitte,U,Default
+TMT,92,Improvised Arsenal,R,Default
+TMT,93,Jennika's Technique,U,Default
+TMT,94,Manhole Missile,C,Default
+TMT,95,Mouser Attack! ,C,Default
+TMT,96,Mouser Foundry,C,Default
+TMT,97,Mutant Town Musicians,C,Default
+TMT,98,Null Group Biological Assets,C,Default
+TMT,99,"Old Hob, Alleycat Blues",U,Default
+TMT,100,Purple Dragon Punks,C,Default
+TMT,101,"Raphael, Most Attitude",U,Default
+TMT,102,"Raphael, Ninja Destroyer",M,Default
+TMT,103,"Raphael, the Nightwatcher",R,Default
+TMT,104,"Raphael, Tough Turtle",C,Default
+TMT,105,Raphael's Technique,R,Default
+TMT,106,Ravenous Robots,R,Default
+TMT,107,Rock Soldiers,C,Default
+TMT,108,"Slash, Reptile Rampager",R,Default
+TMT,109,Spicy Oatmeal Pizza,U,Default
+TMT,110,"Wingnut, Bat on the Belfry",U,Default
+TMT,111,"Zog, Triceraton Castaway",C,Default
+TMT,112,Courier of Comestibles,U,Default
+TMT,113,Cowabunga!,C,Default
+TMT,114,Frog Butler,C,Default
+TMT,115,Groundchuck & Dirtbag,R,Default
+TMT,116,Guac & Marshmallow Pizza,C,Default
+TMT,117,"Leatherhead, Swamp Stalker",R,Default
+TMT,118,"Michelangelo, Game Master",C,Default
+TMT,119,"Michelangelo, Improviser",M,Default
+TMT,120,"Michelangelo, Mutant BFF",U,Default
+TMT,121,"Michelangelo, Weirdness to 11",R,Default
+TMT,122,Michelangelo's Technique,R,Default
+TMT,123,"Mona Lisa, Science Geek",U,Default
+TMT,124,"Mutagen Man, Living Ooze",R,Default
+TMT,125,Mutant Chain Reaction,C,Default
+TMT,126,New Generation's Technique,U,Default
+TMT,127,Novel Nunchaku,U,Default
+TMT,128,Party Dude,R,Default
+TMT,129,Primordial Pachyderm,C,Default
+TMT,130,Ragamuffin Raptor,C,Default
+TMT,131,"Rocksteady, Crash Courser",C,Default
+TMT,132,Saved by the Shell,U,Default
+TMT,133,Tenderize,C,Default
+TMT,134,Transdimensional Bovine,R,Default
+TMT,135,Turtle Power! ,R,Default
+TMT,136,"Venus, Torn Between Worlds",U,Default
+TMT,137,West Wind Avatar,U,Default
+TMT,138,Zoo Escapees,C,Default
+TMT,139,Baxter Stockman,U,Default
+TMT,140,Bebop & Rocksteady,R,Default
+TMT,141,Brilliance Unleashed,U,Default
+TMT,142,Dark Leo & Shredder,M,Default
+TMT,143,"Don & Leo, Problem Solvers",R,Default
+TMT,144,"Don & Raph, Hard Science",R,Default
+TMT,145,EPF Point Squad,C,Default
+TMT,146,Foot Elite,C,Default
+TMT,147,Foot Ninjas,C,Default
+TMT,148,Genghis Frog,U,Default
+TMT,149,Go Ninja Go,U,Default
+TMT,150,Ice Cream Kitty,C,Default
+TMT,151,"Karai, Future of the Foot",U,Default
+TMT,152,Karai's Technique,U,Default
+TMT,153,Krang & Shredder,R,Default
+TMT,154,The Last Ronin ,M,Default
+TMT,155,Lessons from Life,U,Default
+TMT,156,Mechanized Ninja Cavalry,C,Default
+TMT,157,"Mikey & Don, Party Planners",R,Default
+TMT,158,"Mikey & Leo, Chaos & Order",R,Default
+TMT,159,Mouser Mark III,C,Default
+TMT,160,The Neutrinos,U,Default
+TMT,161,Nobody,C,Default
+TMT,162,North Wind Avatar,M,Default
+TMT,163,"Pizza Face, Gastromancer",U,Default
+TMT,164,Punk Frogs,C,Default
+TMT,165,Putrid Pals,C,Default
+TMT,166,"Raph & Leo, Sibling Rivals",R,Default
+TMT,167,"Raph & Mikey, Troublemakers",R,Default
+TMT,168,Slithering Cryptid,C,Default
+TMT,169,"Splinter, Radical Rat",R,Default
+TMT,170,Tainted Treats,U,Default
+TMT,171,"Tokka & Rahzar, Terrible Twos",R,Default
+TMT,172,Chrome Dome,R,Default
+TMT,173,Everything Pizza,U,Default
+TMT,174,Henchbots,U,Default
+TMT,175,"Krang, Utrom Warlord",M,Default
+TMT,176,Omni-Cheese Pizza,C,Default
+TMT,177,The Ooze,R,Default
+TMT,178,Skateboard,U,Default
+TMT,179,Technodrome,M,Default
+TMT,180,Turtle Blimp,U,Default
+TMT,181,Turtle Van,R,Default
+TMT,182,Weather Maker,R,Default
+TMT,183,Dimension X,C,Default
+TMT,184,Escape Tunnel,C,Default
+TMT,185,Foot Headquarters,C,Default
+TMT,186,Illegitimate Business,C,Default
+TMT,187,Mutant Town,C,Default
+TMT,188,Northampton Farm,R,Default
+TMT,189,TCRI Building,C,Default
+TMT,190,Turtle Lair,U,Default
+TMT,191,Plains,L,Rooftop Lands
+TMT,192,Island,L,Rooftop Lands
+TMT,193,Swamp,L,Rooftop Lands
+TMT,194,Mountain,L,Rooftop Lands
+TMT,195,Forest,L,Rooftop Lands
+TMT,196,"Leonardo, Leader in Blue",U,Turtle Tots Pizza Party Scene Card
+TMT,197,"Donatello, Way with Machines",U,Turtle Tots Pizza Party Scene Card
+TMT,198,"Michelangelo, Mutant BFF",U,Turtle Tots Pizza Party Scene Card
+TMT,199,"Raphael, Most Attitude",U,Turtle Tots Pizza Party Scene Card
+TMT,200,"Mikey & Leo, Chaos & Order",R,Mutant Melee Scene Card
+TMT,201,Krang & Shredder,R,Mutant Melee Scene Card
+TMT,202,"Renet, Temporal Apprentice",R,Mutant Melee Scene Card
+TMT,203,"Jennika, Bad Apple Big Sister",C,Mutant Melee Scene Card
+TMT,204,Bebop & Rocksteady,R,Mutant Melee Scene Card
+TMT,205,"Don & Raph, Hard Science",R,Mutant Melee Scene Card
+TMT,206,"April, Reporter of the Weird",U,Mutant Melee Scene Card
+TMT,207,"Casey Jones, Jury-Rig Justiciar",U,Mutant Melee Scene Card
+TMT,208,"Slash, Reptile Rampager",R,Mutant Melee Scene Card
+TMT,209,Foot Ninjas,C,Shredder Rooftop Battle Scene Card
+TMT,210,"Shredder, Unrelenting",U,Shredder Rooftop Battle Scene Card
+TMT,211,"Leonardo, Cutting Edge",R,Shredder Rooftop Battle Scene Card
+TMT,212,"Donatello, Gadget Master",R,Shredder Rooftop Battle Scene Card
+TMT,213,"Raphael, the Nightwatcher",R,Shredder Rooftop Battle Scene Card
+TMT,214,"Michelangelo, Weirdness to 11",R,Shredder Rooftop Battle Scene Card
+TMT,215,"Leonardo, Sewer Samurai",M,Borderless Silhouette
+TMT,216,"Donatello, Mutant Mechanic",M,Borderless Silhouette
+TMT,217,Super Shredder,M,Borderless Silhouette
+TMT,218,"Raphael, Ninja Destroyer",M,Borderless Silhouette
+TMT,219,"Michelangelo, Improviser",M,Borderless Silhouette
+TMT,220,Dark Leo & Shredder,M,Borderless Silhouette
+TMT,221,"Krang, Utrom Warlord",M,Borderless Silhouette
+TMT,222,Technodrome,M,Borderless Silhouette
+TMT,223,The Last Ronin's Technique,U,Sewer Frame
+TMT,224,Leonardo's Technique,R,Sewer Frame
+TMT,225,"Sally Pride, Lioness Leader",R,Sewer Frame
+TMT,226,Triceraton Commander,M,Sewer Frame
+TMT,227,"April O'Neil, Hacktivist",R,Sewer Frame
+TMT,228,Donatello's Technique ,U,Sewer Frame
+TMT,229,Kitsune's Technique,R,Sewer Frame
+TMT,230,"Krang, Master Mind",R,Sewer Frame
+TMT,231,Mondo Gecko,M,Sewer Frame
+TMT,232,Shredder's Technique,U,Sewer Frame
+TMT,233,Splinter's Technique,R,Sewer Frame
+TMT,234,Broadcast Takeover,M,Sewer Frame
+TMT,235,"Casey Jones, Vigilante",R,Sewer Frame
+TMT,236,Jennika's Technique,U,Sewer Frame
+TMT,237,Raphael's Technique,R,Sewer Frame
+TMT,238,Groundchuck & Dirtbag,R,Sewer Frame
+TMT,239,Michelangelo's Technique,R,Sewer Frame
+TMT,240,New Generation's Technique,U,Sewer Frame
+TMT,241,Bebop & Rocksteady,R,Sewer Frame
+TMT,242,"Don & Leo, Problem Solvers",R,Sewer Frame
+TMT,243,"Don & Raph, Hard Science",R,Sewer Frame
+TMT,244,Karai's Technique,U,Sewer Frame
+TMT,245,Krang & Shredder,R,Sewer Frame
+TMT,246,"Mikey & Don, Party Planners",R,Sewer Frame
+TMT,247,"Mikey & Leo, Chaos & Order",R,Sewer Frame
+TMT,248,North Wind Avatar,M,Sewer Frame
+TMT,249,"Raph & Leo, Sibling Rivals",R,Sewer Frame
+TMT,250,"Raph & Mikey, Troublemakers",R,Sewer Frame
+TMT,251,"Splinter, Radical Rat",R,Sewer Frame
+TMT,252,"Tokka & Rahzar, Terrible Twos",R,Sewer Frame
+TMT,253,Plains,L,Pizza Lands
+TMT,254,Island,L,Pizza Lands
+TMT,255,Swamp,L,Pizza Lands
+TMT,256,Mountain,L,Pizza Lands
+TMT,257,Forest,L,Pizza Lands
+TMT,258,"Agent Bishop, Man in Black",R,Extended Art
+TMT,259,Prehistoric Pet,R,Extended Art
+TMT,260,Turncoat Kunoichi,R,Extended Art
+TMT,261,Turtles Forever,R,Extended Art
+TMT,262,"Kitsune, Dragon's Daughter",R,Extended Art
+TMT,263,Turtles in Time,M,Extended Art
+TMT,264,"Armaggon, Future Shark",R,Extended Art
+TMT,265,"Madame Null, Power Broker",R,Extended Art
+TMT,266,"Rat King, Verminister",R,Extended Art
+TMT,267,"Savanti Romero, Time's Exile",R,Extended Art
+TMT,268,"Shark Shredder, Killer Clone",R,Extended Art
+TMT,269,South Wind Avatar,R,Extended Art
+TMT,270,Improvised Arsenal,R,Extended Art
+TMT,271,Ravenous Robots,R,Extended Art
+TMT,272,"Leatherhead, Swamp Stalker",R,Extended Art
+TMT,273,"Mutagen Man, Living Ooze",R,Extended Art
+TMT,274,Transdimensional Bovine,R,Extended Art
+TMT,275,Turtle Power!,R,Extended Art
+TMT,276,Chrome Dome,R,Extended Art
+TMT,277,The Ooze,R,Extended Art
+TMT,278,Turtle Van,R,Extended Art
+TMT,279,Weather Maker,R,Extended Art
+TMT,280,Northampton Farm,R,Extended Art
+TMT,281,"Leonardo, Cutting Edge",M,Japan Showcase
+TMT,282,"April O'Neil, Hacktivist",M,Japan Showcase
+TMT,283,"Donatello, Gadget Master",M,Japan Showcase
+TMT,284,Turtles in Time,M,Japan Showcase
+TMT,285,Super Shredder,M,Japan Showcase
+TMT,286,"Casey Jones, Vigilante",M,Japan Showcase
+TMT,287,"Raphael, the Nightwatcher",M,Japan Showcase
+TMT,288,"Michelangelo, Weirdness to 11",M,Japan Showcase
+TMT,289,Dark Leo & Shredder,M,Japan Showcase
+TMT,290,"Krang, Utrom Warlord",M,Japan Showcase
+TMT,291,"Leonardo, Cutting Edge",M,Japan Showcase Fracture Foil
+TMT,292,"April O'Neil, Hacktivist",M,Japan Showcase Fracture Foil
+TMT,293,"Donatello, Gadget Master",M,Japan Showcase Fracture Foil
+TMT,294,Turtles in Time,M,Japan Showcase Fracture Foil
+TMT,295,Super Shredder,M,Japan Showcase Fracture Foil
+TMT,296,"Casey Jones, Vigilante",M,Japan Showcase Fracture Foil
+TMT,297,"Raphael, the Nightwatcher",M,Japan Showcase Fracture Foil
+TMT,298,"Michelangelo, Weirdness to 11",M,Japan Showcase Fracture Foil
+TMT,299,Dark Leo & Shredder,M,Japan Showcase Fracture Foil
+TMT,300,"Krang, Utrom Warlord",M,Japan Showcase Fracture Foil
+TMT,301,"Leonardo, Sewer Samurai",M,"Borderless Signed, Headliner"
+TMT,302,"Donatello, Mutant Mechanic",M,"Borderless Signed, Headliner"
+TMT,303,"Raphael, Ninja Destroyer",M,"Borderless Signed, Headliner"
+TMT,304,"Michelangelo, Improviser",M,"Borderless Signed, Headliner"
+TMT,305,Plains,L,"Rooftop Lands, Surge Foil"
+TMT,306,Island,L,"Rooftop Lands, Surge Foil"
+TMT,307,Swamp,L,"Rooftop Lands, Surge Foil"
+TMT,308,Mountain,L,"Rooftop Lands, Surge Foil"
+TMT,309,Forest,L,"Rooftop Lands, Surge Foil"
+TMT,310,Plains,L,"Pizza Lands, Surge Foil"
+TMT,311,Island,L,"Pizza Lands, Surge Foil"
+TMT,312,Swamp,L,"Pizza Lands, Surge Foil"
+TMT,313,Mountain,L,"Pizza Lands, Surge Foil"
+TMT,314,Forest,L,"Pizza Lands, Surge Foil"
+TMT,315,Plains,L,Basic Lands
+TMT,316,Island,L,Basic Lands
+TMT,317,Swamp,L,Basic Lands
+TMT,318,Mountain,L,Basic Lands
+TMT,319,Forest,L,Basic Lands
+TMT,320,"Shark Shredder, Killer Clone",R,Bundle Promo
+TMC,1,"Leonardo, the Balance",M,Commander
+TMC,2,"Donatello, the Brains",M,Commander
+TMC,3,"Splinter, the Mentor",M,Commander
+TMC,4,"Raphael, the Muscle",M,Commander
+TMC,5,"Michelangelo, the Heart",M,Commander
+TMC,6,Heroes in a Half Shell,M,Commander
+TMC,7,Continue?,R,Commander
+TMC,8,Endless Foot Assault,R,Commander
+TMC,9,"April O'Neil, Live on the Scene",M,Commander
+TMC,10,"Baxter, Fly in the Ointment",R,Commander
+TMC,11,Here Comes a New Hero!,R,Commander
+TMC,12,"Irma, Part-Time Mutant",R,Commander
+TMC,13,"Krang, the All-Powerful",R,Commander
+TMC,14,"Ray Fillet, Wave Warrior",R,Commander
+TMC,15,"Bebop, Skull & Crossbones",R,Commander
+TMC,16,Dimension X Pizzasaur,R,Commander
+TMC,17,Foot Chopper,R,Commander
+TMC,18,Game Over,R,Commander
+TMC,19,"Rat King, Pale Piper",R,Commander
+TMC,20,"Shredder, Shadow Master",R,Commander
+TMC,21,Swift Demise,R,Commander
+TMC,22,"Casey Jones, Back Alley Brute",R,Commander
+TMC,23,Electric Seaweed,R,Commander
+TMC,24,Fast Forward,R,Commander
+TMC,25,Shellshock,R,Commander
+TMC,26,Special Move,R,Commander
+TMC,27,"Tempestra, Dame of Games",R,Commander
+TMC,28,"Tokka & Rahzar, Unsupervised",R,Commander
+TMC,29,High Score,R,Commander
+TMC,30,"Leatherhead, Iron Gator",R,Commander
+TMC,31,Level Up,R,Commander
+TMC,32,Ninja Pizza,R,Commander
+TMC,33,"Rocksteady, Mutant Marauder",R,Commander
+TMC,34,Super Combo,R,Commander
+TMC,35,Double Jump // Flying Kick,R,Commander
+TMC,36,Arcade Cabinet,R,Commander
+TMC,37,Big Mother Mouser,R,Commander
+TMC,38,Coin of Mastery,R,Commander
+TMC,39,Exploding Barrel,R,Commander
+TMC,40,Mole Module,R,Commander
+TMC,41,Roadkil Rodney,R,Commander
+TMC,42,"Big Apple, 3 a.m.",R,Commander
+TMC,43,Hidden Hideout,R,Commander
+TMC,44,Together Forever,R,Commander
+TMC,45,Vanquish the Horde,R,Commander
+TMC,46,Wave Goodbye,R,Commander
+TMC,47,Blasphemous Act,R,Commander
+TMC,48,Acidic Slime,U,Commander
+TMC,49,Biogenic Ooze,R,Commander
+TMC,50,Cultivate,C,Commander
+TMC,51,Harmonize,U,Commander
+TMC,52,Steelbane Hydra,R,Commander
+TMC,53,Vigor,R,Commander
+TMC,54,Voracious Hydra,R,Commander
+TMC,55,Assassin's Trophy,R,Commander
+TMC,56,Corpsejack Menace,R,Commander
+TMC,57,Arcane Signet,U,Commander
+TMC,58,Chromatic Lantern,R,Commander
+TMC,59,Sol Ring,U,Commander
+TMC,60,Ash Barrens,C,Commander
+TMC,61,Cinder Glade,R,Commander
+TMC,62,City of Brass,R,Commander
+TMC,63,Command Tower,C,Commander
+TMC,64,Dragonskull Summit,R,Commander
+TMC,65,Evolving Wilds,C,Commander
+TMC,66,Exotic Orchard,R,Commander
+TMC,67,Fabled Passage,R,Commander
+TMC,68,Grand Coliseum,R,Commander
+TMC,69,Hinterland Harbor,R,Commander
+TMC,70,Path of Ancestry,C,Commander
+TMC,71,Rain-Slicked Copse,R,Commander
+TMC,72,Rootbound Crag,R,Commander
+TMC,73,Smoldering Marsh,R,Commander
+TMC,74,Sodden Verdure,R,Commander
+TMC,75,Spire Garden,R,Commander
+TMC,76,Sunken Hollow,R,Commander
+TMC,77,Thriving Grove,C,Commander
+TMC,78,Thriving Isle,C,Commander
+TMC,79,Thriving Moor,C,Commander
+TMC,80,Undergrowth Stadium,R,Commander
+TMC,81,Vernal Fen,R,Commander
+TMC,82,Vibrant Cityscape,C,Commander
+TMC,83,"Leonardo, the Balance",M,Pixel
+TMC,84,"April O'Neil, Live on the Scene",M,Pixel
+TMC,85,"Donatello, the Brains",M,Pixel
+TMC,86,"Krang, the All-Powerful",R,Pixel
+TMC,87,"Bebop, Skull & Crossbones",R,Pixel
+TMC,88,"Shredder, Shadow Master",R,Pixel
+TMC,89,"Splinter, The Mentor",M,Pixel
+TMC,90,"Casey Jones, Back Alley Brute",R,Pixel
+TMC,91,"Raphael, the Muscle",M,Pixel
+TMC,92,"Michelangelo, the Heart",M,Pixel
+TMC,93,Ninja Pizza,R,Pixel
+TMC,94,"Rocksteady, Mutant Marauder",R,Pixel
+TMC,95,Super Combo,R,Pixel
+TMC,96,Heroes in a Half Shell,M,Pixel
+TMC,97,Big Mother Mouser,R,Pixel
+TMC,98,Definitely Not a Turtle,U,Turtle Team-Up
+TMC,99,,,
+TMC,100,Hamato Ninpo ,C,Turtle Team-Up
+TMC,101,"Leonardo, Worldly Warrior",M,Turtle Team-Up
+TMC,102,Leo's Guidance,U,Turtle Team-Up
+TMC,103,"Splinter & Leo, Father & Son",R,Turtle Team-Up
+TMC,104,"Splinter, Aging Champion",R,Turtle Team-Up
+TMC,105,Triceraton Regenta,C,Turtle Team-Up
+TMC,106,Wooden Cane,U,Turtle Team-Up
+TMC,107,"April O'Neil, Human Element",R,Turtle Team-Up
+TMC,108,Containment Protocol,C,Turtle Team-Up
+TMC,109,"Donatello, Rad Scientist",M,Turtle Team-Up
+TMC,110,Dontalleo's Science Lesson,U,Turtle Team-Up
+TMC,111,"Donnie & April, Adorkable Duo",R,Turtle Team-Up
+TMC,112,,,
+TMC,113,Utrom Monitor,C,Turtle Team-Up
+TMC,114,"Casey & Raph, Hotheads",R,Turtle Team-Up
+TMC,115,"Casey Jones, Asphalt Hooligan",R,Turtle Team-Up
+TMC,116,,,
+TMC,117,Monster Mashup,C,Turtle Team-Up
+TMC,118,"Raphael, Tag Team Tough",M,Turtle Team-Up
+TMC,119,Raph's Bravado,U,Turtle Team-Up
+TMC,120,Storm of Steel,U,Turtle Team-Up
+TMC,121,Ticked Off,C,Turtle Team-Up
+TMC,122,Foe-liage,C,Turtle Team-Up
+TMC,123,,,
+TMC,124,"Michelangelo, On the Scene",M,Turtle Team-Up
+TMC,125,"Mikey & Mona, Mutant Sitters",R,Turtle Team-Up
+TMC,126,"Mona Lisa, Ever Adaptable",R,Turtle Team-Up
+TMC,127,Prehistoric Turtlesaurus,C,Turtle Team-Up
+TMC,128,Study the Classics,U,Turtle Team-Up
+TMC,129,Turtle Tracks,U,Turtle Team-Up
+TMC,130,Manhole Cover,U,Turtle Team-Up
+TMC,131,Dark Ritual,M,Pizzle Bundle Promo
+TMC,132,Waste Not,M,Pizzle Bundle Promo
+TMC,133,Food Chain,M,Pizzle Bundle Promo
+TMC,134,Supreme Verdict,M,Pizzle Bundle Promo
+TMC,135,Commander's Plate,M,Pizzle Bundle Promo
+TMC,136,Sword of Hearth and Home,M,Pizzle Bundle Promo
+PZA,1,Path to Exile,M,Borderless Source Material
+PZA,2,Teleportation Circle,M,Borderless Source Material
+PZA,3,Trouble in Pairs,M,Borderless Source Material
+PZA,4,Brainstorm,M,Borderless Source Material
+PZA,5,Cytoplast Manipulator,M,Borderless Source Material
+PZA,6,Ashcoat of the Shadow Swarm,M,Borderless Source Material
+PZA,7,Plague of Vermin,M,Borderless Source Material
+PZA,8,All Will Be One,M,Borderless Source Material
+PZA,9,Silverclad Ferocidons,M,Borderless Source Material
+PZA,10,Underworld Breach,M,Borderless Source Material
+PZA,11,Doubling Season,M,Borderless Source Material
+PZA,12,Rhythm of the Wild,M,Borderless Source Material
+PZA,13,Waves of Aggression,M,Borderless Source Material
+PZA,14,Arcbound Ravager,M,Borderless Source Material
+PZA,15,Conqueror's Flail,M,Borderless Source Material
+PZA,16,Metallic Mimic,M,Borderless Source Material
+PZA,17,Shadowspear,M,Borderless Source Material
+PZA,18,Sword of Sinew and Steel,M,Borderless Source Material
+PZA,19,Umezawa's Jitte,M,Borderless Source Material
+PZA,20,Undercity Sewers,M,Borderless Source Material

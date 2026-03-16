@@ -76,6 +76,10 @@ svg {
     background: linear-gradient(142deg, rgba(90, 83, 101, 0.7) 0%, rgba(44, 31, 47, 0.95) 100%);
 }
 
+.set-button {
+    cursor: pointer;
+}
+
 .set-button:hover {
     background-color: #ffffff22;
 }
@@ -591,6 +595,14 @@ input:checked + .slider:before {
     backdrop-filter: blur(2px);
 }
 
+/* Multi-card slot container heights (desktop: 240px cards, 336px tall, 38px offset) */
+.stack-height-2 { height: 404px; }
+.stack-height-3 { height: 444px; }
+.stack-height-4 { height: 484px; }
+.stack-height-5 { height: 524px; }
+.stack-height-6 { height: 564px; }
+.stack-height-7 { height: 604px; }
+
 .h-cards-2 {
     margin-top: -2px;
     height: 364px;
@@ -709,6 +721,14 @@ input:checked + .slider:before {
         margin-top: -2px;
         height: 646px;
     }
+
+    /* Mobile: 300px cards are 418px tall (+82px vs desktop) */
+    .stack-height-2 { height: 490px; }
+    .stack-height-3 { height: 530px; }
+    .stack-height-4 { height: 570px; }
+    .stack-height-5 { height: 610px; }
+    .stack-height-6 { height: 650px; }
+    .stack-height-7 { height: 690px; }
 }
 
 #snark {

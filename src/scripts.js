@@ -167,7 +167,12 @@ function ghostSlide() {
         } else {
             content.querySelector(".infopop-name").textContent = window.cardInfo?.[infopopID][0];
             content.querySelector(".infopop-type").textContent = window.cardInfo?.[infopopID][1];
-            content.querySelector(".infopop-rarity").textContent = "Appears " + window.cardInfo?.[infopopID][2] + " of the time. ";
+            const _rarityStr = window.cardInfo?.[infopopID][2] || "";
+            const _rarityPct = parseFloat(_rarityStr);
+            const _rarityText = _rarityPct < 0.25 ? "Appears at a very low rate."
+                              : _rarityPct < 1    ? "Appears less than 1% of the time."
+                              :                     "Appears " + _rarityStr + " of the time.";
+            content.querySelector(".infopop-rarity").textContent = _rarityText;
         }
 
         // text.innerText = window.cardInfo?.[infopopID];
@@ -396,12 +401,12 @@ document.addEventListener(
             } else if (_savedSet == "ECL") {
                 // handled by MIGRATED_SETS above
             } else {
-                setECL();
+                await initSet("ECL");
             }
         } else {
             console.log("run 3");
 
-            setECL();
+            await initSet("ECL");
         }
 
         // Pull the set that's in the cookie
@@ -589,7 +594,7 @@ function changeSet() {
     // currentSet === "EOE" ? alertMessage.classList.remove("hidden") : alertMessage.classList.add("hidden");
 
     // Make set selectors buttons
-    const setButtons = document.getElementsByClassName("set-button");
+    const setButtons = Array.from(document.querySelectorAll(".set-button"));
 
     for (button of setButtons) {
         const buttonCode = button.id.slice(-3);
@@ -757,7 +762,6 @@ function makeSlot(id, label, hasFoil, quantity) {
     if (quantity) {
         // Quantity stuff
         const cardSet = document.createElement("div");
-        let stackHeightValue = quantity * 40 + 324;
         cardSet.id = id + "-set";
         cardSet.classList.add("mb-1", "sm:pt-0", "card-info");
 
@@ -784,7 +788,7 @@ function makeSlot(id, label, hasFoil, quantity) {
             setLabel.innerHTML = "";
         } else {
             setLabel.innerHTML = '<div class="slot-label">' + label + " (" + quantity + ")</div>" + '<div id="' + id + '-sum" class="pr-3 font-bold"></div>';
-            cardSet.style.height = stackHeightValue + "px";
+            cardSet.classList.add("stack-height-" + quantity);
         }
         cardSet.append(setLabel);
 
@@ -1102,25 +1106,30 @@ async function ghostDataGrab(ghostLinkHalf, topOutLink) {
         });
 }
 
-const setName = window[window.setName];
+const setName = new Proxy({}, { get(_, prop) { return (window[window.setName] || {})[prop]; } });
 // let cardsRemaining = setName.totalCards;
 
-const cardImageLoaded = async (cardType, cardImagePrimary, cardStack) => {
-    cardsRemaining--;
-    // console.log("remaining: " + cardsRemaining);
+const cardImageLoaded = async (cardType, cardImagePrimary, cardStack, _skipDecrement = false, onFlipped = null) => {
+    if (!_skipDecrement) cardsRemaining--;
 
-    cardStack.classList.add("flipped");
     if (!rareFirstFlip) {
-        // Not the first flip
-        // console.log("Waiting 1400ms before flipping the stack");
-        await waitforme(1400);
-    } else {
-        // first flip
+        // Flip to back, wait for transition to complete
+        cardStack.classList.add("flipped");
+        await waitforme(1100);
     }
 
-    //  Flipping
+    // Card back is now fully visible — safe to update foil overlay
+    if (onFlipped) onFlipped();
+
+    // Set src and wait for image to actually load before revealing
+    await new Promise(resolve => {
+        cardType.addEventListener('load', resolve, { once: true });
+        cardType.src = cardImagePrimary;
+        if (cardType.complete) resolve();
+    });
+
+    // Flip to front to reveal the loaded image
     cardStack.classList.remove("flipped");
-    cardType.src = cardImagePrimary;
 };
 
 function sumTotals() {
@@ -1152,12 +1161,6 @@ function sumTotals() {
         if (checkIfFinished()) {
             clearInterval(timeout);
             isFinished = true;
-
-            if (localStorage.getItem("currentBoosterType") === "COLLECTOR") {
-                cardsRemaining = setName.totalCards;
-            } else {
-                cardsRemaining = setName.totalCards_PLAY;
-            }
 
             loadingOverlay.classList.remove("z-10", "loader-blur-effect");
             loadingOverlay.classList.add("-z-10", "opacity-0");
@@ -1236,14 +1239,6 @@ function sumTotals() {
             ghostSlide();
         }
     }, 100);
-
-    // Reset "cards remaining" value a moment after the loader fades away
-    if (localStorage.getItem("currentBoosterType") === "COLLECTOR") {
-        cardsLoadingNumber.innerText = setName.totalCards;
-    } else {
-        cardsLoadingNumber.innerText = setName.totalCards_PLAY;
-    }
-
 
 }
 

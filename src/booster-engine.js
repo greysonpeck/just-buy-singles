@@ -3,7 +3,7 @@
 
 // List of set codes that have been migrated to JSON configs.
 // Add a code here after its JSON config is verified working.
-window.MIGRATED_SETS = ['FDN', 'FIN', 'EOE', 'SPM', 'TLA', 'ECL'];
+window.MIGRATED_SETS = ['FDN', 'FIN', 'EOE', 'SPM', 'TLA', 'ECL', 'TMT'];
 
 const _configCache = {};
 
@@ -59,7 +59,7 @@ function _initSetMoney(code, boosterType, config) {
     window[code] = window[code] || {};
     window[code].totalCards = collectorConfig ? collectorConfig.totalCards : boosterConfig.totalCards;
     window[code].totalCards_PLAY = playConfig ? playConfig.totalCards : boosterConfig.totalCards;
-    window.setName = window[code];
+    window.setName = code;
 
     // Booster price cookies
     const playPart = boosterType === 'PLAY' ? '_PLAY' : '';
@@ -84,6 +84,10 @@ async function pullBoosterFromConfig(config, boosterType) {
     const boosterConfig = config.boosters[boosterType];
     if (!boosterConfig) return;
 
+    cardsRemaining = boosterConfig.totalCards;
+    const _cardsLoadingEl = document.getElementById("cards-loading");
+    if (_cardsLoadingEl) _cardsLoadingEl.innerText = cardsRemaining;
+
     const foilGroupMap = {}; // tracks foil groups (e.g., FIN bfr slots)
 
     for (const slot of boosterConfig.slots) {
@@ -98,6 +102,12 @@ async function pullBoosterFromConfig(config, boosterType) {
 }
 
 const _ALL_GRADIENT_CLASSES = ['foil-gradient', 'mana-gradient', 'surge-gradient', 'galaxy-gradient'];
+
+function _tickCardLoaded() {
+    cardsRemaining--;
+    const el = document.getElementById("cards-loading");
+    if (el) el.innerText = cardsRemaining;
+}
 
 // Pulls a single-card slot. Handles foil groups, nested probabilities, and foil flips.
 async function _pullSingleSlot(slot, foilGroupMap) {
@@ -144,6 +154,7 @@ async function _pullSingleSlot(slot, foilGroupMap) {
     // Fetch card from Scryfall
     const response = await fetch('https://api.scryfall.com/cards/random?q=' + entry.query);
     const card = await response.json();
+    _tickCardLoaded();
 
     // Determine price key
     let priceKey = entry.priceKey;
@@ -176,24 +187,23 @@ async function _pullSingleSlot(slot, foilGroupMap) {
     // Get image element
     const imageElement = document.getElementById(slot.id + '-image');
 
-    // Manage foil overlay class (only for isFoil: true slots)
-    if (slot.isFoil) {
+    // Build foil overlay callback — runs after card flips to back, before reveal
+    let foilCallback = null;
+    if (slot.isFoil && (slot.foilFlip || entry.foilClass !== undefined)) {
         const overlay = imageElement.previousElementSibling;
         const foilClassToApply = slot.foilFlip ? resolvedFoilClass : entry.foilClass;
-        // Only manage when entry explicitly declares a foilClass (or slot has foilFlip)
-        if (slot.foilFlip || entry.foilClass !== undefined) {
+        foilCallback = () => {
             _ALL_GRADIENT_CLASSES.forEach(cls => overlay.classList.remove(cls));
             if (foilClassToApply) {
                 const classes = Array.isArray(foilClassToApply) ? foilClassToApply : [foilClassToApply];
                 classes.forEach(cls => overlay.classList.add(cls));
             }
-        }
+        };
     }
 
-    // Set image and trigger flip animation
-    imageElement.src = imageUrl;
+    // Trigger flip animation (cardImageLoaded sets src and waits for load before revealing)
     const stack = imageElement.closest('.both-cards');
-    imageElement.addEventListener('load', cardImageLoaded(imageElement, imageUrl, stack));
+    cardImageLoaded(imageElement, imageUrl, stack, true, foilCallback);
 
     // Update price/roll elements
     const priceElement = document.getElementById(slot.id + '-price');
@@ -232,6 +242,7 @@ async function _pullMultiSlot(slot) {
 
         const response = await fetch('https://api.scryfall.com/cards/random?q=' + entry.query);
         const card = await response.json();
+        _tickCardLoaded();
 
         const priceKey = entry.priceKey || (slot.isFoil ? 'usd_foil' : 'usd');
         const price = convertCurrency(Number((card.prices[priceKey] || 0) * priceCut));
@@ -244,11 +255,10 @@ async function _pullMultiSlot(slot) {
         }
 
         const imageElement = document.getElementById(slot.id + '-image-' + k);
-        imageElement.src = imageUrl;
 
         // Multi-slot uses parentElement (not .both-cards) for the flip stack
         const stack = imageElement.parentElement;
-        imageElement.addEventListener('load', cardImageLoaded(imageElement, imageUrl, stack));
+        cardImageLoaded(imageElement, imageUrl, stack, true);
 
         if (slot.debugLog) console.log('[' + slot.id + ':' + k + '] ' + card.name + ' — ' + USDollar.format(price));
         sumPrice += price;

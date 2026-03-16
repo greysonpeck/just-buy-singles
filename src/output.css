@@ -50,6 +50,8 @@
     --radius-lg: 0.5rem;
     --radius-xl: 0.75rem;
     --perspective-midrange: 800px;
+    --default-transition-duration: 150ms;
+    --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
   }
@@ -200,6 +202,9 @@
   }
 }
 @layer utilities {
+  .visible {
+    visibility: visible;
+  }
   .absolute {
     position: absolute;
   }
@@ -208,6 +213,9 @@
   }
   .relative {
     position: relative;
+  }
+  .static {
+    position: static;
   }
   .inset-0 {
     inset: calc(var(--spacing) * 0);
@@ -835,6 +843,11 @@
   .filter {
     filter: var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,) var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,);
   }
+  .transition {
+    transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter;
+    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+    transition-duration: var(--tw-duration, var(--default-transition-duration));
+  }
   .text-shadow-lg\/100 {
     --tw-text-shadow-alpha: 100%;
     text-shadow: 0px 1px 2px var(--tw-text-shadow-color, oklab(from rgb(0 0 0 / 0.1) l a b / 100%)), 0px 3px 2px var(--tw-text-shadow-color, oklab(from rgb(0 0 0 / 0.1) l a b / 100%)), 0px 4px 8px var(--tw-text-shadow-color, oklab(from rgb(0 0 0 / 0.1) l a b / 100%));
@@ -904,11 +917,6 @@
   .sm\:hidden {
     @media (width >= 40rem) {
       display: none;
-    }
-  }
-  .sm\:h-auto {
-    @media (width >= 40rem) {
-      height: auto;
     }
   }
   .sm\:w-fit {
@@ -1024,6 +1032,9 @@ svg {
   font-family: "Raleway", sans-serif;
   background: rgba(70, 70, 70, 0.85);
   background: linear-gradient(142deg, rgba(90, 83, 101, 0.7) 0%, rgba(44, 31, 47, 0.95) 100%);
+}
+.set-button {
+  cursor: pointer;
 }
 .set-button:hover {
   background-color: #ffffff22;
@@ -1419,6 +1430,24 @@ input:checked + .slider:before {
   z-index: 2;
   backdrop-filter: blur(2px);
 }
+.stack-height-2 {
+  height: 404px;
+}
+.stack-height-3 {
+  height: 444px;
+}
+.stack-height-4 {
+  height: 484px;
+}
+.stack-height-5 {
+  height: 524px;
+}
+.stack-height-6 {
+  height: 564px;
+}
+.stack-height-7 {
+  height: 604px;
+}
 .h-cards-2 {
   margin-top: -2px;
   height: 364px;
@@ -1508,6 +1537,24 @@ input:checked + .slider:before {
   .h-cards-7 {
     margin-top: -2px;
     height: 646px;
+  }
+  .stack-height-2 {
+    height: 490px;
+  }
+  .stack-height-3 {
+    height: 530px;
+  }
+  .stack-height-4 {
+    height: 570px;
+  }
+  .stack-height-5 {
+    height: 610px;
+  }
+  .stack-height-6 {
+    height: 650px;
+  }
+  .stack-height-7 {
+    height: 690px;
   }
 }
 #snark {

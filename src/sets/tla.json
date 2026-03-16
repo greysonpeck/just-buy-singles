@@ -182,7 +182,7 @@
         },
         {
           "id": "nfwildcard",
-          "label": "Non-Foil Wildcard",
+          "label": "Non-foil Wildcard",
           "isFoil": false,
           "probabilities": [
             { "maxRoll": 4.2,   "type": "Default frame, Common",                    "rarity": "4.2%",   "query": "set%3ATLA+rarity%3Ac+%28CN<%3D262+OR+CN%3D277%29+&unique=cards" },
@@ -202,11 +202,11 @@
           "label": "Land",
           "isFoil": true,
           "probabilities": [
-            { "maxRoll": 40.0,  "type": "Common dual-land",                          "rarity": "40%",   "query": "set%3ATLA+%28CN>%3D265+AND+CN<%3D281%29+ci%3D2&unique=cards", "foilClass": null },
+            { "maxRoll": 40.0,  "type": "Common dual land",                          "rarity": "40%",   "query": "set%3ATLA+%28CN>%3D265+AND+CN<%3D281%29+ci%3D2&unique=cards", "foilClass": null },
             { "maxRoll": 60.0,  "type": "Default frame basic land",                  "rarity": "20%",   "query": "set%3ATLA+%28CN>%3D282+AND+CN<%3D286%29&unique=cards",         "foilClass": null },
             { "maxRoll": 70.0,  "type": "Avatar's Journey full-art basic land",      "rarity": "10%",   "query": "set%3ATLA+%28CN>%3D292+AND+CN<%3D296%29&unique=cards",         "foilClass": null },
             { "maxRoll": 80.0,  "type": "Appa full-art basic land",                  "rarity": "10%",   "query": "set%3ATLA+%28CN>%3D287+AND+CN<%3D291%29&unique=cards",         "foilClass": null },
-            { "maxRoll": 90.0,  "type": "Common dual-land (Foil)",                   "rarity": "10%",   "query": "set%3ATLA+%28CN>%3D265+AND+CN<%3D281%29+ci%3D2&unique=cards", "foilClass": "foil-gradient" },
+            { "maxRoll": 90.0,  "type": "Common dual land (Foil)",                   "rarity": "10%",   "query": "set%3ATLA+%28CN>%3D265+AND+CN<%3D281%29+ci%3D2&unique=cards", "foilClass": "foil-gradient" },
             { "maxRoll": 95.0,  "type": "Default frame basic land (Foil)",           "rarity": "5%",    "query": "set%3ATLA+%28CN>%3D282+AND+CN<%3D286%29&unique=cards",         "foilClass": "foil-gradient" },
             { "maxRoll": 97.5,  "type": "Avatar's Journey full-art basic land (Foil)","rarity": "2.5%", "query": "set%3ATLA+%28CN>%3D292+AND+CN<%3D296%29&unique=cards",         "foilClass": "foil-gradient" },
             { "maxRoll": 100.0, "type": "Appa full-art basic land (Foil)",           "rarity": "2.5%",  "query": "set%3ATLA+%28CN>%3D287+AND+CN<%3D291%29&unique=cards",         "foilClass": "foil-gradient" }

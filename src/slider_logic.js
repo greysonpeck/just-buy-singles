@@ -29,6 +29,13 @@ window.onload = function () {
 
         if (volume.innerHTML >= 97 && !isLocked) {
             isLocked = true;
+            const _setObj = window[window.setName];
+            const _cardsEl = document.getElementById("cards-loading");
+            if (_setObj && _cardsEl) {
+                const _isCollector = localStorage.getItem("currentBoosterType") !== "PLAY";
+                cardsRemaining = _isCollector ? _setObj.totalCards : _setObj.totalCards_PLAY;
+                _cardsEl.innerText = cardsRemaining;
+            }
             loadingOverlay.classList.remove("-z-10", "opacity-0");
             loadingOverlay.classList.add("z-10", "loader-blur-effect");
             setTimeout(function () {

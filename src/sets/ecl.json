@@ -148,7 +148,7 @@
         },
         {
           "id": "nfwildcard",
-          "label": "Non-Foil Wildcard",
+          "label": "Non-foil Wildcard",
           "isFoil": false,
           "probabilities": [
             { "maxRoll": 18.0,   "type": "Common",                              "rarity": "18%",    "query": "set%3Aecl+rarity%3Ac+CN<%3D268" },

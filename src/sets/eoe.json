@@ -158,7 +158,7 @@
         },
         {
           "id": "wildcard",
-          "label": "Wildcard",
+          "label": "Non-foil Wildcard",
           "isFoil": false,
           "probabilities": [
             { "maxRoll": 12.5,  "type": "Default frame, Common",                          "rarity": "12.5%",  "query": "set%3Aeoe+rarity%3Ac+-type%3Abasic" },
