@@ -382,31 +382,13 @@ document.addEventListener(
         currentMoneyElement = document.getElementById("current-money");
         const toggle = document.getElementById("currency");
 
-        if (localStorage.getItem("currentSet")) {
-            const _savedSet = localStorage.getItem("currentSet");
-            if (window.MIGRATED_SETS && window.MIGRATED_SETS.includes(_savedSet)) {
-                await initSet(_savedSet);
-            } else if (_savedSet == "MH3") {
-                setMH3();
-            } else if (_savedSet == "DSK") {
-                // handled by MIGRATED_SETS above
-            } else if (_savedSet == "FIN") {
-                // handled by MIGRATED_SETS above
-            } else if (_savedSet == "EOE") {
-                // handled by MIGRATED_SETS above
-            } else if (_savedSet == "SPM") {
-                // handled by MIGRATED_SETS above
-            } else if (_savedSet == "TLA") {
-                // handled by MIGRATED_SETS above
-            } else if (_savedSet == "ECL") {
-                // handled by MIGRATED_SETS above
-            } else {
-                await initSet("ECL");
-            }
+        const _savedSet = localStorage.getItem("currentSet");
+        if (_savedSet && window.MIGRATED_SETS && window.MIGRATED_SETS.includes(_savedSet)) {
+            await initSet(_savedSet);
+        } else if (_savedSet === "MH3") {
+            setMH3();
         } else {
-            console.log("run 3");
-
-            await initSet("ECL");
+            await initSet("TMT");
         }
 
         // Pull the set that's in the cookie
