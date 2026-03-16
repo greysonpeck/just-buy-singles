@@ -18,8 +18,6 @@
           "id": "boosterfun",
           "label": "Foil Booster Fun",
           "isFoil": true,
-                    "rollOverride": 99.94,
-
           "probabilities": [
             { "maxRoll": 13.2,  "type": "Scene, Rare (Foil)",                    "rarity": "13.2%", "query": "set%3Atmt+rarity%3Ar+%28CN>%3D196+AND+CN<%3D214%29&unique=cards",   "foilClass": "foil-gradient" },
             { "maxRoll": 42.9,  "type": "Sewer Frame, Rare (Foil)",              "rarity": "29.7%", "query": "set%3Atmt+rarity%3Ar+%28CN>%3D223+AND+CN<%3D252%29&unique=cards",   "foilClass": "foil-gradient" },
