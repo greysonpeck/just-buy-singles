@@ -3,7 +3,7 @@
 
 // List of set codes that have been migrated to JSON configs.
 // Add a code here after its JSON config is verified working.
-window.MIGRATED_SETS = ['FDN', 'FIN', 'EOE', 'SPM', 'TLA', 'ECL', 'TMT'];
+window.MIGRATED_SETS = ['FDN', 'FIN', 'EOE', 'SPM', 'TLA', 'ECL', 'TMT', 'SOS'];
 
 const _configCache = {};
 

@@ -1,0 +1,1006 @@
+Set Code,CN,Card name,Rarity,Type
+SOS,1,The Dawning Archaic,M,Default
+SOS,2,Rancorous Archaic,C,Default
+SOS,3,Sundering Archaic,U,Default
+SOS,4,Together as One,R,Default
+SOS,5,Transcendent Archaic,U,Default
+SOS,6,,,Default
+SOS,7,Antiquities on the Loose,R,Default
+SOS,8,,,Default
+SOS,9,Daydream,U,Default
+SOS,10,Dig Site Inventory,C,Default
+SOS,11,Eager Glyphmage,C,Default
+SOS,12,Elite Interceptor,C,Default
+SOS,13,Emeritus of Truce,M,Default
+SOS,14,"Ennis, Debate Moderator",U,Default
+SOS,15,Erode,R,Default
+SOS,16,Graduation Day,U,Default
+SOS,17,Group Project,U,Default
+SOS,18,Harsh Annotation,U,Default
+SOS,19,,,Default
+SOS,20,Informed Inkwright,R,Default
+SOS,21,Inkshape Demonstrator,U,Default
+SOS,22,Interjection,C,Default
+SOS,23,Joined Researchers,R,Default
+SOS,24,,,Default
+SOS,25,Practiced Offense,R,Default
+SOS,26,Primary Research,U,Default
+SOS,27,Quill-Blade Laureate,U,Default
+SOS,28,Rapier Wit,C,Default
+SOS,29,Rehearsed Debater,C,Default
+SOS,30,Restoration Seminar,M,Default
+SOS,31,Shattered Acolyte,C,Default
+SOS,32,Soaring Stoneglider,U,Default
+SOS,33,Spiritcall Enthusiast ,U,Default
+SOS,34,Stand Up for Yourself,U,Default
+SOS,35,Stirring Hopesinger,R,Default
+SOS,36,,,Default
+SOS,37,Summoned Dromedary,U,Default
+SOS,38,Banishing Betrayal,C,Default
+SOS,39,Brush Off,U,Default
+SOS,40,Campus Composer,U,Default
+SOS,41,,,Default
+SOS,42,Deluge Virtuoso,C,Default
+SOS,43,Divergent Equation ,U,Default
+SOS,44,Echocasting Symposium,M,Default
+SOS,45,Emeritus of Ideation,M,Default
+SOS,46,Encouraging Aviator,U,Default
+SOS,47,,,Default
+SOS,48,Exhibition Tidecaller,R,Default
+SOS,49,Flow State,U,Default
+SOS,50,Fractal Anomaly,U,Default
+SOS,51,Fractalize,U,Default
+SOS,52,Harmonized Trio,R,Default
+SOS,53,Homesickness,U,Default
+SOS,54,,,Default
+SOS,55,"Jadzi, Steward of Fate",R,Default
+SOS,56,Landscape Painter,C,Default
+SOS,57,Mana Sculpt,R,Default
+SOS,58,Mathemagics,M,Default
+SOS,59,Matterbending Mage,U,Default
+SOS,60,Muse Seeker,U,Default
+SOS,61,Muse's Encouragement,C,Default
+SOS,62,"Orysa, Tide Choreographer",U,Default
+SOS,63,Pensive Professor,R,Default
+SOS,64,Procrastinate,C,Default
+SOS,65,Quick Study,C,Default
+SOS,66,,,Default
+SOS,67,Skycoach Conductor,R,Default
+SOS,68,,,Default
+SOS,69,Tester of the Tangential ,U,Default
+SOS,70,,,Default
+SOS,71,Wisdom of Ages,R,Default
+SOS,72,Adventurous Eater,C,Default
+SOS,73,Arcane Omens,U,Default
+SOS,74,"Arnyn, Deathbloom Botanist",U,Default
+SOS,75,,,Default
+SOS,76,,,Default
+SOS,77,Cost of Brilliance,C,Default
+SOS,78,Decorum Dissertation,M,Default
+SOS,79,Dissection Practice,U,Default
+SOS,80,Emeritus of Woe,M,Default
+SOS,81,End of the Hunt,U,Default
+SOS,82,Eternal Student,U,Default
+SOS,83,Foolish Fate,U,Default
+SOS,84,,,Default
+SOS,85,Grave Researcher,R,Default
+SOS,86,,,Default
+SOS,87,,,Default
+SOS,88,,,Default
+SOS,89,Masterful Flourish,C,Default
+SOS,90,,,Default
+SOS,91,"Moseo, Vein's New Dean",R,Default
+SOS,92,Poisoner's Apprentice,U,Default
+SOS,93,Postmortem Professor,R,Default
+SOS,94,Pox Plague,R,Default
+SOS,95,Pull from the Grave,C,Default
+SOS,96,,,Default
+SOS,97,"Ral Zarek, Guest Lecturer",M,Default
+SOS,98,Scathing Shadelock,U,Default
+SOS,99,Scheming Silvertongue,R,Default
+SOS,100,Send in the Pest,C,Default
+SOS,101,Sneering Shadewriter,C,Default
+SOS,102,Tragedy Feaster,R,Default
+SOS,103,Ulna Alley Shopkeep,C,Default
+SOS,104,,,Default
+SOS,105,Withering Curse,M,Default
+SOS,106,Ancestral Anger,C,Default
+SOS,107,Archaic's Agony,U,Default
+SOS,108,Artistic Process,U,Default
+SOS,109,Charging Strifeknight,U,Default
+SOS,110,Choreographed Sparks,R,Default
+SOS,111,,,Default
+SOS,112,Duel Tactics,U,Default
+SOS,113,Emeritus of Conflict,M,Default
+SOS,114,Expressive Firedancer,C,Default
+SOS,115,Flashback,R,Default
+SOS,116,Garrison Excavator,U,Default
+SOS,117,Goblin Glasswright,C,Default
+SOS,118,Heated Argument,C,Default
+SOS,119,Impratical Joke,U,Default
+SOS,120,Improvisation Capstone,M,Default
+SOS,121,Living History,U,Default
+SOS,122,Maelstrom Artisan,R,Default
+SOS,123,Magmablood Archaic,R,Default
+SOS,124,"Mica, Reader of Ruins",U,Default
+SOS,125,Molten-Core Maestro,R,Default
+SOS,126,,,Default
+SOS,127,Rearing Embermare,C,Default
+SOS,128,Rubble Rouser,C,Default
+SOS,129,,,Default
+SOS,130,Steal the Show,R,Default
+SOS,131,,,Default
+SOS,132,Tablet of Discovery,U,Default
+SOS,133,Tackle Artist,C,Default
+SOS,134,Thunderdrum Soloist,U,Default
+SOS,135,,,Default
+SOS,136,,,Default
+SOS,137,,,Default
+SOS,138,,,Default
+SOS,139,Additive Evolution,U,Default
+SOS,140,Ambitious Augmenter,R,Default
+SOS,141,Burrog Barrage,C,Default
+SOS,142,,,Default
+SOS,143,Comforting Counsel,R,Default
+SOS,144,Efflorescence,C,Default
+SOS,145,Emeritus of Abundance,M,Default
+SOS,146,,,Default
+SOS,147,Environmental Scientist,U,Default
+SOS,148,,,Default
+SOS,149,Germination Practicum,M,Default
+SOS,150,Glorious Decay,C,Default
+SOS,151,Hungry Graffalon,C,Default
+SOS,152,,,Default
+SOS,153,Lumaret's Favor,U,Default
+SOS,154,Mindful Biomancer,C,Default
+SOS,155,Noxious Newt,C,Default
+SOS,156,Oracle's Restoration,C,Default
+SOS,157,Pestbrood Sloth,U,Default
+SOS,158,Planar Engineering,R,Default
+SOS,159,,,Default
+SOS,160,Slumbering Trudge,R,Default
+SOS,161,Snarl Song,U,Default
+SOS,162,Studious First-Year,C,Default
+SOS,163,,,Default
+SOS,164,,,Default
+SOS,165,,,Default
+SOS,166,Vastlands Scavenger,R,Default
+SOS,167,,,Default
+SOS,168,Wildgrowth Archaic,R,Default
+SOS,169,Zimone's Experiment,U,Default
+SOS,170,"Abigale, Poet Laureate",U,Default
+SOS,171,Abstract Paintmage,U,Default
+SOS,172,Applied Geometry ,R,Default
+SOS,173,Ark of Hunger,R,Default
+SOS,174,"Aziza, Mage Tower Captain",R,Default
+SOS,175,"Berta, Wise Extrapolator",R,Default
+SOS,176,"Blech, Loafing Pest",R,Default
+SOS,177,Bogwater Lumaret,C,Default
+SOS,178,Borrowed Knowledge,U,Default
+SOS,179,Cauldron of Essence,R,Default
+SOS,180,Colorstorm Stallion,R,Default
+SOS,181,Colossus of the Blood Age,U,Default
+SOS,182,Conciliator's Duelist,R,Default
+SOS,183,Cuboid Colony,U,Default
+SOS,184,Dina's Guidance,R,Default
+SOS,185,Elemental Mascot,C,Default
+SOS,186,Embrace the Paradox,C,Default
+SOS,187,Essenceknit Scholar,U,Default
+SOS,188,Fix What's Broken,R,Default
+SOS,189,Fractal Mascot,C,Default
+SOS,190,Fractal Tender,U,Default
+SOS,191,Geometer's Arthropod,R,Default
+SOS,192,Grapple with Death,C,Default
+SOS,193,Growth Curve,U,Default
+SOS,194,Hardened Academic,R,Default
+SOS,195,Impervious Inkmage,C,Default
+SOS,196,Inkling Mascot,C,Default
+SOS,197,Killian's Confidence,U,Default
+SOS,198,"Kirol, History Buff",U,Default
+SOS,199,"Lluwen, Exchange Student",U,Default
+SOS,200,Lorehold Charm,U,Default
+SOS,201,"Lorehold, the Historian",M,Default
+SOS,202,Mind into Matter,R,Default
+SOS,203,,,Default
+SOS,204,Molten Note,U,Default
+SOS,205,Moment of Reckoning,R,Default
+SOS,206,"Nita, Forum Conciliator",R,Default
+SOS,207,Old-Growth Educator,U,Default
+SOS,208,Paradox Surveyor,U,Default
+SOS,209,Pest Mascot,C,Default
+SOS,210,Practiced Scrollsmith ,U,Default
+SOS,211,Prismari Charm,U,Default
+SOS,212,"Prismari, the Inspiration",M,Default
+SOS,213,,,Default
+SOS,214,Professor Dellian Fel,M,Default
+SOS,215,Pterafractyl,C,Default
+SOS,216,Pursue the Past,C,Default
+SOS,217,Quandrix Charm,U,Default
+SOS,218,"Quandrix, the Proof",M,Default
+SOS,219,Rapturous Moment,U,Default
+SOS,220,Render Speechless,C,Default
+SOS,221,Resonating Lute,R,Default
+SOS,222,,,Default
+SOS,223,"Sanar, Unfinished Genius",U,Default
+SOS,224,Scolding Administrator,U,Default
+SOS,225,Silverquill Charm,U,Default
+SOS,226,"Silverquill, the Disputant",M,Default
+SOS,227,Snooping Page,U,Default
+SOS,228,Social Snub,U,Default
+SOS,229,Spectacular Skywhale,U,Default
+SOS,230,Spirit Mascot,C,Default
+SOS,231,Splatter Technique,R,Default
+SOS,232,Stadium Tidalmage,C,Default
+SOS,233,,,Default
+SOS,234,Stirring Honormancer,U,Default
+SOS,235,Stress Dream,U,Default
+SOS,236,Suspend Aggression,R,Default
+SOS,237,"Tam, Observant Sequencer",U,Default
+SOS,238,Teacher's Pest,U,Default
+SOS,239,Traumatic Critique,R,Default
+SOS,240,,,Default
+SOS,241,Vicious Rivalry,R,Default
+SOS,242,Visionary's Dance,C,Default
+SOS,243,Wilt in the Heat,C,Default
+SOS,244,Witherbloom Charm,U,Default
+SOS,245,"Witherbloom, the Balancer",M,Default
+SOS,246,Zaffai and the Tempests,R,Default
+SOS,247,Bibliopex Tomekeeper,C,Default
+SOS,248,Diary of Dreams,U,Default
+SOS,249,Mage Tower Referee,C,Default
+SOS,250,"Page, Loose Leaf",C,Default
+SOS,251,Potioner's Trove,C,Default
+SOS,252,Strixhaven Skycoach,U,Default
+SOS,253,Deathcap Glade,R,Default
+SOS,254,Dreamroot Cascade,R,Default
+SOS,255,Fields of Strife,C,Default
+SOS,256,Forum of Amity,C,Default
+SOS,257,Great Hall of the Biblioplex,R,Default
+SOS,258,Paradox Gardens,C,Default
+SOS,259,Petrified Hamlet,R,Default
+SOS,260,Shattered Sanctum,R,Default
+SOS,261,Skycoach Waypoint,U,Default
+SOS,262,Spectacle Summit,C,Default
+SOS,263,Stormcarved Coast,R,Default
+SOS,264,Sundown Pass,R,Default
+SOS,265,Terramorphic Expanse,C,Default
+SOS,266,Titan's Grave,C,Default
+SOS,267,Plains,L,Spellcraft Basic Land
+SOS,268,Island,L,Spellcraft Basic Land
+SOS,269,Swamp,L,Spellcraft Basic Land
+SOS,270,Mountain,L,Spellcraft Basic Land
+SOS,271,Forest,L,Spellcraft Basic Land
+SOS,272,Plains,L,Basic Land
+SOS,273,Plains,L,Basic Land
+SOS,274,Island,L,Basic Land
+SOS,275,Island,L,Basic Land
+SOS,276,Mountain,L,Basic Land
+SOS,277,Mountain,L,Basic Land
+SOS,278,Forest,L,Basic Land
+SOS,279,Forest,L,Basic Land
+SOS,280,Swamp,L,Basic Land
+SOS,281,Swamp,L,Basic Land
+SOS,282,"Ral Zarek, Guest Lecturer",M,Borderless Planeswalker
+SOS,283,Professor Dellian Fel,M,Borderless Planeswalker
+SOS,284,"Lorehold, the Historian",M,Borderless Elder Dragon
+SOS,285,"Prismari, the Inspiration",M,Borderless Elder Dragon
+SOS,286,"Quandrix, the Proof",M,Borderless Elder Dragon
+SOS,287,"Silverquill, the Disputant",M,Borderless Elder Dragon
+SOS,288,"Witherbloom, the Balancer",M,Borderless Elder Dragon
+SOS,289,The Dawning Archaic,M,Borderless Field Notes
+SOS,290,Restoration Seminar,M,Borderless Field Notes
+SOS,291,Echocasting Symposium,M,Borderless Field Notes
+SOS,292,Decorum Dissertation,M,Borderless Field Notes
+SOS,293,Tragedy Feaster,R,Borderless Field Notes
+SOS,294,Improvisation Capstone,M,Borderless Field Notes
+SOS,295,Magmablood Archaic,R,Borderless Field Notes
+SOS,296,Germination Practicum,M,Borderless Field Notes
+SOS,297,Wildgrowth Archaic,R,Borderless Field Notes
+SOS,298,"Blech, Loafing Pest",R,Borderless Field Notes
+SOS,299,Colorstorm Stallion,R,Borderless Field Notes
+SOS,300,Geometer's Arthropod,R,Borderless Field Notes
+SOS,301,Deathcap Glade,R,Borderless Portal View Rare Land
+SOS,302,Dreamroot Cascade,R,Borderless Portal View Rare Land
+SOS,303,Shattered Sanctum,R,Borderless Portal View Rare Land
+SOS,304,Stormcarved Coast,R,Borderless Portal View Rare Land
+SOS,305,Sundown Pass,R,Borderless Portal View Rare Land
+SOS,306,Emeritus of Ideation,M,Headliner (Serialized)
+SOS,307,Together as One,R,Extended Art
+SOS,308,Antiquities on the Loose,R,Extended Art
+SOS,309,Emeritus of Truce,M,Extended Art
+SOS,310,Erode,R,Extended Art
+SOS,311,Informed Inkwright,R,Extended Art
+SOS,312,Joined Researchers,R,Extended Art
+SOS,313,Practiced Offense,R,Extended Art
+SOS,314,Stirring Hopesinger,R,Extended Art
+SOS,315,Emeritus of Ideation,M,Extended Art
+SOS,316,Exhibition Tidecaller,R,Extended Art
+SOS,317,Harmonized Trio,R,Extended Art
+SOS,318,"Jadzi, Steward of Fate",R,Extended Art
+SOS,319,Mana Sculpt,R,Extended Art
+SOS,320,Mathemagics,M,Extended Art
+SOS,321,Pensive Professor,R,Extended Art
+SOS,322,Skycoach Conductor,R,Extended Art
+SOS,323,Wisdom of Ages,R,Extended Art
+SOS,324,Emeritus of Woe,M,Extended Art
+SOS,325,Grave Researcher,R,Extended Art
+SOS,326,"Moseo, Vein's New Dean",R,Extended Art
+SOS,327,Postmortem Professor,R,Extended Art
+SOS,328,Pox Plague,R,Extended Art
+SOS,329,Scheming Silvertongue,R,Extended Art
+SOS,330,Withering Curse,M,Extended Art
+SOS,331,Choreographed Sparks,R,Extended Art
+SOS,332,Emeritus of Conflict,M,Extended Art
+SOS,333,Flashback,R,Extended Art
+SOS,334,Maelstrom Artisan,R,Extended Art
+SOS,335,Molten-Core Maestro,R,Extended Art
+SOS,336,Steal the Show,R,Extended Art
+SOS,337,Ambitious Augmenter,R,Extended Art
+SOS,338,Comforting Counsel,R,Extended Art
+SOS,339,Emeritus of Abundance,M,Extended Art
+SOS,340,Planar Engineering,R,Extended Art
+SOS,341,Slumbering Trudge,R,Extended Art
+SOS,342,Vastlands Scavenger,R,Extended Art
+SOS,343,Applied Geometry,R,Extended Art
+SOS,344,Ark of Hunger,R,Extended Art
+SOS,345,"Aziza, Mage Tower Captain",R,Extended Art
+SOS,346,"Berta, Wise Extrapolator",R,Extended Art
+SOS,347,Cauldron of Essence,R,Extended Art
+SOS,348,Conciliator's Duelist,R,Extended Art
+SOS,349,Dina's Guidance,R,Extended Art
+SOS,350,Fix What's Broken,R,Extended Art
+SOS,351,Hardened Academic,R,Extended Art
+SOS,352,Mind into Matter,R,Extended Art
+SOS,353,Moment of Reckoning,R,Extended Art
+SOS,354,"Nita, Forum Conciliator",R,Extended Art
+SOS,355,Resonating Lute,R,Extended Art
+SOS,356,Splatter Technique,R,Extended Art
+SOS,357,Suspend Aggression,R,Extended Art
+SOS,358,Traumatic Critique,R,Extended Art
+SOS,359,Vicious Rivalry,R,Extended Art
+SOS,360,Zaffai and the Tempests,R,Extended Art
+SOS,361,Great Hall of the Biblioplex,R,Extended Art
+SOS,362,Petrified Hamlet,R,Extended Art
+SOS,363,Lorehold Charm,U,Promo Pack
+SOS,364,Prismari Charm,U,Promo Pack
+SOS,365,Quandrix Charm,U,Promo Pack
+SOS,366,Silverquill Charm,U,Promo Pack
+SOS,367,Witherbloom Charm,U,Promo Pack
+SOS,368,Wisdom of Ages,R,Bundle Promo
+SOC,1,"Dina, Essence Brewer",M,Mythic Borderless Commander
+SOC,2,"Excava, the Risen Past",M,Mythic Borderless Commander
+SOC,3,"Gorma, the Gullet",M,Mythic Borderless Commander
+SOC,4,"Killian, Decisive Mentor",M,Mythic Borderless Commander
+SOC,5,"Muddle, the Ever-Changing",M,Mythic Borderless Commander
+SOC,6,"Primo, the Unbounded",M,Mythic Borderless Commander
+SOC,7,"Quintorius, History Chaser",M,Mythic Borderless Commander
+SOC,8,"Rootha, Mastering the Moment",M,Mythic Borderless Commander
+SOC,9,"Scriv, the Obligator",M,Mythic Borderless Commander
+SOC,10,"Zimone, Infinite Analyst",M,Mythic Borderless Commander
+SOC,11,"Augusta, Order Returned",R,New Cards
+SOC,12,Ceaseless Conflict,R,New Cards
+SOC,13,Eiganjo Dynastorian,R,New Cards
+SOC,14,Forum Filibuster,R,New Cards
+SOC,15,Herald of Amity,R,New Cards
+SOC,16,Vanguard of the Restless,R,New Cards
+SOC,17,Abstract Performance,R,New Cards
+SOC,18,Dirgur Focusmage,R,New Cards
+SOC,19,Expansion Algorithm,R,New Cards
+SOC,20,Leitmotif Composer,R,New Cards
+SOC,21,Nexus Mentality,R,New Cards
+SOC,22,Owlin Spiralmancer,R,New Cards
+SOC,23,Changing Loyalty,R,New Cards
+SOC,24,Coercive Impetus,R,New Cards
+SOC,25,Defiling Daemogoth,R,New Cards
+SOC,26,Intermediate Chirography,R,New Cards
+SOC,27,Merchant of Venom,R,New Cards
+SOC,28,Ominous Harvest,R,New Cards
+SOC,29,Stesian Sanguinist,R,New Cards
+SOC,30,Advanced Reconstruction,R,New Cards
+SOC,31,Fateful Tempest,R,New Cards
+SOC,32,Furygale Flocking,R,New Cards
+SOC,33,Naktamun Lorespinner,R,New Cards
+SOC,34,Prismari Pianist,R,New Cards
+SOC,35,Relic Retriever,R,New Cards
+SOC,36,Renegade Bull,R,New Cards
+SOC,37,Spirit of Resilience,R,New Cards
+SOC,38,Feral Appetite,R,New Cards
+SOC,39,Kinetic Ooze,R,New Cards
+SOC,40,Lattice Library,R,New Cards
+SOC,41,"Nev, the Practical Dean",R,New Cards
+SOC,42,Pest Rescuer,R,New Cards
+SOC,43,Ribtruss Roaster,R,New Cards
+SOC,44,Yavimaya Bloomsage,R,New Cards
+SOC,45,Defacing Duskmage,R,New Cards
+SOC,46,Eccentric Pestfinder,R,New Cards
+SOC,47,Immoral Bargain,R,New Cards
+SOC,48,Inspired Skypainter,R,New Cards
+SOC,49,Lorehold Archivist,R,New Cards
+SOC,50,Striding Shotcaller,R,New Cards
+SOC,51,Brass Ininiscope,R,New Cards
+SOC,52,Coastal Peak,R,New Cards
+SOC,53,Eclipsed Steppe,R,New Cards
+SOC,54,Scorched Geyser,R,New Cards
+SOC,55,Turbulent Fen,R,New Cards
+SOC,56,Turbulent Moor,R,New Cards
+SOC,57,Turbulent Springs,R,New Cards
+SOC,58,Turbulent Steppe,R,New Cards
+SOC,59,Turbulent Wilderness,R,New Cards
+SOC,60,Umbral Expanse,R,New Cards
+SOC,61,"Augusta, Order Returned",R,Extended Art
+SOC,62,Ceaseless Conflict,R,Extended Art
+SOC,63,Eiganjo Dynastorian,R,Extended Art
+SOC,64,Forum Filibuster,R,Extended Art
+SOC,65,Herald of Amity,R,Extended Art
+SOC,66,Vanguard of the Restless,R,Extended Art
+SOC,67,Abstract Performance,R,Extended Art
+SOC,68,Dirgur Focusmage,R,Extended Art
+SOC,69,Expansion Algorithm,R,Extended Art
+SOC,70,Leitmotif Composer,R,Extended Art
+SOC,71,Nexus Mentality,R,Extended Art
+SOC,72,Owlin Spiralmancer,R,Extended Art
+SOC,73,Changing Loyalty,R,Extended Art
+SOC,74,Coercive Impetus,R,Extended Art
+SOC,75,Defiling Daemogoth,R,Extended Art
+SOC,76,Merchant of Venom,R,Extended Art
+SOC,77,Ominous Harvest,R,Extended Art
+SOC,78,Stesian Sanguinist,R,Extended Art
+SOC,79,Fateful Tempest,R,Extended Art
+SOC,80,Furygale Flocking,R,Extended Art
+SOC,81,Naktamun Lorespinner,R,Extended Art
+SOC,82,Prismari Pianist,R,Extended Art
+SOC,83,Relic Retriever,R,Extended Art
+SOC,84,Renegade Bull,R,Extended Art
+SOC,85,Spirit of Resilience,R,Extended Art
+SOC,86,Feral Appetite,R,Extended Art
+SOC,87,Kinetic Ooze,R,Extended Art
+SOC,88,Lattice Library,R,Extended Art
+SOC,89,"Nev, the Practical Dean",R,Extended Art
+SOC,90,Pest Rescuer,R,Extended Art
+SOC,91,Ribtruss Roaster,R,Extended Art
+SOC,92,Yavimaya Bloomsage,R,Extended Art
+SOC,93,Defacing Duskmage,R,Extended Art
+SOC,94,Eccentric Pestfinder,R,Extended Art
+SOC,95,Immoral Bargain,R,Extended Art
+SOC,96,Inspired Skypainter,R,Extended Art
+SOC,97,Lorehold Archivist,R,Extended Art
+SOC,98,Striding Shotcaller,R,Extended Art
+SOC,99,Brass Ininiscope,R,Extended Art
+SOC,100,Coastal Peak,R,Extended Art
+SOC,101,Eclipsed Steppe,R,Extended Art
+SOC,102,Scorched Geyser,R,Extended Art
+SOC,103,Turbulent Fen,R,Extended Art
+SOC,104,Turbulent Moor,R,Extended Art
+SOC,105,Turbulent Springs,R,Extended Art
+SOC,106,Turbulent Steppe,R,Extended Art
+SOC,107,Turbulent Wilderness,R,Extended Art
+SOC,108,Umbral Expanse,R,Extended Art
+SOC,109,Flickering Ward,U,Reprints with new art
+SOC,110,Moonshaker Cavalry,M,Reprints with new art
+SOC,111,Staff of the Storyteller,R,Reprints with new art
+SOC,112,Wave of Reckoning,R,Reprints with new art
+SOC,113,Commander's Insight,R,Reprints with new art
+SOC,114,Faerie Mastermind,R,Reprints with new art
+SOC,115,Ingenious Prodigy,R,Reprints with new art
+SOC,116,Pull from Tomorrow,R,Reprints with new art
+SOC,117,Fallen Ideal,U,Reprints with new art
+SOC,118,Ophiomancer,R,Reprints with new art
+SOC,119,Screams from Within,U,Reprints with new art
+SOC,120,Toxic Deluge,R,Reprints with new art
+SOC,121,Chain Reaction,R,Reprints with new art
+SOC,122,Determined Iteration,R,Reprints with new art
+SOC,123,Harmonic Prodigy,R,Reprints with new art
+SOC,124,Benevolent Hydra,R,Reprints with new art
+SOC,125,Tendershoot Dryad,R,Reprints with new art
+SOC,126,Unbound Flourishing,M,Reprints with new art
+SOC,127,Arcane Signet,U,Reprints with new art
+SOC,128,Sol Ring,U,Reprints with new art
+SOC,129,Command Tower,C,Reprints with new art
+SOC,130,Fabled Passage,R,Reprints with new art
+SOC,131,Eldrazi Conscription,R,Reprints with new art
+SOC,132,Ajani's Chosen,R,Reprints with new art
+SOC,133,Angel of Indemnity,R,Reprints with new art
+SOC,134,Angelic Destiny,M,Reprints with new art
+SOC,135,"Ao, the Dawn Sky",M,Reprints with new art
+SOC,136,Archaeomancer's Map,R,Reprints with new art
+SOC,137,Archon of Sun's Grace,R,Reprints with new art
+SOC,138,Armored Skyhunter,R,Reprints with new art
+SOC,139,Chains of Custody,C,Reprints with new art
+SOC,140,Claim Jumper,R,Reprints with new art
+SOC,141,Combat Calligrapher,R,Reprints with new art
+SOC,142,Darksteel Mutation,U,Reprints with new art
+SOC,143,Drumbellower,R,Reprints with new art
+SOC,144,Eidolon of Countless Battles,R,Reprints with new art
+SOC,145,Firemane Commando,R,Reprints with new art
+SOC,146,Ghostly Prison,U,Reprints with new art
+SOC,147,Gift of Immortality,R,Reprints with new art
+SOC,148,Guardian of Faith,R,Reprints with new art
+SOC,149,Guardian Scalelord,R,Reprints with new art
+SOC,150,Kami of Ancient Law,C,Reprints with new art
+SOC,151,Karmic Guide,R,Reprints with new art
+SOC,152,Kor Spiritdancer,R,Reprints with new art
+SOC,153,Land Tax,M,Reprints with new art
+SOC,154,,,
+SOC,155,"Magara, the Diplomat",R,Default
+SOC,156,Martial Impetus,C,Default
+SOC,157,Monologue Tax,R,Default
+SOC,158,"Nils, Discipline Enforcer",R,Default
+SOC,159,Path to Exile,U,Default
+SOC,160,"Pearl-Ear, Imperial Advisor",R,Default
+SOC,161,Promise of Loyalty,R,Default
+SOC,162,Raffine's Guidance,C,Default
+SOC,163,Redemption Arc,R,Default
+SOC,164,Remorseful Cleric,R,Default
+SOC,165,Sage's Reverie,U,Default
+SOC,166,Secret Rendezvous,U,Default
+SOC,167,Selfless Spirit,R,Default
+SOC,168,Sentinel's Eyes,C,Default
+SOC,169,Serra Paragon,M,Default
+SOC,170,Sevinne's Reclamation,R,Default
+SOC,171,Sheltered by Ghosts,U,Default
+SOC,172,Shielded by Faith,R,Default
+SOC,173,Skyclave Apparition,R,Default
+SOC,174,Songbirds' Blessing,R,Default
+SOC,175,Spirit Mantle,U,Default
+SOC,176,"Sram, Senior Edificer",R,Default
+SOC,177,Starfield Mystic,R,Default
+SOC,178,Sun Titan,M,Default
+SOC,179,Swords to Plowshares,U,Default
+SOC,180,"Teshar, Ancestor's Apostle",U,Default
+SOC,181,Tocasia's Welcome,R,Default
+SOC,182,Tragic Arrogance,R,Default
+SOC,183,Trascendent Envoy,C,Default
+SOC,184,White Orchid Phantom,R,Default
+SOC,185,Winds of Rath,R,Default
+SOC,186,Aether Gale,R,Default
+SOC,187,Arcane Denial,C,Default
+SOC,188,Archmage Emeritus,R,Default
+SOC,189,,,
+SOC,190,Brazen Borrower,M,Default
+SOC,191,Curiosity Crafter,R,Default
+SOC,192,Curse of the Swine,R,Default
+SOC,193,"Deekah, Fractal Theorist",R,Default
+SOC,194,Deep Analysis,C,Default
+SOC,195,Dig Through Time,R,Default
+SOC,196,Entrancing Melody,R,Default
+SOC,197,Perplexing Test,R,Default
+SOC,198,Rapid Hybridization,U,Default
+SOC,199,Reality Shift,U,Default
+SOC,200,Replication Technique,R,Default
+SOC,201,Resculpt,C,Default
+SOC,202,Rite of Replication,R,Default
+SOC,203,Stroke of Genius,R,Default
+SOC,204,Thunderclap Drake,R,Default
+SOC,205,Treasure Cruise,C,Default
+SOC,206,Zimone's Hypothesis,R,Default
+SOC,207,Animate Dead,U,Default
+SOC,208,Blight Mound,R,Default
+SOC,209,Blood Artist,U,Default
+SOC,210,Bloodghast,R,Default
+SOC,211,,,
+SOC,212,Doomwake Giant,R,Default
+SOC,213,Final Act,R,Default
+SOC,214,Ghoulish Impetus,R,Default
+SOC,215,Hateful Eidolon,U,Default
+SOC,216,Infernal Grasp,U,Default
+SOC,217,"Jadar, Ghoulcaller of Nephalia",R,Default
+SOC,218,Keen Duelist,R,Default
+SOC,219,Morbid Opportunist,U,Default
+SOC,220,Nether Traitor,R,Default
+SOC,221,Night's Whisper,C,Default
+SOC,222,Parasitic Impetus,C,Default
+SOC,223,Pawn of Ulamog,U,Default
+SOC,224,Plumb the Forbidden,U,Default
+SOC,225,Priest of Forgotten Gods,R,Default
+SOC,226,Smothering Abomination,R,Default
+SOC,227,Umbral Collar Zealot,U,Default
+SOC,228,Veinwitch Coven,R,Default
+SOC,229,Viscera Seer,C,Default
+SOC,230,Witch of the Moors,R,Default
+SOC,231,Woe Strider,R,Default
+SOC,232,"Yahenni, Undying Partisan",R,Default
+SOC,233,Zulaport Cutthroat,U,Default
+SOC,234,Abrade,U,Default
+SOC,235,Anger,U,Default
+SOC,236,"Atsushi, the Blazing Sky",M,Default
+SOC,237,Big Score,C,Default
+SOC,238,Blasphemous Act,R,Default
+SOC,239,Chaos Warp,R,Default
+SOC,240,Conspiracy Theorist,R,Default
+SOC,241,Creative Technique,R,Default
+SOC,242,Cursed Mirror,R,Default
+SOC,243,Dance with Calamity,R,Default
+SOC,244,Faithless Looting,C,Default
+SOC,245,Goldspan Dragon,M,Default
+SOC,246,"Laelia, the Blade Reforged",R,Default
+SOC,247,Mana Geyser,C,Default
+SOC,248,Manaform Hellkite,M,Default
+SOC,249,Mirrorwing Dragon,M,Default
+SOC,250,Plargg and Nassari,R,Default
+SOC,251,Redoubled Stormsinger,R,Default
+SOC,252,"Rionya, Fire Dancer",R,Default
+SOC,253,Rousing Refrain,R,Default
+SOC,254,"Squee, Goblin Nabob",U,Default
+SOC,255,Storm-Kiln Artist,U,Default
+SOC,256,Surge to Victory,R,Default
+SOC,257,Throes of Chaos,U,Default
+SOC,258,Twinflame,R,Default
+SOC,259,Volcanic Salvo,R,Default
+SOC,260,Volcanic Torrent,U,Default
+SOC,261,Animist's Awakening,R,Default
+SOC,262,Awakening Zone,R,Default
+SOC,263,Beast Within,U,Default
+SOC,264,Blossoming Bogbeast,R,Default
+SOC,265,Cultivate,C,Default
+SOC,266,Elvish Mystic,C,Default
+SOC,267,Forgotten Ancient,R,Default
+SOC,268,Fractal Harness,R,Default
+SOC,269,Gilded Goose,R,Default
+SOC,270,Goldvein Hydra,M,Default
+SOC,271,Guardian Augmenter,R,Default
+SOC,272,Hardened Scales,R,Default
+SOC,273,Kami of Whispered Hopes,U,Default
+SOC,274,Lifeblood Hydra,R,Default
+SOC,275,Mana Bloom,R,Default
+SOC,276,Mycoloth,R,Default
+SOC,277,,,
+SOC,278,Nature's Lore,U,Default
+SOC,279,Ohran Frostfang,R,Default
+SOC,280,Open the Way,R,Default
+SOC,281,"Ozolith, the Shattered Spire",R,Default
+SOC,282,Pest Infestation,R,Default
+SOC,283,Primal Might,R,Default
+SOC,284,Primordial Hydra,M,Default
+SOC,285,Sakura-Tribe Elder,C,Default
+SOC,286,Silkguard,R,Default
+SOC,287,Springbloom Druid,C,Default
+SOC,288,Steelbane Hydra,R,Default
+SOC,289,Three Visits,U,Default
+SOC,290,Trudge Garden,R,Default
+SOC,291,Tyvar's Stand,U,Default
+SOC,292,Altered Ego,R,Default
+SOC,293,Anguished Unmaking,R,Default
+SOC,294,Assassin's Trophy,R,Default
+SOC,295,Balefire Liege,R,Default
+SOC,296,Beledros Witherbloom,M,Default
+SOC,297,Biomass Mutation,R,Default
+SOC,298,"Breena, the Demagogue",M,Default
+SOC,299,"Brudiclad, Telchor Engineer",M,Default
+SOC,300,Casualties of War,R,Default
+SOC,301,Creakwood Liege,R,Default
+SOC,302,Culling Ritual,R,Default
+SOC,303,Deadly Brew,U,Default
+SOC,304,Decisive Denial,U,Default
+SOC,305,"Dina, Soul Steeper",U,Default
+SOC,306,Elusive Otter,R,Default
+SOC,307,Eriette of the Charmed Apple,M,Default
+SOC,308,Eureka Moment,C,Default
+SOC,309,Expressive Iteration,U,Default
+SOC,310,Fracture,U,Default
+SOC,311,Galazeth Prismari,M,Default
+SOC,312,The Goose Mother,R,Default
+SOC,313,"Gyome, Master Chef",M,Default
+SOC,314,Hofri Ghostforge,M,Default
+SOC,315,Hydroid Krasis,R,Default
+SOC,316,Inkshield,R,Default
+SOC,317,"Killian, Ink Duelist",U,Default
+SOC,318,Magma Opus,M,Default
+SOC,319,"Mazirek, Kraul Death Priest",R,Default
+SOC,320,Moldervine Reclamation,U,Default
+SOC,321,Mortality Spear,U,Default
+SOC,322,Oversimplify,R,Default
+SOC,323,Prismari Command,R,Default
+SOC,324,Quandrix Apprentice,U,Default
+SOC,325,Quandrix Command,R,Default
+SOC,326,"Quintorius, Field Historian",U,Default
+SOC,327,"Quintorius, Loremaster",R,Default
+SOC,328,Rip Apart,U,Default
+SOC,329,"Rootha, Mercurial Artist",U,Default
+SOC,330,Shadrix Silverquill,M,Default
+SOC,331,Stormcatch Mentor,U,Default
+SOC,332,Tanazir Quandrix,M,Default
+SOC,333,"Tomik, Wielder of Law",M,Default
+SOC,334,"Troyan, Gutsy Explorer",U,Default
+SOC,335,Vanishing Verse,R,Default
+SOC,336,Venerable Warsinger,R,Default
+SOC,337,"Veyran, Voice of Duality",M,Default
+SOC,338,Wight of the Reliquary,R,Default
+SOC,339,Witherbloom Command,R,Default
+SOC,340,"Zimone, All-Questioning",R,Default
+SOC,341,"Zimone, Quandrix Prodigy",U,Default
+SOC,342,Astral Cornucopia,R,Default
+SOC,343,"Bitterthorn, Nissa's Animus",R,Default
+SOC,344,Containment Construct,U,Default
+SOC,345,Currency Converter,R,Default
+SOC,346,Elementalist's Palette,R,Default
+SOC,347,Fellwar Stone,U,Default
+SOC,348,Hangarback Walker,R,Default
+SOC,349,Haywire Mite,U,Default
+SOC,350,Lightning Greaves,U,Default
+SOC,351,Millikin,U,Default
+SOC,352,Mind Stone,U,Default
+SOC,353,Patchwork Banner,U,Default
+SOC,354,Perpetual Timepiece,U,Default
+SOC,355,Solemn Simulacrum,R,Default
+SOC,356,Stonecoil Serpent,R,Default
+SOC,357,Talisman of Creativity,U,Default
+SOC,358,Talisman of Hierarchy,U,Default
+SOC,359,,,
+SOC,360,Alchemist's Refuge,R,Default
+SOC,361,Arcane Lighthouse,U,Default
+SOC,362,Battlefield Forge,R,Default
+SOC,363,Bojuka Bog,C,Default
+SOC,364,Cascade Bluffs,R,Default
+SOC,365,Caves of Koilos,R,Default
+SOC,366,Clifftop Retreat,R,Default
+SOC,367,Desolate Mire,R,Default
+SOC,368,"Emeria, the Sky Ruin",R,Default
+SOC,369,Exotic Orchard,R,Default
+SOC,370,Ferrous Lake,R,Default
+SOC,371,Festering Thicket,R,Default
+SOC,372,Fetid Heath,R,Default
+SOC,373,Flooded Grove,R,Default
+SOC,374,Frostboil Snarl,R,Default
+SOC,375,Furycalm Snarl,R,Default
+SOC,376,Glittering Massif,R,Default
+SOC,377,Grim Backwoods,R,Default
+SOC,378,Hall of Oracles,R,Default
+SOC,379,Haunted Mire,C,Default
+SOC,380,High Market,R,Default
+SOC,381,Hinterland Harbor,R,Default
+SOC,382,Isolated Chapel,R,Default
+SOC,383,Llanowar Wastes,R,Default
+SOC,384,Lorehold Campus,C,Default
+SOC,385,Lotus Field,R,Default
+SOC,386,Mistveil Plains,U,Default
+SOC,387,Molten Tributary,C,Default
+SOC,388,Mystic Sanctuary,C,Default
+SOC,389,Necroblossom Snarl,R,Default
+SOC,390,Opal Palace,C,Default
+SOC,391,"Oran-Rief, the Vastwood",R,Default
+SOC,392,Overflowing Basin,R,Default
+SOC,393,Path of Ancestry,C,Default
+SOC,394,Prismary Campus,C,Default
+SOC,395,Quandrix Campus,C,Default
+SOC,396,Radiant Summit,R,Default
+SOC,397,Rain-Slicked Copse,R,Default
+SOC,398,Reliquary Tower,U,Default
+SOC,399,Restless Spire,R,Default
+SOC,400,Rogue's Passage,U,Default
+SOC,401,Rugged Prairie,R,Default
+SOC,402,Sacred Peaks,C,Default
+SOC,403,Shineshadow Snarl,R,Default
+SOC,404,Shivan Reef,R,Default
+SOC,405,Silverquill Campus,C,Default
+SOC,406,Sodden Verdure,R,Default
+SOC,407,Study Hall,C,Default
+SOC,408,Sulfur Falls,R,Default
+SOC,409,Sunlit Marsh,C,Default
+SOC,410,Sunscorched Divide,R,Default
+SOC,411,Tangled Islet,C,Default
+SOC,412,Temple of Epiphany,R,Default
+SOC,413,Temple of Malady,R,Default
+SOC,414,Temple of Mystery,R,Default
+SOC,415,Temple of Silence,R,Default
+SOC,416,Temple of the False God,U,Default
+SOC,417,Temple of Triumph,R,Default
+SOC,418,Twilight Mire,R,Default
+SOC,419,Vernal Fen,R,Default
+SOC,420,Vineglimmer Snarl,R,Default
+SOC,421,Viridescent Bog,R,Default
+SOC,422,War Room,R,Default
+SOC,423,Witherbloom Campus,C,Default
+SOC,424,Woodland Cemetery,R,Default
+SOC,425,Yavimaya Coast,R,Default
+SOC,426,,,
+SOC,427,Sol Ring,M,Codex Bundle
+SOC,428,Talisman of Conviction,M,Codex Bundle
+SOC,429,Talisman of Creativity,M,Codex Bundle
+SOC,430,Talisman of Curiosity,M,Codex Bundle
+SOC,431,Talisman of Hierarchy,M,Codex Bundle
+SOC,432,Talisman of Resilience,M,Codex Bundle
+SOA,1,Akroma's Will,M,Mystical Archive
+SOA,2,Angel's Grace,R,Mystical Archive
+SOA,3,Armageddon,M,Mystical Archive
+SOA,4,Duty Beyond Death,U,Mystical Archive
+SOA,5,Helping Hand,U,Mystical Archive
+SOA,6,Hop to It,U,Mystical Archive
+SOA,7,Prismatic Ending,R,Mystical Archive
+SOA,8,Repel Calamity,U,Mystical Archive
+SOA,9,Reprieve,R,Mystical Archive
+SOA,10,Requisition Raid,U,Mystical Archive
+SOA,11,Return to the Ranks,R,Mystical Archive
+SOA,12,Winds of Abandon,M,Mystical Archive
+SOA,13,Brain Freeze,R,Mystical Archive
+SOA,14,Cyclonic Rift,M,Mystical Archive
+SOA,15,Daze,R,Mystical Archive
+SOA,16,Deduce,U,Mystical Archive
+SOA,17,Disdainful Stroke,U,Mystical Archive
+SOA,18,Flusterstorm,M,Mystical Archive
+SOA,19,Force of Will,M,Mystical Archive
+SOA,20,Pongify ,R,Mystical Archive
+SOA,21,Preordain,R,Mystical Archive
+SOA,22,Sleight of Hand,U,Mystical Archive
+SOA,23,Spell Pierce,U,Mystical Archive
+SOA,24,Stock Up,U,Mystical Archive
+SOA,25,Ad Nauseam,M,Mystical Archive
+SOA,26,Bitter Triumph,U,Mystical Archive
+SOA,27,Culling the Weak,R,Mystical Archive
+SOA,28,Dismember,R,Mystical Archive
+SOA,29,Feed the Swarm,U,Mystical Archive
+SOA,30,Living End,M,Mystical Archive
+SOA,31,Locust Spray,U,Mystical Archive
+SOA,32,Sheoldred's Edict,R,Mystical Archive
+SOA,33,Smallpox,R,Mystical Archive
+SOA,34,Stargaze,U,Mystical Archive
+SOA,35,Vampiric Tutor,M,Mystical Archive
+SOA,36,Zombify,U,Mystical Archive
+SOA,37,Abrade,U,Mystical Archive
+SOA,38,Big Score,R,Mystical Archive
+SOA,39,Brotherhood's End,R,Mystical Archive
+SOA,40,Bulk Up,U,Mystical Archive
+SOA,41,Burst Lightning,U,Mystical Archive
+SOA,42,Crackle with Power,M,Mystical Archive
+SOA,43,Empty the Warrens,R,Mystical Archive
+SOA,44,Jeska's Will,M,Mystical Archive
+SOA,45,Monstrous Rage,U,Mystical Archive
+SOA,46,Pyretic Ritual,R,Mystical Archive
+SOA,47,Return the Favor,U,Mystical Archive
+SOA,48,Subterranean Tremors,M,Mystical Archive
+SOA,49,Awaken the Woods,M,Mystical Archive
+SOA,50,Berserk,M,Mystical Archive
+SOA,51,Crop Rotation,R,Mystical Archive
+SOA,52,Giant Growth,U,Mystical Archive
+SOA,53,Glimpse of Nature,R,Mystical Archive
+SOA,54,Knockout Maneuver,U,Mystical Archive
+SOA,55,Pick Your Poison,U,Mystical Archive
+SOA,56,Royal Treatment,U,Mystical Archive
+SOA,57,Shamanic Revelation,R,Mystical Archive
+SOA,58,Shared Roots,U,Mystical Archive
+SOA,59,Triumph of the Hordes,M,Mystical Archive
+SOA,60,Veil of Summer,R,Mystical Archive
+SOA,61,Bring to Light,R,Mystical Archive
+SOA,62,Culling Ritual,R,Mystical Archive
+SOA,63,Deflecting Palm,R,Mystical Archive
+SOA,64,Expressive Iteration,R,Mystical Archive
+SOA,65,Fracture,R,Mystical Archive
+SOA,66,Akroma's Will,M,Mystical Archive (Japanese)
+SOA,67,Angel's Grace,R,Mystical Archive (Japanese)
+SOA,68,Armageddon,M,Mystical Archive (Japanese)
+SOA,69,Duty Beyond Death,U,Mystical Archive (Japanese)
+SOA,70,Helping Hand,U,Mystical Archive (Japanese)
+SOA,71,Hop to It,U,Mystical Archive (Japanese)
+SOA,72,Prismatic Ending,R,Mystical Archive (Japanese)
+SOA,73,Repel Calamity,U,Mystical Archive (Japanese)
+SOA,74,Reprieve,R,Mystical Archive (Japanese)
+SOA,75,Requisition Raid,U,Mystical Archive (Japanese)
+SOA,76,Return to the Ranks,R,Mystical Archive (Japanese)
+SOA,77,Winds of Abandon,M,Mystical Archive (Japanese)
+SOA,78,Brain Freeze,R,Mystical Archive (Japanese)
+SOA,79,Cyclonic Rift,M,Mystical Archive (Japanese)
+SOA,80,Daze,R,Mystical Archive (Japanese)
+SOA,81,Deduce,U,Mystical Archive (Japanese)
+SOA,82,Disdainful Stroke,U,Mystical Archive (Japanese)
+SOA,83,Flusterstorm,M,Mystical Archive (Japanese)
+SOA,84,Force of Will,M,Mystical Archive (Japanese)
+SOA,85,Pongify ,R,Mystical Archive (Japanese)
+SOA,86,Preordain,R,Mystical Archive (Japanese)
+SOA,87,Sleight of Hand,U,Mystical Archive (Japanese)
+SOA,88,Spell Pierce,U,Mystical Archive (Japanese)
+SOA,89,Stock Up,U,Mystical Archive (Japanese)
+SOA,90,Ad Nauseam,M,Mystical Archive (Japanese)
+SOA,91,Bitter Triumph,U,Mystical Archive (Japanese)
+SOA,92,Culling the Weak,R,Mystical Archive (Japanese)
+SOA,93,Dismember,R,Mystical Archive (Japanese)
+SOA,94,Feed the Swarm,U,Mystical Archive (Japanese)
+SOA,95,Living End,M,Mystical Archive (Japanese)
+SOA,96,Locust Spray,U,Mystical Archive (Japanese)
+SOA,97,Sheoldred's Edict,R,Mystical Archive (Japanese)
+SOA,98,Smallpox,R,Mystical Archive (Japanese)
+SOA,99,Stargaze,U,Mystical Archive (Japanese)
+SOA,100,Vampiric Tutor,M,Mystical Archive (Japanese)
+SOA,101,Zombify,U,Mystical Archive (Japanese)
+SOA,102,Abrade,U,Mystical Archive (Japanese)
+SOA,103,Big Score,R,Mystical Archive (Japanese)
+SOA,104,Brotherhood's End,R,Mystical Archive (Japanese)
+SOA,105,Bulk Up,U,Mystical Archive (Japanese)
+SOA,106,Burst Lightning,U,Mystical Archive (Japanese)
+SOA,107,Crackle with Power,M,Mystical Archive (Japanese)
+SOA,108,Empty the Warrens,R,Mystical Archive (Japanese)
+SOA,109,Jeska's Will,M,Mystical Archive (Japanese)
+SOA,110,Monstrous Rage,U,Mystical Archive (Japanese)
+SOA,111,Pyretic Ritual,R,Mystical Archive (Japanese)
+SOA,112,Return the Favor,U,Mystical Archive (Japanese)
+SOA,113,Subterranean Tremors,M,Mystical Archive (Japanese)
+SOA,114,Awaken the Woods,M,Mystical Archive (Japanese)
+SOA,115,Berserk,M,Mystical Archive (Japanese)
+SOA,116,Crop Rotation,R,Mystical Archive (Japanese)
+SOA,117,Giant Growth,U,Mystical Archive (Japanese)
+SOA,118,Glimpse of Nature,R,Mystical Archive (Japanese)
+SOA,119,Knockout Maneuver,U,Mystical Archive (Japanese)
+SOA,120,Pick Your Poison,U,Mystical Archive (Japanese)
+SOA,121,Royal Treatment,U,Mystical Archive (Japanese)
+SOA,122,Shamanic Revelation,R,Mystical Archive (Japanese)
+SOA,123,Shared Roots,U,Mystical Archive (Japanese)
+SOA,124,Triumph of the Hordes,M,Mystical Archive (Japanese)
+SOA,125,Veil of Summer,R,Mystical Archive (Japanese)
+SOA,126,Bring to Light,R,Mystical Archive (Japanese)
+SOA,127,Culling Ritual,R,Mystical Archive (Japanese)
+SOA,128,Deflecting Palm,R,Mystical Archive (Japanese)
+SOA,129,Expressive Iteration,R,Mystical Archive (Japanese)
+SOA,130,Fracture,R,Mystical Archive (Japanese)
+SOA,131,Akroma's Will,M,"Mystical Archive (Japanese, Silver Scroll Foil)"
+SOA,132,Angel's Grace,R,"Mystical Archive (Japanese, Silver Scroll Foil)"
+SOA,133,Armageddon,M,"Mystical Archive (Japanese, Silver Scroll Foil)"
+SOA,134,Duty Beyond Death,U,"Mystical Archive (Japanese, Silver Scroll Foil)"
+SOA,135,Helping Hand,U,"Mystical Archive (Japanese, Silver Scroll Foil)"
+SOA,136,Hop to It,U,"Mystical Archive (Japanese, Silver Scroll Foil)"
+SOA,137,Prismatic Ending,R,"Mystical Archive (Japanese, Silver Scroll Foil)"
+SOA,138,Repel Calamity,U,"Mystical Archive (Japanese, Silver Scroll Foil)"
+SOA,139,Reprieve,R,"Mystical Archive (Japanese, Silver Scroll Foil)"
+SOA,140,Requisition Raid,U,"Mystical Archive (Japanese, Silver Scroll Foil)"
+SOA,141,Return to the Ranks,R,"Mystical Archive (Japanese, Silver Scroll Foil)"
+SOA,142,Winds of Abandon,M,"Mystical Archive (Japanese, Silver Scroll Foil)"
+SOA,143,Brain Freeze,R,"Mystical Archive (Japanese, Silver Scroll Foil)"
+SOA,144,Cyclonic Rift,M,"Mystical Archive (Japanese, Silver Scroll Foil)"
+SOA,145,Daze,R,"Mystical Archive (Japanese, Silver Scroll Foil)"
+SOA,146,Deduce,U,"Mystical Archive (Japanese, Silver Scroll Foil)"
+SOA,147,Disdainful Stroke,U,"Mystical Archive (Japanese, Silver Scroll Foil)"
+SOA,148,Flusterstorm,M,"Mystical Archive (Japanese, Silver Scroll Foil)"
+SOA,149,Force of Will,M,"Mystical Archive (Japanese, Silver Scroll Foil)"
+SOA,150,Pongify ,R,"Mystical Archive (Japanese, Silver Scroll Foil)"
+SOA,151,Preordain,R,"Mystical Archive (Japanese, Silver Scroll Foil)"
+SOA,152,Sleight of Hand,U,"Mystical Archive (Japanese, Silver Scroll Foil)"
+SOA,153,Spell Pierce,U,"Mystical Archive (Japanese, Silver Scroll Foil)"
+SOA,154,Stock Up,U,"Mystical Archive (Japanese, Silver Scroll Foil)"
+SOA,155,Ad Nauseam,M,"Mystical Archive (Japanese, Silver Scroll Foil)"
+SOA,156,Bitter Triumph,U,"Mystical Archive (Japanese, Silver Scroll Foil)"
+SOA,157,Culling the Weak,R,"Mystical Archive (Japanese, Silver Scroll Foil)"
+SOA,158,Dismember,R,"Mystical Archive (Japanese, Silver Scroll Foil)"
+SOA,159,Feed the Swarm,U,"Mystical Archive (Japanese, Silver Scroll Foil)"
+SOA,160,Living End,M,"Mystical Archive (Japanese, Silver Scroll Foil)"
+SOA,161,Locust Spray,U,"Mystical Archive (Japanese, Silver Scroll Foil)"
+SOA,162,Sheoldred's Edict,R,"Mystical Archive (Japanese, Silver Scroll Foil)"
+SOA,163,Smallpox,R,"Mystical Archive (Japanese, Silver Scroll Foil)"
+SOA,164,Stargaze,U,"Mystical Archive (Japanese, Silver Scroll Foil)"
+SOA,165,Vampiric Tutor,M,"Mystical Archive (Japanese, Silver Scroll Foil)"
+SOA,166,Zombify,U,"Mystical Archive (Japanese, Silver Scroll Foil)"
+SOA,167,Abrade,U,"Mystical Archive (Japanese, Silver Scroll Foil)"
+SOA,168,Big Score,R,"Mystical Archive (Japanese, Silver Scroll Foil)"
+SOA,169,Brotherhood's End,R,"Mystical Archive (Japanese, Silver Scroll Foil)"
+SOA,170,Bulk Up,U,"Mystical Archive (Japanese, Silver Scroll Foil)"
+SOA,171,Burst Lightning,U,"Mystical Archive (Japanese, Silver Scroll Foil)"
+SOA,172,Crackle with Power,M,"Mystical Archive (Japanese, Silver Scroll Foil)"
+SOA,173,Empty the Warrens,R,"Mystical Archive (Japanese, Silver Scroll Foil)"
+SOA,174,Jeska's Will,M,"Mystical Archive (Japanese, Silver Scroll Foil)"
+SOA,175,Monstrous Rage,U,"Mystical Archive (Japanese, Silver Scroll Foil)"
+SOA,176,Pyretic Ritual,R,"Mystical Archive (Japanese, Silver Scroll Foil)"
+SOA,177,Return the Favor,U,"Mystical Archive (Japanese, Silver Scroll Foil)"
+SOA,178,Subterranean Tremors,M,"Mystical Archive (Japanese, Silver Scroll Foil)"
+SOA,179,Awaken the Woods,M,"Mystical Archive (Japanese, Silver Scroll Foil)"
+SOA,180,Berserk,M,"Mystical Archive (Japanese, Silver Scroll Foil)"
+SOA,181,Crop Rotation,R,"Mystical Archive (Japanese, Silver Scroll Foil)"
+SOA,182,Giant Growth,U,"Mystical Archive (Japanese, Silver Scroll Foil)"
+SOA,183,Glimpse of Nature,R,"Mystical Archive (Japanese, Silver Scroll Foil)"
+SOA,184,Knockout Maneuver,U,"Mystical Archive (Japanese, Silver Scroll Foil)"
+SOA,185,Pick Your Poison,U,"Mystical Archive (Japanese, Silver Scroll Foil)"
+SOA,186,Royal Treatment,U,"Mystical Archive (Japanese, Silver Scroll Foil)"
+SOA,187,Shamanic Revelation,R,"Mystical Archive (Japanese, Silver Scroll Foil)"
+SOA,188,Shared Roots,U,"Mystical Archive (Japanese, Silver Scroll Foil)"
+SOA,189,Triumph of the Hordes,M,"Mystical Archive (Japanese, Silver Scroll Foil)"
+SOA,190,Veil of Summer,R,"Mystical Archive (Japanese, Silver Scroll Foil)"
+SOA,191,Bring to Light,R,"Mystical Archive (Japanese, Silver Scroll Foil)"
+SOA,192,Culling Ritual,R,"Mystical Archive (Japanese, Silver Scroll Foil)"
+SOA,193,Deflecting Palm,R,"Mystical Archive (Japanese, Silver Scroll Foil)"
+SOA,194,Expressive Iteration,R,"Mystical Archive (Japanese, Silver Scroll Foil)"
+SOA,195,Fracture,R,"Mystical Archive (Japanese, Silver Scroll Foil)"
+SPG,149,Archaeomancer,,Special Guest
+SPG,150,Archmage Emeritus,,Special Guest
+SPG,151,Murmuring Mystic,,Special Guest
+SPG,152,Grim Haruspex,,Special Guest
+SPG,153,Dualcaster Mage,,Special Guest
+SPG,154,Magus of the Library,,Special Guest
+SPG,155,Sylvan Library,,Special Guest
+SPG,156,"Adrix and Nev, Twincasters",,Special Guest
+SPG,157,"Codie, Vociferous Codex",,Special Guest
+SPG,158,Library of Leng,,Special Guest

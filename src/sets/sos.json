@@ -1,0 +1,132 @@
+{
+  "code": "SOS",
+  "displayName": "SECRETS OF STRIXHAVEN",
+  "backgroundImage": "img/SOS_bg.jpg",
+  "boosterTypes": ["COLLECTOR"],
+  "boosters": {
+    "COLLECTOR": {
+      "totalCards": 15,
+      "msrp": 37.99,
+      "defaultUSD": 36,
+      "defaultCAD": 60,
+      "ghostCard": {
+        "randomQuery": "%28set%3Asos+or+set%3Asoa+or+set%3Aspg%29+date%3A2026-04-24+unique%3Aprints",
+        "topOutQuery": "%28set%3Asos+or+set%3Asoa+set%3Aspg%29+date%3A2026-04-24+unique%3Aprints+USD>%3D15&unique=cards"
+      },
+      "slots": [
+        {
+          "id": "foil-boosterfun",
+          "label": "Foil Booster Fun",
+          "isFoil": true,
+          "probabilities": [
+            { "maxRoll":  59.6, "type": "Extended-art, Rare (Foil)",                          "rarity": "59.6%", "query": "set%3Asos+rarity%3Ar+%28CN>%3D307+AND+CN<%3D362%29&unique=cards",   "foilClass": "foil-gradient" },
+            { "maxRoll":  63.9, "type": "Extended-art, Mythic (Foil)",                        "rarity": "4.3%",  "query": "set%3Asos+rarity%3Am+%28CN>%3D307+AND+CN<%3D362%29&unique=cards",   "foilClass": "foil-gradient" },
+            { "maxRoll":  70.0, "type": "Borderless Portal View Land, Rare (Foil)",           "rarity": "6.1%",  "query": "set%3Asos+rarity%3Ar+%28CN>%3D301+AND+CN<%3D305%29&unique=cards",   "foilClass": "foil-gradient" },
+            { "maxRoll":  74.3, "type": "Borderless Elder Dragon or Planeswalker, Mythic (Foil)", "rarity": "4.3%",  "query": "set%3Asos+rarity%3Am+%28CN>%3D282+AND+CN<%3D288%29&unique=cards",   "foilClass": "foil-gradient" },
+            { "maxRoll":  81.6, "type": "Field Notes, Rare (Foil)",                           "rarity": "7.3%",  "query": "set%3Asos+rarity%3Ar+%28CN>%3D289+AND+CN<%3D300%29&unique=cards",   "foilClass": "foil-gradient" },
+            { "maxRoll":  85.3, "type": "Field Notes, Mythic (Foil)",                         "rarity": "3.7%",  "query": "set%3Asos+rarity%3Am+%28CN>%3D289+AND+CN<%3D300%29&unique=cards",   "foilClass": "foil-gradient" },
+            { "maxRoll":  93.0, "type": "Japanese MA, Rare (Silver Scroll Foil)",             "rarity": "7.7%",  "query": "set%3Asoa+rarity%3Ar+%28CN>%3D131+AND+CN<%3D195%29&unique=cards",   "foilClass": "foil-gradient" },
+            { "maxRoll":  95.3, "type": "Japanese MA, Mythic (Silver Scroll Foil)",           "rarity": "2.3%",  "query": "set%3Asoa+rarity%3Am+%28CN>%3D131+AND+CN<%3D195%29&unique=cards",   "foilClass": "foil-gradient" },
+            { "maxRoll":  99.8, "type": "Special Guests (Foil)",                              "rarity": "4.5%",  "query": "set%3Aspg+%28CN>%3D149+AND+CN<%3D158%29&unique=cards",              "foilClass": "foil-gradient" },
+            { "maxRoll": 100.0, "type": "Headliner, Serialized (Double Rainbow Foil)",        "rarity": "0.2%",  "query": "set%3Asos+%28CN>%3D306+AND+CN<%3D306%29&unique=cards",              "foilClass": "foil-gradient" }
+          ]
+        },
+        {
+          "id": "ma-raremythic",
+          "label": "Mystical Archive, R/M",
+          "isFoil": true,
+          "probabilities": [
+            { "maxRoll":  25.6, "type": "MA Rare (NF)",             "rarity": "25.6%", "query": "set%3Asoa+rarity%3Ar+CN<%3D65&unique=cards",                              "foilClass": null },
+            { "maxRoll":  33.3, "type": "MA Mythic (NF)",           "rarity": "7.7%",  "query": "set%3Asoa+rarity%3Am+CN<%3D65&unique=cards",                              "foilClass": null },
+            { "maxRoll":  58.9, "type": "Japanese MA Rare (NF)",    "rarity": "25.6%", "query": "set%3Asoa+rarity%3Ar+%28CN>%3D66+AND+CN<%3D130%29&unique=cards",          "foilClass": null },
+            { "maxRoll":  66.6, "type": "Japanese MA Mythic (NF)",  "rarity": "7.7%",  "query": "set%3Asoa+rarity%3Am+%28CN>%3D66+AND+CN<%3D130%29&unique=cards",          "foilClass": null },
+            { "maxRoll":  92.2, "type": "MA Rare (Foil)",           "rarity": "25.6%", "query": "set%3Asoa+rarity%3Ar+CN<%3D65&unique=cards",                              "foilClass": "foil-gradient" },
+            { "maxRoll": 100.0, "type": "MA Mythic (Foil)",         "rarity": "7.7%",  "query": "set%3Asoa+rarity%3Am+CN<%3D65&unique=cards",                              "foilClass": "foil-gradient" }
+          ]
+        },
+        {
+          "id": "boosterfun-nf",
+          "label": "Non-foil Booster Fun",
+          "isFoil": false,
+          "probabilities": [
+            { "maxRoll":  70.0, "type": "Extended-art, Rare",                             "rarity": "70%",   "query": "set%3Asos+rarity%3Ar+%28CN>%3D307+AND+CN<%3D362%29&unique=cards" },
+            { "maxRoll":  75.0, "type": "Extended-art, Mythic",                           "rarity": "5%",    "query": "set%3Asos+rarity%3Am+%28CN>%3D307+AND+CN<%3D362%29&unique=cards" },
+            { "maxRoll":  82.1, "type": "Borderless Portal View Land, Rare",              "rarity": "7.1%",  "query": "set%3Asos+rarity%3Ar+%28CN>%3D301+AND+CN<%3D305%29&unique=cards" },
+            { "maxRoll":  87.1, "type": "Borderless Elder Dragon or Planeswalker, Mythic","rarity": "5%",    "query": "set%3Asos+rarity%3Am+%28CN>%3D282+AND+CN<%3D288%29&unique=cards" },
+            { "maxRoll":  95.7, "type": "Field Notes, Rare",                              "rarity": "8.6%",  "query": "set%3Asos+rarity%3Ar+%28CN>%3D289+AND+CN<%3D300%29&unique=cards" },
+            { "maxRoll": 100.0, "type": "Field Notes, Mythic",                            "rarity": "4.3%",  "query": "set%3Asos+rarity%3Am+%28CN>%3D289+AND+CN<%3D300%29&unique=cards" }
+          ]
+        },
+        {
+          "id": "soc-raremythic",
+          "label": "Commander, R/M",
+          "isFoil": false,
+          "probabilities": [
+            { "maxRoll":   9.0, "type": "SOC Mythic Borderless Commander", "rarity": "9%",  "query": "set%3Asoc+rarity%3Am+CN<%3D10&unique=cards" },
+            { "maxRoll": 100.0, "type": "SOC Extended-art, Rare",          "rarity": "91%", "query": "set%3Asoc+rarity%3Ar+%28CN>%3D61+AND+CN<%3D108%29&unique=cards" }
+          ]
+        },
+        {
+          "id": "raremythic",
+          "label": "Foil Rare or Mythic",
+          "isFoil": true,
+          "probabilities": [
+            { "maxRoll":  85.7, "type": "Default frame, Rare (Foil)",   "rarity": "85.7%", "query": "set%3Asos+rarity%3Ar+CN<%3D266&unique=cards", "foilClass": "foil-gradient" },
+            { "maxRoll": 100.0, "type": "Default frame, Mythic (Foil)", "rarity": "14.3%", "query": "set%3Asos+rarity%3Am+CN<%3D266&unique=cards", "foilClass": "foil-gradient" }
+          ]
+        },
+        {
+          "id": "spellcraft-land",
+          "label": "Full-art Spellcraft Land",
+          "isFoil": true,
+          "probabilities": [
+            { "maxRoll": 100.0, "type": "Spellcraft Basic Land (Foil)", "rarity": "100%", "query": "set%3Asos+%28CN>%3D267+AND+CN<%3D271%29&unique=cards", "foilClass": "foil-gradient" }
+          ]
+        },
+        {
+          "id": "ma-uncommon-1",
+          "label": "Mystical Archive, U (#1)",
+          "isFoil": true,
+          "probabilities": [
+            { "maxRoll":  31.7, "type": "Mystical Archive Uncommon (NF)",                          "rarity": "31.7%", "query": "set%3Asoa+rarity%3Au+CN<%3D65&unique=cards",                     "foilClass": null },
+            { "maxRoll":  63.4, "type": "Mystical Archive Uncommon (Foil)",                        "rarity": "31.7%", "query": "set%3Asoa+rarity%3Au+CN<%3D65&unique=cards",                     "foilClass": "foil-gradient" },
+            { "maxRoll":  95.1, "type": "Japanese Mystical Archive Uncommon (NF)",                 "rarity": "31.7%", "query": "set%3Asoa+rarity%3Au+%28CN>%3D66+AND+CN<%3D130%29&unique=cards", "foilClass": null },
+            { "maxRoll": 100.0, "type": "Japanese Mystical Archive Uncommon (Silver Scroll Foil)", "rarity": "5%",    "query": "set%3Asoa+rarity%3Au+%28CN>%3D131+AND+CN<%3D195%29&unique=cards", "foilClass": "foil-gradient" }
+          ]
+        },
+        {
+          "id": "ma-uncommon-2",
+          "label": "Mystical Archive, U (#2)",
+          "isFoil": true,
+          "probabilities": [
+            { "maxRoll":  31.7, "type": "Mystical Archive Uncommon (NF)",                          "rarity": "31.7%", "query": "set%3Asoa+rarity%3Au+CN<%3D65&unique=cards",                     "foilClass": null },
+            { "maxRoll":  63.4, "type": "Mystical Archive Uncommon (Foil)",                        "rarity": "31.7%", "query": "set%3Asoa+rarity%3Au+CN<%3D65&unique=cards",                     "foilClass": "foil-gradient" },
+            { "maxRoll":  95.1, "type": "Japanese Mystical Archive Uncommon (NF)",                 "rarity": "31.7%", "query": "set%3Asoa+rarity%3Au+%28CN>%3D66+AND+CN<%3D130%29&unique=cards", "foilClass": null },
+            { "maxRoll": 100.0, "type": "Japanese Mystical Archive Uncommon (Silver Scroll Foil)", "rarity": "5%",    "query": "set%3Asoa+rarity%3Au+%28CN>%3D131+AND+CN<%3D195%29&unique=cards", "foilClass": "foil-gradient" }
+          ]
+        },
+        {
+          "id": "uncommon",
+          "label": "Foil Uncommons",
+          "isFoil": true,
+          "count": 3,
+          "cardInfo": ["3 Foil Uncommons", "100 uncommons from the main set."],
+          "probabilities": [
+            { "maxRoll": 100.0, "type": "Main-set Uncommon (Foil)", "rarity": "100%", "query": "set%3Asos+rarity%3Au+CN<%3D266&unique=cards" }
+          ]
+        },
+        {
+          "id": "common",
+          "label": "Foil Commons",
+          "isFoil": true,
+          "count": 4,
+          "sumVar": "commonSum",
+          "cardInfo": ["4 Foil Commons", "81 commons and 5 common dual lands from the main set."],
+          "probabilities": [
+            { "maxRoll": 100.0, "type": "Main-set Common (Foil)", "rarity": "100%", "query": "set%3Asos+rarity%3Ac+CN<%3D266&unique=cards" }
+          ]
+        }
+      ]
+    }
+  }
+}
