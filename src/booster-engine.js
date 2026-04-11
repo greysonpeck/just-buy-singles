@@ -7,6 +7,20 @@ window.MIGRATED_SETS = ['FDN', 'FIN', 'EOE', 'SPM', 'TLA', 'ECL', 'TMT', 'SOS'];
 
 const _configCache = {};
 
+// Centralized Scryfall fetch that enforces a minimum gap between every request,
+// regardless of whether it comes from a single-card slot, a multi-card slot, or
+// back-to-back pulls. Prevents 429s from Scryfall's rate limiter.
+let _lastRequestTime = 0;
+const _MIN_REQUEST_GAP = 750;
+async function _scryfallFetch(query) {
+    const gap = Date.now() - _lastRequestTime;
+    if (gap < _MIN_REQUEST_GAP) {
+        await new Promise(resolve => setTimeout(resolve, _MIN_REQUEST_GAP - gap));
+    }
+    _lastRequestTime = Date.now();
+    return fetch('https://api.scryfall.com/cards/random?q=' + query);
+}
+
 async function loadSetConfig(code) {
     if (_configCache[code]) return _configCache[code];
     const response = await fetch('src/sets/' + code.toLowerCase() + '.json');
@@ -152,7 +166,7 @@ async function _pullSingleSlot(slot, foilGroupMap) {
     }
 
     // Fetch card from Scryfall
-    const response = await fetch('https://api.scryfall.com/cards/random?q=' + entry.query);
+    const response = await _scryfallFetch(entry.query);
     const card = await response.json();
     _tickCardLoaded();
 
@@ -240,7 +254,7 @@ async function _pullMultiSlot(slot) {
             }
         }
 
-        const response = await fetch('https://api.scryfall.com/cards/random?q=' + entry.query);
+        const response = await _scryfallFetch(entry.query);
         const card = await response.json();
         _tickCardLoaded();
 
