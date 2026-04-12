@@ -1091,27 +1091,40 @@ async function ghostDataGrab(ghostLinkHalf, topOutLink) {
 const setName = new Proxy({}, { get(_, prop) { return (window[window.setName] || {})[prop]; } });
 // let cardsRemaining = setName.totalCards;
 
-const cardImageLoaded = async (cardType, cardImagePrimary, cardStack, _skipDecrement = false, onFlipped = null) => {
+const cardImageLoaded = async (cardType, cardImagePrimary, cardStack, _skipDecrement = false, onFlipped = null, prevReveal = null) => {
     if (!_skipDecrement) cardsRemaining--;
 
-    if (!rareFirstFlip) {
-        // Flip to back, wait for transition to complete
-        cardStack.classList.add("flipped");
-        await waitforme(1100);
+    if (prevReveal !== null) {
+        // New-style (migrated sets): all cards were flipped to back at pull start.
+        // Load the image in parallel with waiting for the previous card to reveal,
+        // so network time and wait time overlap instead of stacking sequentially.
+        const imageReady = new Promise(resolve => {
+            cardType.addEventListener('load', resolve, { once: true });
+            cardType.src = cardImagePrimary;
+            if (cardType.complete) resolve();
+        });
+        await Promise.all([imageReady, prevReveal]);
+
+        // Clear the stagger delay set during flip-to-back so the reveal flip isn't delayed
+        cardStack.style.transitionDelay = '';
+
+        // Safe to update foil overlay now (card is about to flip to front)
+        if (onFlipped) onFlipped();
+        cardStack.classList.remove("flipped");
+    } else {
+        // Legacy-style (DSK, MH3): flip this individual card to back, wait, then reveal.
+        if (!rareFirstFlip) {
+            cardStack.classList.add("flipped");
+            await waitforme(1100);
+        }
+        if (onFlipped) onFlipped();
+        await new Promise(resolve => {
+            cardType.addEventListener('load', resolve, { once: true });
+            cardType.src = cardImagePrimary;
+            if (cardType.complete) resolve();
+        });
+        cardStack.classList.remove("flipped");
     }
-
-    // Card back is now fully visible — safe to update foil overlay
-    if (onFlipped) onFlipped();
-
-    // Set src and wait for image to actually load before revealing
-    await new Promise(resolve => {
-        cardType.addEventListener('load', resolve, { once: true });
-        cardType.src = cardImagePrimary;
-        if (cardType.complete) resolve();
-    });
-
-    // Flip to front to reveal the loaded image
-    cardStack.classList.remove("flipped");
 };
 
 function sumTotals() {
