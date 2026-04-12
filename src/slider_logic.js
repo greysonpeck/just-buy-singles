@@ -8,17 +8,31 @@ window.onload = function () {
     const sliderContainer = document.querySelector("#sound-slider__container");
     const loadingOverlay = document.getElementById("data-loading");
     let isLocked = false;
+    let isSliderActive = false; // true while the user is actively dragging the slider
 
-    // Unlock when user releases the mouse
-    slider.addEventListener("mouseup", () => {
-        // volume.innerHTML = 5;
-        isLocked = false;
-    });
+    // Track when the user starts interacting with the slider
+    slider.addEventListener("mousedown", () => { isSliderActive = true; });
+    slider.addEventListener("touchstart", () => { isSliderActive = true; });
 
-    // Also unlock for touch devices
-    slider.addEventListener("touchend", () => {
+    // Release handler — shared by mouse, touch, and cancelled touch.
+    // Listening on document (not slider) for mouseup so we catch releases that
+    // happen outside the slider bounds after a fast drag, which is the most common
+    // cause of the slider reaching 97+ without the pull triggering.
+    function handleRelease() {
+        if (!isSliderActive) return;
+        isSliderActive = false;
+
+        // Belt-and-suspenders: if the slider is at threshold and isLocked is false
+        // (stale from a missed unlock), fire the pull now rather than requiring a jog.
+        if (!isLocked && parseInt(slider.value) >= 97) {
+            handleRangeUpdate(slider);
+        }
         isLocked = false;
-    });
+    }
+
+    document.addEventListener("mouseup", handleRelease);
+    slider.addEventListener("touchend", handleRelease);
+    slider.addEventListener("touchcancel", handleRelease); // iOS gesture cancellations
 
     function handleRangeUpdate(el) {
         if (el.target) {
