@@ -648,7 +648,7 @@ function clearMoney() {
         if (len > 19) {
             label.classList.add("text-sm");
         } else {
-            label.classList.add("text-base");
+            label.classList.add("text-sm", "sm:text-base");
         }
     });
 }
@@ -711,7 +711,7 @@ function makeSlot(id, label, hasFoil, quantity) {
         "</div>" +
         '<div id="' +
         id +
-        '-price" class="price pr-3 font-bold"></div>' +
+        '-price" class="price pr-3 font-bold text-base"></div>' +
         '<div id="' +
         id +
         '-roll" class="hidden"></div>';
@@ -769,7 +769,7 @@ function makeSlot(id, label, hasFoil, quantity) {
         if (quantity < 1) {
             setLabel.innerHTML = "";
         } else {
-            setLabel.innerHTML = '<div class="slot-label">' + label + " (" + quantity + ")</div>" + '<div id="' + id + '-sum" class="pr-3 font-bold"></div>';
+            setLabel.innerHTML = '<div class="slot-label">' + label + " (" + quantity + ")</div>" + '<div id="' + id + '-sum" class="sum pr-3 font-bold"></div>';
             cardSet.classList.add("stack-height-" + quantity);
         }
         cardSet.append(setLabel);

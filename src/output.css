@@ -7,7 +7,6 @@
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
-    --color-red-800: oklch(44.4% 0.177 26.899);
     --color-red-900: oklch(39.6% 0.141 25.723);
     --color-emerald-500: oklch(69.6% 0.17 162.48);
     --color-emerald-800: oklch(43.2% 0.095 166.913);
@@ -51,8 +50,6 @@
     --radius-lg: 0.5rem;
     --radius-xl: 0.75rem;
     --perspective-midrange: 800px;
-    --default-transition-duration: 150ms;
-    --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
   }
@@ -203,9 +200,6 @@
   }
 }
 @layer utilities {
-  .visible {
-    visibility: visible;
-  }
   .absolute {
     position: absolute;
   }
@@ -383,6 +377,9 @@
   .h-\[335px\] {
     height: 335px;
   }
+  .h-\[343px\] {
+    height: 343px;
+  }
   .h-\[347px\] {
     height: 347px;
   }
@@ -406,9 +403,6 @@
   }
   .w-10 {
     width: calc(var(--spacing) * 10);
-  }
-  .w-20 {
-    width: calc(var(--spacing) * 20);
   }
   .w-32 {
     width: calc(var(--spacing) * 32);
@@ -436,6 +430,9 @@
   }
   .w-full {
     width: 100%;
+  }
+  .w-min {
+    width: min-content;
   }
   .max-w-\[200px\] {
     max-width: 200px;
@@ -571,9 +568,6 @@
     @supports (color: color-mix(in lab, red, red)) {
       background-color: color-mix(in oklab, var(--color-gray-900) 50%, transparent);
     }
-  }
-  .bg-red-800 {
-    background-color: var(--color-red-800);
   }
   .bg-rose-500 {
     background-color: var(--color-rose-500);
@@ -849,11 +843,6 @@
   }
   .filter {
     filter: var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,) var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,);
-  }
-  .transition {
-    transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter;
-    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
-    transition-duration: var(--tw-duration, var(--default-transition-duration));
   }
   .text-shadow-lg\/100 {
     --tw-text-shadow-alpha: 100%;
@@ -1480,35 +1469,110 @@ input:checked + .slider:before {
   height: 562px;
 }
 @media (max-width: 480px) {
-  .both-cards, .both-cards-single, .card-face, .card-default, .foil-hold, .snark-and-single {
-    width: 300px;
+  #card-section .both-cards, #card-section .both-cards-single, #card-section .card-face, #card-section .card-default, #card-section .foil-hold {
+    width: 165px;
   }
   .total-card {
-    margin-bottom: calc(var(--spacing) * 28);
+    height: 260px;
+    text-wrap: wrap;
+    margin-bottom: calc(var(--spacing) * 8);
+  }
+  .slot-label {
+    white-space: normal;
+    text-wrap: wrap;
   }
   .card-info {
-    font-size: var(--text-base);
-    line-height: var(--tw-leading, var(--text-base--line-height));
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1px;
+    font-size: var(--text-xs);
+    line-height: var(--tw-leading, var(--text-xs--line-height));
+  }
+  .card-info .price, .card-info .sum {
+    order: -1;
+    padding-right: 0;
+  }
+  .card-info .slot-label {
+    padding-left: 0;
+  }
+  .top-pos-1 {
+    top: 26px;
+  }
+  .top-pos-2 {
+    top: 52px;
+  }
+  .top-pos-3 {
+    top: 78px;
+  }
+  .top-pos-4 {
+    top: 104px;
+  }
+  .top-pos-5 {
+    top: 130px;
+  }
+  .top-pos-6 {
+    top: 156px;
+  }
+  .stack-height-2 {
+    height: 287px;
+  }
+  .stack-height-3 {
+    height: 315px;
+  }
+  .stack-height-4 {
+    height: 343px;
+  }
+  .stack-height-5 {
+    height: 371px;
+  }
+  .stack-height-6 {
+    height: 399px;
+  }
+  .stack-height-7 {
+    height: 427px;
+  }
+  .infopop-content {
+    width: 165px;
+    height: 231px;
+  }
+  .h-cards-2 {
+    margin-top: -2px;
+    height: 255px;
+  }
+  .h-cards-3 {
+    margin-top: -2px;
+    height: 281px;
+  }
+  .h-cards-4 {
+    margin-top: -2px;
+    height: 307px;
+  }
+  .h-cards-5 {
+    margin-top: -2px;
+    height: 333px;
+  }
+  .h-cards-6 {
+    margin-top: -2px;
+    height: 359px;
+  }
+  .h-cards-7 {
+    margin-top: -2px;
+    height: 385px;
+  }
+  .snark-and-single {
+    width: 300px;
   }
   #single-holder {
-    margin-left: -23px;
     scale: 0.8;
   }
   #single-holder.single-view {
     scale: 1.15 !important;
-    margin-left: -32px;
   }
   .shine-holder {
-    height: 426px;
-    width: 308px;
     top: unset;
   }
   #snark {
     top: 64px;
-  }
-  .infopop-content {
-    width: 300px;
-    height: 424px;
   }
   #about-modal, #feedback-modal {
     max-width: 320px;
@@ -1523,45 +1587,7 @@ input:checked + .slider:before {
     background-color: #101828d6;
   }
   .foil-in-list {
-    height: 418px;
-  }
-  .h-cards-3 {
-    margin-top: -2px;
-    height: 492px;
-  }
-  .h-cards-4 {
-    margin-top: -2px;
-    height: 532px;
-  }
-  .h-cards-5 {
-    margin-top: -2px;
-    height: 570px;
-  }
-  .h-cards-6 {
-    margin-top: -2px;
-    height: 608px;
-  }
-  .h-cards-7 {
-    margin-top: -2px;
-    height: 646px;
-  }
-  .stack-height-2 {
-    height: 490px;
-  }
-  .stack-height-3 {
-    height: 530px;
-  }
-  .stack-height-4 {
-    height: 570px;
-  }
-  .stack-height-5 {
-    height: 610px;
-  }
-  .stack-height-6 {
-    height: 650px;
-  }
-  .stack-height-7 {
-    height: 690px;
+    height: 231px;
   }
 }
 #snark {
