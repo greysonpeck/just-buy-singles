@@ -686,6 +686,10 @@ function clearSlots() {
     boosterCheck(window.boosterType);
 }
 
+function _toggleSlotExpand() {
+    document.getElementById("card-section").classList.toggle("mobile-big");
+}
+
 function makeSlot(id, label, hasFoil, quantity) {
     const cardSection = document.getElementById("card-section");
 
@@ -695,6 +699,7 @@ function makeSlot(id, label, hasFoil, quantity) {
 
     const slotContainer = document.createElement("div");
     slotContainer.classList.add("total-card", "h-[356px]", "w-fit", "text-nowrap", "mb-1", "sm:pt-0");
+    slotContainer.addEventListener("click", () => _toggleSlotExpand());
 
     const cardInfo = document.createElement("div");
     cardInfo.id = id + "-label";
@@ -746,6 +751,7 @@ function makeSlot(id, label, hasFoil, quantity) {
         const cardSet = document.createElement("div");
         cardSet.id = id + "-set";
         cardSet.classList.add("mb-1", "sm:pt-0", "card-info");
+        cardSet.addEventListener("click", () => _toggleSlotExpand());
 
         // Infopops spacer
         infoPopSpacer =

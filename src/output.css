@@ -377,9 +377,6 @@
   .h-\[335px\] {
     height: 335px;
   }
-  .h-\[343px\] {
-    height: 343px;
-  }
   .h-\[347px\] {
     height: 347px;
   }
@@ -1588,6 +1585,92 @@ input:checked + .slider:before {
   }
   .foil-in-list {
     height: 231px;
+  }
+  #card-section.mobile-big {
+    gap: 20px;
+  }
+  #card-section.mobile-big .both-cards, #card-section.mobile-big .both-cards-single, #card-section.mobile-big .card-face, #card-section.mobile-big .card-default, #card-section.mobile-big .foil-hold {
+    width: 270px;
+  }
+  #card-section.mobile-big .total-card {
+    height: 400px;
+    text-wrap: nowrap;
+    margin-bottom: 0.25rem;
+  }
+  #card-section.mobile-big .slot-label {
+    white-space: nowrap;
+    text-wrap: nowrap;
+  }
+  #card-section.mobile-big .card-info {
+    flex-direction: row;
+    align-items: center;
+    gap: 0;
+    font-size: inherit;
+  }
+  #card-section.mobile-big .card-info .price, #card-section.mobile-big .card-info .sum {
+    order: 0;
+    padding-right: 0.75rem;
+  }
+  #card-section.mobile-big .foil-in-list {
+    height: 377px;
+  }
+  #card-section.mobile-big .infopop-content {
+    width: 270px;
+    height: 378px;
+  }
+  #card-section.mobile-big .h-cards-2 {
+    height: 410px;
+  }
+  #card-section.mobile-big .h-cards-3 {
+    height: 464px;
+  }
+  #card-section.mobile-big .h-cards-4 {
+    height: 504px;
+  }
+  #card-section.mobile-big .h-cards-5 {
+    height: 547px;
+  }
+  #card-section.mobile-big .h-cards-6 {
+    height: 590px;
+  }
+  #card-section.mobile-big .h-cards-7 {
+    height: 632px;
+  }
+  #card-section.mobile-big .stack-height-2 {
+    height: 455px;
+  }
+  #card-section.mobile-big .stack-height-3 {
+    height: 500px;
+  }
+  #card-section.mobile-big .stack-height-4 {
+    height: 545px;
+  }
+  #card-section.mobile-big .stack-height-5 {
+    height: 590px;
+  }
+  #card-section.mobile-big .stack-height-6 {
+    height: 635px;
+  }
+  #card-section.mobile-big .stack-height-7 {
+    height: 680px;
+  }
+  #card-section.mobile-big .top-pos-1 {
+    top: 43px;
+  }
+  #card-section.mobile-big .top-pos-2 {
+    top: 86px;
+  }
+  #card-section.mobile-big .top-pos-3 {
+    top: 129px;
+  }
+  #card-section.mobile-big .top-pos-4 {
+    top: 172px;
+  }
+  #card-section.mobile-big .top-pos-5 {
+    top: 215px;
+  }
+  #card-section.mobile-big .top-pos-6 {
+    top: 258px;
   }
 }
 #snark {
