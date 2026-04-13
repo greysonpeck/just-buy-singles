@@ -40,7 +40,6 @@
 }
 
 body {
-    background-image: url("img/MH3_bg.png");
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
@@ -161,10 +160,11 @@ svg {
     top: 0;
 }
 
-h2,
-#booster-types {
+h2 #booster-types {
     font-family: "Oswald", sans-serif;
 }
+
+
 
 #collector-booster,
 #play-booster {

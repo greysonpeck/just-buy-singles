@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./src/output.css?v=1.40" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <title>Catalog: SOA Mystical Archive — Just Buy Singles</title>
+    <style>
+        body {
+            background-image: url('img/catalog-soa.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            min-height: 100vh;
+        }
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.45);
+            z-index: 0;
+            pointer-events: none;
+        }
+        #page {
+            position: relative;
+            z-index: 1;
+        }
+        /* Card flip structure */
+        .ma-flipper {
+            position: relative;
+            width: 200px;
+            height: 279px; /* 200 × (680/488) */
+            transform-style: preserve-3d;
+            transition: transform 1s;
+        }
+        .ma-flipper.flipped {
+            transform: rotateY(180deg);
+        }
+        .ma-flipper .ma-face {
+            position: absolute;
+            width: 200px;
+            border-radius: 10px;
+            backface-visibility: hidden;
+            display: block;
+        }
+        .ma-flipper .ma-back {
+            transform: rotateY(180deg);
+        }
+        /* Mode toggle */
+        .ma-toggle {
+            display: inline-flex;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .ma-toggle button {
+            padding: 7px 22px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            font-family: inherit;
+            color: white;
+        }
+        .ma-btn-active {
+            background: linear-gradient(to bottom, rgba(80, 50, 150, 0.95), rgba(110, 80, 185, 0.8));
+        }
+        .ma-btn-inactive {
+            background: linear-gradient(to bottom, rgba(35, 35, 45, 0.95), rgba(60, 60, 75, 0.8));
+            color: rgba(255,255,255,0.65) !important;
+        }
+        .ma-divider {
+            width: 1px;
+            background: rgba(209,213,219,0.5);
+            flex-shrink: 0;
+        }
+        /* Responsive card width */
+        .ma-card { width: 200px; }
+        @media (max-width: 480px) {
+            .ma-card { width: 150px; }
+            .ma-flipper, .ma-flipper .ma-face { width: 150px; }
+            .ma-flipper { height: 209px; }
+        }
+    </style>
+</head>
+<body class="text-white font-[Raleway]">
+    <div id="page" class="max-w-[1280px] mx-auto px-4 sm:px-8 py-10">
+
+        <!-- Header -->
+        <div class="mb-8">
+            <h1 class="text-4xl font-bold tracking-wide">Secrets of Strixhaven: Mystical Archive</h1>
+            <p class="text-white/60 mt-1 text-sm">SOA &nbsp;·&nbsp; TCGPlayer prices via Scryfall</p>
+
+            <!-- Mode toggle -->
+            <div id="mode-toggle" class="ma-toggle mt-4 ring-1 ring-gray-400"></div>
+        </div>
+
+        <!-- Loading state -->
+        <div id="loading" class="text-white/60 text-lg py-20 text-center">Loading cards…</div>
+
+        <!-- Buckets rendered here -->
+        <div id="buckets" class="flex flex-col gap-8"></div>
+
+        <!-- Footer -->
+        <p class="text-white/30 text-xs mt-12 pb-6">
+            Card prices and images via <a href="https://scryfall.com" class="underline hover:text-white/60" target="_blank">Scryfall</a>.
+            Prices are TCGPlayer market price. Etched foil prices shown where available.
+        </p>
+    </div>
+
+    <script src="./src/catalog.js?v=1.41"></script>
+    <script>
+        initCatalog({
+            modes: [
+                { id: 'en',        label: 'Standard',                query: 'set%3Asoa+lang%3Aen+is%3Anonfoil'  },
+                { id: 'ja',        label: 'Japanese',                 query: 'set%3Asoa+lang%3Aja+cn%3C%3D130'   },
+                { id: 'ja_silver', label: 'Japanese (Silver Scroll)', query: 'set%3Asoa+lang%3Aja+cn%3E130'      },
+            ]
+        });
+    </script>
+</body>
+</html>
