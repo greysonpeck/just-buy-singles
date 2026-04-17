@@ -2,14 +2,18 @@
  * catalog.js — shared logic for all catalog pages.
  *
  * Usage: call initCatalog(config) with:
- *   config.modes = [{ id, label, query }, ...]
+ *   config.modes = [{ id, label, query, alwaysShowNormal?, foilOnly? }, ...]
  *   First mode is the "base" (English); subsequent modes are alt views
  *   matched to base cards by name.
+ *
+ *   alwaysShowNormal — always render a Normal price row, "no data" if missing
+ *   foilOnly         — bucket and display by usd_foil/usd_etched instead of usd
  *
  * HTML page needs:
  *   <div id="mode-toggle" class="ma-toggle mt-4 ring-1 ring-gray-400"></div>
  *   <div id="loading">Loading cards…</div>
  *   <div id="buckets"></div>
+ *   <span id="fetch-date"></span>  (optional — filled with ", as of Month D")
  */
 
 const BUCKETS = [
@@ -33,6 +37,28 @@ const BG_STYLES = [
 ];
 
 const CARD_BACK = './img/card_default4.png';
+const CACHE_TTL = 24 * 60 * 60 * 1000; // 24 hours
+
+// ── Cache helpers ──────────────────────────────────────────────────
+function _getCached(query) {
+    try {
+        const raw = localStorage.getItem('catalog_' + query);
+        if (!raw) return null;
+        const entry = JSON.parse(raw);
+        if (Date.now() - entry.at > CACHE_TTL) return null;
+        return entry; // { cards, at }
+    } catch { return null; }
+}
+
+function _setCache(query, cards) {
+    try {
+        localStorage.setItem('catalog_' + query, JSON.stringify({ cards, at: Date.now() }));
+    } catch {}
+}
+
+function _fmtDate(ts) {
+    return new Date(ts).toLocaleDateString('en-US', { month: 'long', day: 'numeric' });
+}
 
 function initCatalog(config) {
     const modes = config.modes;
@@ -58,24 +84,35 @@ function initCatalog(config) {
         toggleEl.appendChild(btn);
     });
 
-    // ── Fetch ──────────────────────────────────────────────────────
+    // ── Fetch (with 24h cache) ─────────────────────────────────────
     async function init() {
         try {
-            const responses = await Promise.all(
-                modes.map(m => fetch('https://api.scryfall.com/cards/search?q=' + m.query + '&order=usd&dir=desc'))
-            );
-            if (!responses[0].ok) throw new Error('Scryfall error ' + responses[0].status);
+            const results = await Promise.all(modes.map(async m => {
+                const cached = _getCached(m.query);
+                if (cached) return cached;
+                const resp = await fetch('https://api.scryfall.com/cards/search?q=' + m.query + '&order=usd&dir=desc');
+                if (!resp.ok) throw new Error('Scryfall error ' + resp.status);
+                const data = await resp.json();
+                const cards = data.data ?? [];
+                _setCache(m.query, cards);
+                return { cards, at: Date.now() };
+            }));
 
-            const dataArr = await Promise.all(responses.map(r => r.json()));
-
-            baseCards = dataArr[0].data ?? [];
+            baseCards = results[0].cards;
             for (let i = 1; i < modes.length; i++) {
                 const map = {};
-                for (const card of (dataArr[i].data ?? [])) map[card.name] = card;
+                for (const card of results[i].cards) map[card.name] = card;
                 altMaps[modes[i].id] = map;
             }
 
             document.getElementById('loading').remove();
+
+            const dateEl = document.getElementById('fetch-date');
+            if (dateEl) {
+                const oldestAt = Math.min(...results.map(r => r.at));
+                dateEl.textContent = ', as of ' + _fmtDate(oldestAt);
+            }
+
             buildBuckets(modes[0].id, baseCards, false);
 
         } catch (e) {
@@ -84,17 +121,20 @@ function initCatalog(config) {
     }
 
     // ── Bucketing ──────────────────────────────────────────────────
-    function assignBuckets(cards) {
-        const buckets      = BUCKETS.map((b, i) => ({ ...b, bgStyle: BG_STYLES[i], cards: [] }));
+    function assignBuckets(cards, modeConfig) {
+        const buckets       = BUCKETS.map((b, i) => ({ ...b, bgStyle: BG_STYLES[i], cards: [] }));
         const noPriceBucket = buckets[buckets.length - 1];
 
         for (const card of cards) {
-            const usd = card.prices?.usd;
-            if (!usd) {
+            const priceVal = modeConfig?.foilOnly
+                ? (card.prices?.usd_foil ?? card.prices?.usd_etched)
+                : card.prices?.usd;
+
+            if (!priceVal) {
                 noPriceBucket.cards.push(card);
                 continue;
             }
-            const price = parseFloat(usd);
+            const price = parseFloat(priceVal);
             const bucket = buckets.find(b => !b.noPrice && price >= b.min && price < b.max)
                 ?? buckets[buckets.length - 2];
             bucket.cards.push(card);
@@ -108,11 +148,13 @@ function initCatalog(config) {
         return '$' + Math.round(parseFloat(val));
     }
 
-    function priceRow(label, val) {
-        if (!val) return '';
+    // placeholder shown (dimmed) when val is null
+    function priceRow(label, val, placeholder) {
+        const display = val ?? placeholder;
+        if (!display) return '';
         return `<div class="flex justify-between gap-3">
                     <span class="text-white/60">${label}</span>
-                    <span class="font-semibold text-white">${val}</span>
+                    <span class="font-semibold ${val ? 'text-white' : 'text-white/30'}">${display}</span>
                 </div>`;
     }
 
@@ -125,29 +167,38 @@ function initCatalog(config) {
         return '';
     }
 
-    function priceBlock(card) {
-        return priceRow('Normal', fmt(card.prices?.usd)) + combinedFoilRow(card);
+    function priceBlock(card, modeConfig) {
+        if (modeConfig?.foilOnly) {
+            const foil   = fmt(card.prices?.usd_foil);
+            const etched = fmt(card.prices?.usd_etched);
+            const val    = foil ?? etched;
+            const label  = (foil && etched) ? 'Foil, Foil Etched' : etched ? 'Foil Etched' : 'Foil';
+            return priceRow(label, val, 'no data');
+        }
+        const normalPlaceholder = modeConfig?.alwaysShowNormal ? 'no data' : null;
+        return priceRow('Normal', fmt(card.prices?.usd), normalPlaceholder) + combinedFoilRow(card);
     }
 
     // ── DOM building ───────────────────────────────────────────────
     function buildBuckets(mode, cards, animate) {
-        const container = document.getElementById('buckets');
-        const buckets   = assignBuckets(cards);
+        const modeConfig = modes.find(m => m.id === mode);
+        const container  = document.getElementById('buckets');
+        const buckets    = assignBuckets(cards, modeConfig);
 
         if (animate) {
             container.querySelectorAll('.ma-flipper').forEach(f => f.classList.add('flipped'));
             setTimeout(() => {
-                container.innerHTML = renderBucketsHTML(mode, buckets, true);
+                container.innerHTML = renderBucketsHTML(mode, buckets, true, modeConfig);
                 requestAnimationFrame(() => requestAnimationFrame(() => {
                     container.querySelectorAll('.ma-flipper').forEach(f => f.classList.remove('flipped'));
                 }));
             }, 600);
         } else {
-            container.innerHTML = renderBucketsHTML(mode, buckets, false);
+            container.innerHTML = renderBucketsHTML(mode, buckets, false, modeConfig);
         }
     }
 
-    function renderBucketsHTML(mode, buckets, startFlipped) {
+    function renderBucketsHTML(mode, buckets, startFlipped, modeConfig) {
         const isBase       = mode === modes[0].id;
         const altMap       = isBase ? {} : (altMaps[mode] ?? {});
         const flippedClass = startFlipped ? ' flipped' : '';
@@ -165,7 +216,7 @@ function initCatalog(config) {
 
                 return `<div class="ma-card flex flex-col gap-1">
                     ${!isBase ? `<div class="text-sm text-white/60 w-full truncate">${card.name}</div>` : ''}
-                    <div class="text-xs w-full">${priceBlock(priceCard)}</div>
+                    <div class="text-xs w-full">${priceBlock(priceCard, modeConfig)}</div>
                     <div style="perspective:800px;">
                         <div class="ma-flipper${flippedClass}">
                             <img class="ma-face ma-front shadow-lg" src="${imgSrc}" alt="${card.name}" loading="lazy">

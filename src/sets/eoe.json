@@ -178,10 +178,10 @@
           "label": "Basic Land",
           "isFoil": true,
           "probabilities": [
-            { "maxRoll": 64.0,  "type": "Default frame Basic Land",              "rarity": "64%", "query": "set%3Aeoe+type%3Abasic+unique%3Aart+-is%3Afullart&unique=cards", "foilClass": null },
-            { "maxRoll": 80.0,  "type": "Default frame Basic Land (Foil)",       "rarity": "16%", "query": "set%3Aeoe+type%3Abasic+unique%3Aart+-is%3Afullart&unique=cards", "foilClass": "foil-gradient" },
-            { "maxRoll": 96.0,  "type": "Full-art Celestial Basic Land",         "rarity": "16%", "query": "set%3Aeoe+type%3Abasic+is%3Afullart",                           "foilClass": null },
-            { "maxRoll": 100.0, "type": "Full-art Celestial Basic Land (Foil)",  "rarity": "4%",  "query": "set%3Aeoe+type%3Abasic+is%3Afullart",                           "foilClass": "foil-gradient" }
+            { "maxRoll": 64.0,  "type": "Default frame basic land",              "rarity": "64%", "query": "set%3Aeoe+type%3Abasic+unique%3Aart+-is%3Afullart&unique=cards", "foilClass": null },
+            { "maxRoll": 80.0,  "type": "Default frame basic land (Foil)",       "rarity": "16%", "query": "set%3Aeoe+type%3Abasic+unique%3Aart+-is%3Afullart&unique=cards", "foilClass": "foil-gradient" },
+            { "maxRoll": 96.0,  "type": "Full-art Celestial basic land",         "rarity": "16%", "query": "set%3Aeoe+type%3Abasic+is%3Afullart",                           "foilClass": null },
+            { "maxRoll": 100.0, "type": "Full-art Celestial basic land (Foil)",  "rarity": "4%",  "query": "set%3Aeoe+type%3Abasic+is%3Afullart",                           "foilClass": "foil-gradient" }
           ]
         },
         {

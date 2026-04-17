@@ -143,6 +143,7 @@ async function initSet(code, boosterType) {
     currentSet = code;
     localStorage.setItem('currentSet', code);
     localStorage.setItem('currentBoosterType', actualType);
+    history.replaceState(null, '', '?set=' + code.toLowerCase());
     window.boosterType = config.boosterTypes.length > 1 ? 'both' : 'COLLECTOR';
 
     boosterCheck(config.boosterTypes.length > 1 ? 'both' : 'collector');

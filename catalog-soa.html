@@ -92,7 +92,7 @@
         <!-- Header -->
         <div class="mb-8">
             <h1 class="text-4xl font-bold tracking-wide">Secrets of Strixhaven: Mystical Archive</h1>
-            <p class="text-white/60 mt-1 text-sm">SOA &nbsp;·&nbsp; TCGPlayer prices via Scryfall</p>
+            <p class="text-white/60 mt-1 text-sm">TCGPlayer prices via Scryfall<span id="fetch-date"></span></p>
 
             <!-- Mode toggle -->
             <div id="mode-toggle" class="ma-toggle mt-4 ring-1 ring-gray-400"></div>
@@ -111,13 +111,13 @@
         </p>
     </div>
 
-    <script src="./src/catalog.js?v=1.41"></script>
+    <script src="./src/catalog.js?v=1.42"></script>
     <script>
         initCatalog({
             modes: [
-                { id: 'en',        label: 'Standard',                query: 'set%3Asoa+lang%3Aen+is%3Anonfoil'  },
-                { id: 'ja',        label: 'Japanese',                 query: 'set%3Asoa+lang%3Aja+cn%3C%3D130'   },
-                { id: 'ja_silver', label: 'Japanese (Silver Scroll)', query: 'set%3Asoa+lang%3Aja+cn%3E130'      },
+                { id: 'en',        label: 'Standard',                query: 'set%3Asoa+lang%3Aen+is%3Anonfoil',  alwaysShowNormal: true },
+                { id: 'ja',        label: 'Japanese',                 query: 'set%3Asoa+lang%3Aja+cn%3C%3D130'                          },
+                { id: 'ja_silver', label: 'Japanese (Silver Scroll)', query: 'set%3Asoa+lang%3Aja+cn%3E130',      foilOnly: true         },
             ]
         });
     </script>

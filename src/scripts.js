@@ -373,10 +373,12 @@ document.addEventListener(
         currentMoneyElement = document.getElementById("current-money");
         const toggle = document.getElementById("currency");
 
+        const _urlSet = new URLSearchParams(window.location.search).get("set")?.toUpperCase();
         const _savedSet = localStorage.getItem("currentSet");
-        if (_savedSet && window.MIGRATED_SETS && window.MIGRATED_SETS.includes(_savedSet)) {
-            await initSet(_savedSet);
-        } else if (_savedSet === "MH3") {
+        const _startSet = _urlSet || _savedSet;
+        if (_startSet && window.MIGRATED_SETS && window.MIGRATED_SETS.includes(_startSet)) {
+            await initSet(_startSet);
+        } else if (_startSet === "MH3") {
             setMH3();
         } else {
             await initSet("TMT");
