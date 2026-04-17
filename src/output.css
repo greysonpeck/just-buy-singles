@@ -17,7 +17,6 @@
     --color-gray-50: oklch(98.5% 0.002 247.839);
     --color-gray-100: oklch(96.7% 0.003 264.542);
     --color-gray-400: oklch(70.7% 0.022 261.325);
-    --color-gray-500: oklch(55.1% 0.027 264.364);
     --color-gray-900: oklch(21% 0.034 264.665);
     --color-zinc-700: oklch(37% 0.013 285.805);
     --color-zinc-800: oklch(27.4% 0.006 286.033);
@@ -446,9 +445,6 @@
   .w-full {
     width: 100%;
   }
-  .w-min {
-    width: min-content;
-  }
   .max-w-\[200px\] {
     max-width: 200px;
   }
@@ -475,6 +471,9 @@
   }
   .min-w-\[350px\] {
     min-width: 350px;
+  }
+  .flex-shrink {
+    flex-shrink: 1;
   }
   .shrink-0 {
     flex-shrink: 0;
@@ -941,13 +940,6 @@
   .perspective-midrange {
     perspective: var(--perspective-midrange);
   }
-  .hover\:cursor-pointer {
-    &:hover {
-      @media (hover: hover) {
-        cursor: pointer;
-      }
-    }
-  }
   .hover\:bg-gray-50\/20 {
     &:hover {
       @media (hover: hover) {
@@ -1015,6 +1007,11 @@
   .sm\:w-fit {
     @media (width >= 40rem) {
       width: fit-content;
+    }
+  }
+  .sm\:w-min {
+    @media (width >= 40rem) {
+      width: min-content;
     }
   }
   .sm\:min-w-3\/4 {
@@ -1570,11 +1567,16 @@ input:checked + .slider:before {
   height: 562px;
 }
 @media (max-width: 480px) {
+  #card-section {
+    --mobile-w: calc(50vw - 12px);
+    --mobile-h: calc(var(--mobile-w) * 1.3934);
+    --mobile-step: calc(var(--mobile-w) * 0.1576);
+  }
   #card-section .both-cards, #card-section .both-cards-single, #card-section .card-face, #card-section .card-default, #card-section .foil-hold {
-    width: 165px;
+    width: var(--mobile-w);
   }
   .total-card {
-    height: 260px;
+    height: calc(var(--mobile-h) + 29px);
     text-wrap: wrap;
     margin-bottom: calc(var(--spacing) * 8);
   }
@@ -1597,68 +1599,68 @@ input:checked + .slider:before {
     padding-left: 0;
   }
   .top-pos-1 {
-    top: 26px;
+    top: calc(var(--mobile-step) * 1);
   }
   .top-pos-2 {
-    top: 52px;
+    top: calc(var(--mobile-step) * 2);
   }
   .top-pos-3 {
-    top: 78px;
+    top: calc(var(--mobile-step) * 3);
   }
   .top-pos-4 {
-    top: 104px;
+    top: calc(var(--mobile-step) * 4);
   }
   .top-pos-5 {
-    top: 130px;
+    top: calc(var(--mobile-step) * 5);
   }
   .top-pos-6 {
-    top: 156px;
+    top: calc(var(--mobile-step) * 6);
   }
   .stack-height-2 {
-    height: 287px;
+    height: calc(var(--mobile-h) + 56px);
   }
   .stack-height-3 {
-    height: 315px;
+    height: calc(var(--mobile-h) + 84px);
   }
   .stack-height-4 {
-    height: 343px;
+    height: calc(var(--mobile-h) + 112px);
   }
   .stack-height-5 {
-    height: 371px;
+    height: calc(var(--mobile-h) + 140px);
   }
   .stack-height-6 {
-    height: 399px;
+    height: calc(var(--mobile-h) + 168px);
   }
   .stack-height-7 {
-    height: 427px;
+    height: calc(var(--mobile-h) + 196px);
   }
   .infopop-content {
-    width: 165px;
-    height: 231px;
+    width: var(--mobile-w);
+    height: var(--mobile-h);
   }
   .h-cards-2 {
     margin-top: -2px;
-    height: 255px;
+    height: calc(var(--mobile-h) - 2px + var(--mobile-step) * 1);
   }
   .h-cards-3 {
     margin-top: -2px;
-    height: 281px;
+    height: calc(var(--mobile-h) - 2px + var(--mobile-step) * 2);
   }
   .h-cards-4 {
     margin-top: -2px;
-    height: 307px;
+    height: calc(var(--mobile-h) - 2px + var(--mobile-step) * 3);
   }
   .h-cards-5 {
     margin-top: -2px;
-    height: 333px;
+    height: calc(var(--mobile-h) - 2px + var(--mobile-step) * 4);
   }
   .h-cards-6 {
     margin-top: -2px;
-    height: 359px;
+    height: calc(var(--mobile-h) - 2px + var(--mobile-step) * 5);
   }
   .h-cards-7 {
     margin-top: -2px;
-    height: 385px;
+    height: calc(var(--mobile-h) - 2px + var(--mobile-step) * 6);
   }
   .snark-and-single {
     width: 300px;
@@ -1678,17 +1680,17 @@ input:checked + .slider:before {
   #about-modal, #feedback-modal {
     max-width: 320px;
   }
-  .top-nav {
+  #top-actions {
     top: 0;
     bottom: auto;
+    background-color: transparent;
+    transition: background-color 0.3s ease;
   }
-  .bottom-nav {
-    top: auto;
-    bottom: 0;
+  #top-actions.scrolled {
     background-color: #101828d6;
   }
   .foil-in-list {
-    height: 231px;
+    height: var(--mobile-h);
   }
   #card-section.mobile-big {
     gap: 20px;

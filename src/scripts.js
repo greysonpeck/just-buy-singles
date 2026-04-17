@@ -228,18 +228,9 @@ document.addEventListener(
         const getSubInfo = document.getElementById("explainer");
         const backToMainInfo = document.getElementById("back-to-main");
 
-        // Top actions scroll, reposition
+        // Top actions — fade in background after scrolling
         window.addEventListener("scroll", function () {
-            const topActions = document.getElementById("top-actions");
-            const scrollThreshold = 50; // pixels
-
-            if (window.scrollY > scrollThreshold) {
-                topActions.classList.remove("top-nav");
-                topActions.classList.add("bottom-nav");
-            } else {
-                topActions.classList.remove("bottom-nav");
-                topActions.classList.add("top-nav");
-            }
+            document.getElementById("top-actions").classList.toggle("scrolled", window.scrollY > 50);
         });
 
         // Click Feedback, get modal
@@ -711,7 +702,7 @@ function makeSlot(id, label, hasFoil, quantity) {
 
     cardInfo.innerHTML =
         infoPopWrapper +
-        '<div class="slot-label hover:underline hover:cursor-pointer">' +
+        '<div class="slot-label">' +
         label +
         "</div>" +
         '<div id="' +

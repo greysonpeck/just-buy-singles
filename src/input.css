@@ -635,29 +635,31 @@ input:checked + .slider:before {
 
 /* Mobile sizing — 2-column layout
  *
- * Cards are reduced to 165px wide (from 240px desktop) so two fit per row on
- * 360px+ phones with the existing flex-wrap layout. Text sizes are left alone.
- * All dependent values (top-pos offsets, stack heights, infopop) are scaled
- * proportionally: factor = 165/240 ≈ 0.688.
- *
- *   Card height:  165 * (336/240) = 231px
- *   top-pos step: 38 * 0.688      =  26px
- *   Stack formula: 231 + (N-1)*28 + 28 = 259 + (N-1)*28
+ * Cards expand to fill exactly half the container:
+ *   --mobile-w    = 50vw - 12px   (px-4 = 8px/side, gap-2 = 8px → 12px/card)
+ *   --mobile-h    = mobile-w × 680/488  (standard MTG card aspect ratio)
+ *   --mobile-step = mobile-w × 26/165   (top-pos step, scaled from 38px desktop)
  */
 @media (max-width: 480px) {
-    /* Card element widths scoped to #card-section so the ghost card
-     * (#single-holder) is unaffected — it keeps its own 240px sizing. */
+    /* CSS variables on #card-section so descendants inherit them.
+     * Ghost card (#single-holder) is outside #card-section and is unaffected. */
+    #card-section {
+        --mobile-w:    calc(50vw - 12px);
+        --mobile-h:    calc(var(--mobile-w) * 1.3934);
+        --mobile-step: calc(var(--mobile-w) * 0.1576);
+    }
+
     #card-section .both-cards,
     #card-section .both-cards-single,
     #card-section .card-face,
     #card-section .card-default,
     #card-section .foil-hold {
-        width: 165px;
+        width: var(--mobile-w);
     }
 
-    /* Single-card slot container height (231px card + ~29px label row) */
+    /* Single-card slot container height (card + ~29px label row) */
     .total-card {
-        height: 260px;
+        height: calc(var(--mobile-h) + 29px);
         text-wrap: wrap;
         @apply mb-8;
     }
@@ -686,34 +688,34 @@ input:checked + .slider:before {
         padding-left: 0;
     }
 
-    /* Top-position offsets for stacked cards: 26px per step (was 38px) */
-    .top-pos-1 { top: 26px; }
-    .top-pos-2 { top: 52px; }
-    .top-pos-3 { top: 78px; }
-    .top-pos-4 { top: 104px; }
-    .top-pos-5 { top: 130px; }
-    .top-pos-6 { top: 156px; }
+    /* Top-position offsets for stacked cards (scaled with card width) */
+    .top-pos-1 { top: calc(var(--mobile-step) * 1); }
+    .top-pos-2 { top: calc(var(--mobile-step) * 2); }
+    .top-pos-3 { top: calc(var(--mobile-step) * 3); }
+    .top-pos-4 { top: calc(var(--mobile-step) * 4); }
+    .top-pos-5 { top: calc(var(--mobile-step) * 5); }
+    .top-pos-6 { top: calc(var(--mobile-step) * 6); }
 
-    /* Multi-card stack container heights: 259 + (N-1)*28 */
-    .stack-height-2 { height: 287px; }
-    .stack-height-3 { height: 315px; }
-    .stack-height-4 { height: 343px; }
-    .stack-height-5 { height: 371px; }
-    .stack-height-6 { height: 399px; }
-    .stack-height-7 { height: 427px; }
+    /* Multi-card stack container heights: card-h + N×28px */
+    .stack-height-2 { height: calc(var(--mobile-h) + 56px); }
+    .stack-height-3 { height: calc(var(--mobile-h) + 84px); }
+    .stack-height-4 { height: calc(var(--mobile-h) + 112px); }
+    .stack-height-5 { height: calc(var(--mobile-h) + 140px); }
+    .stack-height-6 { height: calc(var(--mobile-h) + 168px); }
+    .stack-height-7 { height: calc(var(--mobile-h) + 196px); }
 
     /* Infopop tooltip covering a multi-card stack */
     .infopop-content {
-        width: 165px;
-        height: 231px;
+        width: var(--mobile-w);
+        height: var(--mobile-h);
     }
 
-    .h-cards-2 { margin-top: -2px; height: 255px; }
-    .h-cards-3 { margin-top: -2px; height: 281px; }
-    .h-cards-4 { margin-top: -2px; height: 307px; }
-    .h-cards-5 { margin-top: -2px; height: 333px; }
-    .h-cards-6 { margin-top: -2px; height: 359px; }
-    .h-cards-7 { margin-top: -2px; height: 385px; }
+    .h-cards-2 { margin-top: -2px; height: calc(var(--mobile-h) - 2px + var(--mobile-step) * 1); }
+    .h-cards-3 { margin-top: -2px; height: calc(var(--mobile-h) - 2px + var(--mobile-step) * 2); }
+    .h-cards-4 { margin-top: -2px; height: calc(var(--mobile-h) - 2px + var(--mobile-step) * 3); }
+    .h-cards-5 { margin-top: -2px; height: calc(var(--mobile-h) - 2px + var(--mobile-step) * 4); }
+    .h-cards-6 { margin-top: -2px; height: calc(var(--mobile-h) - 2px + var(--mobile-step) * 5); }
+    .h-cards-7 { margin-top: -2px; height: calc(var(--mobile-h) - 2px + var(--mobile-step) * 6); }
 
     /* Ghost card — center the fixed element by anchoring at viewport midpoint */
     .snark-and-single { width: 300px; }
@@ -741,19 +743,19 @@ input:checked + .slider:before {
         max-width: 320px;
     }
 
-    .top-nav {
+    #top-actions {
         top: 0;
         bottom: auto;
+        background-color: transparent;
+        transition: background-color 0.3s ease;
     }
 
-    .bottom-nav {
-        top: auto;
-        bottom: 0;
+    #top-actions.scrolled {
         background-color: #101828d6;
     }
 
     .foil-in-list {
-        height: 231px;
+        height: var(--mobile-h);
     }
 
     /* Big mode: tapping any slot toggles #card-section.mobile-big.
