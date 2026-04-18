@@ -187,7 +187,7 @@ h2 #booster-types {
     height: 34px;
     position: relative;
     border-radius: 34px;
-    background-color: #1c45484f;
+    background-color: rgba(255,255,255,0.12);
     cursor: pointer;
     transition: background-color 0.3s;
 }
@@ -202,7 +202,7 @@ h2 #booster-types {
     width: 40px;
     height: 24px;
     border-radius: 25px;
-    background-color: #1c45484f;
+    background-color: rgba(255,255,255,0.28);
     top: 4px;
     left: 4px;
     transition: transform 0.3s;
@@ -213,7 +213,7 @@ h2 #booster-types {
 }
 
 .toggle.on {
-    background-color: #0824264f;
+    background-color: rgba(255,255,255,0.08);
 }
 
 .toggle.on::before {

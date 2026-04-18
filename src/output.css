@@ -364,6 +364,9 @@
   .-ml-\[120px\] {
     margin-left: calc(120px * -1);
   }
+  .ml-3 {
+    margin-left: calc(var(--spacing) * 3);
+  }
   .ml-4 {
     margin-left: calc(var(--spacing) * 4);
   }
@@ -381,6 +384,9 @@
   }
   .inline {
     display: inline;
+  }
+  .h-0 {
+    height: calc(var(--spacing) * 0);
   }
   .h-10 {
     height: calc(var(--spacing) * 10);
@@ -740,6 +746,9 @@
   }
   .text-right {
     text-align: right;
+  }
+  .align-middle {
+    vertical-align: middle;
   }
   .font-\[Raleway\] {
     font-family: Raleway;
@@ -1210,7 +1219,7 @@ h2 #booster-types {
   height: 34px;
   position: relative;
   border-radius: 34px;
-  background-color: #1c45484f;
+  background-color: rgba(255,255,255,0.12);
   cursor: pointer;
   transition: background-color 0.3s;
 }
@@ -1224,7 +1233,7 @@ h2 #booster-types {
   width: 40px;
   height: 24px;
   border-radius: 25px;
-  background-color: #1c45484f;
+  background-color: rgba(255,255,255,0.28);
   top: 4px;
   left: 4px;
   transition: transform 0.3s;
@@ -1233,7 +1242,7 @@ h2 #booster-types {
   content: "CAD";
 }
 .toggle.on {
-  background-color: #0824264f;
+  background-color: rgba(255,255,255,0.08);
 }
 .toggle.on::before {
   transform: translateX(12px);

@@ -13,31 +13,48 @@
  *   <div id="mode-toggle" class="ma-toggle mt-4 ring-1 ring-gray-400"></div>
  *   <div id="loading">Loading cards…</div>
  *   <div id="buckets"></div>
- *   <span id="fetch-date"></span>  (optional — filled with ", as of Month D")
+ *   <span id="fetch-date"></span>      (optional — filled with ", as of Month D")
+ *   <span id="catalog-currency"></span> (optional — filled with USD/CAD toggle)
+ *
+ * Requires money.js (fx) for CAD conversion.
  */
 
-const BUCKETS = [
-    { label: 'Over $50',      min: 50, max: Infinity },
-    { label: 'Over $20',      min: 20, max: 50       },
-    { label: 'Over $10',      min: 10, max: 20       },
-    { label: 'Over $5',       min: 5,  max: 10       },
-    { label: '$1\u2013$5',    min: 1,  max: 5        },
-    { label: 'Under $1',      min: 0,  max: 1        },
-    { label: 'No prices yet', noPrice: true          },
+const BG_STYLES = [
+    'background: linear-gradient(to bottom, rgba(175,130,20,0.65), rgba(175,130,20,0.15))', // gold       — Over $1,000
+    'background: linear-gradient(to bottom, rgba(170,80,30,0.65),  rgba(170,80,30,0.15))',  // orange     — Over $500
+    'background: linear-gradient(to bottom, rgba(165,55,35,0.65),  rgba(165,55,35,0.15))',  // orange-red — Over $250
+    'background: linear-gradient(to bottom, rgba(160,50,50,0.65),  rgba(160,50,50,0.15))',  // red        — Over $100
+    'background: linear-gradient(to bottom, rgba(145,50,90,0.65),  rgba(145,50,90,0.15))',  // crimson    — Over $50
+    'background: linear-gradient(to bottom, rgba(120,50,120,0.65), rgba(120,50,120,0.15))', // magenta    — Over $20
+    'background: linear-gradient(to bottom, rgba(80,50,150,0.65),  rgba(80,50,150,0.15))',  // purple     — Over $10
+    'background: linear-gradient(to bottom, rgba(55,70,165,0.65),  rgba(55,70,165,0.15))',  // blue       — Over $5
+    'background: linear-gradient(to bottom, rgba(35,95,155,0.65),  rgba(35,95,155,0.15))',  // sky blue   — $1–$5
+    'background: linear-gradient(to bottom, rgba(30,110,95,0.65),  rgba(30,110,95,0.15))',  // teal       — Under $1
+    'background: linear-gradient(to bottom, rgba(30,30,35,0.70),   rgba(30,30,35,0.30))',   // dark gray  — No prices yet
 ];
 
-const BG_STYLES = [
-    'background: linear-gradient(to bottom, rgba(136,19,55,0.65),  rgba(136,19,55,0.15))',
-    'background: linear-gradient(to bottom, rgba(51,65,85,0.65),   rgba(51,65,85,0.15))',
-    'background: linear-gradient(to bottom, rgba(30,58,138,0.65),  rgba(30,58,138,0.15))',
-    'background: linear-gradient(to bottom, rgba(49,46,129,0.65),  rgba(49,46,129,0.15))',
-    'background: linear-gradient(to bottom, rgba(76,29,149,0.65),  rgba(76,29,149,0.15))',
-    'background: linear-gradient(to bottom, rgba(31,41,55,0.65),   rgba(31,41,55,0.15))',
-    'background: linear-gradient(to bottom, rgba(30,30,35,0.7),    rgba(30,30,35,0.3))',
-];
+function _makeBuckets() {
+    const s = '$';
+    return [
+        { label: `Over ${s}1,000 (yo??)`,  min: 1000, max: Infinity },
+        { label: `Over ${s}500`,            min: 500,  max: 1000     },
+        { label: `Over ${s}250`,            min: 250,  max: 500      },
+        { label: `Over ${s}100`,            min: 100,  max: 250      },
+        { label: `Over ${s}50`,             min: 50,   max: 100      },
+        { label: `Over ${s}20`,             min: 20,  max: 50       },
+        { label: `Over ${s}10`,             min: 10,  max: 20       },
+        { label: `Over ${s}5`,              min: 5,   max: 10       },
+        { label: `${s}1\u2013${s}5`,        min: 1,   max: 5        },
+        { label: `Under ${s}1`,             min: 0,   max: 1        },
+        { label: 'No prices yet',           noPrice: true           },
+    ].map((b, i) => ({ ...b, bgStyle: BG_STYLES[i] }));
+}
 
 const CARD_BACK = './img/card_default4.png';
 const CACHE_TTL = 24 * 60 * 60 * 1000; // 24 hours
+
+// ── Currency ───────────────────────────────────────────────────────
+let currencyMode = 'USD';
 
 // ── Cache helpers ──────────────────────────────────────────────────
 function _getCached(query) {
@@ -68,6 +85,9 @@ function initCatalog(config) {
     let currentMode = modes[0].id;
     let isAnimating = false;
 
+    // Read currency preference on init
+    currencyMode = localStorage.getItem('currencyMode') || 'USD';
+
     // ── Build toggle UI ────────────────────────────────────────────
     const toggleEl = document.getElementById('mode-toggle');
     modes.forEach((mode, i) => {
@@ -83,6 +103,34 @@ function initCatalog(config) {
         btn.onclick   = () => setMode(mode.id);
         toggleEl.appendChild(btn);
     });
+
+    // ── Currency toggle ────────────────────────────────────────────
+    function renderCurrencyToggle() {
+        const el = document.getElementById('catalog-currency');
+        if (!el) return;
+        el.innerHTML =
+            `<label class="switch ml-3 align-middle cursor-pointer">` +
+            `<input type="checkbox" id="cat-currency-input" class="opacity-0 w-0 h-0 absolute"` +
+            (currencyMode === 'CAD' ? ' checked' : '') + `>` +
+            `<span id="cat-toggle" class="toggle${currencyMode === 'CAD' ? ' toggle-cad on' : ''}"></span>` +
+            `</label>`;
+        el.querySelector('#cat-currency-input').addEventListener('change', e => {
+            currencyMode = e.target.checked ? 'CAD' : 'USD';
+            localStorage.setItem('currencyMode', currencyMode);
+            const toggle = el.querySelector('#cat-toggle');
+            toggle.classList.toggle('toggle-cad', currencyMode === 'CAD');
+            toggle.classList.toggle('on', currencyMode === 'CAD');
+            rebuildCurrentMode();
+        });
+    }
+
+    function rebuildCurrentMode() {
+        const isBase = currentMode === modes[0].id;
+        const cards  = isBase
+            ? baseCards
+            : baseCards.map(c => altMaps[currentMode]?.[c.name] ?? c);
+        buildBuckets(currentMode, cards, false);
+    }
 
     // ── Fetch (with 24h cache) ─────────────────────────────────────
     async function init() {
@@ -113,6 +161,7 @@ function initCatalog(config) {
                 dateEl.textContent = ', as of ' + _fmtDate(oldestAt);
             }
 
+            renderCurrencyToggle();
             buildBuckets(modes[0].id, baseCards, false);
 
         } catch (e) {
@@ -122,7 +171,7 @@ function initCatalog(config) {
 
     // ── Bucketing ──────────────────────────────────────────────────
     function assignBuckets(cards, modeConfig) {
-        const buckets       = BUCKETS.map((b, i) => ({ ...b, bgStyle: BG_STYLES[i], cards: [] }));
+        const buckets       = _makeBuckets().map(b => ({ ...b, cards: [] }));
         const noPriceBucket = buckets[buckets.length - 1];
 
         for (const card of cards) {
@@ -134,7 +183,10 @@ function initCatalog(config) {
                 noPriceBucket.cards.push(card);
                 continue;
             }
-            const price = parseFloat(priceVal);
+            const usd   = parseFloat(priceVal);
+            const price = (currencyMode === 'CAD' && typeof fx !== 'undefined')
+                ? usd * fx.rates.CAD
+                : usd;
             const bucket = buckets.find(b => !b.noPrice && price >= b.min && price < b.max)
                 ?? buckets[buckets.length - 2];
             bucket.cards.push(card);
@@ -145,7 +197,13 @@ function initCatalog(config) {
     // ── Price formatting ───────────────────────────────────────────
     function fmt(val) {
         if (!val || isNaN(parseFloat(val))) return null;
-        return '$' + Math.round(parseFloat(val));
+        const usd = parseFloat(val);
+        const converted = (currencyMode === 'CAD' && typeof fx !== 'undefined')
+            ? usd * fx.rates.CAD
+            : usd;
+        const rounded = Math.round(converted);
+        if (rounded === 0) return '< $1';
+        return '$' + (rounded >= 1000 ? rounded.toLocaleString() : rounded);
     }
 
     // placeholder shown (dimmed) when val is null
@@ -158,13 +216,13 @@ function initCatalog(config) {
                 </div>`;
     }
 
-    function combinedFoilRow(card) {
+    function combinedFoilRow(card, alwaysShow) {
         const foil   = fmt(card.prices?.usd_foil);
         const etched = fmt(card.prices?.usd_etched);
         if (foil && etched) return priceRow('Foil, Foil Etched', `${foil}, ${etched}`);
         if (foil)           return priceRow('Foil', foil);
         if (etched)         return priceRow('Foil Etched', etched);
-        return '';
+        return alwaysShow   ? priceRow('Foil', null, 'no data') : '';
     }
 
     function priceBlock(card, modeConfig) {
@@ -175,8 +233,9 @@ function initCatalog(config) {
             const label  = (foil && etched) ? 'Foil, Foil Etched' : etched ? 'Foil Etched' : 'Foil';
             return priceRow(label, val, 'no data');
         }
-        const normalPlaceholder = modeConfig?.alwaysShowNormal ? 'no data' : null;
-        return priceRow('Normal', fmt(card.prices?.usd), normalPlaceholder) + combinedFoilRow(card);
+        const alwaysShow = !!modeConfig?.alwaysShowNormal;
+        return priceRow('Normal', fmt(card.prices?.usd), alwaysShow ? 'no data' : null)
+            + combinedFoilRow(card, alwaysShow);
     }
 
     // ── DOM building ───────────────────────────────────────────────
@@ -216,7 +275,7 @@ function initCatalog(config) {
 
                 return `<div class="ma-card flex flex-col gap-1">
                     ${!isBase ? `<div class="text-sm text-white/60 w-full truncate">${card.name}</div>` : ''}
-                    <div class="text-xs w-full">${priceBlock(priceCard, modeConfig)}</div>
+                    <div class="text-sm w-full">${priceBlock(priceCard, modeConfig)}</div>
                     <div style="perspective:800px;">
                         <div class="ma-flipper${flippedClass}">
                             <img class="ma-face ma-front shadow-lg" src="${imgSrc}" alt="${card.name}" loading="lazy">
@@ -226,8 +285,8 @@ function initCatalog(config) {
                 </div>`;
             }).join('');
 
-            html += `<div class="rounded-2xl p-5 backdrop-blur-sm" style="${b.bgStyle}">
-                <h2 class="text-base font-bold text-white/90 mb-4">${b.label}</h2>
+            html += `<div class="rounded-lg p-5 backdrop-blur-sm" style="${b.bgStyle}">
+                <h2 class="text-lg font-bold text-white/90 mb-4">${b.label}</h2>
                 <div class="flex flex-wrap gap-4">${cardsHTML}</div>
             </div>`;
         }

@@ -87,8 +87,8 @@
 
         <!-- Header -->
         <div class="mb-8">
-            <h1 class="text-4xl font-bold tracking-wide">Strixhaven: School of Mages, Mystical Archive</h1>
-            <p class="text-white/60 mt-1 text-sm">STA &nbsp;·&nbsp; TCGPlayer prices via Scryfall</p>
+            <h1 class="text-3xl sm:text-4xl font-bold tracking-wide">Strixhaven: School of Mages, Mystical Archive</h1>
+            <p class="text-white/60 mt-1 text-sm flex items-center">TCGPlayer prices via Scryfall<span id="fetch-date"></span><span id="catalog-currency"></span></p>
 
             <!-- Mode toggle -->
             <div id="mode-toggle" class="ma-toggle mt-4 ring-1 ring-gray-400"></div>
@@ -107,7 +107,8 @@
         </p>
     </div>
 
-    <script src="./src/catalog.js?v=1.41"></script>
+    <script src="./src/money.js?v=1.43"></script>
+    <script src="./src/catalog.js?v=1.43"></script>
     <script>
         initCatalog({
             modes: [
