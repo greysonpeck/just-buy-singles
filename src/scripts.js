@@ -373,6 +373,12 @@ document.addEventListener(
         currentMoneyElement = document.getElementById("current-money");
         const toggle = document.getElementById("currency");
 
+        const SET_VERSION = 'v2-sos-default';
+        if (localStorage.getItem('setVersion') !== SET_VERSION) {
+            localStorage.setItem('setVersion', SET_VERSION);
+            localStorage.removeItem('currentSet');
+        }
+
         const _urlSet = new URLSearchParams(window.location.search).get("set")?.toUpperCase();
         const _savedSet = localStorage.getItem("currentSet");
         const _startSet = _urlSet || _savedSet;
