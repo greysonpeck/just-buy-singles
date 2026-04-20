@@ -377,6 +377,7 @@ document.addEventListener(
         if (localStorage.getItem('setVersion') !== SET_VERSION) {
             localStorage.setItem('setVersion', SET_VERSION);
             localStorage.removeItem('currentSet');
+            history.replaceState(null, '', window.location.pathname);
         }
 
         const _urlSet = new URLSearchParams(window.location.search).get("set")?.toUpperCase();
