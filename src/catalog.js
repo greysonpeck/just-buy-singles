@@ -109,7 +109,7 @@ function initCatalog(config) {
         const el = document.getElementById('catalog-currency');
         if (!el) return;
         el.innerHTML =
-            `<label class="switch ml-3 align-middle cursor-pointer">` +
+            `<label class="switch align-middle cursor-pointer">` +
             `<input type="checkbox" id="cat-currency-input" class="opacity-0 w-0 h-0 absolute"` +
             (currencyMode === 'CAD' ? ' checked' : '') + `>` +
             `<span id="cat-toggle" class="toggle${currencyMode === 'CAD' ? ' toggle-cad on' : ''}"></span>` +
