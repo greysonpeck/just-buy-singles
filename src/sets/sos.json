@@ -192,7 +192,7 @@
             { "maxRoll":  31.7, "type": "Mystical Archive, Uncommon",                          "rarity": "31.7%", "query": "set%3Asoa+rarity%3Au+CN<%3D65&unique=cards",                     "foilClass": null },
             { "maxRoll":  63.4, "type": "Mystical Archive, Uncommon (Foil)",                        "rarity": "31.7%", "query": "set%3Asoa+rarity%3Au+CN<%3D65&unique=cards",                     "foilClass": "foil-gradient" },
             { "maxRoll":  95.1, "type": "Japanese Mystical Archive, Uncommon",                 "rarity": "31.7%", "query": "set%3Asoa+rarity%3Au+%28CN>%3D66+AND+CN<%3D130%29&unique=cards", "foilClass": null },
-            { "maxRoll": 100.0, "type": "Japanese Mystical Archive, Uncommon (Silver Scroll Foil)", "rarity": "5%",    "query": "set%3Asoa+rarity%3Au+%28CN>%3D131+AND+CN<%3D195%29&unique=cards", "foilClass": null }
+            { "maxRoll": 100.0, "type": "Japanese Mystical Archive, Uncommon (Silver Scroll Foil)", "rarity": "5%",    "query": "set%3Asoa+rarity%3Au+%28CN>%3D131+AND+CN<%3D195%29&unique=cards", "foilClass": "foil-gradient" }
           ]
         },
         {
@@ -203,7 +203,7 @@
             { "maxRoll":  31.7, "type": "Mystical Archive, Uncommon",                          "rarity": "31.7%", "query": "set%3Asoa+rarity%3Au+CN<%3D65&unique=cards",                     "foilClass": null },
             { "maxRoll":  63.4, "type": "Mystical Archive, Uncommon (Foil)",                        "rarity": "31.7%", "query": "set%3Asoa+rarity%3Au+CN<%3D65&unique=cards",                     "foilClass": "foil-gradient" },
             { "maxRoll":  95.1, "type": "Japanese Mystical Archive, Uncommon",                 "rarity": "31.7%", "query": "set%3Asoa+rarity%3Au+%28CN>%3D66+AND+CN<%3D130%29&unique=cards", "foilClass": null },
-            { "maxRoll": 100.0, "type": "Japanese Mystical Archive, Uncommon (Silver Scroll Foil)", "rarity": "5%",    "query": "set%3Asoa+rarity%3Au+%28CN>%3D131+AND+CN<%3D195%29&unique=cards", "foilClass": null }
+            { "maxRoll": 100.0, "type": "Japanese Mystical Archive, Uncommon (Silver Scroll Foil)", "rarity": "5%",    "query": "set%3Asoa+rarity%3Au+%28CN>%3D131+AND+CN<%3D195%29&unique=cards", "foilClass": "foil-gradient" }
           ]
         },
         {

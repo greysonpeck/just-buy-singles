@@ -5,7 +5,16 @@
       "Bash(wc -l /Users/gpeck/repos/just-buy-singles/src/*.js)",
       "Bash(wc -l /Users/gpeck/repos/just-buy-singles/src/*.css)",
       "Bash(ls /Users/gpeck/repos/just-buy-singles/src/logic-*.js)",
-      "Bash(npx tailwindcss -i src/input.css -o src/output.css 2>&1 | tail -3)"
+      "Bash(npx tailwindcss -i src/input.css -o src/output.css 2>&1 | tail -3)",
+      "WebFetch(domain:scryfall.com)",
+      "WebSearch",
+      "Bash(npx @tailwindcss/cli -i src/input.css -o src/output.css)",
+      "Bash(curl -s \"https://api.scryfall.com/cards/search?q=set%3Asoa+lang%3Aen+is%3Anonfoil\")",
+      "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); print\\('EN nonfoil:', d.get\\('total_cards'\\)\\)\")",
+      "Bash(curl -s \"https://api.scryfall.com/cards/search?q=set%3Asoa+lang%3Aja+is%3Anonfoil\")",
+      "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); print\\('JA nonfoil:', d.get\\('total_cards'\\)\\)\")",
+      "Bash(curl -s \"https://api.scryfall.com/cards/search?q=set%3Asoa+lang%3Aja+-is%3Anonfoil\")",
+      "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); print\\('JA foil-only \\(Silver Scroll\\):', d.get\\('total_cards'\\)\\)\")"
     ]
   }
 }

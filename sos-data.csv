@@ -4,9 +4,9 @@ SOS,2,Rancorous Archaic,C,Default
 SOS,3,Sundering Archaic,U,Default
 SOS,4,Together as One,R,Default
 SOS,5,Transcendent Archaic,U,Default
-SOS,6,,,Default
+SOS,6,Ajani's Response,C,Default
 SOS,7,Antiquities on the Loose,R,Default
-SOS,8,,,Default
+SOS,8,Ascendant Dustspeaker,C,Default
 SOS,9,Daydream,U,Default
 SOS,10,Dig Site Inventory,C,Default
 SOS,11,Eager Glyphmage,C,Default
@@ -17,12 +17,12 @@ SOS,15,Erode,R,Default
 SOS,16,Graduation Day,U,Default
 SOS,17,Group Project,U,Default
 SOS,18,Harsh Annotation,U,Default
-SOS,19,,,Default
+SOS,19,Honorbound Page // Forum's Favor,U,Default
 SOS,20,Informed Inkwright,R,Default
 SOS,21,Inkshape Demonstrator,U,Default
 SOS,22,Interjection,C,Default
 SOS,23,Joined Researchers,R,Default
-SOS,24,,,Default
+SOS,24,Owlin Historian,C,Default
 SOS,25,Practiced Offense,R,Default
 SOS,26,Primary Research,U,Default
 SOS,27,Quill-Blade Laureate,U,Default
@@ -34,25 +34,25 @@ SOS,32,Soaring Stoneglider,U,Default
 SOS,33,Spiritcall Enthusiast ,U,Default
 SOS,34,Stand Up for Yourself,U,Default
 SOS,35,Stirring Hopesinger,R,Default
-SOS,36,,,Default
+SOS,36,Stone Docent,C,Default
 SOS,37,Summoned Dromedary,U,Default
 SOS,38,Banishing Betrayal,C,Default
 SOS,39,Brush Off,U,Default
 SOS,40,Campus Composer,U,Default
-SOS,41,,,Default
+SOS,41,Chase Inspiration,C,Default
 SOS,42,Deluge Virtuoso,C,Default
 SOS,43,Divergent Equation ,U,Default
 SOS,44,Echocasting Symposium,M,Default
 SOS,45,Emeritus of Ideation,M,Default
 SOS,46,Encouraging Aviator,U,Default
-SOS,47,,,Default
+SOS,47,Essence Scatter,C,Default
 SOS,48,Exhibition Tidecaller,R,Default
 SOS,49,Flow State,U,Default
 SOS,50,Fractal Anomaly,U,Default
 SOS,51,Fractalize,U,Default
 SOS,52,Harmonized Trio,R,Default
 SOS,53,Homesickness,U,Default
-SOS,54,,,Default
+SOS,54,Hydro-Channeler,C,Default
 SOS,55,"Jadzi, Steward of Fate",R,Default
 SOS,56,Landscape Painter,C,Default
 SOS,57,Mana Sculpt,R,Default
@@ -64,17 +64,17 @@ SOS,62,"Orysa, Tide Choreographer",U,Default
 SOS,63,Pensive Professor,R,Default
 SOS,64,Procrastinate,C,Default
 SOS,65,Quick Study,C,Default
-SOS,66,,,Default
+SOS,66,Run Behind,C,Default
 SOS,67,Skycoach Conductor,R,Default
-SOS,68,,,Default
+SOS,68,Spellbook Seeker // Careful Study,C,Default
 SOS,69,Tester of the Tangential ,U,Default
-SOS,70,,,Default
+SOS,70,Textbook Tabulator,C,Default
 SOS,71,Wisdom of Ages,R,Default
 SOS,72,Adventurous Eater,C,Default
 SOS,73,Arcane Omens,U,Default
 SOS,74,"Arnyn, Deathbloom Botanist",U,Default
-SOS,75,,,Default
-SOS,76,,,Default
+SOS,75,Burrog Banemaker,C,Default
+SOS,76,Cheerful Osteomancer,C,Default
 SOS,77,Cost of Brilliance,C,Default
 SOS,78,Decorum Dissertation,M,Default
 SOS,79,Dissection Practice,U,Default
@@ -82,19 +82,19 @@ SOS,80,Emeritus of Woe,M,Default
 SOS,81,End of the Hunt,U,Default
 SOS,82,Eternal Student,U,Default
 SOS,83,Foolish Fate,U,Default
-SOS,84,,,Default
+SOS,84,Forum Necroscribe,U,Default
 SOS,85,Grave Researcher,R,Default
-SOS,86,,,Default
-SOS,87,,,Default
-SOS,88,,,Default
+SOS,86,Last Gasp,C,Default
+SOS,87,Lecturing Scornmage,U,Default
+SOS,88,Leech Collector,U,Default
 SOS,89,Masterful Flourish,C,Default
-SOS,90,,,Default
+SOS,90,Melancholic Poet,C,Default
 SOS,91,"Moseo, Vein's New Dean",R,Default
 SOS,92,Poisoner's Apprentice,U,Default
 SOS,93,Postmortem Professor,R,Default
 SOS,94,Pox Plague,R,Default
 SOS,95,Pull from the Grave,C,Default
-SOS,96,,,Default
+SOS,96,Rabid Attack,U,Default
 SOS,97,"Ral Zarek, Guest Lecturer",M,Default
 SOS,98,Scathing Shadelock,U,Default
 SOS,99,Scheming Silvertongue,R,Default
@@ -102,14 +102,14 @@ SOS,100,Send in the Pest,C,Default
 SOS,101,Sneering Shadewriter,C,Default
 SOS,102,Tragedy Feaster,R,Default
 SOS,103,Ulna Alley Shopkeep,C,Default
-SOS,104,,,Default
+SOS,104,Wander Off,C,Default
 SOS,105,Withering Curse,M,Default
 SOS,106,Ancestral Anger,C,Default
 SOS,107,Archaic's Agony,U,Default
 SOS,108,Artistic Process,U,Default
-SOS,109,Charging Strifeknight,U,Default
-SOS,110,Choreographed Sparks,R,Default
-SOS,111,,,Default
+SOS,109,Blazing Firesinger,U,Default
+SOS,110,Charging Strifeknight,U,Default
+SOS,111,Choreographed Sparks,R,Default
 SOS,112,Duel Tactics,U,Default
 SOS,113,Emeritus of Conflict,M,Default
 SOS,114,Expressive Firedancer,C,Default
@@ -124,53 +124,53 @@ SOS,122,Maelstrom Artisan,R,Default
 SOS,123,Magmablood Archaic,R,Default
 SOS,124,"Mica, Reader of Ruins",U,Default
 SOS,125,Molten-Core Maestro,R,Default
-SOS,126,,,Default
+SOS,126,Pigment Wrangler,U,Default
 SOS,127,Rearing Embermare,C,Default
 SOS,128,Rubble Rouser,C,Default
-SOS,129,,,Default
+SOS,129,Seize the Spoils,C,Default
 SOS,130,Steal the Show,R,Default
-SOS,131,,,Default
+SOS,131,Strife Scholar,C,Default
 SOS,132,Tablet of Discovery,U,Default
 SOS,133,Tackle Artist,C,Default
 SOS,134,Thunderdrum Soloist,U,Default
-SOS,135,,,Default
-SOS,136,,,Default
-SOS,137,,,Default
-SOS,138,,,Default
+SOS,135,Tome Blast,C,Default
+SOS,136,Unsubtle Mockery,C,Default
+SOS,137,Zealous Lorecaster,C,Default
+SOS,138,Aberrant Manawurm,U,Default
 SOS,139,Additive Evolution,U,Default
 SOS,140,Ambitious Augmenter,R,Default
 SOS,141,Burrog Barrage,C,Default
-SOS,142,,,Default
+SOS,142,Chelonian Tackle,U,Default
 SOS,143,Comforting Counsel,R,Default
 SOS,144,Efflorescence,C,Default
 SOS,145,Emeritus of Abundance,M,Default
-SOS,146,,,Default
+SOS,146,"Emil, Vastlands Roamer",U,Default
 SOS,147,Environmental Scientist,U,Default
-SOS,148,,,Default
+SOS,148,Follow the Lumarets,C,Default
 SOS,149,Germination Practicum,M,Default
 SOS,150,Glorious Decay,C,Default
 SOS,151,Hungry Graffalon,C,Default
-SOS,152,,,Default
+SOS,152,Infirmary Healer,U,Default
 SOS,153,Lumaret's Favor,U,Default
 SOS,154,Mindful Biomancer,C,Default
 SOS,155,Noxious Newt,C,Default
 SOS,156,Oracle's Restoration,C,Default
 SOS,157,Pestbrood Sloth,U,Default
 SOS,158,Planar Engineering,R,Default
-SOS,159,,,Default
+SOS,159,Shopkeeper's Bane,C,Default
 SOS,160,Slumbering Trudge,R,Default
 SOS,161,Snarl Song,U,Default
 SOS,162,Studious First-Year,C,Default
-SOS,163,,,Default
-SOS,164,,,Default
-SOS,165,,,Default
+SOS,163,Tenured Concocter,C,Default
+SOS,164,Thornfist Striker,U,Default
+SOS,165,Topiary Lecturer,U,Default
 SOS,166,Vastlands Scavenger,R,Default
-SOS,167,,,Default
+SOS,167,Wild Hypothesis,C,Default
 SOS,168,Wildgrowth Archaic,R,Default
 SOS,169,Zimone's Experiment,U,Default
 SOS,170,"Abigale, Poet Laureate",U,Default
 SOS,171,Abstract Paintmage,U,Default
-SOS,172,Applied Geometry ,R,Default
+SOS,172,Applied Geometry,R,Default
 SOS,173,Ark of Hunger,R,Default
 SOS,174,"Aziza, Mage Tower Captain",R,Default
 SOS,175,"Berta, Wise Extrapolator",R,Default
@@ -201,17 +201,17 @@ SOS,199,"Lluwen, Exchange Student",U,Default
 SOS,200,Lorehold Charm,U,Default
 SOS,201,"Lorehold, the Historian",M,Default
 SOS,202,Mind into Matter,R,Default
-SOS,203,,,Default
+SOS,203,Mind Roots,U,Default
 SOS,204,Molten Note,U,Default
 SOS,205,Moment of Reckoning,R,Default
 SOS,206,"Nita, Forum Conciliator",R,Default
 SOS,207,Old-Growth Educator,U,Default
 SOS,208,Paradox Surveyor,U,Default
 SOS,209,Pest Mascot,C,Default
-SOS,210,Practiced Scrollsmith ,U,Default
+SOS,210,Practiced Scrollsmith,U,Default
 SOS,211,Prismari Charm,U,Default
 SOS,212,"Prismari, the Inspiration",M,Default
-SOS,213,,,Default
+SOS,213,Proctor's Gaze,U,Default
 SOS,214,Professor Dellian Fel,M,Default
 SOS,215,Pterafractyl,C,Default
 SOS,216,Pursue the Past,C,Default
@@ -220,7 +220,7 @@ SOS,218,"Quandrix, the Proof",M,Default
 SOS,219,Rapturous Moment,U,Default
 SOS,220,Render Speechless,C,Default
 SOS,221,Resonating Lute,R,Default
-SOS,222,,,Default
+SOS,222,Root Manipulation,U,Default
 SOS,223,"Sanar, Unfinished Genius",U,Default
 SOS,224,Scolding Administrator,U,Default
 SOS,225,Silverquill Charm,U,Default
@@ -231,14 +231,14 @@ SOS,229,Spectacular Skywhale,U,Default
 SOS,230,Spirit Mascot,C,Default
 SOS,231,Splatter Technique,R,Default
 SOS,232,Stadium Tidalmage,C,Default
-SOS,233,,,Default
+SOS,233,Startled Relic Sloth,U,Default
 SOS,234,Stirring Honormancer,U,Default
 SOS,235,Stress Dream,U,Default
 SOS,236,Suspend Aggression,R,Default
 SOS,237,"Tam, Observant Sequencer",U,Default
 SOS,238,Teacher's Pest,U,Default
 SOS,239,Traumatic Critique,R,Default
-SOS,240,,,Default
+SOS,240,Vibrant Outburst,U,Default
 SOS,241,Vicious Rivalry,R,Default
 SOS,242,Visionary's Dance,C,Default
 SOS,243,Wilt in the Heat,C,Default
