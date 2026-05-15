@@ -130,13 +130,17 @@ async function loadSetConfig(code) {
 // Replaces setXxx() functions. Called from DOMContentLoaded set-restore and set-selector buttons.
 async function initSet(code, boosterType) {
     const config = await loadSetConfig(code);
-    const actualType = boosterType || localStorage.getItem('currentBoosterType') || config.boosterTypes[0];
+    const _savedType = boosterType || localStorage.getItem('currentBoosterType');
+    const actualType = (_savedType && config.boosterTypes.includes(_savedType))
+        ? _savedType
+        : config.boosterTypes[0];
 
     // Register compatibility shims so legacy callers (boosterToggle, changeSet) still work.
     window['set' + code] = () => initSet(code);
     window['set' + code + '_Money'] = () => {
         const bt = localStorage.getItem('currentBoosterType') || config.boosterTypes[0];
-        _initSetMoney(code, bt, config);
+        const validBt = config.boosterTypes.includes(bt) ? bt : config.boosterTypes[0];
+        _initSetMoney(code, validBt, config);
     };
 
     // State
