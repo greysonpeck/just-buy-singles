@@ -99,7 +99,7 @@
           "trailingCard": {
             "probabilities": [
               { "maxRoll":  98.2, "type": "Common",          "rarity": "98.2%", "query": "set%3Asos+rarity%3Ac+CN<%3D266&unique=cards" },
-              { "maxRoll": 100.0, "type": "Special Guests",  "rarity": "1.8%",  "query": "set%3Aspg+%28CN>%3D149+AND+CN<%3D158%29&unique=cards" }
+              { "maxRoll": 100.0, "type": "Special Guests",  "rarity": "1.8%",  "query": "set%3Aspg+%28CN>%3D149+AND+CN<%3D158%29+game%3Apaper" }
             ]
           }
         }
@@ -129,7 +129,7 @@
             { "maxRoll":  85.5, "type": "Field Notes, Mythic (Foil)",                             "rarity": "3.7%",  "query": "set%3Asos+rarity%3Am+%28CN>%3D289+AND+CN<%3D300%29&unique=cards",   "foilClass": "foil-gradient" },
             { "maxRoll":  93.2, "type": "Japanese MA, Rare (Silver Scroll Foil)",                 "rarity": "7.7%",  "query": "set%3Asoa+rarity%3Ar+%28CN>%3D131+AND+CN<%3D195%29&unique=cards",   "foilClass": "foil-gradient" },
             { "maxRoll":  95.5, "type": "Japanese MA, Mythic (Silver Scroll Foil)",               "rarity": "2.3%",  "query": "set%3Asoa+rarity%3Am+%28CN>%3D131+AND+CN<%3D195%29&unique=cards",   "foilClass": "foil-gradient" },
-            { "maxRoll": 100.0, "type": "Special Guests (Foil)",                                  "rarity": "4.5%",  "query": "set%3Aspg+%28CN>%3D149+AND+CN<%3D158%29&unique=cards",              "foilClass": "foil-gradient" }
+            { "maxRoll": 100.0, "type": "Special Guests (Foil)",                                  "rarity": "4.5%",  "query": "set%3Aspg+%28CN>%3D149+AND+CN<%3D158%29+game%3Apaper",              "foilClass": "foil-gradient" }
           ]
         },
         {
