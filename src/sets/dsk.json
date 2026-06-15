@@ -3,16 +3,16 @@
   "displayName": "DUSKMOURN",
   "backgroundImage": "img/DSK_bg.jpg",
   "boosterTypes": ["COLLECTOR"],
+  "ghostCard": {
+    "randomQuery": "set%3Adsk+unique%3Aprints+",
+    "topOutQuery": "set%3Adsk+unique%3Aprints+USD%3E%3D15"
+  },
   "boosters": {
     "COLLECTOR": {
       "totalCards": 13,
       "msrp": 4.99,
       "defaultUSD": 5,
       "defaultCAD": 7,
-      "ghostCard": {
-        "randomQuery": "set%3Adsk+unique%3Aprints+",
-        "topOutQuery": "set%3Adsk+unique%3Aprints+USD%3E%3D15"
-      },
       "slots": [
         {
           "id": "rare",
@@ -54,8 +54,8 @@
             { "maxRoll": 16.6,  "type": "Full-art basic (Foil)",  "rarity": "3.3%",  "query": "set%3Adsk+type%3Abasic+is%3Afullart",                                                                                   "foilClass": "foil-gradient" },
             { "maxRoll": 43.3,  "type": "Basic land (NF)",        "rarity": "26.7%", "query": "set%3Adsk+type%3Abasic+unique%3Aart+-is%3Afullart",                                                                      "foilClass": null },
             { "maxRoll": 50.0,  "type": "Basic land (Foil)",      "rarity": "6.7%",  "query": "set%3Adsk+type%3Abasic+unique%3Aart+-is%3Afullart",                                                                      "foilClass": "foil-gradient" },
-            { "maxRoll": 90.0,  "type": "Common dual-land (NF)",  "rarity": "40%",   "query": "set%3Adsk+type%3Aland+rarity%3Ac+-type%3Abasic+-name%3A%22Terramorphic+Expanse%22",                                     "foilClass": null },
-            { "maxRoll": 100.0, "type": "Common dual-land (Foil)","rarity": "10%",   "query": "set%3Adsk+type%3Aland+rarity%3Ac+-type%3Abasic+-name%3A%22Terramorphic+Expanse%22",                                     "foilClass": "foil-gradient" }
+            { "maxRoll": 90.0,  "type": "Common dual land (NF)",  "rarity": "40%",   "query": "set%3Adsk+type%3Aland+rarity%3Ac+-type%3Abasic+-name%3A%22Terramorphic+Expanse%22",                                     "foilClass": null },
+            { "maxRoll": 100.0, "type": "Common dual land (Foil)","rarity": "10%",   "query": "set%3Adsk+type%3Aland+rarity%3Ac+-type%3Abasic+-name%3A%22Terramorphic+Expanse%22",                                     "foilClass": "foil-gradient" }
           ]
         },
         {

@@ -3,16 +3,16 @@
   "displayName": "EDGE OF ETERNITIES",
   "backgroundImage": "img/EOE_bg_dark.jpg",
   "boosterTypes": ["COLLECTOR", "PLAY"],
+  "ghostCard": {
+    "randomQuery": "%28set%3Aeoe+or+set%3Aeos%29+unique%3Aprints+",
+    "topOutQuery": "%28set%3Aeoe+or+set%3Aeos%29+unique%3Aprints+USD%3E%3D15"
+  },
   "boosters": {
     "COLLECTOR": {
       "totalCards": 15,
       "msrp": 24.99,
       "defaultUSD": 38,
       "defaultCAD": 60,
-      "ghostCard": {
-        "randomQuery": "%28set%3Aeoe+or+set%3Aeos%29+unique%3Aprints+",
-        "topOutQuery": "%28set%3Aeoe+or+set%3Aeos%29+unique%3Aprints+USD%3E%3D15"
-      },
       "slots": [
         {
           "id": "boosterfun",
@@ -90,8 +90,8 @@
           "label": "Full-Art Celestial Land",
           "isFoil": true,
           "probabilities": [
-            { "maxRoll": 66.6,  "type": "Full-art Celestial Basic Land (Foil)",        "rarity": "66.6%", "query": "set%3Aeoe+type%3Abasic+is%3Afullart",              "foilClass": "foil-gradient" },
-            { "maxRoll": 100.0, "type": "Full-art Celestial Basic Land (Galaxy Foil)", "rarity": "33.3%", "query": "set%3Aeoe+type%3Abasic+is%3Afullart+is%3Agalaxyfoil","foilClass": ["foil-gradient", "galaxy-gradient"] }
+            { "maxRoll": 66.6,  "type": "Full-art Celestial basic land (Foil)",        "rarity": "66.6%", "query": "set%3Aeoe+type%3Abasic+is%3Afullart",              "foilClass": "foil-gradient" },
+            { "maxRoll": 100.0, "type": "Full-art Celestial basic land (Galaxy Foil)", "rarity": "33.3%", "query": "set%3Aeoe+type%3Abasic+is%3Afullart+is%3Agalaxyfoil","foilClass": ["foil-gradient", "galaxy-gradient"] }
           ]
         },
         {
@@ -122,10 +122,6 @@
       "msrp": 5.49,
       "defaultUSD": 6,
       "defaultCAD": 8,
-      "ghostCard": {
-        "randomQuery": "%28set%3Aeoe+or+set%3Aeos%29+unique%3Aprints+",
-        "topOutQuery": "%28set%3Aeoe+or+set%3Aeos%29+unique%3Aprints+USD%3E%3D15"
-      },
       "slots": [
         {
           "id": "foilwildcard",

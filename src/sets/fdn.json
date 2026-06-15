@@ -3,16 +3,16 @@
   "displayName": "FOUNDATIONS",
   "backgroundImage": "img/FDN_bg.png",
   "boosterTypes": ["COLLECTOR"],
+  "ghostCard": {
+    "randomQuery": "set%3Afdn+unique%3Aprints+",
+    "topOutQuery": "set%3Afdn+unique%3Aprints+USD%3E%3D15"
+  },
   "boosters": {
     "COLLECTOR": {
       "totalCards": 15,
       "msrp": 24.99,
       "defaultUSD": 40,
       "defaultCAD": 60,
-      "ghostCard": {
-        "randomQuery": "set%3Afdn+unique%3Aprints+",
-        "topOutQuery": "set%3Afdn+unique%3Aprints+USD%3E%3D15"
-      },
       "slots": [
         {
           "id": "foil",
@@ -99,7 +99,7 @@
           "sumVar": "commonSum",
           "cardInfo": ["5 Main-set commons", "10 common dual-lands appear 10.9% of the time, 2 borderless commons appear 2.1% of the time."],
           "probabilities": [
-            { "maxRoll": 87.0, "type": "Main Set Common", "rarity": "87%", "query": "set%3Afdn+rarity%3Ac+%28cn<%3D253+or+cn%3D262%29" },
+            { "maxRoll": 87.0, "type": "Main-set Common", "rarity": "87%", "query": "set%3Afdn+rarity%3Ac+%28cn<%3D253+or+cn%3D262%29" },
             { "maxRoll": 97.9, "type": "Common Dual Lands", "rarity": "10.9%", "query": "set%3Afdn+rarity%3Ac+cn>%3D258+AND+cn<%3D271+AND+cn%21%3D262" },
             { "maxRoll": 100.0, "type": "Common Borderless", "rarity": "2.1%", "query": "set%3Afdn+rarity%3Ac+border%3Aborderless" }
           ]

@@ -3,16 +3,16 @@
   "displayName": "TEENAGE MUTANT NINJA TURTLES",
   "backgroundImage": "img/TMT_bg.jpg",
   "boosterTypes": ["COLLECTOR", "PLAY"],
+  "ghostCard": {
+    "randomQuery": "%28set%3Atmt+or+set%3Atmc+or+set%3Apza%29+unique%3Aprints+",
+    "topOutQuery": "%28set%3Atmt+or+set%3Atmc+or+set%3Apza%29+unique%3Aprints+USD%3E%3D15"
+  },
   "boosters": {
     "COLLECTOR": {
       "totalCards": 15,
       "msrp": 37.99,
       "defaultUSD": 36,
       "defaultCAD": 60,
-      "ghostCard": {
-        "randomQuery": "%28set%3Atmt+or+set%3Atmc+or+set%3Apza%29+unique%3Aprints+",
-        "topOutQuery": "%28set%3Atmt+or+set%3Atmc+or+set%3Apza%29+unique%3Aprints+USD%3E%3D15"
-      },
       "slots": [
         {
           "id": "boosterfun",
@@ -69,7 +69,7 @@
             { "maxRoll": 2.9,   "type": "Silhouette, Mythic",                    "rarity": "2.9%",  "query": "set%3Atmt+rarity%3Am+%28CN>%3D215+AND+CN<%3D222%29&unique=cards",                            "foilClass": null },
             { "maxRoll": 8.7,   "type": "Scene, Rare",                           "rarity": "5.8%",  "query": "set%3Atmt+rarity%3Ar+%28CN>%3D196+AND+CN<%3D214%29&unique=cards",                            "foilClass": null },
             { "maxRoll": 21.9,  "type": "Sewer Frame, Rare",                     "rarity": "13.2%", "query": "set%3Atmt+rarity%3Ar+%28CN>%3D223+AND+CN<%3D252%29&unique=cards",                            "foilClass": null },
-            { "maxRoll": 23.3,  "type": "Sewer Frame, Mythic",                   "rarity": "1.4%",  "query": "set%3Atmt+rarity%3Am+%28CN>%3D223+AND+CN<%3D252%29&unique=cards",                            "foilClass": null },
+            { "maxRoll": 23.3,  "type": "Sewer Frame, Mythic",                   "rarity": "1.4%",  "query": "set%3Atmt+rarity%3A+%28CN>%3D223+AND+CN<%3D252%29&unique=cards",                            "foilClass": null },
             { "maxRoll": 39.4,  "type": "Extended-art, Rare",                    "rarity": "16.1%", "query": "set%3Atmt+rarity%3Ar+%28CN>%3D258+AND+CN<%3D280%29&unique=cards",                            "foilClass": null },
             { "maxRoll": 39.7,  "type": "Extended-art, Mythic",                  "rarity": "0.3%",  "query": "set%3Atmt+rarity%3Am+%28CN>%3D258+AND+CN<%3D280%29&unique=cards",                            "foilClass": null },
             { "maxRoll": 41.9,  "type": "Commander Mythic",                      "rarity": "2.2%",  "query": "set%3Atmc+rarity%3Am+%28CN>%3D1+AND+CN<%3D6%29&unique=cards",                               "foilClass": null },
@@ -121,8 +121,8 @@
           "cardInfo": ["3 Uncommons", "Main set (80.9%), Scene (10.3%), Sewer Frame (8.8%)."],
           "probabilities": [
             { "maxRoll": 80.9,  "type": "Main-set Uncommon (Foil)",   "rarity": "80.9%", "query": "set%3Atmt+rarity%3Au+CN<%3D190&unique=cards" },
-            { "maxRoll": 91.2,  "type": "Scene Uncommon (Foil)",      "rarity": "10.3%", "query": "set%3Atmt+rarity%3Au+%28CN>%3D196+AND+CN<%3D214%29&unique=cards" },
-            { "maxRoll": 100.0, "type": "Sewer Frame Uncommon (Foil)","rarity": "8.8%",  "query": "set%3Atmt+rarity%3Au+%28CN>%3D223+AND+CN<%3D252%29&unique=cards" }
+            { "maxRoll": 91.2,  "type": "Scene, Uncommon (Foil)",      "rarity": "10.3%", "query": "set%3Atmt+rarity%3Au+%28CN>%3D196+AND+CN<%3D214%29&unique=cards" },
+            { "maxRoll": 100.0, "type": "Sewer Frame, Uncommon (Foil)","rarity": "8.8%",  "query": "set%3Atmt+rarity%3Au+%28CN>%3D223+AND+CN<%3D252%29&unique=cards" }
           ]
         },
         {
@@ -145,10 +145,6 @@
       "msrp": 6.99,
       "defaultUSD": 6,
       "defaultCAD": 9,
-      "ghostCard": {
-        "randomQuery": "%28set%3Atmt+or+set%3Atmc+or+set%3Apza%29+unique%3Aprints+",
-        "topOutQuery": "%28set%3Atmt+or+set%3Atmc+or+set%3Apza%29+unique%3Aprints+USD%3E%3D15"
-      },
       "slots": [
         {
           "id": "foil",
@@ -159,12 +155,12 @@
             { "maxRoll": 89.2,  "type": "Main-set Uncommon (Foil)",             "rarity": "27.7%", "query": "set%3Atmt+rarity%3Au+CN<%3D190&unique=cards",                                "foilClass": "foil-gradient" },
             { "maxRoll": 95.9,  "type": "Main-set Rare (Foil)",                 "rarity": "6.7%",  "query": "set%3Atmt+rarity%3Ar+CN<%3D190&unique=cards",                                "foilClass": "foil-gradient" },
             { "maxRoll": 96.5,  "type": "Main-set Mythic (Foil)",               "rarity": "0.6%",  "query": "set%3Atmt+rarity%3Am+CN<%3D190&unique=cards",                                "foilClass": "foil-gradient" },
-            { "maxRoll": 96.7,  "type": "Scene Common (Foil)",                  "rarity": "0.2%",  "query": "set%3Atmt+rarity%3Ac+%28CN>%3D196+AND+CN<%3D214%29&unique=cards",            "foilClass": "foil-gradient" },
-            { "maxRoll": 97.4,  "type": "Scene Uncommon (Foil)",                "rarity": "0.7%",  "query": "set%3Atmt+rarity%3Au+%28CN>%3D196+AND+CN<%3D214%29&unique=cards",            "foilClass": "foil-gradient" },
-            { "maxRoll": 97.8,  "type": "Scene Rare (Foil)",                    "rarity": "0.4%",  "query": "set%3Atmt+rarity%3Ar+%28CN>%3D196+AND+CN<%3D214%29&unique=cards",            "foilClass": "foil-gradient" },
-            { "maxRoll": 98.4,  "type": "Sewer Frame Uncommon (Foil)",          "rarity": "0.6%",  "query": "set%3Atmt+rarity%3Au+%28CN>%3D223+AND+CN<%3D252%29&unique=cards",            "foilClass": "foil-gradient" },
-            { "maxRoll": 99.2,  "type": "Sewer Frame Rare (Foil)",              "rarity": "0.8%",  "query": "set%3Atmt+rarity%3Ar+%28CN>%3D223+AND+CN<%3D252%29&unique=cards",            "foilClass": "foil-gradient" },
-            { "maxRoll": 99.6,  "type": "Sewer Frame Mythic (Foil)",            "rarity": "0.4%",  "query": "set%3Atmt+rarity%3Am+%28CN>%3D223+AND+CN<%3D252%29&unique=cards",            "foilClass": "foil-gradient" },
+            { "maxRoll": 96.7,  "type": "Scene, Common (Foil)",                  "rarity": "0.2%",  "query": "set%3Atmt+rarity%3Ac+%28CN>%3D196+AND+CN<%3D214%29&unique=cards",            "foilClass": "foil-gradient" },
+            { "maxRoll": 97.4,  "type": "Scene, Uncommon (Foil)",                "rarity": "0.7%",  "query": "set%3Atmt+rarity%3Au+%28CN>%3D196+AND+CN<%3D214%29&unique=cards",            "foilClass": "foil-gradient" },
+            { "maxRoll": 97.8,  "type": "Scene, Rare (Foil)",                    "rarity": "0.4%",  "query": "set%3Atmt+rarity%3Ar+%28CN>%3D196+AND+CN<%3D214%29&unique=cards",            "foilClass": "foil-gradient" },
+            { "maxRoll": 98.4,  "type": "Sewer Frame, Uncommon (Foil)",          "rarity": "0.6%",  "query": "set%3Atmt+rarity%3Au+%28CN>%3D223+AND+CN<%3D252%29&unique=cards",            "foilClass": "foil-gradient" },
+            { "maxRoll": 99.2,  "type": "Sewer Frame, Rare (Foil)",              "rarity": "0.8%",  "query": "set%3Atmt+rarity%3Ar+%28CN>%3D223+AND+CN<%3D252%29&unique=cards",            "foilClass": "foil-gradient" },
+            { "maxRoll": 99.6,  "type": "Sewer Frame, Mythic (Foil)",            "rarity": "0.4%",  "query": "set%3Atmt+rarity%3Am+%28CN>%3D223+AND+CN<%3D252%29&unique=cards",            "foilClass": "foil-gradient" },
             { "maxRoll": 100.0, "type": "Borderless Silhouette, Mythic (Foil)", "rarity": "0.4%",  "query": "set%3Atmt+rarity%3Am+%28CN>%3D215+AND+CN<%3D222%29&unique=cards",            "foilClass": "foil-gradient" }
           ]
         },
@@ -175,9 +171,9 @@
           "probabilities": [
             { "maxRoll": 84.9,  "type": "Main-set Rare",                 "rarity": "84.9%", "query": "set%3Atmt+rarity%3Ar+CN<%3D190&unique=cards" },
             { "maxRoll": 94.1,  "type": "Main-set Mythic",               "rarity": "9.2%",  "query": "set%3Atmt+rarity%3Am+CN<%3D190&unique=cards" },
-            { "maxRoll": 94.9,  "type": "Scene Rare",                    "rarity": "0.8%",  "query": "set%3Atmt+rarity%3Ar+%28CN>%3D196+AND+CN<%3D214%29&unique=cards" },
-            { "maxRoll": 99.0,  "type": "Sewer Frame Rare",              "rarity": "4.1%",  "query": "set%3Atmt+rarity%3Ar+%28CN>%3D223+AND+CN<%3D252%29&unique=cards" },
-            { "maxRoll": 99.6,  "type": "Sewer Frame Mythic",            "rarity": "0.6%",  "query": "set%3Atmt+rarity%3Am+%28CN>%3D223+AND+CN<%3D252%29&unique=cards" },
+            { "maxRoll": 94.9,  "type": "Scene, Rare",                    "rarity": "0.8%",  "query": "set%3Atmt+rarity%3Ar+%28CN>%3D196+AND+CN<%3D214%29&unique=cards" },
+            { "maxRoll": 99.0,  "type": "Sewer Frame, Rare",              "rarity": "4.1%",  "query": "set%3Atmt+rarity%3Ar+%28CN>%3D223+AND+CN<%3D252%29&unique=cards" },
+            { "maxRoll": 99.6,  "type": "Sewer Frame, Mythic",            "rarity": "0.6%",  "query": "set%3Atmt+rarity%3Am+%28CN>%3D223+AND+CN<%3D252%29&unique=cards" },
             { "maxRoll": 100.0, "type": "Borderless Silhouette, Mythic", "rarity": "0.4%",  "query": "set%3Atmt+rarity%3Am+%28CN>%3D215+AND+CN<%3D222%29&unique=cards" }
           ]
         },
@@ -190,12 +186,12 @@
             { "maxRoll": 87.0,  "type": "Main-set Uncommon",             "rarity": "62.1%", "query": "set%3Atmt+rarity%3Au+CN<%3D190&unique=cards" },
             { "maxRoll": 94.6,  "type": "Main-set Rare",                 "rarity": "7.6%",  "query": "set%3Atmt+rarity%3Ar+CN<%3D190&unique=cards" },
             { "maxRoll": 95.0,  "type": "Main-set Mythic",               "rarity": "0.4%",  "query": "set%3Atmt+rarity%3Am+CN<%3D190&unique=cards" },
-            { "maxRoll": 95.1,  "type": "Scene Common",                  "rarity": "0.1%",  "query": "set%3Atmt+rarity%3Ac+%28CN>%3D196+AND+CN<%3D214%29&unique=cards" },
-            { "maxRoll": 96.4,  "type": "Scene Uncommon",                "rarity": "1.3%",  "query": "set%3Atmt+rarity%3Au+%28CN>%3D200+AND+CN<%3D214%29&unique=cards" },
-            { "maxRoll": 96.5,  "type": "Scene Rare",                    "rarity": "0.1%",  "query": "set%3Atmt+rarity%3Ar+%28CN>%3D196+AND+CN<%3D214%29&unique=cards" },
-            { "maxRoll": 99.1,  "type": "Sewer Frame Uncommon",          "rarity": "2.6%",  "query": "set%3Atmt+rarity%3Au+%28CN>%3D223+AND+CN<%3D252%29&unique=cards" },
-            { "maxRoll": 99.5,  "type": "Sewer Frame Rare",              "rarity": "0.4%",  "query": "set%3Atmt+rarity%3Ar+%28CN>%3D223+AND+CN<%3D252%29&unique=cards" },
-            { "maxRoll": 99.7,  "type": "Sewer Frame Mythic",            "rarity": "0.2%",  "query": "set%3Atmt+rarity%3Am+%28CN>%3D223+AND+CN<%3D252%29&unique=cards" },
+            { "maxRoll": 95.1,  "type": "Scene, Common",                  "rarity": "0.1%",  "query": "set%3Atmt+rarity%3Ac+%28CN>%3D196+AND+CN<%3D214%29&unique=cards" },
+            { "maxRoll": 96.4,  "type": "Scene, Uncommon",                "rarity": "1.3%",  "query": "set%3Atmt+rarity%3Au+%28CN>%3D200+AND+CN<%3D214%29&unique=cards" },
+            { "maxRoll": 96.5,  "type": "Scene, Rare",                    "rarity": "0.1%",  "query": "set%3Atmt+rarity%3Ar+%28CN>%3D196+AND+CN<%3D214%29&unique=cards" },
+            { "maxRoll": 99.1,  "type": "Sewer Frame, Uncommon",          "rarity": "2.6%",  "query": "set%3Atmt+rarity%3Au+%28CN>%3D223+AND+CN<%3D252%29&unique=cards" },
+            { "maxRoll": 99.5,  "type": "Sewer Frame, Rare",              "rarity": "0.4%",  "query": "set%3Atmt+rarity%3Ar+%28CN>%3D223+AND+CN<%3D252%29&unique=cards" },
+            { "maxRoll": 99.7,  "type": "Sewer Frame, Mythic",            "rarity": "0.2%",  "query": "set%3Atmt+rarity%3Am+%28CN>%3D223+AND+CN<%3D252%29&unique=cards" },
             { "maxRoll": 100.0, "type": "Borderless Silhouette, Mythic", "rarity": "0.3%",  "query": "set%3Atmt+rarity%3Am+%28CN>%3D215+AND+CN<%3D222%29&unique=cards" }
           ]
         },
@@ -233,8 +229,8 @@
           "cardInfo": ["2 Main-set Uncommons", "Scene and Sewer Frame uncommons can also appear in these slots."],
           "probabilities": [
             { "maxRoll": 88.3,  "type": "Main-set Uncommon",    "rarity": "88.3%", "query": "set%3Atmt+rarity%3Au+CN<%3D190&unique=cards" },
-            { "maxRoll": 92.2,  "type": "Scene Uncommon",       "rarity": "3.9%",  "query": "set%3Atmt+rarity%3Au+%28CN>%3D200+AND+CN<%3D214%29&unique=cards" },
-            { "maxRoll": 100.0, "type": "Sewer Frame Uncommon", "rarity": "7.8%",  "query": "set%3Atmt+rarity%3Au+%28CN>%3D223+AND+CN<%3D252%29&unique=cards" }
+            { "maxRoll": 92.2,  "type": "Scene, Uncommon",       "rarity": "3.9%",  "query": "set%3Atmt+rarity%3Au+%28CN>%3D200+AND+CN<%3D214%29&unique=cards" },
+            { "maxRoll": 100.0, "type": "Sewer Frame, Uncommon", "rarity": "7.8%",  "query": "set%3Atmt+rarity%3Au+%28CN>%3D223+AND+CN<%3D252%29&unique=cards" }
           ]
         },
         {
@@ -250,7 +246,7 @@
           "trailingCard": {
             "probabilities": [
               { "maxRoll": 92.2,  "type": "Common",        "rarity": "92.2%", "query": "set%3Atmt+rarity%3Ac+CN<%3D182&unique=cards" },
-              { "maxRoll": 96.4,  "type": "Scene Common",  "rarity": "4.2%",  "query": "set%3Atmt+rarity%3Ac+%28CN>%3D196+AND+CN<%3D214%29&unique=cards" },
+              { "maxRoll": 96.4,  "type": "Scene, Common",  "rarity": "4.2%",  "query": "set%3Atmt+rarity%3Ac+%28CN>%3D196+AND+CN<%3D214%29&unique=cards" },
               { "maxRoll": 100.0, "type": "Source Material", "rarity": "3.6%", "query": "set%3Apza&unique=cards" }
             ]
           }

@@ -3,16 +3,16 @@
   "displayName": "FINAL FANTASY",
   "backgroundImage": "img/FIN_bg2_dark.jpg",
   "boosterTypes": ["COLLECTOR"],
+  "ghostCard": {
+    "randomQuery": "%28set%3Afin+OR+set%3Afic+OR+set%3Afca%29+",
+    "topOutQuery": "%28set%3Afin+OR+set%3Afic+OR+set%3Afca%29+unique%3Aprints+USD%3E%3D15"
+  },
   "boosters": {
     "COLLECTOR": {
       "totalCards": 15,
       "msrp": 24.99,
       "defaultUSD": 100,
       "defaultCAD": 160,
-      "ghostCard": {
-        "randomQuery": "%28set%3Afin+OR+set%3Afic+OR+set%3Afca%29+",
-        "topOutQuery": "%28set%3Afin+OR+set%3Afic+OR+set%3Afca%29+unique%3Aprints+USD%3E%3D15"
-      },
       "slots": [
         {
           "id": "fchoco",
@@ -109,8 +109,8 @@
           "label": "Foil Rare or Mythic",
           "isFoil": true,
           "probabilities": [
-            { "maxRoll": 87.75,  "type": "Default Frame, Rare (Foil)",   "rarity": "87.75%", "query": "set%3Afin+rarity%3Ar+has%3Afoil",                                                                              "foilClass": "foil-gradient" },
-            { "maxRoll": 100.0,  "type": "Default Frame, Mythic (Foil)", "rarity": "12.25%", "query": "set%3Afin+rarity%3Am+%28-CN%3A552+AND+-CN%3A553%29+-is%3Aboosterfun+game%3Apaper",                             "foilClass": "foil-gradient" }
+            { "maxRoll": 87.75,  "type": "Default frame, Rare (Foil)",   "rarity": "87.75%", "query": "set%3Afin+rarity%3Ar+has%3Afoil",                                                                              "foilClass": "foil-gradient" },
+            { "maxRoll": 100.0,  "type": "Default frame, Mythic (Foil)", "rarity": "12.25%", "query": "set%3Afin+rarity%3Am+%28-CN%3A552+AND+-CN%3A553%29+-is%3Aboosterfun+game%3Apaper",                             "foilClass": "foil-gradient" }
           ]
         },
         {

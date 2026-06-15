@@ -3,16 +3,16 @@
   "displayName": "SECRETS OF STRIXHAVEN",
   "backgroundImage": "img/SOS_bg.jpg",
   "boosterTypes": ["PLAY", "COLLECTOR"],
+  "ghostCard": {
+    "randomQuery": "%28set%3Asos+or+set%3Asoa+or+set%3Aspg%29+date%3A2026-04-24+unique%3Aprints",
+    "topOutQuery": "%28set%3Asos+or+set%3Asoa+set%3Aspg%29+date%3A2026-04-24+unique%3Aprints+USD>%3D15&unique=cards"
+  },
   "boosters": {
     "PLAY": {
       "totalCards": 15,
       "msrp": 5.49,
       "defaultUSD": 5,
       "defaultCAD": 8,
-      "ghostCard": {
-        "randomQuery": "%28set%3Asos+or+set%3Asoa+or+set%3Aspg%29+date%3A2026-04-24+unique%3Aprints",
-        "topOutQuery": "%28set%3Asos+or+set%3Asoa+set%3Aspg%29+date%3A2026-04-24+unique%3Aprints+USD>%3D15&unique=cards"
-      },
       "slots": [
         {
           "id": "raremythic",
@@ -110,10 +110,6 @@
       "msrp": 37.99,
       "defaultUSD": 36,
       "defaultCAD": 60,
-      "ghostCard": {
-        "randomQuery": "%28set%3Asos+or+set%3Asoa+or+set%3Aspg%29+date%3A2026-04-24+unique%3Aprints",
-        "topOutQuery": "%28set%3Asos+or+set%3Asoa+set%3Aspg%29+date%3A2026-04-24+unique%3Aprints+USD>%3D15&unique=cards"
-      },
       "slots": [
         {
           "id": "foil-boosterfun",

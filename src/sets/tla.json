@@ -3,16 +3,16 @@
   "displayName": "AVATAR: THE LAST AIRBENDER",
   "backgroundImage": "img/TLA_bg_dark.jpg",
   "boosterTypes": ["COLLECTOR", "PLAY"],
+  "ghostCard": {
+    "randomQuery": "%28set%3Atla+or+set%3Atle%29+date%3A2025-11-21+unique%3Aprints+",
+    "topOutQuery": "%28set%3Atla+or+set%3Atle%29+date%3A2025-11-21+unique%3Aprints+USD%3E%3D15"
+  },
   "boosters": {
     "COLLECTOR": {
       "totalCards": 15,
       "msrp": 37.99,
       "defaultUSD": 42,
       "defaultCAD": 60,
-      "ghostCard": {
-        "randomQuery": "%28set%3Atla+or+set%3Atle%29+date%3A2025-11-21+unique%3Aprints+",
-        "topOutQuery": "%28set%3Atla+or+set%3Atle%29+date%3A2025-11-21+unique%3Aprints+USD%3E%3D15"
-      },
       "slots": [
         {
           "id": "boosterfun",
@@ -141,10 +141,6 @@
       "msrp": 6.99,
       "defaultUSD": 6,
       "defaultCAD": 9,
-      "ghostCard": {
-        "randomQuery": "%28set%3Atla+or+set%3Atle%29+date%3A2025-11-21+unique%3Aprints+",
-        "topOutQuery": "%28set%3Atla+or+set%3Atle%29+date%3A2025-11-21+unique%3Aprints+USD%3E%3D15"
-      },
       "slots": [
         {
           "id": "wildcard",

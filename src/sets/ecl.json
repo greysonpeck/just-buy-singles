@@ -3,16 +3,16 @@
   "displayName": "LORWYN ECLIPSED",
   "backgroundImage": "img/ECL_bg2_dark.jpg",
   "boosterTypes": ["COLLECTOR", "PLAY"],
+  "ghostCard": {
+    "randomQuery": "%28set%3Aecl+or+set%3Aspg%29+date%3A2026-01-23+unique%3Aprints+",
+    "topOutQuery": "%28set%3Aecl+or+set%3Aspg%29+date%3A2026-01-23+unique%3Aprints+USD%3E%3D15"
+  },
   "boosters": {
     "COLLECTOR": {
       "totalCards": 15,
       "msrp": 26.99,
       "defaultUSD": 36,
       "defaultCAD": 50,
-      "ghostCard": {
-        "randomQuery": "%28set%3Aecl+or+set%3Aspg%29+date%3A2026-01-23+unique%3Aprints+",
-        "topOutQuery": "%28set%3Aecl+or+set%3Aspg%29+date%3A2026-01-23+unique%3Aprints+USD%3E%3D15"
-      },
       "slots": [
         {
           "id": "boosterfun",
@@ -110,10 +110,6 @@
       "msrp": 5.49,
       "defaultUSD": 6,
       "defaultCAD": 9,
-      "ghostCard": {
-        "randomQuery": "%28set%3Aecl+or+set%3Aspg%29+date%3A2026-01-23+unique%3Aprints+",
-        "topOutQuery": "%28set%3Aecl+or+set%3Aspg%29+date%3A2026-01-23+unique%3Aprints+USD%3E%3D15"
-      },
       "slots": [
         {
           "id": "wildcard",
