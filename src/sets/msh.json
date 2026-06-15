@@ -1,0 +1,243 @@
+{
+  "code": "MSH",
+  "displayName": "MARVEL SUPER HEROES",
+  "backgroundImage": "img/MSH_bg.jpg",
+  "boosterTypes": ["COLLECTOR", "PLAY"],
+  "ghostCard": {
+    "randomQuery": "%28set%3Amsh+or+set%3Amsc+or+set%3Amar%29+date%3A2026-06-26+unique%3Aprints+",
+    "topOutQuery": "%28set%3Amsh+or+set%3Amsc+or+set%3Amar%29+date%3A2026-06-26+unique%3Aprints+USD%3E%3D15"
+  },
+  "boosters": {
+    "COLLECTOR": {
+      "totalCards": 15,
+      "msrp": 37.99,
+      "defaultUSD": 36,
+      "defaultCAD": 60,
+      "slots": [
+        {
+          "id": "boosterfun-foil-rm",
+          "label": "Foil Booster Fun",
+          "isFoil": true,
+          "probabilities": [
+            { "maxRoll": 31.74, "type": "Extended-art, Rare (Foil)",   "rarity": "31.7%", "query": "set%3Amsh+rarity%3Ar+%28cn>%3D402+AND+cn<%3D429%29&unique=cards" },
+            { "maxRoll": 34.43, "type": "Extended-art, Mythic (Foil)", "rarity": "2.7%",  "query": "set%3Amsh+rarity%3Am+%28cn>%3D402+AND+cn<%3D429%29&unique=cards" },
+            { "maxRoll": 41.72, "type": "Scene, Rare (Foil)",          "rarity": "7.3%",  "query": "set%3Amsh+rarity%3Ar+%28cn>%3D314+AND+cn<%3D351%29+-is%3Adfc&unique=cards" },
+            { "maxRoll": 45.71, "type": "Scene, Mythic (Foil)",        "rarity": "4%",    "query": "set%3Amsh+rarity%3Am+%28cn>%3D314+AND+cn<%3D351%29+-is%3Adfc&unique=cards" },
+            { "maxRoll": 62.88, "type": "Logo, Rare (Foil)",           "rarity": "17.2%", "query": "set%3Amsh+rarity%3Ar+%28cn>%3D352+AND+cn<%3D379%29+-is%3Adfc&unique=cards" },
+            { "maxRoll": 66.47, "type": "Logo, Mythic (Foil)",         "rarity": "3.6%",  "query": "set%3Amsh+rarity%3Am+%28cn>%3D352+AND+cn<%3D379%29+-is%3Adfc&unique=cards" },
+            { "maxRoll": 80.34, "type": "Panel, Rare (Foil)",          "rarity": "13.9%", "query": "set%3Amsh+rarity%3Ar+%28cn>%3D297+AND+cn<%3D313%29&unique=cards" },
+            { "maxRoll": 83.33, "type": "Panel, Mythic (Foil)",        "rarity": "3%",    "query": "set%3Amsh+rarity%3Am+%28cn>%3D297+AND+cn<%3D313%29&unique=cards" },
+            { "maxRoll": 89.92, "type": "Borderless Land, Rare (Foil)","rarity": "6.6%",  "query": "set%3Amsh+%28cn>%3D380+AND+cn<%3D384%29&unique=cards" },
+            { "maxRoll": 99.80, "type": "Borderless Classic Comic (Foil)", "rarity": "9.9%", "query": "set%3Amsh+%28cn>%3D387+AND+cn<%3D401%29&unique=cards" },
+            { "maxRoll": 99.975, "type": "The Mind Stone, Gauntlet (Foil)", "rarity": "0.175%", "query": "set%3Amsh+rarity%3Am+cn%3D386&unique=cards", "foilClass": "foil-gradient" },
+            { "maxRoll": 100.0, "type": "The Mind Stone, Cosmic Foil (Foil)", "rarity": "0.025%", "query": "set%3Amsh+rarity%3Am+cn%3D385&unique=cards", "foilClass": "foil-gradient" }
+          ]
+        },
+        {
+          "id": "source-material",
+          "label": "Source Material",
+          "isFoil": true,
+          "probabilities": [
+            { "maxRoll": 75.0,  "type": "Source Material",        "rarity": "75%", "query": "set%3Amar+%28cn>%3D41+AND+cn<%3D100%29&unique=cards", "foilClass": null },
+            { "maxRoll": 100.0, "type": "Source Material (Foil)",  "rarity": "25%", "query": "set%3Amar+%28cn>%3D41+AND+cn<%3D100%29&unique=cards", "foilClass": "foil-gradient" }
+          ]
+        },
+        {
+          "id": "boosterfun-nf",
+          "label": "Non-foil Booster Fun",
+          "isFoil": false,
+          "probabilities": [
+            { "maxRoll": 27.8,  "type": "Extended-art, Rare",            "rarity": "27.8%", "query": "set%3Amsh+rarity%3Ar+%28cn>%3D402+AND+cn<%3D429%29&unique=cards" },
+            { "maxRoll": 30.1,  "type": "Extended-art, Mythic",          "rarity": "2.3%",  "query": "set%3Amsh+rarity%3Am+%28cn>%3D402+AND+cn<%3D429%29&unique=cards" },
+            { "maxRoll": 36.5,  "type": "Scene, Rare",                   "rarity": "6.4%",  "query": "set%3Amsh+rarity%3Ar+%28cn>%3D314+AND+cn<%3D351%29&unique=cards" },
+            { "maxRoll": 41.4,  "type": "Scene, Mythic",                 "rarity": "4.9%",  "query": "set%3Amsh+rarity%3Am+%28cn>%3D314+AND+cn<%3D351%29&unique=cards" },
+            { "maxRoll": 56.5,  "type": "Logo, Rare",                    "rarity": "15.1%", "query": "set%3Amsh+rarity%3Ar+%28cn>%3D352+AND+cn<%3D379%29&unique=cards" },
+            { "maxRoll": 61.1,  "type": "Logo, Mythic",                  "rarity": "4.6%",  "query": "set%3Amsh+rarity%3Am+%28cn>%3D352+AND+cn<%3D379%29&unique=cards" },
+            { "maxRoll": 73.2,  "type": "Panel, Rare",                   "rarity": "12.1%", "query": "set%3Amsh+rarity%3Ar+%28cn>%3D297+AND+cn<%3D313%29&unique=cards" },
+            { "maxRoll": 75.8,  "type": "Panel, Mythic",                 "rarity": "2.6%",  "query": "set%3Amsh+rarity%3Am+%28cn>%3D297+AND+cn<%3D313%29&unique=cards" },
+            { "maxRoll": 89.7,  "type": "Borderless Classic Comic",      "rarity": "13.9%", "query": "set%3Amsh+%28cn>%3D387+AND+cn<%3D401%29&unique=cards" },
+            { "maxRoll": 95.5,  "type": "Borderless Land, Rare",         "rarity": "5.8%",  "query": "set%3Amsh+%28cn>%3D380+AND+cn<%3D384%29&unique=cards" },
+            { "maxRoll": 100.0, "type": "Source Material",               "rarity": "4.5%",  "query": "set%3Amar+%28cn>%3D41+AND+cn<%3D100%29&unique=cards" }
+          ]
+        },
+        {
+          "id": "commander-boosterfun",
+          "label": "Booster Fun (Commander)",
+          "isFoil": false,
+          "probabilities": [
+            { "maxRoll": 93.6,  "type": "Extended-art Commander, Rare",   "rarity": "93.6%", "query": "set%3Amsc+rarity%3Ar+%28cn>%3D291+AND+cn<%3D500%29&unique=cards" },
+            { "maxRoll": 96.8,  "type": "Extended-art Commander, Mythic", "rarity": "3.2%",  "query": "set%3Amsc+rarity%3Am+%28cn>%3D291+AND+cn<%3D500%29&unique=cards" },
+            { "maxRoll": 100.0, "type": "Borderless Face Commander",      "rarity": "3.2%",  "query": "set%3Amsc+%28cn>%3D1+AND+cn<%3D7%29&unique=cards" }
+          ]
+        },
+        {
+          "id": "raremythic",
+          "label": "Foil Rare or Mythic",
+          "isFoil": true,
+          "probabilities": [
+            { "maxRoll": 45.0,  "type": "Rare",                              "rarity": "45%",   "query": "set%3Amsh+rarity%3Ar+cn<%3D276&unique=cards" },
+            { "maxRoll": 54.4,  "type": "Mythic",                            "rarity": "9.4%",  "query": "set%3Amsh+rarity%3Am+cn<%3D276&unique=cards" },
+            { "maxRoll": 55.8,  "type": "Scene, Mythic (Double-faced)",      "rarity": "1.4%",  "query": "set%3Amsh+rarity%3Am+%28cn>%3D314+AND+cn<%3D351%29+is%3Adfc&unique=cards" },
+            { "maxRoll": 57.2,  "type": "Logo, Mythic (Double-faced)",       "rarity": "1.4%",  "query": "set%3Amsh+rarity%3Am+%28cn>%3D352+AND+cn<%3D379%29+is%3Adfc&unique=cards" },
+            { "maxRoll": 91.0,  "type": "New-to-Magic Jumpstart, Rare",      "rarity": "33.8%", "query": "set%3Amsc+rarity%3Ar+%28cn>%3D583+AND+cn<%3D767%29&unique=cards" },
+            { "maxRoll": 95.1,  "type": "New-to-Magic Jumpstart, Mythic",    "rarity": "4.1%",  "query": "set%3Amsc+rarity%3Am+%28cn>%3D583+AND+cn<%3D767%29&unique=cards" },
+            { "maxRoll": 98.1,  "type": "Jumpstart Reprint, Rare",           "rarity": "3%",    "query": "set%3Amsc+rarity%3Ar+%28cn>%3D768+AND+cn<%3D828%29&unique=cards" },
+            { "maxRoll": 100.0, "type": "Welcome Deck, Mythic",              "rarity": "1.9%",  "query": "set%3Amsc+rarity%3Am+%28cn>%3D829+AND+cn<%3D833%29&unique=cards" }
+          ]
+        },
+        {
+          "id": "scene-cu",
+          "label": "Foil Scene Card",
+          "isFoil": true,
+          "probabilities": [
+            { "maxRoll": 20.0,  "type": "Scene, Common",   "rarity": "20%", "query": "set%3Amsh+rarity%3Ac+%28cn>%3D314+AND+cn<%3D351%29&unique=cards" },
+            { "maxRoll": 100.0, "type": "Scene, Uncommon", "rarity": "80%", "query": "set%3Amsh+rarity%3Au+%28cn>%3D314+AND+cn<%3D351%29&unique=cards" }
+          ]
+        },
+        {
+          "id": "msc-uncommon",
+          "label": "Foil Jumpstart (U)",
+          "isFoil": true,
+          "probabilities": [
+            { "maxRoll": 18.6,  "type": "Jumpstart Reprint, Uncommon",      "rarity": "18.6%", "query": "set%3Amsc+rarity%3Au+%28cn>%3D768+AND+cn<%3D828%29&unique=cards" },
+            { "maxRoll": 100.0, "type": "New-to-Magic Jumpstart, Uncommon", "rarity": "81.4%", "query": "set%3Amsc+rarity%3Au+%28cn>%3D583+AND+cn<%3D767%29&unique=cards" }
+          ]
+        },
+        {
+          "id": "msc-common",
+          "label": "Foil Jumpstart (C)",
+          "isFoil": true,
+          "count": 2,
+          "cardInfo": ["2 Traditional Foil Commons (MSC)", "A reprint card from Jumpstart Boosters (50%) or a new-to-Magic Jumpstart card (50%)."],
+          "probabilities": [
+            { "maxRoll": 50.0,  "type": "Jumpstart Reprint, Common",       "rarity": "50%", "query": "set%3Amsc+rarity%3Ac+%28cn>%3D768+AND+cn<%3D828%29&unique=cards" },
+            { "maxRoll": 100.0, "type": "New-to-Magic Jumpstart, Common",  "rarity": "50%", "query": "set%3Amsc+rarity%3Ac+%28cn>%3D583+AND+cn<%3D767%29&unique=cards" }
+          ]
+        },
+        {
+          "id": "uncommon",
+          "label": "Foil Uncommons",
+          "isFoil": true,
+          "count": 2,
+          "cardInfo": ["2 Traditional Foil Uncommons", "There are 100 uncommon cards from the main set that can be found in these slots."],
+          "probabilities": [
+            { "maxRoll": 100.0, "type": "Uncommon", "rarity": "100%", "query": "set%3Amsh+rarity%3Au+cn<%3D276&unique=cards" }
+          ]
+        },
+        {
+          "id": "common",
+          "label": "Foil Commons",
+          "isFoil": true,
+          "count": 3,
+          "sumVar": "commonSum",
+          "cardInfo": ["3 Traditional Foil Commons", "There are 81 common cards (89%) and 10 common dual lands (11%) from the main set that can be found in these slots."],
+          "probabilities": [
+            { "maxRoll": 100.0, "type": "Common", "rarity": "100%", "query": "set%3Amsh+rarity%3Ac+cn<%3D276&unique=cards" }
+          ]
+        },
+        {
+          "id": "city-land",
+          "label": "Foil Full-Art Basic Land",
+          "isFoil": true,
+          "probabilities": [
+            { "maxRoll": 100.0, "type": "Full-art basic land (City Calm / City Chaos)", "rarity": "100%", "query": "set%3Amsh+%28cn>%3D277+AND+cn<%3D286%29&unique=cards" }
+          ]
+        }
+      ]
+    },
+    "PLAY": {
+      "totalCards": 14,
+      "msrp": 6.99,
+      "defaultUSD": 6,
+      "defaultCAD": 9,
+      "slots": [
+
+        {
+          "id": "raremythic",
+          "label": "Rare or Mythic",
+          "isFoil": false,
+          "probabilities": [
+            { "maxRoll": 76.1,  "type": "Rare",         "rarity": "76.1%", "query": "set%3Amsh+rarity%3Ar+cn<%3D276&unique=cards" },
+            { "maxRoll": 92.7,  "type": "Mythic",        "rarity": "16.6%", "query": "set%3Amsh+rarity%3Am+cn<%3D276&unique=cards" },
+            { "maxRoll": 93.7,  "type": "Scene, Rare",   "rarity": "1%",    "query": "set%3Amsh+rarity%3Ar+%28cn>%3D314+AND+cn<%3D351%29&unique=cards" },
+            { "maxRoll": 94.5,  "type": "Scene, Mythic",  "rarity": "0.8%",  "query": "set%3Amsh+rarity%3Am+%28cn>%3D314+AND+cn<%3D351%29&unique=cards" },
+            { "maxRoll": 96.9,  "type": "Logo, Rare",    "rarity": "2.4%",  "query": "set%3Amsh+rarity%3Ar+%28cn>%3D352+AND+cn<%3D379%29&unique=cards" },
+            { "maxRoll": 97.6,  "type": "Logo, Mythic",   "rarity": "0.7%",  "query": "set%3Amsh+rarity%3Am+%28cn>%3D352+AND+cn<%3D379%29&unique=cards" },
+            { "maxRoll": 99.5,  "type": "Panel, Rare",   "rarity": "1.9%",  "query": "set%3Amsh+rarity%3Ar+%28cn>%3D297+AND+cn<%3D313%29&unique=cards" },
+            { "maxRoll": 100.0, "type": "Panel, Mythic",  "rarity": "0.5%",  "query": "set%3Amsh+rarity%3Am+%28cn>%3D297+AND+cn<%3D313%29&unique=cards" }
+          ]
+        },
+        {
+          "id": "foil",
+          "label": "Foil Wildcard",
+          "isFoil": true,
+          "probabilities": [
+            { "maxRoll": 59.9,  "type": "Common",                          "rarity": "59.9%", "query": "set%3Amsh+rarity%3Ac+cn<%3D276&unique=cards" },
+            { "maxRoll": 89.5,  "type": "Uncommon",                        "rarity": "29.6%", "query": "set%3Amsh+rarity%3Au+cn<%3D276&unique=cards" },
+            { "maxRoll": 95.4,  "type": "Rare",                            "rarity": "5.9%",  "query": "set%3Amsh+rarity%3Ar+cn<%3D276&unique=cards" },
+            { "maxRoll": 96.6,  "type": "Mythic",                          "rarity": "1.2%",  "query": "set%3Amsh+rarity%3Am+cn<%3D276&unique=cards" },
+            { "maxRoll": 97.8,  "type": "Scene, Uncommon",                 "rarity": "1.2%",  "query": "set%3Amsh+rarity%3Au+%28cn>%3D314+AND+cn<%3D351%29&unique=cards" },
+            { "maxRoll": 100.0, "type": "Booster Fun (Panel/Scene/Logo/Borderless Land)", "rarity": "2.2%", "query": "set%3Amsh+%28cn>%3D297+AND+cn<%3D384%29&unique=cards" }
+          ]
+        },
+        {
+          "id": "wildcard",
+          "label": "Non-foil Wildcard",
+          "isFoil": false,
+          "probabilities": [
+            { "maxRoll": 12.4,  "type": "Common",                              "rarity": "12.4%", "query": "set%3Amsh+rarity%3Ac+cn<%3D276&unique=cards" },
+            { "maxRoll": 76.4,  "type": "Uncommon",                            "rarity": "64%",   "query": "set%3Amsh+rarity%3Au+cn<%3D276&unique=cards" },
+            { "maxRoll": 93.2,  "type": "Rare",                                "rarity": "16.8%", "query": "set%3Amsh+rarity%3Ar+cn<%3D276&unique=cards" },
+            { "maxRoll": 95.3,  "type": "Mythic",                              "rarity": "2.1%",  "query": "set%3Amsh+rarity%3Am+cn<%3D276&unique=cards" },
+            { "maxRoll": 98.0,  "type": "Scene, Uncommon",                     "rarity": "2.7%",  "query": "set%3Amsh+rarity%3Au+%28cn>%3D314+AND+cn<%3D351%29&unique=cards" },
+            { "maxRoll": 99.0,  "type": "Borderless Land, Rare",               "rarity": "1%",    "query": "set%3Amsh+%28cn>%3D380+AND+cn<%3D384%29&unique=cards" },
+            { "maxRoll": 100.0, "type": "Booster Fun (Scene/Logo/Panel)",      "rarity": "1%",    "query": "set%3Amsh+%28cn>%3D297+AND+cn<%3D379%29+%28rarity%3Ar+OR+rarity%3Am%29&unique=cards" }
+          ]
+        },
+        {
+          "id": "uncommon",
+          "label": "Uncommons",
+          "isFoil": false,
+          "count": 3,
+          "cardInfo": ["3 Uncommons", "There are 100 uncommon cards from the main set and 12 scene uncommons (12%) that can be found in these slots."],
+          "probabilities": [
+            { "maxRoll": 88.0,  "type": "Uncommon",        "rarity": "88%", "query": "set%3Amsh+rarity%3Au+cn<%3D276&unique=cards" },
+            { "maxRoll": 100.0, "type": "Scene, Uncommon", "rarity": "12%", "query": "set%3Amsh+rarity%3Au+%28cn>%3D314+AND+cn<%3D351%29&unique=cards" }
+          ]
+        },
+        {
+          "id": "common",
+          "label": "Commons",
+          "isFoil": false,
+          "count": 7,
+          "sumVar": "commonSum",
+          "cardInfo": ["6-7 Commons", "There are 81 common cards from the main set and 3 scene commons (8.6%) that can be found in these slots. In 1 of 24 Play Boosters, a non-foil Source Material card replaces a common."],
+          "probabilities": [
+            { "maxRoll": 91.4,  "type": "Common",       "rarity": "91.4%", "query": "set%3Amsh+rarity%3Ac+cn<%3D276&unique=cards" },
+            { "maxRoll": 100.0, "type": "Scene, Common", "rarity": "8.6%", "query": "set%3Amsh+rarity%3Ac+%28cn>%3D314+AND+cn<%3D351%29&unique=cards" }
+          ],
+          "trailingCard": {
+            "probabilities": [
+              { "maxRoll": 4.17,  "type": "Source Material", "rarity": "1/24", "query": "set%3Amar+%28cn>%3D41+AND+cn<%3D100%29&unique=cards" },
+              { "maxRoll": 91.74, "type": "Common",          "rarity": "91.4%", "query": "set%3Amsh+rarity%3Ac+cn<%3D276&unique=cards" },
+              { "maxRoll": 100.0, "type": "Scene, Common",   "rarity": "8.6%",  "query": "set%3Amsh+rarity%3Ac+%28cn>%3D314+AND+cn<%3D351%29&unique=cards" }
+            ]
+          }
+        },
+                {
+          "id": "land",
+          "label": "Land",
+          "isFoil": true,
+          "probabilities": [
+            { "maxRoll": 40.0,  "type": "Common dual land",                "rarity": "40%", "query": "set%3Amsh+rarity%3Ac+t%3Aland+-t%3Abasic+cn<%3D276&unique=cards", "foilClass": null },
+            { "maxRoll": 50.0,  "type": "Common dual land (Foil)",         "rarity": "10%", "query": "set%3Amsh+rarity%3Ac+t%3Aland+-t%3Abasic+cn<%3D276&unique=cards", "foilClass": "foil-gradient" },
+            { "maxRoll": 70.0,  "type": "Basic land",                      "rarity": "20%", "query": "set%3Amsh+%28cn>%3D287+AND+cn<%3D296%29&unique=cards", "foilClass": null },
+            { "maxRoll": 75.0,  "type": "Basic land (Foil)",               "rarity": "5%",  "query": "set%3Amsh+%28cn>%3D287+AND+cn<%3D296%29&unique=cards", "foilClass": "foil-gradient" },
+            { "maxRoll": 95.0,  "type": "Full-art basic land (City Calm / City Chaos)", "rarity": "20%", "query": "set%3Amsh+%28cn>%3D277+AND+cn<%3D286%29&unique=cards", "foilClass": null },
+            { "maxRoll": 100.0, "type": "Full-art basic land (Foil)",      "rarity": "5%",  "query": "set%3Amsh+%28cn>%3D277+AND+cn<%3D286%29&unique=cards", "foilClass": "foil-gradient" }
+          ]
+        }
+      ]
+    }
+  }
+}

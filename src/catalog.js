@@ -77,6 +77,75 @@ function _fmtDate(ts) {
     return new Date(ts).toLocaleDateString('en-US', { month: 'long', day: 'numeric' });
 }
 
+// ── Bucketing ──────────────────────────────────────────────────────
+function assignBuckets(cards, modeConfig) {
+    const buckets       = _makeBuckets().map(b => ({ ...b, cards: [] }));
+    const noPriceBucket = buckets[buckets.length - 1];
+
+    for (const card of cards) {
+        const priceVal = modeConfig?.foilOnly
+            ? (card.prices?.usd_foil ?? card.prices?.usd_etched)
+            : card.prices?.usd;
+
+        if (!priceVal) {
+            noPriceBucket.cards.push(card);
+            continue;
+        }
+        const usd   = parseFloat(priceVal);
+        const price = (currencyMode === 'CAD' && typeof fx !== 'undefined')
+            ? usd * fx.rates.CAD
+            : usd;
+        const bucket = buckets.find(b => !b.noPrice && price >= b.min && price < b.max)
+            ?? buckets[buckets.length - 2];
+        bucket.cards.push(card);
+    }
+    return buckets;
+}
+
+// ── Price formatting ──────────────────────────────────────────────
+function fmt(val) {
+    if (!val || isNaN(parseFloat(val))) return null;
+    const usd = parseFloat(val);
+    const converted = (currencyMode === 'CAD' && typeof fx !== 'undefined')
+        ? usd * fx.rates.CAD
+        : usd;
+    const rounded = Math.round(converted);
+    if (rounded === 0) return '< $1';
+    return '$' + (rounded >= 1000 ? rounded.toLocaleString() : rounded);
+}
+
+// placeholder shown (dimmed) when val is null
+function priceRow(label, val, placeholder) {
+    const display = val ?? placeholder;
+    if (!display) return '';
+    return `<div class="flex justify-between gap-3">
+                <span class="text-white/60">${label}</span>
+                <span class="font-semibold ${val ? 'text-white' : 'text-white/30'}">${display}</span>
+            </div>`;
+}
+
+function combinedFoilRow(card, alwaysShow) {
+    const foil   = fmt(card.prices?.usd_foil);
+    const etched = fmt(card.prices?.usd_etched);
+    if (foil && etched) return priceRow('Foil, Foil Etched', `${foil}, ${etched}`);
+    if (foil)           return priceRow('Foil', foil);
+    if (etched)         return priceRow('Foil Etched', etched);
+    return alwaysShow   ? priceRow('Foil', null, 'no data') : '';
+}
+
+function priceBlock(card, modeConfig) {
+    if (modeConfig?.foilOnly) {
+        const foil   = fmt(card.prices?.usd_foil);
+        const etched = fmt(card.prices?.usd_etched);
+        const val    = foil ?? etched;
+        const label  = (foil && etched) ? 'Foil, Foil Etched' : etched ? 'Foil Etched' : 'Foil';
+        return priceRow(label, val, 'no data');
+    }
+    const alwaysShow = !!modeConfig?.alwaysShowNormal;
+    return priceRow('Normal', fmt(card.prices?.usd), alwaysShow ? 'no data' : null)
+        + combinedFoilRow(card, alwaysShow);
+}
+
 function initCatalog(config) {
     const modes = config.modes;
 
@@ -169,75 +238,6 @@ function initCatalog(config) {
         }
     }
 
-    // ── Bucketing ──────────────────────────────────────────────────
-    function assignBuckets(cards, modeConfig) {
-        const buckets       = _makeBuckets().map(b => ({ ...b, cards: [] }));
-        const noPriceBucket = buckets[buckets.length - 1];
-
-        for (const card of cards) {
-            const priceVal = modeConfig?.foilOnly
-                ? (card.prices?.usd_foil ?? card.prices?.usd_etched)
-                : card.prices?.usd;
-
-            if (!priceVal) {
-                noPriceBucket.cards.push(card);
-                continue;
-            }
-            const usd   = parseFloat(priceVal);
-            const price = (currencyMode === 'CAD' && typeof fx !== 'undefined')
-                ? usd * fx.rates.CAD
-                : usd;
-            const bucket = buckets.find(b => !b.noPrice && price >= b.min && price < b.max)
-                ?? buckets[buckets.length - 2];
-            bucket.cards.push(card);
-        }
-        return buckets;
-    }
-
-    // ── Price formatting ───────────────────────────────────────────
-    function fmt(val) {
-        if (!val || isNaN(parseFloat(val))) return null;
-        const usd = parseFloat(val);
-        const converted = (currencyMode === 'CAD' && typeof fx !== 'undefined')
-            ? usd * fx.rates.CAD
-            : usd;
-        const rounded = Math.round(converted);
-        if (rounded === 0) return '< $1';
-        return '$' + (rounded >= 1000 ? rounded.toLocaleString() : rounded);
-    }
-
-    // placeholder shown (dimmed) when val is null
-    function priceRow(label, val, placeholder) {
-        const display = val ?? placeholder;
-        if (!display) return '';
-        return `<div class="flex justify-between gap-3">
-                    <span class="text-white/60">${label}</span>
-                    <span class="font-semibold ${val ? 'text-white' : 'text-white/30'}">${display}</span>
-                </div>`;
-    }
-
-    function combinedFoilRow(card, alwaysShow) {
-        const foil   = fmt(card.prices?.usd_foil);
-        const etched = fmt(card.prices?.usd_etched);
-        if (foil && etched) return priceRow('Foil, Foil Etched', `${foil}, ${etched}`);
-        if (foil)           return priceRow('Foil', foil);
-        if (etched)         return priceRow('Foil Etched', etched);
-        return alwaysShow   ? priceRow('Foil', null, 'no data') : '';
-    }
-
-    function priceBlock(card, modeConfig) {
-        if (modeConfig?.foilOnly) {
-            const foil   = fmt(card.prices?.usd_foil);
-            const etched = fmt(card.prices?.usd_etched);
-            const val    = foil ?? etched;
-            const label  = (foil && etched) ? 'Foil, Foil Etched' : etched ? 'Foil Etched' : 'Foil';
-            return priceRow(label, val, 'no data');
-        }
-        const alwaysShow = !!modeConfig?.alwaysShowNormal;
-        return priceRow('Normal', fmt(card.prices?.usd), alwaysShow ? 'no data' : null)
-            + combinedFoilRow(card, alwaysShow);
-    }
-
     // ── DOM building ───────────────────────────────────────────────
     function buildBuckets(mode, cards, animate) {
         const modeConfig = modes.find(m => m.id === mode);
@@ -311,6 +311,134 @@ function initCatalog(config) {
 
         buildBuckets(mode, cards, true);
         setTimeout(() => { isAnimating = false; }, 2200);
+    }
+
+    init();
+}
+
+/**
+ * initCategoryCatalog — tabbed catalog where each tab is an independent
+ * Scryfall query (a different card pool), bucketed by price.
+ *
+ * config.tabs = [{ id, label, query, alwaysShowNormal?, foilOnly? }, ...]
+ * config.excludeBuckets = ['Under $1', ...]  — bucket labels to omit entirely
+ *
+ * HTML page needs the same elements as initCatalog (mode-toggle, loading,
+ * buckets, fetch-date, catalog-currency).
+ */
+function initCategoryCatalog(config) {
+    const tabs           = config.tabs;
+    const excludeBuckets = config.excludeBuckets ?? [];
+
+    let cardsByTab = {};
+    let currentTab = tabs[0].id;
+
+    currencyMode = localStorage.getItem('currencyMode') || 'USD';
+
+    // ── Build tab toggle UI ────────────────────────────────────────
+    const toggleEl = document.getElementById('mode-toggle');
+    tabs.forEach((tab, i) => {
+        if (i > 0) {
+            const div = document.createElement('div');
+            div.className = 'ma-divider';
+            toggleEl.appendChild(div);
+        }
+        const btn = document.createElement('button');
+        btn.id        = 'btn-' + tab.id;
+        btn.className = i === 0 ? 'ma-btn-active' : 'ma-btn-inactive';
+        btn.textContent = tab.label;
+        btn.onclick   = () => setTab(tab.id);
+        toggleEl.appendChild(btn);
+    });
+
+    // ── Currency toggle ────────────────────────────────────────────
+    function renderCurrencyToggle() {
+        const el = document.getElementById('catalog-currency');
+        if (!el) return;
+        el.innerHTML =
+            `<label class="switch align-middle cursor-pointer">` +
+            `<input type="checkbox" id="cat-currency-input" class="opacity-0 w-0 h-0 absolute"` +
+            (currencyMode === 'CAD' ? ' checked' : '') + `>` +
+            `<span id="cat-toggle" class="toggle${currencyMode === 'CAD' ? ' toggle-cad on' : ''}"></span>` +
+            `</label>`;
+        el.querySelector('#cat-currency-input').addEventListener('change', e => {
+            currencyMode = e.target.checked ? 'CAD' : 'USD';
+            localStorage.setItem('currencyMode', currencyMode);
+            const toggle = el.querySelector('#cat-toggle');
+            toggle.classList.toggle('toggle-cad', currencyMode === 'CAD');
+            toggle.classList.toggle('on', currencyMode === 'CAD');
+            render();
+        });
+    }
+
+    // ── Fetch (with 24h cache) ─────────────────────────────────────
+    async function init() {
+        try {
+            const results = await Promise.all(tabs.map(async t => {
+                const cached = _getCached(t.query);
+                if (cached) return cached;
+                const resp = await fetch('https://api.scryfall.com/cards/search?q=' + t.query + '&order=usd&dir=desc');
+                if (!resp.ok) throw new Error('Scryfall error ' + resp.status);
+                const data = await resp.json();
+                const cards = data.data ?? [];
+                _setCache(t.query, cards);
+                return { cards, at: Date.now() };
+            }));
+
+            tabs.forEach((t, i) => { cardsByTab[t.id] = results[i].cards; });
+
+            document.getElementById('loading').remove();
+
+            const dateEl = document.getElementById('fetch-date');
+            if (dateEl) {
+                const oldestAt = Math.min(...results.map(r => r.at));
+                dateEl.textContent = ', as of ' + _fmtDate(oldestAt);
+            }
+
+            renderCurrencyToggle();
+            render();
+
+        } catch (e) {
+            document.getElementById('loading').textContent = 'Failed to load cards. ' + e.message;
+        }
+    }
+
+    // ── DOM building ───────────────────────────────────────────────
+    function render() {
+        const tab       = tabs.find(t => t.id === currentTab);
+        const container = document.getElementById('buckets');
+        const buckets   = assignBuckets(cardsByTab[currentTab] ?? [], tab)
+            .filter(b => !excludeBuckets.includes(b.label));
+
+        let html = '';
+        for (const b of buckets) {
+            if (!b.cards.length) continue;
+
+            const cardsHTML = b.cards.map(card => {
+                const imgSrc = card.image_uris?.normal ?? card.card_faces?.[0]?.image_uris?.normal ?? '';
+                return `<div class="ma-card flex flex-col gap-1">
+                    <div class="text-sm w-full">${priceBlock(card, tab)}</div>
+                    <img class="rounded-lg shadow-lg w-full" src="${imgSrc}" alt="${card.name}" loading="lazy">
+                </div>`;
+            }).join('');
+
+            html += `<div class="rounded-lg p-5 backdrop-blur-sm" style="${b.bgStyle}">
+                <h2 class="text-lg font-bold text-white/90 mb-4">${b.label}</h2>
+                <div class="flex flex-wrap gap-4">${cardsHTML}</div>
+            </div>`;
+        }
+        container.innerHTML = html;
+    }
+
+    // ── Toggle ─────────────────────────────────────────────────────
+    function setTab(id) {
+        if (id === currentTab) return;
+        currentTab = id;
+        tabs.forEach(t => {
+            document.getElementById('btn-' + t.id).className =
+                t.id === id ? 'ma-btn-active' : 'ma-btn-inactive';
+        });
+        render();
     }
 
     init();

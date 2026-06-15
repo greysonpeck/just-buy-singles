@@ -125,11 +125,9 @@ function ghostSlide() {
     let _ghostLink, _topOutLinkVal;
     const _migratedConfig = _configCache[currentSet];
     if (_migratedConfig) {
-        const _bt = localStorage.getItem("currentBoosterType") || _migratedConfig.boosterTypes[0];
-        const _boosterConfig = _migratedConfig.boosters[_bt];
-        if (_boosterConfig && _boosterConfig.ghostCard) {
-            _ghostLink = "https://api.scryfall.com/cards/random?q=" + _boosterConfig.ghostCard.randomQuery;
-            _topOutLinkVal = "https://api.scryfall.com/cards/search?order=usd&q=" + _boosterConfig.ghostCard.topOutQuery;
+        if (_migratedConfig.ghostCard) {
+            _ghostLink = "https://api.scryfall.com/cards/random?q=" + _migratedConfig.ghostCard.randomQuery;
+            _topOutLinkVal = "https://api.scryfall.com/cards/search?order=usd&q=" + _migratedConfig.ghostCard.topOutQuery;
         }
     } else {
         _ghostLink = ghostLinkHalf[currentSet];
@@ -155,19 +153,14 @@ function ghostSlide() {
     infopopsContent.forEach((content) => {
         let infopopID = content.closest(".card-info").id.replace("-label", "");
 
-        if (infopopID === "uncommon-set") {
-            content.querySelector(".infopop-name").textContent = window.cardInfo?.["uncommon"][0];
-            content.querySelector(".infopop-rarity").textContent = window.cardInfo?.["uncommon"][1];
-        } else if (infopopID === "common-set") {
-            content.querySelector(".infopop-name").textContent = window.cardInfo?.["common"][0];
-            content.querySelector(".infopop-rarity").textContent = window.cardInfo?.["common"][1];
-        } else if (infopopID === "commonsup-set") {
-            content.querySelector(".infopop-name").textContent = window.cardInfo?.["commonsup"][0];
-            content.querySelector(".infopop-rarity").textContent = window.cardInfo?.["commonsup"][1];
+        if (infopopID.endsWith("-set")) {
+            const baseID = infopopID.replace("-set", "");
+            content.querySelector(".infopop-name").textContent = window.cardInfo?.[baseID]?.[0];
+            content.querySelector(".infopop-rarity").textContent = window.cardInfo?.[baseID]?.[1];
         } else {
-            content.querySelector(".infopop-name").textContent = window.cardInfo?.[infopopID][0];
-            content.querySelector(".infopop-type").textContent = window.cardInfo?.[infopopID][1];
-            const _rarityStr = window.cardInfo?.[infopopID][2] || "";
+            content.querySelector(".infopop-name").textContent = window.cardInfo?.[infopopID]?.[0];
+            content.querySelector(".infopop-type").textContent = window.cardInfo?.[infopopID]?.[1];
+            const _rarityStr = window.cardInfo?.[infopopID]?.[2] || "";
             const _rarityPct = parseFloat(_rarityStr);
             const _rarityText = _rarityPct < 0.25 ? "Appears at a very low rate."
                               : _rarityPct < 1    ? "Appears less than 1% of the time."
@@ -383,7 +376,7 @@ document.addEventListener(
         const _urlSet = new URLSearchParams(window.location.search).get("set")?.toUpperCase();
         const _savedSet = localStorage.getItem("currentSet");
         const _startSet = _urlSet || _savedSet;
-        if (_startSet && window.MIGRATED_SETS && window.MIGRATED_SETS.includes(_startSet)) {
+        if (_startSet && _startSet !== "MSH" && window.MIGRATED_SETS && window.MIGRATED_SETS.includes(_startSet)) {
             await initSet(_startSet);
         } else if (_startSet === "MH3") {
             setMH3();
@@ -750,7 +743,7 @@ function makeSlot(id, label, hasFoil, quantity) {
         // Quantity stuff
         const cardSet = document.createElement("div");
         cardSet.id = id + "-set";
-        cardSet.classList.add("mb-1", "sm:pt-0", "card-info");
+        cardSet.classList.add("mb-1", "sm:pt-0", "card-info", "relative");
         cardSet.addEventListener("click", () => _toggleSlotExpand());
 
         // Infopops spacer

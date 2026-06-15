@@ -1556,7 +1556,7 @@ input:checked + .slider:before {
 }
 .h-cards-2 {
   margin-top: -2px;
-  height: 364px;
+  height: 376px;
 }
 .h-cards-3 {
   margin-top: -2px;
@@ -1737,7 +1737,7 @@ input:checked + .slider:before {
     height: 378px;
   }
   #card-section.mobile-big .h-cards-2 {
-    height: 410px;
+    height: 423px;
   }
   #card-section.mobile-big .h-cards-3 {
     height: 464px;

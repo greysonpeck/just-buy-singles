@@ -8,10 +8,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
-    <title>Catalog: SOA Mystical Archive — Just Buy Singles</title>
+    <title>Catalog: Marvel Super Heroes — Just Buy Singles</title>
     <style>
         body {
-            background-image: url('img/catalog-soa.jpg');
+            background-image: url('img/MSH_bg.jpg');
             background-size: cover;
             background-attachment: fixed;
             background-position: center;
@@ -28,27 +28,6 @@
         #page {
             position: relative;
             z-index: 1;
-        }
-        /* Card flip structure */
-        .ma-flipper {
-            position: relative;
-            width: 200px;
-            height: 279px; /* 200 × (680/488) */
-            transform-style: preserve-3d;
-            transition: transform 1s;
-        }
-        .ma-flipper.flipped {
-            transform: rotateY(180deg);
-        }
-        .ma-flipper .ma-face {
-            position: absolute;
-            width: 200px;
-            border-radius: 10px;
-            backface-visibility: hidden;
-            display: block;
-        }
-        .ma-flipper .ma-back {
-            transform: rotateY(180deg);
         }
         /* Mode toggle */
         .ma-toggle {
@@ -81,8 +60,6 @@
         .ma-card { width: 200px; }
         @media (max-width: 480px) {
             .ma-card { width: 150px; }
-            .ma-flipper, .ma-flipper .ma-face { width: 150px; }
-            .ma-flipper { height: 209px; }
         }
     </style>
 </head>
@@ -91,10 +68,10 @@
 
         <!-- Header -->
         <div class="mb-8">
-            <h1 class="text-3xl sm:text-4xl font-bold tracking-wide">Secrets of Strixhaven: Mystical Archive</h1>
+            <h1 class="text-3xl sm:text-4xl font-bold tracking-wide">Marvel Super Heroes</h1>
             <p class="text-white/60 mt-1 text-sm flex items-center">TCGPlayer prices via Scryfall<span id="fetch-date"></span><span id="catalog-currency" style="margin-left:12px"></span></p>
 
-            <!-- Mode toggle -->
+            <!-- Tab toggle -->
             <div id="mode-toggle" class="ma-toggle mt-4 ring-1 ring-gray-400"></div>
         </div>
 
@@ -114,12 +91,25 @@
     <script src="./src/money.js?v=1.43"></script>
     <script src="./src/catalog.js?v=1.44"></script>
     <script>
-        initCatalog({
-            modes: [
-                { id: 'en',        label: 'Standard',                query: 'set%3Asoa+lang%3Aen+is%3Anonfoil',  alwaysShowNormal: true },
-                { id: 'ja',        label: 'Japanese',                 query: 'set%3Asoa+lang%3Aja+cn%3C%3D130'                          },
-                { id: 'ja_silver', label: 'Japanese (Silver Scroll)', query: 'set%3Asoa+lang%3Aja+cn%3E130',      foilOnly: true         },
-            ]
+        initCategoryCatalog({
+            tabs: [
+                {
+                    id: 'boosterfun',
+                    label: 'Booster Fun',
+                    alwaysShowNormal: true,
+                    query: '%28set%3Amsh+%28cn>%3D387+AND+cn<%3D401%29%29' +
+                        '+OR+%28set%3Amsh+%28cn>%3D352+AND+cn<%3D379%29%29' +
+                        '+OR+%28set%3Amsh+%28cn>%3D314+AND+cn<%3D351%29%29' +
+                        '+OR+%28set%3Amar+%28cn>%3D41+AND+cn<%3D100%29%29&unique=cards',
+                },
+                {
+                    id: 'defaultframe',
+                    label: 'Default Frame',
+                    alwaysShowNormal: true,
+                    query: 'set%3Amsh+%28rarity%3Ar+OR+rarity%3Am%29+cn<%3D276&unique=cards',
+                },
+            ],
+            excludeBuckets: ['Under $1'],
         });
     </script>
 </body>

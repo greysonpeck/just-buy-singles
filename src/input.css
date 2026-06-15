@@ -605,7 +605,7 @@ input:checked + .slider:before {
 
 .h-cards-2 {
     margin-top: -2px;
-    height: 364px;
+    height: 376px;
 }
 
 .h-cards-3 {
@@ -802,7 +802,7 @@ input:checked + .slider:before {
     #card-section.mobile-big .infopop-content { width: 270px; height: 378px; }
 
     /* h-cards: desktop values × 1.125 */
-    #card-section.mobile-big .h-cards-2 { height: 410px; }
+    #card-section.mobile-big .h-cards-2 { height: 423px; }
     #card-section.mobile-big .h-cards-3 { height: 464px; }
     #card-section.mobile-big .h-cards-4 { height: 504px; }
     #card-section.mobile-big .h-cards-5 { height: 547px; }
