@@ -8,10 +8,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
-    <title>Catalog: SOA Mystical Archive — Just Buy Singles</title>
+    <title>Catalog: STA Mystical Archive — Just Buy Singles</title>
     <style>
         body {
-            background-image: url('img/catalog-soa.jpg');
+            background-image: url('img/catalog-sta.jpg');
             background-size: cover;
             background-attachment: fixed;
             background-position: center;
@@ -29,7 +29,7 @@
             position: relative;
             z-index: 1;
         }
-        /* Card flip structure */
+        /* Card flip structure — override .both-cards fixed 240px width */
         .ma-flipper {
             position: relative;
             width: 200px;
@@ -72,12 +72,8 @@
             background: linear-gradient(to bottom, rgba(35, 35, 45, 0.95), rgba(60, 60, 75, 0.8));
             color: rgba(255,255,255,0.65) !important;
         }
-        .ma-divider {
-            width: 1px;
-            background: rgba(209,213,219,0.5);
-            flex-shrink: 0;
-        }
-        /* Responsive card width */
+
+        /* Responsive card width — drives flipper, face images, and price block */
         .ma-card { width: 200px; }
         @media (max-width: 480px) {
             .ma-card { width: 150px; }
@@ -85,13 +81,15 @@
             .ma-flipper { height: 209px; }
         }
     </style>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1084747507972985"
+     crossorigin="anonymous"></script>
 </head>
 <body class="text-white font-[Raleway]">
     <div id="page" class="max-w-[1280px] mx-auto px-4 sm:px-8 py-10">
 
         <!-- Header -->
         <div class="mb-8">
-            <h1 class="text-3xl sm:text-4xl font-bold tracking-wide">Secrets of Strixhaven: Mystical Archive</h1>
+            <h1 class="text-3xl sm:text-4xl font-bold tracking-wide">Strixhaven: School of Mages, Mystical Archive</h1>
             <p class="text-white/60 mt-1 text-sm flex items-center">TCGPlayer prices via Scryfall<span id="fetch-date"></span><span id="catalog-currency" style="margin-left:12px"></span></p>
 
             <!-- Mode toggle -->
@@ -116,9 +114,8 @@
     <script>
         initCatalog({
             modes: [
-                { id: 'en',        label: 'Standard',                query: 'set%3Asoa+lang%3Aen+is%3Anonfoil',  alwaysShowNormal: true },
-                { id: 'ja',        label: 'Japanese',                 query: 'set%3Asoa+lang%3Aja+cn%3C%3D130'                          },
-                { id: 'ja_silver', label: 'Japanese (Silver Scroll)', query: 'set%3Asoa+lang%3Aja+cn%3E130',      foilOnly: true         },
+                { id: 'en', label: 'Standard', query: 'set%3Asta+lang%3Aen+is%3Anonfoil' },
+                { id: 'ja', label: 'Japanese',  query: 'set%3Asta+lang%3Aja&unique=cards' },
             ]
         });
     </script>

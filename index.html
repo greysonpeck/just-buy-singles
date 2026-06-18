@@ -30,8 +30,8 @@
     <script defer src="https://cloud.umami.is/script.js?v=1.40" data-website-id="d01d8a5f-624c-4611-823f-9187feb883d4" data-domains="justbuysingles.com">
     umami.disable();
     </script>
-<!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1084747507972985"
-     crossorigin="anonymous"></script> -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1084747507972985"
+     crossorigin="anonymous"></script>
   </head>
   <body>
 
@@ -155,19 +155,18 @@
       <div class="mx-auto flex px-4 flex-col md:flex-row">
         <div class="mt-6 mb-6">
             <h1 class="hidden sm:block text-3xl md:text-5xl font-bold text-nowrap pb-6">Just Buy Singles</h1>
-            <div class="flex">          
-                <h2 id="set-header" class="mr-auto text-2xl md:text-3xl text-wrap font-light tracking-[.3em] mb-2 pb-2">SET NAME</h1>
-            </div>
-
-            <div id="booster-types" class="flex gap-4">
-                <button id="collector-booster" class="text-lg px-3 py-1  rounded-sm font-light uppercase tracking-widest w-fit cursor-pointer">COLLECTOR</button>
-                <button id="play-booster" class="hidden px-3 py-1  rounded-sm text-lg font-light uppercase tracking-widest w-fit cursor-pointer">PLAY</button>
-                <div class="relative ml-auto content-center ">
-                <button id="more" class="h-fit cursor-pointer hover:underline font-medium">Change set</button>
+            <div class="flex items-center gap-3 mb-2 pb-2">
+                <h2 id="set-header" class="mr-auto text-2xl md:text-3xl text-wrap font-light tracking-[.3em]">SET NAME</h2>
+                <div class="relative flex-shrink-0">
+                <button id="more" class="h-8 w-8 rounded-full bg-white/20 hover:bg-white/30 flex items-center justify-center cursor-pointer" aria-label="Change set">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M8 3 4 7 8 11"/><path d="M4 7h16"/><path d="M16 13l4 4-4 4"/><path d="M20 17H4"/>
+                    </svg>
+                </button>
                 <div id="set-list" class="hidden flex flex-wrap  justify-center min-w-11/12 sm:min-w-3/4 mt-2 shadow-2xl ring-2 ring-white text-base w-auto gap-6 p-8 fixed top-1/2 left-1/2 -translate-1/2 rounded-md whitespace-nowrap z-20 max-h-[80vh] overflow-y-auto">
-                    <!-- <button id="set-MSH" class="set-button gap-2 flex flex-col sm:w-fit min-w-[100px] max-w-[200px] w-32 items-center text-left  px-4 py-2 rounded-sm"><span class="text-wrap w-full text-center font-bold flex justify-center">Marvel Super Heroes</span>
+                    <button id="set-MSH" class="hidden set-button gap-2 flex flex-col sm:w-fit min-w-[100px] max-w-[200px] w-32 items-center text-left  px-4 py-2 rounded-sm"><span class="text-wrap w-full text-center font-bold flex justify-center">Marvel Super Heroes</span>
                         <img src="img/booster_MSH_BOTH.png" alt="">
-                    </button> -->
+                    </button>
                     <button id="set-SOS" class="set-button gap-2 flex flex-col sm:w-fit min-w-[100px] max-w-[200px] w-32 items-center text-left  px-4 py-2 rounded-sm"><span class="text-wrap w-full text-center font-bold flex justify-center">Secrets of Strixhaven</span>
                         <img src="img/booster_SOS_BOTH.png" alt="">
                     </button>
@@ -195,7 +194,13 @@
                 </div>
             </div>
             </div>
-            
+
+            <div id="booster-types" class="flex items-center gap-4">
+                <button id="collector-booster" class="text-lg px-3 py-1  rounded-sm font-light uppercase tracking-widest w-fit cursor-pointer">COLLECTOR</button>
+                <button id="play-booster" class="hidden px-3 py-1  rounded-sm text-lg font-light uppercase tracking-widest w-fit cursor-pointer">PLAY</button>
+                <a id="price-guide-link" href="#" class="hidden ml-auto cursor-pointer hover:underline font-medium text-sm">Price guide<span class="ml-1.5 text-xs font-bold rounded-sm px-1.5 py-0.5 leading-tight" style="display:inline-block; background: linear-gradient(135deg, #2a2a2a, #1a1a1a); color: #E9BF53; outline: 1px solid rgba(233,191,83,0.35);">New!</span></a>
+            </div>
+
         </div>
 
         <!-- DATA BLOCK -->

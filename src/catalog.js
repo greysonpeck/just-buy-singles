@@ -53,6 +53,97 @@ function _makeBuckets() {
 const CARD_BACK = './img/card_default4.png';
 const CACHE_TTL = 24 * 60 * 60 * 1000; // 24 hours
 
+// ── Mobile dropdown styles (injected once) ─────────────────────────
+let _maSelectStyleInjected = false;
+function _injectSelectStyles() {
+    if (_maSelectStyleInjected) return;
+    _maSelectStyleInjected = true;
+    const s = document.createElement('style');
+    s.textContent = `
+        .ma-select {
+            display: none;
+            margin-top: 1rem;
+            width: 100%;
+            max-width: 320px;
+            padding: 8px 36px 8px 14px;
+            font-size: 15px;
+            font-weight: 600;
+            font-family: inherit;
+            color: white;
+            background: linear-gradient(to bottom, rgba(35,35,45,0.97), rgba(60,60,75,0.92));
+            border: 1px solid rgba(209,213,219,0.4);
+            border-radius: 8px;
+            cursor: pointer;
+            appearance: none;
+            -webkit-appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='rgba(255,255,255,0.6)' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 12px center;
+        }
+        .ma-select option {
+            background: #1e1e2a;
+            color: white;
+        }
+        @media (max-width: 640px) {
+            .ma-toggle { display: none !important; }
+            .ma-select { display: block; }
+        }
+    `;
+    document.head.appendChild(s);
+}
+
+// ── Lightbox ───────────────────────────────────────────────────────
+let _lightboxReady = false;
+function _setupLightbox() {
+    if (_lightboxReady) return;
+    _lightboxReady = true;
+
+    const style = document.createElement('style');
+    style.textContent = `
+        .catalog-card-img {
+            cursor: pointer;
+            transition: transform 0.15s ease, box-shadow 0.15s ease;
+        }
+        .catalog-card-img:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 16px 40px rgba(0,0,0,0.65);
+        }
+        #catalog-lightbox {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.82);
+            z-index: 1000;
+            cursor: pointer;
+            align-items: center;
+            justify-content: center;
+        }
+        #catalog-lightbox.open { display: flex; }
+        #catalog-lightbox img {
+            max-height: 85vh;
+            max-width: min(90vw, 420px);
+            border-radius: 10px;
+            box-shadow: 0 24px 64px rgba(0,0,0,0.9);
+            pointer-events: none;
+        }
+    `;
+    document.head.appendChild(style);
+
+    const lb = document.createElement('div');
+    lb.id = 'catalog-lightbox';
+    lb.innerHTML = '<img id="catalog-lightbox-img" src="" alt="">';
+    lb.addEventListener('click', () => lb.classList.remove('open'));
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') lb.classList.remove('open'); });
+    document.body.appendChild(lb);
+
+    document.getElementById('buckets').addEventListener('click', e => {
+        const img = e.target.closest('.catalog-card-img');
+        if (!img?.dataset.lbSrc) return;
+        document.getElementById('catalog-lightbox-img').src = img.dataset.lbSrc;
+        lb.classList.add('open');
+    });
+}
+
 // ── Currency ───────────────────────────────────────────────────────
 let currencyMode = 'USD';
 
@@ -158,6 +249,7 @@ function initCatalog(config) {
     currencyMode = localStorage.getItem('currencyMode') || 'USD';
 
     // ── Build toggle UI ────────────────────────────────────────────
+    _injectSelectStyles();
     const toggleEl = document.getElementById('mode-toggle');
     modes.forEach((mode, i) => {
         if (i > 0) {
@@ -172,6 +264,18 @@ function initCatalog(config) {
         btn.onclick   = () => setMode(mode.id);
         toggleEl.appendChild(btn);
     });
+
+    const modeSelect = document.createElement('select');
+    modeSelect.className = 'ma-select';
+    modes.forEach(mode => {
+        const opt = document.createElement('option');
+        opt.value = mode.id;
+        opt.textContent = mode.label;
+        modeSelect.appendChild(opt);
+    });
+    modeSelect.value = modes[0].id;
+    modeSelect.addEventListener('change', () => setMode(modeSelect.value));
+    toggleEl.insertAdjacentElement('beforebegin', modeSelect);
 
     // ── Currency toggle ────────────────────────────────────────────
     function renderCurrencyToggle() {
@@ -278,7 +382,7 @@ function initCatalog(config) {
                     <div class="text-sm w-full">${priceBlock(priceCard, modeConfig)}</div>
                     <div style="perspective:800px;">
                         <div class="ma-flipper${flippedClass}">
-                            <img class="ma-face ma-front shadow-lg" src="${imgSrc}" alt="${card.name}" loading="lazy">
+                            <img class="ma-face ma-front shadow-lg catalog-card-img" src="${imgSrc}" alt="${card.name}" loading="lazy" data-lb-src="${imgSrc}">
                             <img class="ma-face ma-back" src="${CARD_BACK}" alt="">
                         </div>
                     </div>
@@ -293,11 +397,14 @@ function initCatalog(config) {
         return html;
     }
 
+    _setupLightbox();
+
     // ── Toggle ─────────────────────────────────────────────────────
     function setMode(mode) {
         if (mode === currentMode || isAnimating) return;
         isAnimating = true;
         currentMode = mode;
+        modeSelect.value = mode;
 
         modes.forEach(m => {
             document.getElementById('btn-' + m.id).className =
@@ -336,6 +443,7 @@ function initCategoryCatalog(config) {
     currencyMode = localStorage.getItem('currencyMode') || 'USD';
 
     // ── Build tab toggle UI ────────────────────────────────────────
+    _injectSelectStyles();
     const toggleEl = document.getElementById('mode-toggle');
     tabs.forEach((tab, i) => {
         if (i > 0) {
@@ -350,6 +458,18 @@ function initCategoryCatalog(config) {
         btn.onclick   = () => setTab(tab.id);
         toggleEl.appendChild(btn);
     });
+
+    const tabSelect = document.createElement('select');
+    tabSelect.className = 'ma-select';
+    tabs.forEach(tab => {
+        const opt = document.createElement('option');
+        opt.value = tab.id;
+        opt.textContent = tab.label;
+        tabSelect.appendChild(opt);
+    });
+    tabSelect.value = tabs[0].id;
+    tabSelect.addEventListener('change', () => setTab(tabSelect.value));
+    toggleEl.insertAdjacentElement('beforebegin', tabSelect);
 
     // ── Currency toggle ────────────────────────────────────────────
     function renderCurrencyToggle() {
@@ -418,7 +538,7 @@ function initCategoryCatalog(config) {
                 const imgSrc = card.image_uris?.normal ?? card.card_faces?.[0]?.image_uris?.normal ?? '';
                 return `<div class="ma-card flex flex-col gap-1">
                     <div class="text-sm w-full">${priceBlock(card, tab)}</div>
-                    <img class="rounded-lg shadow-lg w-full" src="${imgSrc}" alt="${card.name}" loading="lazy">
+                    <img class="rounded-lg shadow-lg w-full catalog-card-img" src="${imgSrc}" alt="${card.name}" loading="lazy" data-lb-src="${imgSrc}">
                 </div>`;
             }).join('');
 
@@ -430,10 +550,13 @@ function initCategoryCatalog(config) {
         container.innerHTML = html;
     }
 
+    _setupLightbox();
+
     // ── Toggle ─────────────────────────────────────────────────────
     function setTab(id) {
         if (id === currentTab) return;
         currentTab = id;
+        tabSelect.value = id;
         tabs.forEach(t => {
             document.getElementById('btn-' + t.id).className =
                 t.id === id ? 'ma-btn-active' : 'ma-btn-inactive';

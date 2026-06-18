@@ -366,7 +366,7 @@ document.addEventListener(
         currentMoneyElement = document.getElementById("current-money");
         const toggle = document.getElementById("currency");
 
-        const SET_VERSION = 'v2-sos-default';
+        const SET_VERSION = 'v3-sos-default';
         if (localStorage.getItem('setVersion') !== SET_VERSION) {
             localStorage.setItem('setVersion', SET_VERSION);
             localStorage.removeItem('currentSet');
@@ -376,7 +376,7 @@ document.addEventListener(
         const _urlSet = new URLSearchParams(window.location.search).get("set")?.toUpperCase();
         const _savedSet = localStorage.getItem("currentSet");
         const _startSet = _urlSet || _savedSet;
-        if (_startSet && _startSet !== "MSH" && window.MIGRATED_SETS && window.MIGRATED_SETS.includes(_startSet)) {
+        if (_startSet && window.MIGRATED_SETS && window.MIGRATED_SETS.includes(_startSet)) {
             await initSet(_startSet);
         } else if (_startSet === "MH3") {
             setMH3();
@@ -524,6 +524,72 @@ document.addEventListener(
                 // nothing
             }
         });
+
+        // ── Card lightbox ──────────────────────────────────────────
+        const _lbStyle = document.createElement('style');
+        _lbStyle.textContent = `
+            .card-revealed {
+                cursor: pointer;
+                transition: transform 0.15s ease, filter 0.15s ease;
+            }
+            .card-revealed:hover {
+                transform: translateY(-6px);
+                filter: drop-shadow(0 14px 28px rgba(0,0,0,0.7));
+            }
+            #main-lightbox {
+                display: none;
+                position: fixed;
+                inset: 0;
+                background: rgba(0,0,0,0.82);
+                z-index: 1000;
+                cursor: pointer;
+                align-items: center;
+                justify-content: center;
+            }
+            #main-lightbox.open { display: flex; }
+            #main-lightbox img {
+                max-height: 85vh;
+                max-width: min(90vw, 420px);
+                border-radius: 10px;
+                box-shadow: 0 24px 64px rgba(0,0,0,0.9);
+                pointer-events: none;
+            }
+        `;
+        document.head.appendChild(_lbStyle);
+
+        const _lb = document.createElement('div');
+        _lb.id = 'main-lightbox';
+        _lb.innerHTML = `
+            <div style="position:relative;display:inline-block;">
+                <img id="main-lightbox-img" src="" alt="">
+                <div id="main-lightbox-foil" class="foil-hold" style="display:none;border-radius:10px;width:100%;height:100%;"></div>
+            </div>`;
+        _lb.addEventListener('click', () => _lb.classList.remove('open'));
+        document.addEventListener('keydown', e => { if (e.key === 'Escape') _lb.classList.remove('open'); });
+        document.body.appendChild(_lb);
+
+        const _FOIL_CLASSES = ['foil-gradient', 'mana-gradient', 'surge-gradient', 'galaxy-gradient'];
+
+        document.getElementById('card-section').addEventListener('click', e => {
+            const img = e.target.closest('.card-expandable')
+                ?? e.target.closest('.card-revealed')?.querySelector('.card-expandable[data-lb-src]');
+            if (!img?.dataset.lbSrc) return;
+
+            document.getElementById('main-lightbox-img').src = img.dataset.lbSrc;
+
+            const lbFoil = document.getElementById('main-lightbox-foil');
+            const srcFoil = img.closest('.card-revealed')?.querySelector('.foil-hold');
+            const foilClass = srcFoil ? _FOIL_CLASSES.find(c => srcFoil.classList.contains(c)) : null;
+            lbFoil.classList.remove(..._FOIL_CLASSES);
+            if (foilClass) {
+                lbFoil.classList.add(foilClass);
+                lbFoil.style.display = '';
+            } else {
+                lbFoil.style.display = 'none';
+            }
+
+            _lb.classList.add('open');
+        });
     },
     false
 );
@@ -610,6 +676,18 @@ function changeSet() {
     }
 
     document.getElementById("pricePerBooster").innerText = USDollar.format(boosterValue);
+
+    const _priceGuideUrls = { MSH: 'guide-msh.html', SOS: 'guide-soa.html' };
+    const _priceGuideLink = document.getElementById('price-guide-link');
+    if (_priceGuideLink) {
+        const _url = _priceGuideUrls[currentSet];
+        if (_url) {
+            _priceGuideLink.href = _url;
+            _priceGuideLink.classList.remove('hidden');
+        } else {
+            _priceGuideLink.classList.add('hidden');
+        }
+    }
 }
 
 // Card maker
@@ -660,6 +738,7 @@ function clearSlots() {
     while (cardSection.childElementCount > 0) {
         cardSection.removeChild(cardSection.lastChild);
     }
+    document.getElementById('main-lightbox')?.classList.remove('open');
 
     // Clear Ghost Card and associated material
     document.getElementById("snark").classList.add("hidden");
@@ -1110,6 +1189,9 @@ const cardImageLoaded = async (cardType, cardImagePrimary, cardStack, _skipDecre
         // Safe to update foil overlay now (card is about to flip to front)
         if (onFlipped) onFlipped();
         cardStack.classList.remove("flipped");
+        cardStack.classList.add("card-revealed");
+        cardType.classList.add("card-expandable");
+        cardType.dataset.lbSrc = cardImagePrimary;
     } else {
         // Legacy-style (DSK, MH3): flip this individual card to back, wait, then reveal.
         if (!rareFirstFlip) {
@@ -1123,6 +1205,9 @@ const cardImageLoaded = async (cardType, cardImagePrimary, cardStack, _skipDecre
             if (cardType.complete) resolve();
         });
         cardStack.classList.remove("flipped");
+        cardStack.classList.add("card-revealed");
+        cardType.classList.add("card-expandable");
+        cardType.dataset.lbSrc = cardImagePrimary;
     }
 };
 
