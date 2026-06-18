@@ -14,7 +14,13 @@
       "Bash(curl -s \"https://api.scryfall.com/cards/search?q=set%3Asoa+lang%3Aja+is%3Anonfoil\")",
       "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); print\\('JA nonfoil:', d.get\\('total_cards'\\)\\)\")",
       "Bash(curl -s \"https://api.scryfall.com/cards/search?q=set%3Asoa+lang%3Aja+-is%3Anonfoil\")",
-      "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); print\\('JA foil-only \\(Silver Scroll\\):', d.get\\('total_cards'\\)\\)\")"
+      "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); print\\('JA foil-only \\(Silver Scroll\\):', d.get\\('total_cards'\\)\\)\")",
+      "Bash(awk -F'\\\\t' '$1>=354 && $1<=400' msc_sorted.tsv)",
+      "Bash(awk -F'\\\\t' '{print $1}' msc_sorted.tsv)",
+      "Bash(awk '{s+=$1} END {print \"total rows\", s}')",
+      "Bash(awk -F'\\\\t' '$1>=291 && $1<=450 {print $3}' msc_sorted.tsv)",
+      "Bash(python3 *)",
+      "Bash(git *)"
     ]
   }
 }
