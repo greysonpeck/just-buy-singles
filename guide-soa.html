@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
-    <title>Catalog: SOA Mystical Archive — Just Buy Singles</title>
+    <title>Secrets of Strixhaven Price Guide — Just Buy Singles</title>
     <style>
         body {
             background-image: url('img/catalog-soa.jpg');
@@ -93,7 +93,7 @@
 
         <!-- Header -->
         <div class="mb-8">
-            <h1 class="text-3xl sm:text-4xl font-bold tracking-wide">Secrets of Strixhaven: Mystical Archive</h1>
+            <h1 class="text-3xl sm:text-4xl font-bold tracking-wide">Secrets of Strixhaven Price Guide</h1>
             <p class="text-white/60 mt-1 text-sm flex items-center">TCGPlayer prices via Scryfall<span id="fetch-date"></span><span id="catalog-currency" style="margin-left:12px"></span></p>
 
             <!-- Mode toggle -->
@@ -116,11 +116,14 @@
     <script src="./src/money.js?v=1.43"></script>
     <script src="./src/catalog.js?v=1.45"></script>
     <script>
-        initCatalog({
-            modes: [
-                { id: 'en',        label: 'Standard',                query: 'set%3Asoa+lang%3Aen+is%3Anonfoil',  alwaysShowNormal: true },
-                { id: 'ja',        label: 'Japanese',                 query: 'set%3Asoa+lang%3Aja+cn%3C%3D130'                          },
-                { id: 'ja_silver', label: 'Japanese (Silver Scroll)', query: 'set%3Asoa+lang%3Aja+cn%3E130',      foilOnly: true         },
+        initCategoryCatalog({
+            tabs: [
+                { id: 'en',         label: 'Mystical Archive', query: 'set:soa lang:en is:nonfoil',                                 alwaysShowNormal: true },
+                { id: 'ja',         label: 'Japanese STA',     query: 'set:soa lang:ja cn<=130',   showName: true                                      },
+                { id: 'ja_silver',  label: 'Silver Scroll STA',query: 'set:soa lang:ja cn>130',    showName: true, foilOnly: true                              },
+                { id: 'fieldnotes', label: 'Field Notes',      query: 'set:sos (cn>=289 AND cn<=300)'                                                      },
+                { id: 'borderless', label: 'Borderless',       query: '(set:sos cn>=282 cn<=288) OR (set:sos cn>=301 cn<=305)'                             },
+                { id: 'default',    label: 'Default',          query: 'set:sos (rarity:r OR rarity:m) cn<=266'                                             },
             ]
         });
     </script>

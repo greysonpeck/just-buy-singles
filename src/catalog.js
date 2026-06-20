@@ -131,7 +131,10 @@ function _setupLightbox() {
 
     const lb = document.createElement('div');
     lb.id = 'catalog-lightbox';
-    lb.innerHTML = '<img id="catalog-lightbox-img" src="" alt="">';
+    lb.innerHTML = `<div style="display:flex;flex-direction:column;align-items:center;">
+        <img id="catalog-lightbox-img" src="" alt="">
+        <div id="catalog-lightbox-name" style="display:none;margin-top:12px;color:white;font-size:0.95rem;text-align:center;"></div>
+    </div>`;
     lb.addEventListener('click', () => lb.classList.remove('open'));
     document.addEventListener('keydown', e => { if (e.key === 'Escape') lb.classList.remove('open'); });
     document.body.appendChild(lb);
@@ -140,6 +143,13 @@ function _setupLightbox() {
         const img = e.target.closest('.catalog-card-img');
         if (!img?.dataset.lbSrc) return;
         document.getElementById('catalog-lightbox-img').src = img.dataset.lbSrc;
+        const nameEl = document.getElementById('catalog-lightbox-name');
+        if (img.dataset.lbName) {
+            nameEl.textContent = img.dataset.lbName;
+            nameEl.style.display = '';
+        } else {
+            nameEl.style.display = 'none';
+        }
         lb.classList.add('open');
     });
 }
@@ -536,9 +546,12 @@ function initCategoryCatalog(config) {
 
             const cardsHTML = b.cards.map(card => {
                 const imgSrc = card.image_uris?.normal ?? card.card_faces?.[0]?.image_uris?.normal ?? '';
+                const nameAttr = tab.showName ? ` data-lb-name="${card.name}"` : '';
+                const nameEl   = tab.showName ? `<div class="text-sm text-center mt-1">${card.name}</div>` : '';
                 return `<div class="ma-card flex flex-col gap-1">
                     <div class="text-sm w-full">${priceBlock(card, tab)}</div>
-                    <img class="rounded-lg shadow-lg w-full catalog-card-img" src="${imgSrc}" alt="${card.name}" loading="lazy" data-lb-src="${imgSrc}">
+                    <img class="rounded-lg shadow-lg w-full catalog-card-img" src="${imgSrc}" alt="${card.name}" loading="lazy" data-lb-src="${imgSrc}"${nameAttr}>
+                    ${nameEl}
                 </div>`;
             }).join('');
 
