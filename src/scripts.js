@@ -366,7 +366,7 @@ document.addEventListener(
         currentMoneyElement = document.getElementById("current-money");
         const toggle = document.getElementById("currency");
 
-        const SET_VERSION = 'v3-sos-default';
+        const SET_VERSION = 'v4-msh-default';
         if (localStorage.getItem('setVersion') !== SET_VERSION) {
             localStorage.setItem('setVersion', SET_VERSION);
             localStorage.removeItem('currentSet');
@@ -381,7 +381,7 @@ document.addEventListener(
         } else if (_startSet === "MH3") {
             setMH3();
         } else {
-            await initSet("SOS");
+            await initSet("MSH");
         }
 
         // Pull the set that's in the cookie
