@@ -17,20 +17,20 @@
         {
           "id": "boosterfun-foil-rm",
           "label": "Foil Booster Fun",
+          "_comment": "Not modelling The Mind Stone, Cosmic Foil printing (only 150 printings available). Remaining probabilities scaled proportionally to sum to 100%.",
           "isFoil": true,
           "probabilities": [
-            { "maxRoll": 31.74, "type": "Extended-art, Rare (Foil)",   "rarity": "31.7%", "query": "set%3Amsh+rarity%3Ar+%28cn>%3D402+AND+cn<%3D429%29&unique=cards" },
-            { "maxRoll": 34.43, "type": "Extended-art, Mythic (Foil)", "rarity": "2.7%",  "query": "set%3Amsh+rarity%3Am+%28cn>%3D402+AND+cn<%3D429%29&unique=cards" },
-            { "maxRoll": 41.72, "type": "Scene, Rare (Foil)",          "rarity": "7.3%",  "query": "set%3Amsh+rarity%3Ar+%28cn>%3D314+AND+cn<%3D351%29+-is%3Adfc&unique=cards" },
-            { "maxRoll": 45.71, "type": "Scene, Mythic (Foil)",        "rarity": "4%",    "query": "set%3Amsh+rarity%3Am+%28cn>%3D314+AND+cn<%3D351%29+-is%3Adfc&unique=cards" },
-            { "maxRoll": 62.88, "type": "Logo, Rare (Foil)",           "rarity": "17.2%", "query": "set%3Amsh+rarity%3Ar+%28cn>%3D352+AND+cn<%3D379%29+-is%3Adfc&unique=cards" },
-            { "maxRoll": 66.47, "type": "Logo, Mythic (Foil)",         "rarity": "3.6%",  "query": "set%3Amsh+rarity%3Am+%28cn>%3D352+AND+cn<%3D379%29+-is%3Adfc&unique=cards" },
-            { "maxRoll": 80.34, "type": "Panel, Rare (Foil)",          "rarity": "13.9%", "query": "set%3Amsh+rarity%3Ar+%28cn>%3D297+AND+cn<%3D313%29&unique=cards" },
-            { "maxRoll": 83.33, "type": "Panel, Mythic (Foil)",        "rarity": "3%",    "query": "set%3Amsh+rarity%3Am+%28cn>%3D297+AND+cn<%3D313%29&unique=cards" },
-            { "maxRoll": 89.92, "type": "Borderless Land, Rare (Foil)","rarity": "6.6%",  "query": "set%3Amsh+%28cn>%3D380+AND+cn<%3D384%29&unique=cards" },
-            { "maxRoll": 99.80, "type": "Borderless Classic Comic (Foil)", "rarity": "9.9%", "query": "set%3Amsh+%28cn>%3D387+AND+cn<%3D401%29&unique=cards" },
-            { "maxRoll": 99.975, "type": "The Mind Stone, Gauntlet (Foil)", "rarity": "0.175%", "query": "set%3Amsh+rarity%3Am+cn%3D386&unique=cards", "foilClass": "foil-gradient" },
-            { "maxRoll": 100.0, "type": "The Mind Stone, Cosmic Foil (Foil)", "rarity": "0.025%", "query": "set%3Amsh+rarity%3Am+cn%3D385&unique=cards", "foilClass": "foil-gradient" }
+            { "maxRoll": 31.74, "type": "Extended-art, Rare (Foil)",       "rarity": "31.7%",  "query": "set%3Amsh+rarity%3Ar+%28cn>%3D402+AND+cn<%3D429%29&unique=cards" },
+            { "maxRoll": 34.43, "type": "Extended-art, Mythic (Foil)",     "rarity": "2.7%",   "query": "set%3Amsh+rarity%3Am+%28cn>%3D402+AND+cn<%3D429%29&unique=cards" },
+            { "maxRoll": 41.72, "type": "Scene, Rare (Foil)",              "rarity": "7.3%",   "query": "set%3Amsh+rarity%3Ar+%28cn>%3D314+AND+cn<%3D351%29+-is%3Adfc&unique=cards" },
+            { "maxRoll": 45.71, "type": "Scene, Mythic (Foil)",            "rarity": "4%",     "query": "set%3Amsh+rarity%3Am+%28cn>%3D314+AND+cn<%3D351%29+-is%3Adfc&unique=cards" },
+            { "maxRoll": 62.88, "type": "Logo, Rare (Foil)",               "rarity": "17.2%",  "query": "set%3Amsh+rarity%3Ar+%28cn>%3D352+AND+cn<%3D379%29+-is%3Adfc&unique=cards" },
+            { "maxRoll": 66.47, "type": "Logo, Mythic (Foil)",             "rarity": "3.6%",   "query": "set%3Amsh+rarity%3Am+%28cn>%3D352+AND+cn<%3D379%29+-is%3Adfc&unique=cards" },
+            { "maxRoll": 80.34, "type": "Panel, Rare (Foil)",              "rarity": "13.9%",  "query": "set%3Amsh+rarity%3Ar+%28cn>%3D297+AND+cn<%3D313%29&unique=cards" },
+            { "maxRoll": 83.33, "type": "Panel, Mythic (Foil)",            "rarity": "3%",     "query": "set%3Amsh+rarity%3Am+%28cn>%3D297+AND+cn<%3D313%29&unique=cards" },
+            { "maxRoll": 89.92, "type": "Borderless Land, Rare (Foil)",    "rarity": "6.6%",   "query": "set%3Amsh+%28cn>%3D380+AND+cn<%3D384%29&unique=cards" },
+            { "maxRoll": 99.80, "type": "Borderless Classic Comic (Foil)", "rarity": "9.9%",   "query": "set%3Amsh+%28cn>%3D387+AND+cn<%3D401%29&unique=cards" },
+            { "maxRoll": 100.0, "type": "The Mind Stone, Gauntlet (Foil)", "rarity": "0.2%",   "query": "set%3Amsh+rarity%3Am+cn%3D386&unique=cards", "foilClass": "foil-gradient" }
           ]
         },
         {
