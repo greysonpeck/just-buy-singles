@@ -168,6 +168,14 @@ function ghostSlide() {
             content.querySelector(".infopop-rarity").textContent = _rarityText;
         }
 
+        const _commentEl = content.querySelector(".infopop-comment");
+        if (_commentEl) {
+            const _slotId = infopopID.endsWith("-set") ? infopopID.replace("-set", "") : infopopID;
+            const _comment = window.cardInfoComments?.[_slotId];
+            _commentEl.textContent = _comment || '';
+            _commentEl.style.display = _comment ? '' : 'none';
+        }
+
         // text.innerText = window.cardInfo?.[infopopID];
     });
 }
@@ -779,7 +787,7 @@ function makeSlot(id, label, hasFoil, quantity) {
     const infoPopWrapper =
         '<div class="infopop-wrapper hidden w-0 justify-center align-center"> <div id="infopop-' +
         id +
-        '" class="infopop-content bg-slate-950/70 bg-opacity-80"><p class="infopop-name text-lg leading-snug pb-4"></p><p class="infopop-type font-normal pb-2"></p><p class="infopop-rarity font-normal"></p></div></div>';
+        '" class="infopop-content bg-slate-950/70 bg-opacity-80"><p class="infopop-name text-lg leading-snug pb-4"></p><p class="infopop-type font-normal pb-2"></p><p class="infopop-rarity font-normal"></p><p class="infopop-comment text-xs opacity-60 mt-3" style="display:none"></p></div></div>';
 
     cardInfo.innerHTML =
         infoPopWrapper +
@@ -831,7 +839,7 @@ function makeSlot(id, label, hasFoil, quantity) {
             id +
             '" class="infopop-content mb-0 bg-slate-950/70 bg-opacity-80 top-8 rounded-md h-cards-' +
             quantity +
-            '"><p class="infopop-name text-lg leading-snug pb-4"></p><p class="infopop-rarity font-normal"></p></div></div>';
+            '"><p class="infopop-name text-lg leading-snug pb-4"></p><p class="infopop-rarity font-normal"></p><p class="infopop-comment text-xs opacity-60 mt-3" style="display:none"></p></div></div>';
         cardSet.insertAdjacentHTML("afterbegin", infoPopSpacer);
 
         // Check for dummy/spacer slot

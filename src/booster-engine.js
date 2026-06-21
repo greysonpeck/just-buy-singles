@@ -339,6 +339,8 @@ async function _pullSingleSlot(slot, foilGroupMap, prevReveal) {
     window.cardInfo = window.cardInfo || {};
     const _entryType = (slot.foilFlip && resolvedFoilClass) ? entry.type + ' (Foil)' : entry.type;
     window.cardInfo[slot.id] = [card.name, _entryType, entry.rarity || ''];
+    window.cardInfoComments = window.cardInfoComments || {};
+    window.cardInfoComments[slot.id] = slot._comment || null;
 
     // Get image element
     const imageElement = document.getElementById(slot.id + '-image');
@@ -455,6 +457,8 @@ async function _pullMultiSlot(slot, prevReveal) {
     if (slot.cardInfo) {
         window.cardInfo[slot.id] = slot.cardInfo;
     }
+    window.cardInfoComments = window.cardInfoComments || {};
+    window.cardInfoComments[slot.id] = slot._comment || null;
 
     // Return the last card's reveal promise. Since it has the longest delay, waiting
     // for it guarantees all earlier cards have also revealed.
