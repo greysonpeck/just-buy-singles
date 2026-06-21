@@ -593,6 +593,8 @@ input:checked + .slider:before {
     position: absolute;
     z-index: 2;
     backdrop-filter: blur(2px);
+    display: flex;
+    flex-direction: column;
 }
 
 /* Multi-card slot container heights (desktop: 240px cards, 336px tall, 38px offset) */
