@@ -184,7 +184,7 @@ function assignBuckets(cards, modeConfig) {
     const noPriceBucket = buckets[buckets.length - 1];
 
     for (const card of cards) {
-        const priceVal = modeConfig?.foilOnly
+        const priceVal = (modeConfig?.foilOnly || card.nonfoil === false)
             ? (card.prices?.usd_foil ?? card.prices?.usd_etched)
             : card.prices?.usd;
 
