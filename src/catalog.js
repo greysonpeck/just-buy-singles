@@ -245,8 +245,10 @@ function priceBlock(card, modeConfig) {
     const alwaysShow = !!modeConfig?.alwaysShowNormal;
     const hasNonfoil = card.nonfoil !== false;
     const hasFoil    = card.foil !== false || !!card.prices?.usd_etched;
-    return (hasNonfoil ? priceRow('Normal', fmt(card.prices?.usd), alwaysShow ? 'no data' : null) : '')
-         + (hasFoil    ? combinedFoilRow(card, alwaysShow) : '');
+    const normalRow  = hasNonfoil
+        ? priceRow('Normal', fmt(card.prices?.usd), alwaysShow ? 'no data' : null)
+        : `<div class="flex justify-between gap-3"><span class="text-white/60">Normal</span><span class="text-white/60">N/A</span></div>`;
+    return normalRow + (hasFoil ? combinedFoilRow(card, alwaysShow) : '');
 }
 
 function initCatalog(config) {
