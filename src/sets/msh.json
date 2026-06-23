@@ -55,7 +55,7 @@
             { "maxRoll": 61.1,  "type": "Logo, Mythic",                  "rarity": "4.6%",  "query": "set%3Amsh+rarity%3Am+%28cn>%3D352+AND+cn<%3D379%29&unique=cards" },
             { "maxRoll": 73.2,  "type": "Panel, Rare",                   "rarity": "12.1%", "query": "set%3Amsh+rarity%3Ar+%28cn>%3D297+AND+cn<%3D313%29&unique=cards" },
             { "maxRoll": 75.8,  "type": "Panel, Mythic",                 "rarity": "2.6%",  "query": "set%3Amsh+rarity%3Am+%28cn>%3D297+AND+cn<%3D313%29&unique=cards" },
-            { "maxRoll": 89.7,  "type": "Borderless Classic Comic",      "rarity": "13.9%", "query": "set%3Amsh+%28cn>%3D387+AND+cn<%3D401%29&unique=cards" },
+            { "maxRoll": 89.7,  "type": "Scene Box, Rare",                        "rarity": "13.9%", "query": "set%3Amsc+%28cn>%3D501+AND+cn<%3D512%29&unique=cards" },
             { "maxRoll": 95.5,  "type": "Borderless Land, Rare",         "rarity": "5.8%",  "query": "set%3Amsh+%28cn>%3D380+AND+cn<%3D384%29&unique=cards" },
             { "maxRoll": 100.0, "type": "Source Material",               "rarity": "4.5%",  "query": "set%3Amar+%28cn>%3D41+AND+cn<%3D100%29&unique=cards" }
           ]
