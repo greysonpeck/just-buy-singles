@@ -114,7 +114,7 @@
         {
           "id": "foil-boosterfun",
           "label": "Foil Booster Fun",
-          "_comment": "Not modelling the Serialized 1/500 Headliner (0.2%). Remaining probabilities scaled proportionally to sum to 100%.",
+          "_comment": "Not modelling the Serialized 1/500 Headliner.",
           "isFoil": true,
           "probabilities": [
             { "maxRoll":  59.8, "type": "Extended-art, Rare (Foil)",                              "rarity": "59.8%", "query": "set%3Asos+rarity%3Ar+%28CN>%3D307+AND+CN<%3D362%29&unique=cards",   "foilClass": "foil-gradient" },

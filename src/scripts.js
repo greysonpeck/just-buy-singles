@@ -374,10 +374,12 @@ document.addEventListener(
         currentMoneyElement = document.getElementById("current-money");
         const toggle = document.getElementById("currency");
 
-        const SET_VERSION = 'v4-msh-default';
+        const SET_VERSION = 'v5-msh-42';
         if (localStorage.getItem('setVersion') !== SET_VERSION) {
             localStorage.setItem('setVersion', SET_VERSION);
             localStorage.removeItem('currentSet');
+            localStorage.removeItem('boosterValue_MSH');
+            localStorage.removeItem('boosterValue_CAD_MSH');
             history.replaceState(null, '', window.location.pathname);
         }
 

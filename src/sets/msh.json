@@ -11,13 +11,13 @@
     "COLLECTOR": {
       "totalCards": 15,
       "msrp": 37.99,
-      "defaultUSD": 36,
+      "defaultUSD": 42,
       "defaultCAD": 60,
       "slots": [
         {
           "id": "boosterfun-foil-rm",
           "label": "Foil Booster Fun",
-          "_comment": "Not modelling The Mind Stone, Cosmic Foil printing (only 150 printings available). Remaining probabilities scaled proportionally to sum to 100%.",
+          "_comment": "Not modelling The Mind Stone, Cosmic Foil printing (only 150 printings available).",
           "isFoil": true,
           "probabilities": [
             { "maxRoll": 31.74, "type": "Extended-art, Rare (Foil)",       "rarity": "31.7%",  "query": "set%3Amsh+rarity%3Ar+%28cn>%3D402+AND+cn<%3D429%29&unique=cards" },
