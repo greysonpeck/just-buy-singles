@@ -243,8 +243,10 @@ function priceBlock(card, modeConfig) {
         return priceRow(label, val, 'no data');
     }
     const alwaysShow = !!modeConfig?.alwaysShowNormal;
-    return priceRow('Normal', fmt(card.prices?.usd), alwaysShow ? 'no data' : null)
-        + combinedFoilRow(card, alwaysShow);
+    const hasNonfoil = card.nonfoil !== false;
+    const hasFoil    = card.foil !== false || !!card.prices?.usd_etched;
+    return (hasNonfoil ? priceRow('Normal', fmt(card.prices?.usd), alwaysShow ? 'no data' : null) : '')
+         + (hasFoil    ? combinedFoilRow(card, alwaysShow) : '');
 }
 
 function initCatalog(config) {
