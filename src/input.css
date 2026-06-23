@@ -706,10 +706,11 @@ input:checked + .slider:before {
     .stack-height-6 { height: calc(var(--mobile-h) + 168px); }
     .stack-height-7 { height: calc(var(--mobile-h) + 196px); }
 
-    /* Infopop tooltip covering a multi-card stack */
+    /* Infopop tooltip covering a single-card slot */
     .infopop-content {
         width: var(--mobile-w);
-        height: var(--mobile-h);
+        height: calc(var(--mobile-h) + 29px);
+        margin-top: 0;
     }
 
     .h-cards-2 { margin-top: -2px; height: calc(var(--mobile-h) - 2px + var(--mobile-step) * 1); }
