@@ -713,12 +713,12 @@ input:checked + .slider:before {
         margin-top: 0;
     }
 
-    .h-cards-2 { margin-top: -2px; height: calc(var(--mobile-h) - 2px + var(--mobile-step) * 1); }
-    .h-cards-3 { margin-top: -2px; height: calc(var(--mobile-h) - 2px + var(--mobile-step) * 2); }
-    .h-cards-4 { margin-top: -2px; height: calc(var(--mobile-h) - 2px + var(--mobile-step) * 3); }
-    .h-cards-5 { margin-top: -2px; height: calc(var(--mobile-h) - 2px + var(--mobile-step) * 4); }
-    .h-cards-6 { margin-top: -2px; height: calc(var(--mobile-h) - 2px + var(--mobile-step) * 5); }
-    .h-cards-7 { margin-top: -2px; height: calc(var(--mobile-h) - 2px + var(--mobile-step) * 6); }
+    .h-cards-2 { margin-top: -2px; height: calc(var(--mobile-h) + var(--mobile-step) * 2); }
+    .h-cards-3 { margin-top: -2px; height: calc(var(--mobile-h) + var(--mobile-step) * 3); }
+    .h-cards-4 { margin-top: -2px; height: calc(var(--mobile-h) + var(--mobile-step) * 4); }
+    .h-cards-5 { margin-top: -2px; height: calc(var(--mobile-h) + var(--mobile-step) * 5); }
+    .h-cards-6 { margin-top: -2px; height: calc(var(--mobile-h) + var(--mobile-step) * 6); }
+    .h-cards-7 { margin-top: -2px; height: calc(var(--mobile-h) + var(--mobile-step) * 7); }
 
     /* Ghost card — center the fixed element by anchoring at viewport midpoint */
     .snark-and-single { width: 300px; }
