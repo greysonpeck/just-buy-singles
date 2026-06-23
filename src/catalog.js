@@ -20,8 +20,7 @@
  */
 
 const BG_STYLES = [
-    'background: linear-gradient(to bottom, rgba(175,130,20,0.65), rgba(175,130,20,0.15))', // gold       — Over $1,000
-    'background: linear-gradient(to bottom, rgba(170,80,30,0.65),  rgba(170,80,30,0.15))',  // orange     — Over $500
+    'background: linear-gradient(to bottom, rgba(175,130,20,0.65), rgba(175,130,20,0.15))', // gold       — Over $500 (yo??)
     'background: linear-gradient(to bottom, rgba(165,55,35,0.65),  rgba(165,55,35,0.15))',  // orange-red — Over $250
     'background: linear-gradient(to bottom, rgba(160,50,50,0.65),  rgba(160,50,50,0.15))',  // red        — Over $100
     'background: linear-gradient(to bottom, rgba(145,50,90,0.65),  rgba(145,50,90,0.15))',  // crimson    — Over $50
@@ -36,8 +35,7 @@ const BG_STYLES = [
 function _makeBuckets() {
     const s = '$';
     return [
-        { label: `Over ${s}1,000 (yo??)`,  min: 1000, max: Infinity },
-        { label: `Over ${s}500`,            min: 500,  max: 1000     },
+        { label: `Over ${s}500 (yo??)`,     min: 500,  max: Infinity },
         { label: `Over ${s}250`,            min: 250,  max: 500      },
         { label: `Over ${s}100`,            min: 100,  max: 250      },
         { label: `Over ${s}50`,             min: 50,   max: 100      },
