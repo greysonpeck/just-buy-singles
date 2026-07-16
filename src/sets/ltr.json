@@ -1,0 +1,358 @@
+{
+  "code": "LTR",
+  "displayName": "LOTR: TALES OF MIDDLE EARTH",
+  "backgroundImage": "img/LTR_bg.jpg",
+  "boosterTypes": ["COLLECTOR", "PLAY", "HOLIDAY"],
+  "playLabel": "SET",
+  "ghostCard": {
+    "randomQuery": "%28set%3Altr+or+set%3Altc%29+date%3A2023-06-23+unique%3Aprints+",
+    "topOutQuery": "%28set%3Altr+or+set%3Altc%29+date%3A2023-06-23+unique%3Aprints+USD%3E%3D15"
+  },
+  "boosters": {
+    "COLLECTOR": {
+      "totalCards": 15,
+      "msrp": "N/A",
+      "defaultUSD": 260,
+      "defaultCAD": 375,
+      "slots": [
+        {
+          "id": "foil-boosterfun-rm",
+          "label": "Foil Booster Fun (R/M)",
+          "isFoil": true,
+          "probabilities": [
+            { "maxRoll": 39.7,  "type": "Scene, Rare (Foil)",                          "rarity": "39.7%", "query": "set%3Altr+rarity%3Ar+%28cn>%3D399+AND+cn<%3D451%29&unique=cards" },
+            { "maxRoll": 64.5,  "type": "Showcase: The Ring, Rare (Foil)",             "rarity": "24.8%", "query": "set%3Altr+rarity%3Ar+%28cn>%3D302+AND+cn<%3D331%29&unique=cards" },
+            { "maxRoll": 73.2,  "type": "Scene, Mythic (Foil)",                        "rarity": "8.7%",  "query": "set%3Altr+rarity%3Am+%28cn>%3D399+AND+cn<%3D451%29&unique=cards" },
+            { "maxRoll": 83.1,  "type": "Extended-Art Commander, Mythic (Foil, LTC)",  "rarity": "9.9%",  "query": "set%3Altc+rarity%3Am+%28cn>%3D85+AND+cn<%3D160%29&unique=cards" },
+            { "maxRoll": 93.0,  "type": "Borderless Land, Rare (Foil)",                "rarity": "9.9%",  "query": "set%3Altr+rarity%3Ar+%28cn>%3D340+AND+cn<%3D345%29&unique=cards" },
+            { "maxRoll": 98.0,  "type": "Showcase: The Ring, Mythic (Foil)",           "rarity": "5.0%",  "query": "set%3Altr+rarity%3Am+%28cn>%3D302+AND+cn<%3D331%29&unique=cards" },
+            { "maxRoll": 99.2,  "type": "Borderless Land, Mythic (Foil)",              "rarity": "1.2%",  "query": "set%3Altr+rarity%3Am+%28cn>%3D340+AND+cn<%3D345%29&unique=cards" },
+            { "maxRoll": 100.0, "type": "Realms & Relics, Mythic (Surge Foil, LTC)",   "rarity": "0.8%",  "query": "set%3Altc+%28cn>%3D378+AND+cn<%3D407%29&unique=cards", "foilClass": ["foil-gradient", "surge-gradient"] }
+          ]
+        },
+        {
+          "id": "foil-boosterfun-cu",
+          "label": "Foil Booster Fun (C/U)",
+          "isFoil": true,
+          "probabilities": [
+            { "maxRoll": 41.8,  "type": "Scene, Common (Foil)",                 "rarity": "41.8%",       "query": "set%3Altr+rarity%3Ac+%28cn>%3D399+AND+cn<%3D451%29&unique=cards" },
+            { "maxRoll": 74.4,  "type": "Scene, Uncommon (Foil)",               "rarity": "32.6%",       "query": "set%3Altr+rarity%3Au+%28cn>%3D399+AND+cn<%3D451%29&unique=cards" },
+            { "maxRoll": 97.7,  "type": "Showcase: The Ring, Uncommon (Foil)",  "rarity": "23.3%",       "query": "set%3Altr+rarity%3Au+%28cn>%3D302+AND+cn<%3D331%29&unique=cards" },
+            { "maxRoll": 99.74, "type": "Nazgûl (CN 332–339, Foil)",            "rarity": "2.04% (8/9)", "query": "set%3Altr+rarity%3Au+%28cn>%3D332+AND+cn<%3D339%29&unique=prints" },
+            { "maxRoll": 100.0, "type": "Nazgûl (CN 100, Foil)",                "rarity": "0.26% (1/9)", "query": "set%3Altr+rarity%3Au+cn>%3D100+AND+cn<%3D100&unique=cards" }
+          ]
+        },
+        {
+          "id": "scene",
+          "label": "Borderless Scene",
+          "isFoil": false,
+          "probabilities": [
+            { "maxRoll": 37.5,  "type": "Scene, Common",   "rarity": "37.5%", "query": "set%3Altr+rarity%3Ac+%28cn>%3D399+AND+cn<%3D451%29&unique=cards" },
+            { "maxRoll": 66.7,  "type": "Scene, Uncommon", "rarity": "29.2%", "query": "set%3Altr+rarity%3Au+%28cn>%3D399+AND+cn<%3D451%29&unique=cards" },
+            { "maxRoll": 94.0,  "type": "Scene, Rare",     "rarity": "27.3%", "query": "set%3Altr+rarity%3Ar+%28cn>%3D399+AND+cn<%3D451%29&unique=cards" },
+            { "maxRoll": 100.0, "type": "Scene, Mythic",   "rarity": "6%",    "query": "set%3Altr+rarity%3Am+%28cn>%3D399+AND+cn<%3D451%29&unique=cards" }
+          ]
+        },
+        {
+          "id": "boosterfun-nf-rm",
+          "label": "Booster Fun (R/M)",
+          "isFoil": false,
+          "probabilities": [
+            { "maxRoll": 35.0,  "type": "Showcase: The Ring, Rare",      "rarity": "35%",   "query": "set%3Altr+rarity%3Ar+%28cn>%3D302+AND+cn<%3D331%29&unique=cards" },
+            { "maxRoll": 50.0,  "type": "Showcase: The Ring, Mythic",    "rarity": "15%",   "query": "set%3Altr+rarity%3Am+%28cn>%3D302+AND+cn<%3D331%29&unique=cards" },
+            { "maxRoll": 65.6,  "type": "Borderless Land, Rare",         "rarity": "15.6%", "query": "set%3Altr+rarity%3Ar+%28cn>%3D340+AND+cn<%3D345%29&unique=cards" },
+            { "maxRoll": 68.7,  "type": "Borderless Land, Mythic",       "rarity": "3.1%",  "query": "set%3Altr+rarity%3Am+%28cn>%3D340+AND+cn<%3D345%29&unique=cards" },
+            { "maxRoll": 100.0, "type": "Realms & Relics, Mythic (LTC)", "rarity": "31.3%", "query": "set%3Altc+%28cn>%3D348+AND+cn<%3D377%29&unique=cards" }
+          ]
+        },
+        {
+          "id": "ring-nazgul",
+          "label": "Ring Frame (U) or Nazgûl",
+          "isFoil": false,
+          "probabilities": [
+            { "maxRoll": 91.0,  "type": "Showcase: The Ring, Uncommon", "rarity": "91%",      "query": "set%3Altr+rarity%3Au+%28cn>%3D302+AND+cn<%3D331%29&unique=cards" },
+            { "maxRoll": 99.0,  "type": "Nazgûl (CN 332–339)",          "rarity": "8% (8/9)", "query": "set%3Altr+rarity%3Au+%28cn>%3D332+AND+cn<%3D339%29&unique=prints" },
+            { "maxRoll": 100.0, "type": "Nazgûl (CN 100)",              "rarity": "1% (1/9)", "query": "set%3Altr+rarity%3Au+cn>%3D100+AND+cn<%3D100&unique=cards" }
+          ]
+        },
+        {
+          "id": "ea-commander",
+          "label": "Ext. Art, Extras (R/M)",
+          "isFoil": false,
+          "probabilities": [
+            { "maxRoll": 15.1,  "type": "Jumpstart / Starter Kit, Rare (LTR)",      "rarity": "15.1%", "query": "set%3Altr+rarity%3Ar+%28cn>%3D282+AND+cn<%3D298%29&unique=cards" },
+            { "maxRoll": 94.2,  "type": "Extended-Art Commander, Rare (LTC)",        "rarity": "79.1%", "query": "set%3Altc+rarity%3Ar+%28cn>%3D85+AND+cn<%3D160%29&unique=cards" },
+            { "maxRoll": 95.36, "type": "Starter Kit, Mythic (LTR)",                "rarity": "1.16%", "query": "set%3Altr+rarity%3Am+%28cn>%3D287+AND+cn<%3D298%29&unique=cards" },
+            { "maxRoll": 100.0, "type": "Extended-Art Commander, Mythic (LTC)",     "rarity": "4.64%", "query": "set%3Altc+rarity%3Am+%28cn>%3D85+AND+cn<%3D160%29&unique=cards" }
+          ]
+        },
+        {
+          "id": "ea-main",
+          "label": "Extended-Art (R/M)",
+          "isFoil": false,
+          "probabilities": [
+            { "maxRoll": 86.1,  "type": "Extended-Art, Rare",   "rarity": "86.1%", "query": "set%3Altr+rarity%3Ar+%28cn>%3D346+AND+cn<%3D397%29&unique=cards" },
+            { "maxRoll": 100.0, "type": "Extended-Art, Mythic", "rarity": "13.9%", "query": "set%3Altr+rarity%3Am+%28cn>%3D346+AND+cn<%3D397%29&unique=cards" }
+          ]
+        },
+        {
+          "id": "foil-raremythic",
+          "label": "Foil Rare or Mythic",
+          "isFoil": true,
+          "probabilities": [
+            { "maxRoll": 85.7,  "type": "Rare",   "rarity": "85.7%", "query": "set%3Altr+rarity%3Ar+cn<%3D261&unique=cards" },
+            { "maxRoll": 100.0, "type": "Mythic", "rarity": "14.3%", "query": "set%3Altr+rarity%3Am+cn<%3D261&unique=cards" }
+          ]
+        },
+        {
+          "id": "foil-uncommon",
+          "label": "Foil Uncommons",
+          "isFoil": true,
+          "count": 2,
+          "cardInfo": ["2 Traditional Foil Uncommons", "79 of the 80 main-set uncommons appear here. The 9 Nazgûl variants are in a separate slot."],
+          "probabilities": [
+            { "maxRoll": 100.0, "type": "Uncommon", "rarity": "100%", "query": "set%3Altr+rarity%3Au+cn<%3D261&unique=cards" }
+          ]
+        },
+        {
+          "id": "common",
+          "label": "Foil Commons",
+          "isFoil": true,
+          "count": 4,
+          "sumVar": "commonSum",
+          "cardInfo": ["4 Traditional Foil Commons", "There are 101 commons in the LTR main set. The 4th common slot rarely contains a non-foil Sol Ring variant (~0.65% combined for Elven, Dwarven, and Human)."],
+          "probabilities": [
+            { "maxRoll": 100.0, "type": "Common", "rarity": "100%", "query": "set%3Altr+rarity%3Ac+cn<%3D261&unique=cards" }
+          ],
+          "trailingCard": {
+            "probabilities": [
+              { "maxRoll": 0.65,  "type": "Non-foil Sol Ring variant", "rarity": "~0.65%", "query": "set%3Altc+%21'Sol+Ring'+-is%3Aserialized&unique=prints", "foilClass": null, "priceKey": "usd" },
+              { "maxRoll": 100.0, "type": "Common",                    "rarity": "~99.35%", "query": "set%3Altr+rarity%3Ac+cn<%3D261&unique=cards" }
+            ]
+          }
+        },
+                {
+          "id": "foil-land",
+          "label": "Foil Full-Art Basic Land",
+          "isFoil": true,
+          "probabilities": [
+            { "maxRoll": 100.0, "type": "Full-Art Basic Land", "rarity": "100%", "query": "set%3Altr+%28cn>%3D272+AND+cn<%3D281%29&unique=cards" }
+          ]
+        }
+      ]
+    },
+    "PLAY": {
+      "totalCards": 12,
+      "msrp": "N/A",
+      "defaultUSD": 15,
+      "defaultCAD": 20,
+      "slots": [
+        {
+          "id": "raremythic",
+          "label": "Rare or Mythic",
+          "isFoil": false,
+          "probabilities": [
+            { "maxRoll": 87.5,  "type": "Rare",   "rarity": "87.5%", "query": "set%3Altr+rarity%3Ar+cn<%3D261&unique=cards" },
+            { "maxRoll": 100.0, "type": "Mythic", "rarity": "12.5%", "query": "set%3Altr+rarity%3Am+cn<%3D261&unique=cards" }
+          ]
+        },
+        {
+          "id": "foil",
+          "label": "Foil Wildcard",
+          "isFoil": true,
+          "probabilities": [
+            { "maxRoll": 70.0,  "type": "Common",   "rarity": "70%", "query": "set%3Altr+rarity%3Ac+cn<%3D261&unique=cards" },
+            { "maxRoll": 87.0,  "type": "Uncommon", "rarity": "17%", "query": "set%3Altr+rarity%3Au+cn<%3D261&unique=cards" },
+            { "maxRoll": 98.0,  "type": "Rare",     "rarity": "11%", "query": "set%3Altr+rarity%3Ar+cn<%3D261&unique=cards" },
+            { "maxRoll": 100.0, "type": "Mythic",   "rarity": "2%",  "query": "set%3Altr+rarity%3Am+cn<%3D261&unique=cards" }
+          ]
+        },
+        {
+          "id": "wildcard",
+          "label": "Wildcards",
+          "isFoil": false,
+          "count": 2,
+          "cardInfo": ["2 Wildcards", "Any rarity: Common (58%), Uncommon (29%), Rare (11%), Mythic (2%)."],
+          "probabilities": [
+            { "maxRoll": 58.0,  "type": "Common",   "rarity": "58%", "query": "set%3Altr+rarity%3Ac+cn<%3D261&unique=cards" },
+            { "maxRoll": 87.0,  "type": "Uncommon", "rarity": "29%", "query": "set%3Altr+rarity%3Au+cn<%3D261&unique=cards" },
+            { "maxRoll": 98.0,  "type": "Rare",     "rarity": "11%", "query": "set%3Altr+rarity%3Ar+cn<%3D261&unique=cards" },
+            { "maxRoll": 100.0, "type": "Mythic",   "rarity": "2%",  "query": "set%3Altr+rarity%3Am+cn<%3D261&unique=cards" }
+          ]
+        },
+        {
+          "id": "boosterfun-cu",
+          "label": "Booster Fun (C/U)",
+          "isFoil": false,
+          "probabilities": [
+            { "maxRoll": 27.3,  "type": "Scene, Common",                "rarity": "~27%", "query": "set%3Altr+rarity%3Ac+%28cn>%3D399+AND+cn<%3D451%29&unique=cards" },
+            { "maxRoll": 69.7,  "type": "Scene, Uncommon",              "rarity": "~42%", "query": "set%3Altr+rarity%3Au+%28cn>%3D399+AND+cn<%3D451%29&unique=cards" },
+            { "maxRoll": 100.0, "type": "Showcase: The Ring, Uncommon", "rarity": "~30%", "query": "set%3Altr+rarity%3Au+%28cn>%3D302+AND+cn<%3D331%29&unique=cards" }
+          ]
+        },
+        {
+          "id": "uncommon",
+          "label": "Uncommons",
+          "isFoil": false,
+          "count": 3,
+          "cardInfo": ["3 Uncommons", "There are 80 uncommons from the main set that can be found in these slots."],
+          "probabilities": [
+            { "maxRoll": 100.0, "type": "Uncommon", "rarity": "100%", "query": "set%3Altr+rarity%3Au+cn<%3D261&unique=cards" }
+          ]
+        },
+        {
+          "id": "common",
+          "label": "Commons",
+          "isFoil": false,
+          "count": 3,
+          "cardInfo": ["3 Commons", "There are 101 commons from the main set that can be found in these slots."],
+          "probabilities": [
+            { "maxRoll": 100.0, "type": "Common", "rarity": "100%", "query": "set%3Altr+rarity%3Ac+cn<%3D261&unique=cards" }
+          ]
+        },
+        {
+          "id": "land",
+          "label": "Land",
+          "isFoil": false,
+          "probabilities": [
+            { "maxRoll": 80.0,  "type": "Basic Land",         "rarity": "80%", "query": "set%3Altr+%28cn>%3D262+AND+cn<%3D271%29&unique=cards" },
+            { "maxRoll": 100.0, "type": "Full-Art Basic Land", "rarity": "20%", "query": "set%3Altr+%28cn>%3D272+AND+cn<%3D281%29&unique=cards" }
+          ]
+        }
+      ]
+    },
+    "HOLIDAY": {
+      "totalCards": 15,
+      "msrp": 25,
+      "defaultUSD": 800,
+      "defaultCAD": 1100,
+      "slots": [
+        {
+          "id": "hol-hildebrandt-poster",
+          "label": "Poster or Hildebrandt Art",
+          "isFoil": true,
+          "probabilities": [
+            { "maxRoll": 25.0,  "type": "Hildebrandt Uncommon (NF)",          "rarity": "25%",   "query": "set%3Altc+rarity%3Au+%28cn>%3D515+AND+cn<%3D534%29&unique=cards", "foilClass": null, "priceKey": "usd" },
+            { "maxRoll": 50.0,  "type": "Hildebrandt Uncommon (Silver Foil)", "rarity": "25%",   "query": "set%3Altc+rarity%3Au+%28cn>%3D515+AND+cn<%3D534%29&unique=cards" },
+            { "maxRoll": 61.1,  "type": "Hildebrandt Rare (NF)",              "rarity": "11.1%", "query": "set%3Altc+rarity%3Ar+%28cn>%3D515+AND+cn<%3D534%29&unique=cards", "foilClass": null, "priceKey": "usd" },
+            { "maxRoll": 72.2,  "type": "Hildebrandt Rare (Silver Foil)",     "rarity": "11.1%", "query": "set%3Altc+rarity%3Ar+%28cn>%3D515+AND+cn<%3D534%29&unique=cards" },
+            { "maxRoll": 83.3,  "type": "Borderless Poster (NF)",             "rarity": "11.1%", "query": "set%3Altr+rarity%3Am+%28cn>%3D731+AND+cn<%3D750%29&unique=cards", "foilClass": null, "priceKey": "usd" },
+            { "maxRoll": 94.4,  "type": "Borderless Poster (Foil)",           "rarity": "11.1%", "query": "set%3Altr+rarity%3Am+%28cn>%3D731+AND+cn<%3D750%29&unique=cards" },
+            { "maxRoll": 97.2,  "type": "Hildebrandt Mythic (NF)",            "rarity": "2.8%",  "query": "set%3Altc+rarity%3Am+%28cn>%3D515+AND+cn<%3D534%29&unique=cards", "foilClass": null, "priceKey": "usd" },
+            { "maxRoll": 100.0, "type": "Hildebrandt Mythic (Silver Foil)",   "rarity": "2.7%",  "query": "set%3Altc+rarity%3Am+%28cn>%3D515+AND+cn<%3D534%29&unique=cards" }
+          ]
+        },
+        {
+          "id": "hol-surge-boosterfun",
+          "label": "Surge Foil Booster Fun",
+          "isFoil": true,
+          "probabilities": [
+            { "maxRoll": 50.0,  "type": "Showcase: The Ring, Uncommon (Surge Foil)", "rarity": "50%",   "query": "set%3Altr+rarity%3Au+%28cn>%3D794+AND+cn<%3D823%29&unique=cards",  "foilClass": ["foil-gradient", "surge-gradient"] },
+            { "maxRoll": 66.7,  "type": "Scene Box Rare (Surge Foil, LTC)",          "rarity": "16.7%", "query": "set%3Altc+rarity%3Ar+%28cn>%3D535+AND+cn<%3D558%29&unique=cards",  "foilClass": ["foil-gradient", "surge-gradient"] },
+            { "maxRoll": 79.3,  "type": "Realms & Relics (Surge Foil, LTC)",         "rarity": "12.6%", "query": "set%3Altc+%28cn>%3D378+AND+cn<%3D407%29&unique=cards",             "foilClass": ["foil-gradient", "surge-gradient"] },
+            { "maxRoll": 91.0,  "type": "Showcase: The Ring, Rare (Surge Foil)",     "rarity": "11.7%", "query": "set%3Altr+rarity%3Ar+%28cn>%3D794+AND+cn<%3D823%29&unique=cards",  "foilClass": ["foil-gradient", "surge-gradient"] },
+            { "maxRoll": 95.2,  "type": "Borderless Land, Rare (Surge Foil)",        "rarity": "4.2%",  "query": "set%3Altr+rarity%3Ar+%28cn>%3D751+AND+cn<%3D756%29&unique=cards",  "foilClass": ["foil-gradient", "surge-gradient"] },
+            { "maxRoll": 96.9,  "type": "Scene Box Mythic (Surge Foil, LTC)",        "rarity": "1.7%",  "query": "set%3Altc+rarity%3Am+%28cn>%3D535+AND+cn<%3D558%29&unique=cards",  "foilClass": ["foil-gradient", "surge-gradient"] },
+            { "maxRoll": 99.4,  "type": "Showcase: The Ring, Mythic (Surge Foil)",   "rarity": "2.5%",  "query": "set%3Altr+rarity%3Am+%28cn>%3D794+AND+cn<%3D823%29&unique=cards",  "foilClass": ["foil-gradient", "surge-gradient"] },
+            { "maxRoll": 100.0, "type": "Borderless Land, Mythic (Surge Foil)",      "rarity": "0.4%",  "query": "set%3Altr+rarity%3Am+%28cn>%3D751+AND+cn<%3D756%29&unique=cards",  "foilClass": ["foil-gradient", "surge-gradient"] }
+          ]
+        },
+        {
+          "id": "hol-surge-ea",
+          "label": "Surge Foil Ext. Art (R/M)",
+          "isFoil": true,
+          "probabilities": [
+            { "maxRoll": 86.0,  "type": "Extended-Art Rare (Surge Foil)",   "rarity": "86%", "query": "set%3Altr+rarity%3Ar+%28cn>%3D757+AND+cn<%3D793%29&unique=cards", "foilClass": ["foil-gradient", "surge-gradient"] },
+            { "maxRoll": 100.0, "type": "Extended-Art Mythic (Surge Foil)", "rarity": "14%", "query": "set%3Altr+rarity%3Am+%28cn>%3D757+AND+cn<%3D793%29&unique=cards", "foilClass": ["foil-gradient", "surge-gradient"] }
+          ]
+        },
+        {
+          "id": "hol-scene-jmp2",
+          "label": "Scene or Jumpstart 2",
+          "isFoil": false,
+          "probabilities": [
+            { "maxRoll": 74.0,  "type": "Scene Box Rare (LTC)",         "rarity": "74%", "query": "set%3Altc+rarity%3Ar+%28cn>%3D491+AND+cn<%3D514%29&unique=cards" },
+            { "maxRoll": 81.0,  "type": "Scene Box Mythic (LTC)",       "rarity": "7%",  "query": "set%3Altc+rarity%3Am+%28cn>%3D491+AND+cn<%3D514%29&unique=cards" },
+            { "maxRoll": 100.0, "type": "JMP2 Extended-Art Rare (LTR)", "rarity": "19%", "query": "set%3Altr+rarity%3Ar+%28cn>%3D829+AND+cn<%3D833%29&unique=cards" }
+          ]
+        },
+        {
+          "id": "hol-map-land",
+          "label": "Surge Foil Map Land",
+          "isFoil": true,
+          "probabilities": [
+            { "maxRoll": 100.0, "type": "Surge Foil Map Basic Land", "rarity": "100%", "query": "set%3Altr+%28cn>%3D713+AND+cn<%3D722%29&unique=cards", "foilClass": ["foil-gradient", "surge-gradient"] }
+          ]
+        },
+        {
+          "id": "hol-scroll-rm-sf",
+          "label": "Silver Foil Scroll (R/M)",
+          "isFoil": true,
+          "probabilities": [
+            { "maxRoll": 41.0,  "type": "Scroll Rare (Silver Foil, LTR)",             "rarity": "41%", "query": "set%3Altr+rarity%3Ar+%28cn>%3D452+AND+cn<%3D712%29&unique=cards" },
+            { "maxRoll": 48.0,  "type": "Scroll Mythic (Silver Foil, LTR)",           "rarity": "7%",  "query": "set%3Altr+rarity%3Am+%28cn>%3D452+AND+cn<%3D712%29&unique=cards" },
+            { "maxRoll": 97.0,  "type": "Scroll Commander Rare (Silver Foil, LTC)",   "rarity": "49%", "query": "set%3Altc+rarity%3Ar+%28cn>%3D411+AND+cn<%3D490%29&unique=cards" },
+            { "maxRoll": 100.0, "type": "Scroll Commander Mythic (Silver Foil, LTC)", "rarity": "3%",  "query": "set%3Altc+rarity%3Am+%28cn>%3D411+AND+cn<%3D490%29&unique=cards" }
+          ]
+        },
+        {
+          "id": "hol-scroll-rm",
+          "label": "Scroll (R/M)",
+          "isFoil": false,
+          "probabilities": [
+            { "maxRoll": 41.0,  "type": "Scroll Rare (LTR)",             "rarity": "41%", "query": "set%3Altr+rarity%3Ar+%28cn>%3D452+AND+cn<%3D712%29&unique=cards" },
+            { "maxRoll": 48.0,  "type": "Scroll Mythic (LTR)",           "rarity": "7%",  "query": "set%3Altr+rarity%3Am+%28cn>%3D452+AND+cn<%3D712%29&unique=cards" },
+            { "maxRoll": 97.0,  "type": "Scroll Commander Rare (LTC)",   "rarity": "49%", "query": "set%3Altc+rarity%3Ar+%28cn>%3D411+AND+cn<%3D490%29&unique=cards" },
+            { "maxRoll": 100.0, "type": "Scroll Commander Mythic (LTC)", "rarity": "3%",  "query": "set%3Altc+rarity%3Am+%28cn>%3D411+AND+cn<%3D490%29&unique=cards" }
+          ]
+        },
+        {
+          "id": "hol-scroll-uncommon-sf2",
+          "label": "Silver Foil Scroll Unc.",
+          "isFoil": true,
+          "count": 2,
+          "cardInfo": ["2 Silver Foil Scroll Uncommons", "79 main-set uncommons in scroll frame, silver foil. The 9 Nazgûl art variants together appear as often as one regular uncommon."],
+          "probabilities": [
+            { "maxRoll": 98.75,  "type": "Scroll Uncommon (Silver Foil)",          "rarity": "98.75%",    "query": "set%3Altr+rarity%3Au+%28cn>%3D452+AND+cn<%3D712%29+-%21%22Nazg%C3%BBl%22&unique=cards" },
+            { "maxRoll": 99.861, "type": "Scroll Nazgûl, CN 723–730 (Silver Foil)", "rarity": "1.11% (8/9)", "query": "set%3Altr+%28cn>%3D723+AND+cn<%3D730%29&unique=prints" },
+            { "maxRoll": 100.0,  "type": "Scroll Nazgûl, CN 551 (Silver Foil)",    "rarity": "0.14% (1/9)", "query": "set%3Altr+rarity%3Au+cn>%3D551+AND+cn<%3D551&unique=cards" }
+          ]
+        },
+        {
+          "id": "hol-scroll-uncommon",
+          "label": "Scroll Uncommons",
+          "isFoil": false,
+          "count": 2,
+          "cardInfo": ["2 Non-Foil Scroll Uncommons", "79 main-set uncommons in scroll frame. The 9 Nazgûl art variants together appear as often as one regular uncommon."],
+          "probabilities": [
+            { "maxRoll": 98.75,  "type": "Scroll Uncommon",          "rarity": "98.75%",    "query": "set%3Altr+rarity%3Au+%28cn>%3D452+AND+cn<%3D712%29+-%21%22Nazg%C3%BBl%22&unique=cards" },
+            { "maxRoll": 99.861, "type": "Scroll Nazgûl, CN 723–730", "rarity": "1.11% (8/9)", "query": "set%3Altr+%28cn>%3D723+AND+cn<%3D730%29&unique=prints" },
+            { "maxRoll": 100.0,  "type": "Scroll Nazgûl, CN 551",    "rarity": "0.14% (1/9)", "query": "set%3Altr+rarity%3Au+cn>%3D551+AND+cn<%3D551&unique=cards" }
+          ]
+        },
+        {
+          "id": "hol-scroll-uncommon-sf",
+          "label": "S. Foil Scroll Uncommons",
+          "isFoil": true,
+          "count": 2,
+          "cardInfo": ["2 Silver Foil Scroll Uncommons", "79 main-set uncommons in scroll frame, silver foil. The 9 Nazgûl art variants together appear as often as one regular uncommon."],
+          "probabilities": [
+            { "maxRoll": 98.75,  "type": "Scroll Uncommon (Silver Foil)",          "rarity": "98.75%",    "query": "set%3Altr+rarity%3Au+%28cn>%3D452+AND+cn<%3D712%29+-%21%22Nazg%C3%BBl%22&unique=cards" },
+            { "maxRoll": 99.861, "type": "Scroll Nazgûl, CN 723–730 (Silver Foil)", "rarity": "1.11% (8/9)", "query": "set%3Altr+%28cn>%3D723+AND+cn<%3D730%29&unique=prints" },
+            { "maxRoll": 100.0,  "type": "Scroll Nazgûl, CN 551 (Silver Foil)",    "rarity": "0.14% (1/9)", "query": "set%3Altr+rarity%3Au+cn>%3D551+AND+cn<%3D551&unique=cards" }
+          ]
+        },
+        {
+          "id": "hol-scroll-common",
+          "label": "Scroll Commons",
+          "isFoil": false,
+          "count": 2,
+          "cardInfo": ["2 Non-Foil Scroll Commons", "Each of the 101 commons from the main set appears in scroll frame."],
+          "probabilities": [
+            { "maxRoll": 100.0, "type": "Scroll Common", "rarity": "100%", "query": "set%3Altr+rarity%3Ac+%28cn>%3D452+AND+cn<%3D712%29&unique=cards" }
+          ]
+        }
+      ]
+    }
+  }
+}

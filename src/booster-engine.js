@@ -3,7 +3,7 @@
 
 // List of set codes that have been migrated to JSON configs.
 // Add a code here after its JSON config is verified working.
-window.MIGRATED_SETS = ['FDN', 'FIN', 'EOE', 'SPM', 'TLA', 'ECL', 'TMT', 'SOS', 'MSH'];
+window.MIGRATED_SETS = ['FDN', 'FIN', 'EOE', 'SPM', 'TLA', 'ECL', 'TMT', 'SOS', 'MSH', 'LTR'];
 
 const _configCache = {};
 
@@ -157,6 +157,8 @@ async function initSet(code, boosterType) {
     // UI
     document.getElementById('set-header').innerText = config.displayName;
     document.body.style.backgroundImage = 'url(' + config.backgroundImage + ')';
+    const _playBtn = document.getElementById('play-booster');
+    if (_playBtn) _playBtn.innerText = config.playLabel || 'PLAY';
 
     clearSlots();
     _initSetMoney(code, actualType, config);
@@ -172,13 +174,15 @@ function _initSetMoney(code, boosterType, config) {
     // Set up window[code] for sumTotals()
     const collectorConfig = config.boosters.COLLECTOR;
     const playConfig = config.boosters.PLAY;
+    const holidayConfig = config.boosters.HOLIDAY;
     window[code] = window[code] || {};
     window[code].totalCards = collectorConfig ? collectorConfig.totalCards : boosterConfig.totalCards;
     window[code].totalCards_PLAY = playConfig ? playConfig.totalCards : boosterConfig.totalCards;
+    window[code].totalCards_HOLIDAY = holidayConfig ? holidayConfig.totalCards : boosterConfig.totalCards;
     window.setName = code;
 
     // Booster price cookies
-    const playPart = boosterType === 'PLAY' ? '_PLAY' : '';
+    const playPart = boosterType === 'PLAY' ? '_PLAY' : boosterType === 'HOLIDAY' ? '_HOLIDAY' : '';
     const cookieKey = 'boosterValue_' + code + playPart;
     const cadCookieKey = 'boosterValue_CAD_' + code + playPart;
 
@@ -189,6 +193,19 @@ function _initSetMoney(code, boosterType, config) {
     // Make DOM slots
     for (const slot of boosterConfig.slots) {
         makeSlot(slot.id, slot.label, slot.isFoil || false, slot.count || 0);
+    }
+    if (code === 'LTR' && (boosterType === 'COLLECTOR' || boosterType === 'HOLIDAY')) {
+        const firstCardInfo = document.getElementById('card-section').querySelector('.card-info');
+        if (firstCardInfo) {
+            const totalCard = firstCardInfo.parentElement;
+            totalCard.style.position = 'relative';
+            const disclaimer = document.createElement('p');
+            disclaimer.id = 'serialized-disclaimer';
+            disclaimer.className = 'pt-2 sm:pt-0';
+            disclaimer.style.cssText = 'position:absolute;bottom:100%;left:0.75rem;font-size:0.75rem;line-height:1rem;opacity:0.75;padding-bottom:0.5rem;white-space:nowrap;';
+            disclaimer.textContent = 'Serialized cards not included in this simulation.';
+            totalCard.appendChild(disclaimer);
+        }
     }
 
     localStorage.setItem(cookieKey, boosterValue);

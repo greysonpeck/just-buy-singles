@@ -330,8 +330,11 @@ document.addEventListener(
 
         let singleClicked = false;
 
-        if (localStorage.getItem("currentBoosterType") === "COLLECTOR") {
+        const _initBT = localStorage.getItem("currentBoosterType");
+        if (_initBT === "COLLECTOR") {
             cardsRemaining = setName.totalCards;
+        } else if (_initBT === "HOLIDAY") {
+            cardsRemaining = setName.totalCards_HOLIDAY;
         } else {
             cardsRemaining = setName.totalCards_PLAY;
         }
@@ -374,7 +377,7 @@ document.addEventListener(
         currentMoneyElement = document.getElementById("current-money");
         const toggle = document.getElementById("currency");
 
-        const SET_VERSION = 'v5-msh-42';
+        const SET_VERSION = 'v6-ltr-1';
         if (localStorage.getItem('setVersion') !== SET_VERSION) {
             localStorage.setItem('setVersion', SET_VERSION);
             localStorage.removeItem('currentSet');
@@ -472,24 +475,32 @@ document.addEventListener(
             initializeMoney();
         });
 
-        document.getElementById("msrp").innerText = "MSRP: " + USDollar.format(msrp) + " USD";
+        document.getElementById("msrp").innerText = "MSRP: " + (isNaN(msrp) ? msrp : USDollar.format(msrp) + " USD");
 
         function boosterToggle() {
             clearSlots();
 
             boosterCheck(window.boosterType);
 
-            if (localStorage.getItem("currentBoosterType") === "COLLECTOR") {
+            const _currentBT = localStorage.getItem("currentBoosterType");
+            if (_currentBT === "COLLECTOR") {
                 collectorButton.classList.add("booster-active");
+                playButton.classList.remove("booster-active");
+                if (holidayButton) holidayButton.classList.remove("booster-active");
+            } else if (_currentBT === "HOLIDAY") {
+                if (holidayButton) holidayButton.classList.add("booster-active");
+                collectorButton.classList.remove("booster-active");
                 playButton.classList.remove("booster-active");
             } else {
                 playButton.classList.add("booster-active");
                 collectorButton.classList.remove("booster-active");
-                playButton.classList.add("booster-active");
+                if (holidayButton) holidayButton.classList.remove("booster-active");
             }
 
-            if (localStorage.getItem("currentBoosterType") === "COLLECTOR") {
+            if (_currentBT === "COLLECTOR") {
                 cardsRemaining = setName.totalCards;
+            } else if (_currentBT === "HOLIDAY") {
+                cardsRemaining = setName.totalCards_HOLIDAY;
             } else {
                 cardsRemaining = setName.totalCards_PLAY;
             }
@@ -498,13 +509,13 @@ document.addEventListener(
             const moneySet = "set" + setID + "_Money";
             window[moneySet]();
 
-            document.getElementById("msrp").innerText = "MSRP: " + USDollar.format(msrp) + " USD";
+            document.getElementById("msrp").innerText = "MSRP: " + (isNaN(msrp) ? msrp : USDollar.format(msrp) + " USD");
 
             cookieSearch =
                 "boosterValue" +
                 (localStorage.getItem("currencyMode") === "CAD" ? "_CAD_" : "_") +
                 localStorage.getItem("currentSet") +
-                (localStorage.getItem("currentBoosterType") === "PLAY" ? "_PLAY" : "");
+                (_currentBT === "PLAY" ? "_PLAY" : _currentBT === "HOLIDAY" ? "_HOLIDAY" : "");
 
             console.log(cookieSearch);
             console.log("bing: " + localStorage.getItem(cookieSearch));
@@ -525,6 +536,13 @@ document.addEventListener(
             localStorage.setItem('currentBoosterType', 'PLAY');
             boosterToggle();
         });
+
+        if (holidayButton) {
+            holidayButton.addEventListener("click", () => {
+                localStorage.setItem('currentBoosterType', 'HOLIDAY');
+                boosterToggle();
+            });
+        }
 
         // Responsive button name
         document.querySelectorAll("#booster-types>button").forEach((label) => {
@@ -675,14 +693,21 @@ function changeSet() {
 
     playButton = document.getElementById("play-booster");
     collectorButton = document.getElementById("collector-booster");
+    holidayButton = document.getElementById("holiday-booster");
 
-    if (localStorage.getItem("currentBoosterType") === "COLLECTOR") {
+    const _csBT = localStorage.getItem("currentBoosterType");
+    if (_csBT === "COLLECTOR") {
         collectorButton.classList.add("booster-active");
+        playButton.classList.remove("booster-active");
+        if (holidayButton) holidayButton.classList.remove("booster-active");
+    } else if (_csBT === "HOLIDAY") {
+        if (holidayButton) holidayButton.classList.add("booster-active");
+        collectorButton.classList.remove("booster-active");
         playButton.classList.remove("booster-active");
     } else {
         playButton.classList.add("booster-active");
         collectorButton.classList.remove("booster-active");
-        playButton.classList.add("booster-active");
+        if (holidayButton) holidayButton.classList.remove("booster-active");
     }
 
     document.getElementById("pricePerBooster").innerText = USDollar.format(boosterValue);
@@ -722,11 +747,11 @@ function clearMoney() {
 
     initializeMoney();
 
-    // Smaller text slot labels if long
+    // Slot label size: Collector/Holiday stay small; Play/Set scale up on desktop
+    const _bt = localStorage.getItem("currentBoosterType");
+    const _smallLabels = _bt === "COLLECTOR" || _bt === "HOLIDAY";
     document.querySelectorAll(".slot-label").forEach((label) => {
-        const len = label.textContent.trim().length;
-
-        if (len > 19) {
+        if (_smallLabels) {
             label.classList.add("text-sm");
         } else {
             label.classList.add("text-sm", "sm:text-base");
@@ -736,10 +761,19 @@ function clearMoney() {
 
 function boosterCheck(type) {
     playBoosterButton = document.getElementById("play-booster");
+    const _holidayBtn = document.getElementById("holiday-booster");
+    const _cfg = _configCache[localStorage.getItem('currentSet')];
     if (type === "both") {
         playBoosterButton.classList.remove("hidden");
+        if (_holidayBtn) {
+            if (_cfg?.boosterTypes.includes('HOLIDAY')) {
+                _holidayBtn.classList.remove("hidden");
+            } else {
+                _holidayBtn.classList.add("hidden");
+            }
+        }
     } else {
-        //
+        if (_holidayBtn) _holidayBtn.classList.add("hidden");
     }
 }
 
@@ -753,6 +787,8 @@ function clearSlots() {
     // Clear Ghost Card and associated material
     document.getElementById("snark").classList.add("hidden");
     document.getElementById("ghost-image").src = cardBack_URL;
+    document.querySelector(".shade")?.classList.add("opacity-0", "-z-10");
+    document.querySelector(".light-shade")?.classList.add("opacity-0", "-z-10");
     // document.getElementById("foil-holder").style.display = "none";
 
     if (window.boosterType === "both") {
@@ -764,6 +800,7 @@ function clearSlots() {
     }
 
     playButton = document.getElementById("play-booster");
+    holidayButton = document.getElementById("holiday-booster");
 
     boosterCheck(window.boosterType);
 }
@@ -1231,8 +1268,11 @@ function sumTotals() {
     boostersBoughtElement.innerText = boostersBought + (" (" + USDollar.format(boosterTotalValue) + ")");
 
     function checkIfFinished() {
-        if (localStorage.getItem("currentBoosterType") === "COLLECTOR") {
+        const _bt = localStorage.getItem("currentBoosterType");
+        if (_bt === "COLLECTOR") {
             totalCards = setName.totalCards;
+        } else if (_bt === "HOLIDAY") {
+            totalCards = setName.totalCards_HOLIDAY;
         } else {
             totalCards = setName.totalCards_PLAY;
         }
@@ -1250,7 +1290,7 @@ function sumTotals() {
             loadingOverlay.classList.add("-z-10", "opacity-0");
 
             const commonSumElement = document.getElementById("common-sum");
-            commonSumElement.innerText = "$" + commonSum.toFixed(2);
+            if (commonSumElement) commonSumElement.innerText = "$" + commonSum.toFixed(2);
             commonSum = 0;
 
             let thisPack = 0;
