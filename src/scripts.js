@@ -377,7 +377,7 @@ document.addEventListener(
         currentMoneyElement = document.getElementById("current-money");
         const toggle = document.getElementById("currency");
 
-        const SET_VERSION = 'v6-ltr-1';
+        const SET_VERSION = 'v6-ltr-2';
         if (localStorage.getItem('setVersion') !== SET_VERSION) {
             localStorage.setItem('setVersion', SET_VERSION);
             localStorage.removeItem('currentSet');
