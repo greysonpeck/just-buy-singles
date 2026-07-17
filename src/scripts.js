@@ -789,6 +789,15 @@ function clearSlots() {
     document.getElementById("ghost-image").src = cardBack_URL;
     document.querySelector(".shade")?.classList.add("opacity-0", "-z-10");
     document.querySelector(".light-shade")?.classList.add("opacity-0", "-z-10");
+
+    // Reset any stuck pull state (abandoned pull when switching booster type/set)
+    const _overlay = document.getElementById("data-loading");
+    if (_overlay) {
+        _overlay.classList.remove("z-10", "loader-blur-effect");
+        _overlay.classList.add("-z-10", "opacity-0");
+    }
+    activeCheck = false;
+    myPrices = [];
     // document.getElementById("foil-holder").style.display = "none";
 
     if (window.boosterType === "both") {

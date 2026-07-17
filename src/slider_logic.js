@@ -46,10 +46,17 @@ window.onload = function () {
             const _setObj = window[window.setName];
             const _cardsEl = document.getElementById("cards-loading");
             if (_setObj && _cardsEl) {
-                const _isCollector = localStorage.getItem("currentBoosterType") !== "PLAY";
-                cardsRemaining = _isCollector ? _setObj.totalCards : _setObj.totalCards_PLAY;
+                const _bt = localStorage.getItem("currentBoosterType");
+                cardsRemaining = _bt === "PLAY" ? _setObj.totalCards_PLAY
+                               : _bt === "HOLIDAY" ? (_setObj.totalCards_HOLIDAY || _setObj.totalCards)
+                               : _setObj.totalCards;
                 _cardsEl.innerText = cardsRemaining;
             }
+            // Clear any stuck state from an abandoned pull
+            document.querySelector(".shade")?.classList.add("opacity-0", "-z-10");
+            document.querySelector(".light-shade")?.classList.add("opacity-0", "-z-10");
+            activeCheck = false;
+            myPrices = [];
             loadingOverlay.classList.remove("-z-10", "opacity-0");
             loadingOverlay.classList.add("z-10", "loader-blur-effect");
             setTimeout(function () {
