@@ -284,13 +284,17 @@ function _tickCardLoaded() {
 // Returns { revealPromise } — resolves when THIS card is revealed. Wrapped in an object
 // so the caller's `await _pullSingleSlot()` doesn't chain into the reveal promise.
 async function _pullSingleSlot(slot, foilGroupMap, prevReveal) {
-    const roll = slot.rollOverride !== undefined ? slot.rollOverride : getRandomNumber(0, 100);
-
     // Filter probabilities when a foil group has already been used this pack
     let probs = slot.probabilities;
     if (slot.foilGroup && foilGroupMap[slot.foilGroup]) {
         probs = probs.filter(p => !p.foilClass);
     }
+
+    // Roll ceiling is the table's own last maxRoll, not a hardcoded 100 — some slots
+    // intentionally omit serialized-card probability mass (not simulated), so their
+    // real cumulative total falls short of 100. Capping the roll there (instead of
+    // force-closing the last entry at 100) keeps every entry's relative odds intact.
+    const roll = slot.rollOverride !== undefined ? slot.rollOverride : getRandomNumber(0, probs[probs.length - 1].maxRoll);
 
     // Find the matching probability entry
     let entry = probs[probs.length - 1];
@@ -418,7 +422,8 @@ async function _pullMultiSlot(slot, prevReveal) {
         const isLastCard = k === slot.count;
         const probs = (isLastCard && slot.trailingCard) ? slot.trailingCard.probabilities : slot.probabilities;
 
-        const roll = slot.rollOverride !== undefined ? slot.rollOverride : getRandomNumber(0, 100);
+        // See _pullSingleSlot for why the roll ceiling is the table's own last maxRoll.
+        const roll = slot.rollOverride !== undefined ? slot.rollOverride : getRandomNumber(0, probs[probs.length - 1].maxRoll);
 
         let entry = probs[probs.length - 1];
         for (const prob of probs) {

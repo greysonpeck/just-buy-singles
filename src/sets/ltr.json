@@ -126,8 +126,8 @@
           ],
           "trailingCard": {
             "probabilities": [
-              { "maxRoll": 0.65,  "type": "Non-foil Sol Ring variant", "rarity": "~0.65%", "query": "set%3Altc+%21'Sol+Ring'+-is%3Aserialized&unique=prints", "foilClass": null, "priceKey": "usd" },
-              { "maxRoll": 100.0, "type": "Common",                    "rarity": "~99.35%", "query": "set%3Altr+rarity%3Ac+cn<%3D261&unique=cards" }
+              { "maxRoll": 0.65,   "type": "Non-foil Sol Ring variant", "rarity": "~0.65%",  "query": "set%3Altc+%21'Sol+Ring'+-is%3Aserialized&unique=prints", "foilClass": null, "priceKey": "usd" },
+              { "maxRoll": 99.935, "type": "Common",                    "rarity": "~99.29%", "query": "set%3Altr+rarity%3Ac+cn<%3D261&unique=cards" }
             ]
           }
         },
@@ -254,7 +254,7 @@
             { "maxRoll": 95.2,  "type": "Borderless Land, Rare (Surge Foil)",        "rarity": "4.2%",  "query": "set%3Altr+rarity%3Ar+%28cn>%3D751+AND+cn<%3D756%29&unique=cards",  "foilClass": ["foil-gradient", "surge-gradient"] },
             { "maxRoll": 96.9,  "type": "Scene Box Mythic (Surge Foil, LTC)",        "rarity": "1.7%",  "query": "set%3Altc+rarity%3Am+%28cn>%3D535+AND+cn<%3D558%29&unique=cards",  "foilClass": ["foil-gradient", "surge-gradient"] },
             { "maxRoll": 99.4,  "type": "Showcase: The Ring, Mythic (Surge Foil)",   "rarity": "2.5%",  "query": "set%3Altr+rarity%3Am+%28cn>%3D794+AND+cn<%3D823%29&unique=cards",  "foilClass": ["foil-gradient", "surge-gradient"] },
-            { "maxRoll": 100.0, "type": "Borderless Land, Mythic (Surge Foil)",      "rarity": "0.4%",  "query": "set%3Altr+rarity%3Am+%28cn>%3D751+AND+cn<%3D756%29&unique=cards",  "foilClass": ["foil-gradient", "surge-gradient"] }
+            { "maxRoll": 99.8,  "type": "Borderless Land, Mythic (Surge Foil)",      "rarity": "0.4%",  "query": "set%3Altr+rarity%3Am+%28cn>%3D751+AND+cn<%3D756%29&unique=cards",  "foilClass": ["foil-gradient", "surge-gradient"] }
           ]
         },
         {
