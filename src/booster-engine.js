@@ -366,11 +366,14 @@ async function _pullSingleSlot(slot, foilGroupMap, prevReveal) {
     // Get image element
     const imageElement = document.getElementById(slot.id + '-image');
 
-    // Build foil overlay callback — runs after card flips to back, before reveal
+    // Build foil overlay callback — runs after card flips to back, before reveal.
+    // Always runs for foil slots (not just when this entry sets foilClass) — otherwise
+    // an entry with no foilClass silently leaves whatever gradient the previous pull
+    // left on this same DOM node, instead of resetting to the default foil-gradient.
     let foilCallback = null;
-    if (slot.isFoil && (slot.foilFlip || entry.foilClass !== undefined)) {
+    if (slot.isFoil) {
         const overlay = imageElement.previousElementSibling;
-        const foilClassToApply = slot.foilFlip ? resolvedFoilClass : entry.foilClass;
+        const foilClassToApply = slot.foilFlip ? resolvedFoilClass : (entry.foilClass !== undefined ? entry.foilClass : 'foil-gradient');
         foilCallback = () => {
             _ALL_GRADIENT_CLASSES.forEach(cls => overlay.classList.remove(cls));
             if (foilClassToApply) {
@@ -465,13 +468,15 @@ async function _pullMultiSlot(slot, prevReveal) {
         // Multi-slot uses parentElement (not .both-cards) for the flip stack
         const stack = imageElement.parentElement;
 
-        // Build foil overlay callback — mirrors _pullSingleSlot. In makeSlot's multi-card
-        // DOM, the foil-hold div is inserted right after the front image (opposite order
-        // from the single-card block), so nextElementSibling finds it here.
+        // Build foil overlay callback — mirrors _pullSingleSlot, including always running
+        // for foil slots (not just when this entry sets foilClass) so a plain entry resets
+        // the overlay instead of leaving a previous pull's gradient class stuck on it. In
+        // makeSlot's multi-card DOM, the foil-hold div is inserted right after the front
+        // image (opposite order from the single-card block), so nextElementSibling finds it.
         let foilCallback = null;
-        if (slot.isFoil && entry.foilClass !== undefined) {
+        if (slot.isFoil) {
             const overlay = imageElement.nextElementSibling;
-            const foilClassToApply = entry.foilClass;
+            const foilClassToApply = entry.foilClass !== undefined ? entry.foilClass : 'foil-gradient';
             foilCallback = () => {
                 _ALL_GRADIENT_CLASSES.forEach(cls => overlay.classList.remove(cls));
                 if (foilClassToApply) {
