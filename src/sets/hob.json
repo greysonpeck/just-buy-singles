@@ -1,0 +1,238 @@
+{
+  "code": "HOB",
+  "displayName": "THE HOBBIT",
+  "backgroundImage": "img/HOB_bg.jpg",
+  "boosterTypes": ["COLLECTOR", "PLAY"],
+  "excludedCardsDisclaimer": ["COLLECTOR"],
+  "ghostCard": {
+    "randomQuery": "%28set%3Ahob+or+set%3Ahoc%29+date%3A2026-08-14+unique%3Aprints+",
+    "topOutQuery": "%28set%3Ahob+or+set%3Ahoc%29+date%3A2026-08-14+unique%3Aprints+USD%3E%3D15"
+  },
+  "boosters": {
+    "COLLECTOR": {
+      "totalCards": 15,
+      "msrp": "37.99",
+      "defaultUSD": 30,
+      "defaultCAD": 42,
+      "slots": [
+        {
+          "id": "foil-boosterfun",
+          "label": "Foil Booster Fun",
+          "isFoil": true,
+          "cardInfo": ["1 Foil Booster Fun Card", "Approximately 1 in 500 Collector Boosters instead contains a gleaming gold Smaug the Magnificent headliner card. Not simulated here — see disclaimer."],
+          "probabilities": [
+            { "maxRoll": 11.0,  "type": "Scene, Rare (Foil)",                          "rarity": "11.0%", "query": "set%3Ahob+rarity%3Ar+%28cn>%3D199+AND+cn<%3D213%29&unique=cards" },
+            { "maxRoll": 25.3,  "type": "Dragon Hoard, Rare (Traditional Foil)",       "rarity": "14.3%", "query": "set%3Ahob+rarity%3Ar+%28cn>%3D214+AND+cn<%3D238%29&unique=cards" },
+            { "maxRoll": 30.2,  "type": "Dragon Hoard, Mythic (Traditional Foil)",     "rarity": "4.9%",  "query": "set%3Ahob+rarity%3Am+%28cn>%3D214+AND+cn<%3D238%29&unique=cards" },
+            { "maxRoll": 36.7,  "type": "Dragon Hoard, Rare (Surge Foil)",             "rarity": "6.5%",  "query": "set%3Ahob+rarity%3Ar+%28cn>%3D250+AND+cn<%3D274%29&unique=cards", "foilClass": ["foil-gradient", "surge-gradient"] },
+            { "maxRoll": 39.1,  "type": "Dragon Hoard, Mythic (Surge Foil)",           "rarity": "2.4%",  "query": "set%3Ahob+rarity%3Am+%28cn>%3D250+AND+cn<%3D274%29&unique=cards", "foilClass": ["foil-gradient", "surge-gradient"] },
+            { "maxRoll": 43.7,  "type": "Book Cover, Rare (Traditional Foil)",         "rarity": "4.6%",  "query": "set%3Ahob+rarity%3Ar+%28cn>%3D239+AND+cn<%3D248%29&unique=cards" },
+            { "maxRoll": 47.3,  "type": "Book Cover, Mythic (Traditional Foil)",       "rarity": "3.6%",  "query": "set%3Ahob+rarity%3Am+%28cn>%3D239+AND+cn<%3D248%29&unique=cards" },
+            { "maxRoll": 49.7,  "type": "Book Cover, Rare (Surge Foil)",               "rarity": "2.4%",  "query": "set%3Ahob+rarity%3Ar+%28cn>%3D275+AND+cn<%3D284%29&unique=cards", "foilClass": ["foil-gradient", "surge-gradient"] },
+            { "maxRoll": 51.5,  "type": "Book Cover, Mythic (Surge Foil)",             "rarity": "1.8%",  "query": "set%3Ahob+rarity%3Am+%28cn>%3D275+AND+cn<%3D284%29&unique=cards", "foilClass": ["foil-gradient", "surge-gradient"] },
+            { "maxRoll": 63.4,  "type": "Middle-earth Classic Artist (Surge Foil, HOC)", "rarity": "11.9%", "query": "set%3Ahoc+%28cn>%3D53+AND+cn<%3D92%29&unique=cards", "foilClass": ["foil-gradient", "surge-gradient"] },
+            { "maxRoll": 65.0,  "type": "Dwarvish Language (Traditional Foil, HOC)",   "rarity": "1.6%",  "query": "set%3Ahoc+%28cn>%3D93+AND+cn<%3D97%29&unique=cards" },
+            { "maxRoll": 98.8,  "type": "Extended-Art, Rare (Traditional Foil, HOB)",  "rarity": "33.8%", "query": "set%3Ahob+rarity%3Ar+%28cn>%3D285+AND+cn<%3D312%29&unique=cards" },
+            { "maxRoll": 100.1, "type": "Extended-Art, Mythic (Traditional Foil, HOB)","rarity": "1.3%",  "query": "set%3Ahob+rarity%3Am+%28cn>%3D285+AND+cn<%3D312%29&unique=cards" }
+          ]
+        },
+        {
+          "id": "boosterfun-nf-1",
+          "label": "Non-foil Booster Fun #1",
+          "isFoil": false,
+          "cardInfo": ["1 Non-foil Booster Fun Card", "A rare HOB scene card (10.1%), a rare HOC scene card (14.2%), a Dragon Hoard rare (13.1%) or mythic (4.5%), a Book Cover rare (4.2%) or mythic (3.3%), a Middle-earth classic artist card (11.9%), a Dwarvish language card (1.5%), an Extended-Art HOB rare (30.9%) or mythic (1.2%), or a mythic Extended-Art HOC (Battle of Five Armies) card (5.3%)."],
+          "probabilities": [
+            { "maxRoll": 10.1,  "type": "Scene, Rare (HOB)",                   "rarity": "10.1%", "query": "set%3Ahob+rarity%3Ar+%28cn>%3D199+AND+cn<%3D213%29&unique=cards" },
+            { "maxRoll": 24.3,  "type": "Scene, Rare (HOC)",                   "rarity": "14.2%", "query": "set%3Ahoc+rarity%3Ar+%28cn>%3D1+AND+cn<%3D12%29&unique=cards" },
+            { "maxRoll": 37.4,  "type": "Dragon Hoard, Rare",                  "rarity": "13.1%", "query": "set%3Ahob+rarity%3Ar+%28cn>%3D214+AND+cn<%3D238%29&unique=cards" },
+            { "maxRoll": 41.9,  "type": "Dragon Hoard, Mythic",                "rarity": "4.5%",  "query": "set%3Ahob+rarity%3Am+%28cn>%3D214+AND+cn<%3D238%29&unique=cards" },
+            { "maxRoll": 46.1,  "type": "Book Cover, Rare",                    "rarity": "4.2%",  "query": "set%3Ahob+rarity%3Ar+%28cn>%3D239+AND+cn<%3D248%29&unique=cards" },
+            { "maxRoll": 49.4,  "type": "Book Cover, Mythic",                  "rarity": "3.3%",  "query": "set%3Ahob+rarity%3Am+%28cn>%3D239+AND+cn<%3D248%29&unique=cards" },
+            { "maxRoll": 61.3,  "type": "Middle-earth Classic Artist (HOC)",   "rarity": "11.9%", "query": "set%3Ahoc+%28cn>%3D13+AND+cn<%3D52%29&unique=cards" },
+            { "maxRoll": 62.8,  "type": "Dwarvish Language (HOC)",             "rarity": "1.5%",  "query": "set%3Ahoc+%28cn>%3D93+AND+cn<%3D97%29&unique=cards" },
+            { "maxRoll": 93.7,  "type": "Extended-Art, Rare (HOB)",            "rarity": "30.9%", "query": "set%3Ahob+rarity%3Ar+%28cn>%3D285+AND+cn<%3D312%29&unique=cards" },
+            { "maxRoll": 94.9,  "type": "Extended-Art, Mythic (HOB)",          "rarity": "1.2%",  "query": "set%3Ahob+rarity%3Am+%28cn>%3D285+AND+cn<%3D312%29&unique=cards" },
+            { "maxRoll": 100.2, "type": "Extended-Art, Mythic (Battle of Five Armies, HOC)", "rarity": "5.3%", "query": "set%3Ahoc+%28cn>%3D98+AND+cn<%3D106%29&unique=cards" }
+          ]
+        },
+        {
+          "id": "boosterfun-nf-2",
+          "label": "Non-foil Booster Fun #2",
+          "isFoil": false,
+          "cardInfo": ["1 Non-foil Booster Fun Card", "A rare HOB scene card (10.1%), a rare HOC scene card (14.2%), a Dragon Hoard rare (13.1%) or mythic (4.5%), a Book Cover rare (4.2%) or mythic (3.3%), a Middle-earth classic artist card (11.9%), a Dwarvish language card (1.5%), an Extended-Art HOB rare (30.9%) or mythic (1.2%), or a mythic Extended-Art HOC (Battle of Five Armies) card (5.3%)."],
+          "probabilities": [
+            { "maxRoll": 10.1,  "type": "Scene, Rare (HOB)",                   "rarity": "10.1%", "query": "set%3Ahob+rarity%3Ar+%28cn>%3D199+AND+cn<%3D213%29&unique=cards" },
+            { "maxRoll": 24.3,  "type": "Scene, Rare (HOC)",                   "rarity": "14.2%", "query": "set%3Ahoc+rarity%3Ar+%28cn>%3D1+AND+cn<%3D12%29&unique=cards" },
+            { "maxRoll": 37.4,  "type": "Dragon Hoard, Rare",                  "rarity": "13.1%", "query": "set%3Ahob+rarity%3Ar+%28cn>%3D214+AND+cn<%3D238%29&unique=cards" },
+            { "maxRoll": 41.9,  "type": "Dragon Hoard, Mythic",                "rarity": "4.5%",  "query": "set%3Ahob+rarity%3Am+%28cn>%3D214+AND+cn<%3D238%29&unique=cards" },
+            { "maxRoll": 46.1,  "type": "Book Cover, Rare",                    "rarity": "4.2%",  "query": "set%3Ahob+rarity%3Ar+%28cn>%3D239+AND+cn<%3D248%29&unique=cards" },
+            { "maxRoll": 49.4,  "type": "Book Cover, Mythic",                  "rarity": "3.3%",  "query": "set%3Ahob+rarity%3Am+%28cn>%3D239+AND+cn<%3D248%29&unique=cards" },
+            { "maxRoll": 61.3,  "type": "Middle-earth Classic Artist (HOC)",   "rarity": "11.9%", "query": "set%3Ahoc+%28cn>%3D13+AND+cn<%3D52%29&unique=cards" },
+            { "maxRoll": 62.8,  "type": "Dwarvish Language (HOC)",             "rarity": "1.5%",  "query": "set%3Ahoc+%28cn>%3D93+AND+cn<%3D97%29&unique=cards" },
+            { "maxRoll": 93.7,  "type": "Extended-Art, Rare (HOB)",            "rarity": "30.9%", "query": "set%3Ahob+rarity%3Ar+%28cn>%3D285+AND+cn<%3D312%29&unique=cards" },
+            { "maxRoll": 94.9,  "type": "Extended-Art, Mythic (HOB)",          "rarity": "1.2%",  "query": "set%3Ahob+rarity%3Am+%28cn>%3D285+AND+cn<%3D312%29&unique=cards" },
+            { "maxRoll": 100.2, "type": "Extended-Art, Mythic (Battle of Five Armies, HOC)", "rarity": "5.3%", "query": "set%3Ahoc+%28cn>%3D98+AND+cn<%3D106%29&unique=cards" }
+          ]
+        },
+        {
+          "id": "foil-raremythic-1",
+          "label": "Foil Rare or Mythic #1",
+          "isFoil": true,
+          "cardInfo": ["1 Traditional Foil Rare or Mythic", "There are 53 rare (87.6%) and 15 mythic rare (12.4%) cards from the main set that can be found in this slot."],
+          "probabilities": [
+            { "maxRoll": 87.6,  "type": "Rare",   "rarity": "87.6%", "query": "set%3Ahob+rarity%3Ar+cn<%3D188&unique=cards" },
+            { "maxRoll": 100.0, "type": "Mythic", "rarity": "12.4%", "query": "set%3Ahob+rarity%3Am+cn<%3D188&unique=cards" }
+          ]
+        },
+        {
+          "id": "foil-raremythic-2",
+          "label": "Foil Rare or Mythic #2",
+          "isFoil": true,
+          "cardInfo": ["1 Traditional Foil Rare or Mythic", "There are 53 rare (87.6%) and 15 mythic rare (12.4%) cards from the main set that can be found in this slot."],
+          "probabilities": [
+            { "maxRoll": 87.6,  "type": "Rare",   "rarity": "87.6%", "query": "set%3Ahob+rarity%3Ar+cn<%3D188&unique=cards" },
+            { "maxRoll": 100.0, "type": "Mythic", "rarity": "12.4%", "query": "set%3Ahob+rarity%3Am+cn<%3D188&unique=cards" }
+          ]
+        },
+        {
+          "id": "foil-journey-land",
+          "label": "Foil Journey Land",
+          "isFoil": true,
+          "probabilities": [
+            { "maxRoll": 100.0, "type": "Middle-earth Journey Basic Land", "rarity": "100%", "query": "set%3Ahob+%28cn>%3D194+AND+cn<%3D198%29&unique=cards" }
+          ]
+        },
+        {
+          "id": "foil-uncommon",
+          "label": "Foil Uncommons",
+          "isFoil": true,
+          "count": 4,
+          "cardInfo": ["4 Foil Uncommons", "There are 55 traditional foil uncommon cards from the main set (84.6%), 4 traditional foil scene cards (6.2%), and 6 traditional foil Dragon Hoard cards (9.2%) that can be found in these slots. Separately, in 1 of 10 Collector Boosters, the last Uncommon slot is instead a surge foil Dragon Hoard card, regardless of what it would have otherwise rolled."],
+          "probabilities": [
+            { "maxRoll": 84.6,  "type": "Uncommon",                                    "rarity": "84.6%", "query": "set%3Ahob+rarity%3Au+cn<%3D188&unique=cards" },
+            { "maxRoll": 90.8,  "type": "Scene, Uncommon (Foil)",                      "rarity": "6.2%",  "query": "set%3Ahob+rarity%3Au+%28cn>%3D199+AND+cn<%3D213%29&unique=cards" },
+            { "maxRoll": 100.0, "type": "Dragon Hoard, Uncommon (Traditional Foil)",   "rarity": "9.2%",  "query": "set%3Ahob+rarity%3Au+%28cn>%3D214+AND+cn<%3D238%29&unique=cards" }
+          ],
+          "trailingOverride": {
+            "chance": 10.0,
+            "type": "Dragon Hoard, Uncommon (Surge Foil)",
+            "query": "set%3Ahob+rarity%3Au+%28cn>%3D250+AND+cn<%3D274%29&unique=cards",
+            "foilClass": ["foil-gradient", "surge-gradient"]
+          }
+        },
+        {
+          "id": "common",
+          "label": "Foil Commons",
+          "isFoil": true,
+          "count": 5,
+          "cardInfo": ["5 Traditional Foil Commons", "There are 60 common cards (89.6%) and 5 common dual lands (7.5%) from the main set that can be found in these slots. There are 2 scene cards that can be found in these slots (3%)."],
+          "probabilities": [
+            { "maxRoll": 89.6,  "type": "Common",                     "rarity": "89.6%", "query": "set%3Ahob+rarity%3Ac+%28cn<%3D181+or+cn%3D184%29&unique=cards" },
+            { "maxRoll": 97.1,  "type": "Common, Dual Land (Foil)",   "rarity": "7.5%",  "query": "set%3Ahob+rarity%3Ac+%28cn%3D182+or+cn%3D183+or+cn%3D185+or+cn%3D186+or+cn%3D188%29&unique=cards" },
+            { "maxRoll": 100.1, "type": "Scene, Common (Foil)",       "rarity": "3%",    "query": "set%3Ahob+rarity%3Ac+%28cn>%3D199+AND+cn<%3D213%29&unique=cards" }
+          ]
+        }
+      ]
+    },
+    "PLAY": {
+      "totalCards": 14,
+      "msrp": "6.99",
+      "defaultUSD": 8,
+      "defaultCAD": 11,
+      "slots": [
+        {
+          "id": "raremythic",
+          "label": "Rare or Mythic",
+          "isFoil": false,
+          "cardInfo": ["1 Rare or Mythic Rare", "A rare or mythic rare card from the main set, a HOB scene rare, a Dragon Hoard rare or mythic, or a Book Cover rare or mythic."],
+          "probabilities": [
+            { "maxRoll": 82.9,  "type": "Rare",                 "rarity": "82.9%", "query": "set%3Ahob+rarity%3Ar+cn<%3D188&unique=cards" },
+            { "maxRoll": 94.0,  "type": "Mythic",                "rarity": "11.1%", "query": "set%3Ahob+rarity%3Am+cn<%3D188&unique=cards" },
+            { "maxRoll": 95.8,  "type": "Scene, Rare",           "rarity": "1.8%",  "query": "set%3Ahob+rarity%3Ar+%28cn>%3D199+AND+cn<%3D213%29&unique=cards" },
+            { "maxRoll": 98.1,  "type": "Dragon Hoard, Rare",    "rarity": "2.3%",  "query": "set%3Ahob+rarity%3Ar+%28cn>%3D214+AND+cn<%3D238%29&unique=cards" },
+            { "maxRoll": 98.68, "type": "Dragon Hoard, Mythic",  "rarity": "0.58%", "query": "set%3Ahob+rarity%3Am+%28cn>%3D214+AND+cn<%3D238%29&unique=cards" },
+            { "maxRoll": 99.42, "type": "Book Cover, Rare",      "rarity": "0.74%", "query": "set%3Ahob+rarity%3Ar+%28cn>%3D239+AND+cn<%3D248%29&unique=cards" },
+            { "maxRoll": 100.00,"type": "Book Cover, Mythic",    "rarity": "0.58%", "query": "set%3Ahob+rarity%3Am+%28cn>%3D239+AND+cn<%3D248%29&unique=cards" }
+          ]
+        },
+        {
+          "id": "foil",
+          "label": "Traditional Foil",
+          "isFoil": true,
+          "cardInfo": ["1 Traditional Foil Card", "A common, uncommon, rare, or mythic card from the main set, a HOB scene card, a Dragon Hoard card, or a Book Cover card of any rarity, in traditional foil."],
+          "probabilities": [
+            { "maxRoll": 59.8,  "type": "Common",                 "rarity": "59.8%", "query": "set%3Ahob+rarity%3Ac+%28cn<%3D181+or+cn%3D184%29&unique=cards" },
+            { "maxRoll": 89.1,  "type": "Uncommon",               "rarity": "29.3%", "query": "set%3Ahob+rarity%3Au+cn<%3D188&unique=cards" },
+            { "maxRoll": 96.2,  "type": "Rare",                   "rarity": "7.1%",  "query": "set%3Ahob+rarity%3Ar+cn<%3D188&unique=cards" },
+            { "maxRoll": 97.2,  "type": "Mythic",                 "rarity": "1%",    "query": "set%3Ahob+rarity%3Am+cn<%3D188&unique=cards" },
+            { "maxRoll": 97.8,  "type": "Scene, Common",          "rarity": "0.6%",  "query": "set%3Ahob+rarity%3Ac+%28cn>%3D199+AND+cn<%3D213%29&unique=cards" },
+            { "maxRoll": 98.22, "type": "Scene, Uncommon",        "rarity": "0.42%", "query": "set%3Ahob+rarity%3Au+%28cn>%3D199+AND+cn<%3D213%29&unique=cards" },
+            { "maxRoll": 98.52, "type": "Scene, Rare",            "rarity": "0.3%",  "query": "set%3Ahob+rarity%3Ar+%28cn>%3D199+AND+cn<%3D213%29&unique=cards" },
+            { "maxRoll": 98.94, "type": "Dragon Hoard, Uncommon", "rarity": "0.42%", "query": "set%3Ahob+rarity%3Au+%28cn>%3D214+AND+cn<%3D238%29&unique=cards" },
+            { "maxRoll": 99.24, "type": "Dragon Hoard, Rare",     "rarity": "0.3%",  "query": "set%3Ahob+rarity%3Ar+%28cn>%3D214+AND+cn<%3D238%29&unique=cards" },
+            { "maxRoll": 99.48, "type": "Dragon Hoard, Mythic",   "rarity": "0.24%", "query": "set%3Ahob+rarity%3Am+%28cn>%3D214+AND+cn<%3D238%29&unique=cards" },
+            { "maxRoll": 99.76, "type": "Book Cover, Rare",       "rarity": "0.28%", "query": "set%3Ahob+rarity%3Ar+%28cn>%3D239+AND+cn<%3D248%29&unique=cards" },
+            { "maxRoll": 100.00,"type": "Book Cover, Mythic",     "rarity": "0.24%", "query": "set%3Ahob+rarity%3Am+%28cn>%3D239+AND+cn<%3D248%29&unique=cards" }
+          ]
+        },
+        {
+          "id": "wildcard",
+          "label": "Wildcard",
+          "isFoil": false,
+          "cardInfo": ["1 Wildcard of Any Rarity", "A common, uncommon, rare, or mythic card from the main set, a HOB scene card, a Dragon Hoard card, or a Book Cover card of any rarity."],
+          "probabilities": [
+            { "maxRoll": 74.17, "type": "Common",                 "rarity": "74.17%", "query": "set%3Ahob+rarity%3Ac+%28cn<%3D181+or+cn%3D184%29&unique=cards" },
+            { "maxRoll": 78.07, "type": "Uncommon",               "rarity": "3.9%",   "query": "set%3Ahob+rarity%3Au+cn<%3D188&unique=cards" },
+            { "maxRoll": 95.37, "type": "Rare",                   "rarity": "17.3%",  "query": "set%3Ahob+rarity%3Ar+cn<%3D188&unique=cards" },
+            { "maxRoll": 97.67, "type": "Mythic",                 "rarity": "2.3%",   "query": "set%3Ahob+rarity%3Am+cn<%3D188&unique=cards" },
+            { "maxRoll": 98.17, "type": "Scene, Common",          "rarity": "0.5%",   "query": "set%3Ahob+rarity%3Ac+%28cn>%3D199+AND+cn<%3D213%29&unique=cards" },
+            { "maxRoll": 98.52, "type": "Scene, Uncommon",        "rarity": "0.35%",  "query": "set%3Ahob+rarity%3Au+%28cn>%3D199+AND+cn<%3D213%29&unique=cards" },
+            { "maxRoll": 98.77, "type": "Scene, Rare",            "rarity": "0.25%",  "query": "set%3Ahob+rarity%3Ar+%28cn>%3D199+AND+cn<%3D213%29&unique=cards" },
+            { "maxRoll": 99.12, "type": "Dragon Hoard, Uncommon", "rarity": "0.35%",  "query": "set%3Ahob+rarity%3Au+%28cn>%3D214+AND+cn<%3D238%29&unique=cards" },
+            { "maxRoll": 99.37, "type": "Dragon Hoard, Rare",     "rarity": "0.25%",  "query": "set%3Ahob+rarity%3Ar+%28cn>%3D214+AND+cn<%3D238%29&unique=cards" },
+            { "maxRoll": 99.57, "type": "Dragon Hoard, Mythic",   "rarity": "0.2%",   "query": "set%3Ahob+rarity%3Am+%28cn>%3D214+AND+cn<%3D238%29&unique=cards" },
+            { "maxRoll": 99.80, "type": "Book Cover, Rare",       "rarity": "0.23%",  "query": "set%3Ahob+rarity%3Ar+%28cn>%3D239+AND+cn<%3D248%29&unique=cards" },
+            { "maxRoll": 100.00,"type": "Book Cover, Mythic",     "rarity": "0.2%",   "query": "set%3Ahob+rarity%3Am+%28cn>%3D239+AND+cn<%3D248%29&unique=cards" }
+          ]
+        },
+        {
+          "id": "land",
+          "label": "Land",
+          "isFoil": true,
+          "cardInfo": ["1 Land", "A default frame basic land, a Middle-earth Journey basic land, or a common dual land, non-foil or traditional foil."],
+          "probabilities": [
+            { "maxRoll": 26.7,  "type": "Basic Land",                          "rarity": "26.7%", "query": "set%3Ahob+rarity%3Ac+%28cn>%3D189+AND+cn<%3D193%29&unique=cards", "foilClass": null, "priceKey": "usd" },
+            { "maxRoll": 33.4,  "type": "Basic Land (Traditional Foil)",       "rarity": "6.7%",  "query": "set%3Ahob+rarity%3Ac+%28cn>%3D189+AND+cn<%3D193%29&unique=cards" },
+            { "maxRoll": 46.7,  "type": "Middle-earth Journey Land",           "rarity": "13.3%", "query": "set%3Ahob+%28cn>%3D194+AND+cn<%3D198%29&unique=cards", "foilClass": null, "priceKey": "usd" },
+            { "maxRoll": 50.0,  "type": "Middle-earth Journey Land (Foil)",    "rarity": "3.3%",  "query": "set%3Ahob+%28cn>%3D194+AND+cn<%3D198%29&unique=cards" },
+            { "maxRoll": 90.0,  "type": "Common Dual Land",                    "rarity": "40%",   "query": "set%3Ahob+rarity%3Ac+%28cn%3D182+or+cn%3D183+or+cn%3D185+or+cn%3D186+or+cn%3D188%29&unique=cards", "foilClass": null, "priceKey": "usd" },
+            { "maxRoll": 100.0, "type": "Common Dual Land (Traditional Foil)", "rarity": "10%",   "query": "set%3Ahob+rarity%3Ac+%28cn%3D182+or+cn%3D183+or+cn%3D185+or+cn%3D186+or+cn%3D188%29&unique=cards" }
+          ]
+        },
+        {
+          "id": "uncommon",
+          "label": "Uncommons",
+          "isFoil": false,
+          "count": 3,
+          "cardInfo": ["3 Uncommons", "There are 55 uncommon cards from the main set that can be found in these slots. There are 4 scene cards (5.5%) and 6 Dragon Hoard cards (10.9%) that can be found in these slots."],
+          "probabilities": [
+            { "maxRoll": 83.6,  "type": "Uncommon",              "rarity": "83.6%", "query": "set%3Ahob+rarity%3Au+cn<%3D188&unique=cards" },
+            { "maxRoll": 89.1,  "type": "Scene, Uncommon",       "rarity": "5.5%",  "query": "set%3Ahob+rarity%3Au+%28cn>%3D199+AND+cn<%3D213%29&unique=cards" },
+            { "maxRoll": 100.0, "type": "Dragon Hoard, Uncommon","rarity": "10.9%", "query": "set%3Ahob+rarity%3Au+%28cn>%3D214+AND+cn<%3D238%29&unique=cards" }
+          ]
+        },
+        {
+          "id": "common",
+          "label": "Commons",
+          "isFoil": false,
+          "count": 7,
+          "cardInfo": ["7 Commons", "There are 60 common cards from the main set that can be found in these slots. There are 2 scene cards that can be found in these slots (7.8%)."],
+          "probabilities": [
+            { "maxRoll": 92.2,  "type": "Common",             "rarity": "92.2%", "query": "set%3Ahob+rarity%3Ac+%28cn<%3D181+or+cn%3D184%29&unique=cards" },
+            { "maxRoll": 100.0, "type": "Scene, Common",      "rarity": "7.8%",  "query": "set%3Ahob+rarity%3Ac+%28cn>%3D199+AND+cn<%3D213%29&unique=cards" }
+          ]
+        }
+      ]
+    }
+  }
+}

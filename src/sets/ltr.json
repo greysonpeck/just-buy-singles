@@ -4,6 +4,7 @@
   "backgroundImage": "img/LTR_bg.jpg",
   "boosterTypes": ["COLLECTOR", "PLAY", "HOLIDAY"],
   "playLabel": "SET",
+  "excludedCardsDisclaimer": ["COLLECTOR", "HOLIDAY"],
   "ghostCard": {
     "randomQuery": "%28set%3Altr+or+set%3Altc%29+date%3A2023-06-23+unique%3Aprints+",
     "topOutQuery": "%28set%3Altr+or+set%3Altc%29+date%3A2023-06-23+unique%3Aprints+USD%3E%3D15"

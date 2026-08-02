@@ -3,7 +3,7 @@
 
 // List of set codes that have been migrated to JSON configs.
 // Add a code here after its JSON config is verified working.
-window.MIGRATED_SETS = ['FDN', 'FIN', 'EOE', 'SPM', 'TLA', 'ECL', 'TMT', 'SOS', 'MSH', 'LTR'];
+window.MIGRATED_SETS = ['FDN', 'FIN', 'EOE', 'SPM', 'TLA', 'ECL', 'TMT', 'SOS', 'MSH', 'LTR', 'HOB'];
 
 const _configCache = {};
 
@@ -79,23 +79,19 @@ async function _fetchCardPool(query) {
     return cards;
 }
 
-// Main entry point for slot pull functions. Returns one card object selected
-// at random from the cached pool for this query. Check order:
+// Returns the full cached card array for a query. Check order:
 //   1. In-memory cache (fastest — no serialization)
 //   2. localStorage cache (persisted across reloads, valid for 24h)
 //   3. Scryfall /cards/search fetch (populates both caches for next time)
-async function _getCardFromPool(query) {
+async function _getPool(query) {
     // 1. In-memory hit
-    if (_poolCache[query]) {
-        const pool = _poolCache[query];
-        return pool[Math.floor(Math.random() * pool.length)];
-    }
+    if (_poolCache[query]) return _poolCache[query];
 
     // 2. localStorage hit — also warms in-memory cache to avoid re-parsing on next call
     const stored = _loadPoolFromStorage(query);
     if (stored) {
         _poolCache[query] = stored;
-        return stored[Math.floor(Math.random() * stored.length)];
+        return stored;
     }
 
     // 3. Full miss — fetch from Scryfall. Deduplicate concurrent fetches for the
@@ -110,11 +106,15 @@ async function _getCardFromPool(query) {
     }
 
     const pool = await _poolFetchInFlight[query];
-
     if (!pool || pool.length === 0) {
         throw new Error('Scryfall returned no cards for query: ' + query);
     }
+    return pool;
+}
 
+// Main entry point for slot pull functions. Returns one card object selected at random.
+async function _getCardFromPool(query) {
+    const pool = await _getPool(query);
     return pool[Math.floor(Math.random() * pool.length)];
 }
 
@@ -194,7 +194,7 @@ function _initSetMoney(code, boosterType, config) {
     for (const slot of boosterConfig.slots) {
         makeSlot(slot.id, slot.label, slot.isFoil || false, slot.count || 0);
     }
-    if (code === 'LTR' && (boosterType === 'COLLECTOR' || boosterType === 'HOLIDAY')) {
+    if (config.excludedCardsDisclaimer && config.excludedCardsDisclaimer.includes(boosterType)) {
         const firstCardInfo = document.getElementById('card-section').querySelector('.card-info');
         if (firstCardInfo) {
             const totalCard = firstCardInfo.parentElement;
@@ -420,21 +420,34 @@ async function _pullMultiSlot(slot, prevReveal) {
 
     for (let k = 1; k <= slot.count; k++) {
         const isLastCard = k === slot.count;
-        const probs = (isLastCard && slot.trailingCard) ? slot.trailingCard.probabilities : slot.probabilities;
 
-        // See _pullSingleSlot for why the roll ceiling is the table's own last maxRoll.
-        const roll = slot.rollOverride !== undefined ? slot.rollOverride : getRandomNumber(0, probs[probs.length - 1].maxRoll);
+        // Trailing override: an unconditional pack-level chance (independent of the
+        // normal roll below) that only ever applies to the last card in the stack —
+        // so it's visible at a glance rather than buried mid-stack. When it fires it
+        // replaces the last card's pull outright; it does not require — and is not
+        // reduced by — whatever the normal roll would otherwise have produced.
+        const override = isLastCard ? slot.trailingOverride : null;
+        let entry, card;
+        if (override && Math.random() * 100 < override.chance) {
+            entry = { type: override.type, foilClass: override.foilClass, query: override.query };
+            card = await _getCardFromPool(override.query);
+        } else {
+            const probs = (isLastCard && slot.trailingCard) ? slot.trailingCard.probabilities : slot.probabilities;
 
-        let entry = probs[probs.length - 1];
-        for (const prob of probs) {
-            if (roll <= prob.maxRoll) {
-                entry = prob;
-                break;
+            // See _pullSingleSlot for why the roll ceiling is the table's own last maxRoll.
+            const roll = slot.rollOverride !== undefined ? slot.rollOverride : getRandomNumber(0, probs[probs.length - 1].maxRoll);
+
+            entry = probs[probs.length - 1];
+            for (const prob of probs) {
+                if (roll <= prob.maxRoll) {
+                    entry = prob;
+                    break;
+                }
             }
-        }
 
-        // Pick one card at random from the cached pool for this query.
-        const card = await _getCardFromPool(entry.query);
+            // Pick one card at random from the cached pool for this query.
+            card = await _getCardFromPool(entry.query);
+        }
         _tickCardLoaded();
 
         const priceKey = entry.priceKey || (slot.isFoil ? 'usd_foil' : 'usd');
@@ -452,6 +465,22 @@ async function _pullMultiSlot(slot, prevReveal) {
         // Multi-slot uses parentElement (not .both-cards) for the flip stack
         const stack = imageElement.parentElement;
 
+        // Build foil overlay callback — mirrors _pullSingleSlot. In makeSlot's multi-card
+        // DOM, the foil-hold div is inserted right after the front image (opposite order
+        // from the single-card block), so nextElementSibling finds it here.
+        let foilCallback = null;
+        if (slot.isFoil && entry.foilClass !== undefined) {
+            const overlay = imageElement.nextElementSibling;
+            const foilClassToApply = entry.foilClass;
+            foilCallback = () => {
+                _ALL_GRADIENT_CLASSES.forEach(cls => overlay.classList.remove(cls));
+                if (foilClassToApply) {
+                    const classes = Array.isArray(foilClassToApply) ? foilClassToApply : [foilClassToApply];
+                    classes.forEach(cls => overlay.classList.add(cls));
+                }
+            };
+        }
+
         // Fan each card out from the same prevReveal start using an absolute offset.
         // Card 1 reveals immediately when prevReveal resolves; card 2 reveals 150ms later;
         // card 3 reveals 300ms later; etc. This is more reliable than a cascading chain
@@ -460,7 +489,7 @@ async function _pullMultiSlot(slot, prevReveal) {
             ? prevReveal
             : prevReveal.then(() => waitforme((k - 1) * _MULTI_REVEAL_STAGGER_MS));
 
-        lastCardReveal = cardImageLoaded(imageElement, imageUrl, stack, true, null, cardRevealGate);
+        lastCardReveal = cardImageLoaded(imageElement, imageUrl, stack, true, foilCallback, cardRevealGate);
 
         if (slot.debugLog) console.log('[' + slot.id + ':' + k + '] ' + card.name + ' — ' + USDollar.format(price));
         sumPrice += price;
