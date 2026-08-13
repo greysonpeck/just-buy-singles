@@ -394,7 +394,7 @@ document.addEventListener(
         } else if (_startSet === "MH3") {
             setMH3();
         } else {
-            await initSet("MSH");
+            await initSet("HOB");
         }
 
         // Pull the set that's in the cookie
