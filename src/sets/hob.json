@@ -12,8 +12,8 @@
     "COLLECTOR": {
       "totalCards": 15,
       "msrp": "37.99",
-      "defaultUSD": 30,
-      "defaultCAD": 42,
+      "defaultUSD": 90,
+      "defaultCAD": 110,
       "slots": [
         {
           "id": "foil-boosterfun",
@@ -137,8 +137,8 @@
     "PLAY": {
       "totalCards": 14,
       "msrp": "6.99",
-      "defaultUSD": 8,
-      "defaultCAD": 11,
+      "defaultUSD": 7,
+      "defaultCAD": 9,
       "slots": [
         {
           "id": "raremythic",
