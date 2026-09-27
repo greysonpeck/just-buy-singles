@@ -11,7 +11,7 @@
       }
       window.onload = codeAddress;
       </script>
-    <link rel="stylesheet" href="./src/output.css?v=1.48" />
+    <link rel="stylesheet" href="./src/output.css?v=1.54" />
     <link rel="stylesheet" href="./src/slider.css?v=1.40" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,7 +23,7 @@
     <script src="./src/booster-engine.js?v=1.54"></script>
     <script src="./src/early-pricing.js?v=1.01"></script>
 
-    <script src="./src/scripts.js?v=1.51"></script>
+    <script src="./src/scripts.js?v=1.57"></script>
     <script src="./src/settings.js?v=1.49"></script>
     <script src="./src/money.js?v=1.40"></script>
     <script src="./src/slider_logic.js?v=1.40"></script>
@@ -236,7 +236,7 @@
                 <button id="collector-booster" class="text-lg px-3 py-1  rounded-sm font-light uppercase tracking-widest w-fit cursor-pointer">COLLECTOR</button>
                 <button id="play-booster" class="hidden px-3 py-1  rounded-sm text-lg font-light uppercase tracking-widest w-fit cursor-pointer">PLAY</button>
                 <button id="holiday-booster" class="hidden px-3 py-1  rounded-sm text-lg font-light uppercase tracking-widest w-fit cursor-pointer">HOLIDAY</button>
-                <a id="price-guide-link" href="#" class="hidden ml-auto cursor-pointer hover:underline font-medium text-sm" data-umami-event="Price guide">Price guide<span class="ml-1.5 text-xs font-bold rounded-sm px-1.5 py-0.5 leading-tight" style="display:inline-block; background: linear-gradient(135deg, #2a2a2a, #1a1a1a); color: #E9BF53; outline: 1px solid rgba(233,191,83,0.35);">New!</span></a>
+                <a id="price-guide-link" href="#" class="hidden ml-auto cursor-pointer hover:underline font-medium text-sm" data-umami-event="Price guide">Price guide</a>
             </div>
 
         </div>
@@ -397,7 +397,7 @@
 
     <!-- CARD SECTION STARTS HERE -->
 
-    <div id="card-section" class="flex flex-wrap gap-2 sm:gap-6 mx-auto mb-12 justify-center text-sm sm:text-base max-w-[1080px]">
+    <div id="card-section" class="flex flex-wrap gap-2 sm:gap-6 mx-auto mb-6 justify-center text-sm sm:text-base max-w-[1080px]">
         <!-- <div class="w-full">This booster: <span id="this-booster"></span><span id="booster-commentary" class="text-sm"></span></div> -->
         <!-- <div id="ad-holder-middle"></div> -->
     </div>
@@ -405,11 +405,12 @@
 
 
  <!-- Footer ad container (hidden until consent) -->
-    <div id="ad-holder-footer" class="ad-holder  flex justify-center w-full"></div>
+    <div id="ad-holder-footer" class="ad-holder hidden w-full"></div>
 
-    <footer class="mt-8 mb-12 opacity-85">
-        <p class="text-xs max-w-[800px] m-auto pb-3 px-6 ">Magic: the Gathering card graphics on this website are copyright Wizards of the Coast, LLC, a subsidiary of Hasbro, Inc. justbuysingles.com is not produced by, endorsed by, supported by, or affiliated with Wizards of the Coast.</p>
-        <p class="text-xs max-w-[800px] m-auto pb-3 px-6 ">Secondary market card pricing and listed card treatments are sourced from Scryfall - no guarantees are made for price accuracy. The booster simulation was created by justbuysingles.com and no guarantee is made for the accuracy of simulated results (which cards appear and at what frequency).</p>    
+    <footer class="mt-5 mb-40 opacity-85">
+        <div class="max-w-[1080px] mx-auto px-6">
+            <p class="text-xs max-w-[800px] mx-auto pb-3">Magic: the Gathering card graphics on this website are copyright Wizards of the Coast, LLC, a subsidiary of Hasbro, Inc., and justbuysingles.com is not produced by, endorsed by, supported by, or affiliated with Wizards of the Coast. Secondary market card pricing and listed card treatments are sourced from Scryfall - no guarantees are made for price accuracy.</p>
+        </div>
     </footer>
     <div class="shade opacity-0 -z-10"></div>
     <div class="light-shade opacity-0 -z-10"></div>

@@ -8,10 +8,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
-    <title>Catalog: Marvel Super Heroes — Just Buy Singles</title>
+    <title>Catalog: The Hobbit — Just Buy Singles</title>
     <style>
         body {
-            background-image: url('img/MSH_bg.jpg');
+            background-image: url('img/HOB_bg.jpg');
             background-size: cover;
             background-attachment: fixed;
             background-position: center;
@@ -67,7 +67,7 @@
 
         <!-- Header -->
         <div class="mb-4">
-            <h1 class="text-3xl sm:text-4xl font-bold tracking-wide">Marvel Super Heroes</h1>
+            <h1 class="text-3xl sm:text-4xl font-bold tracking-wide">The Hobbit Price Guide</h1>
             <p class="text-white/60 mt-1 text-sm flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3"><span>TCGPlayer prices via Scryfall<span id="fetch-date"></span></span><span id="catalog-currency"></span></p>
 
             <!-- Tab toggle -->
@@ -83,7 +83,7 @@
         <!-- Footer -->
         <p class="text-white/30 text-xs mt-12 pb-6">
             Card prices and images via <a href="https://scryfall.com" class="underline hover:text-white/60" target="_blank">Scryfall</a>.
-            Prices are TCGPlayer market price. Etched foil prices shown where available.
+            Prices are TCGPlayer market price. Covers both The Hobbit (HOB) and Middle-earth Classic (HOC) treatments.
         </p>
     </div>
 
@@ -93,50 +93,78 @@
         initCategoryCatalog({
             tabs: [
                 {
-                    id: 'defaultframe',
+                    id: 'default',
                     label: 'Default Frame',
                     alwaysShowNormal: true,
-                    query: 'set%3Amsh+%28rarity%3Ar+OR+rarity%3Am%29+cn<%3D276&unique=cards',
+                    query: 'set%3Ahob+%28rarity%3Ar+OR+rarity%3Am%29+cn%3C%3D188&unique=cards',
                 },
                 {
-                    id: 'boosterfun',
-                    label: 'Booster Fun',
+                    id: 'battle-of-five-armies',
+                    label: 'Battle of Five Armies EA',
                     alwaysShowNormal: true,
-                    query: '%28set%3Amsh+%28cn>%3D297+AND+cn<%3D429%29%29' +
-                        '+OR+%28set%3Amar+%28cn>%3D41+AND+cn<%3D100%29%29&unique=cards',
+                    query: 'set%3Ahoc+%28cn%3E%3D98+AND+cn%3C%3D106%29&unique=cards',
                 },
                 {
-                    id: 'classic-comic',
-                    label: 'Classic Comic',
+                    id: 'book-cover',
+                    label: 'Book Cover',
                     alwaysShowNormal: true,
-                    query: 'set%3Amsh+%28cn>%3D387+AND+cn<%3D401%29&unique=cards',
+                    query: 'set%3Ahob+%28cn%3E%3D239+AND+cn%3C%3D248%29&unique=cards',
                 },
                 {
-                    id: 'logo',
-                    label: 'Logo',
-                    alwaysShowNormal: true,
-                    query: 'set%3Amsh+%28cn>%3D352+AND+cn<%3D379%29&unique=cards',
+                    id: 'book-cover-surge',
+                    label: 'Book Cover (Surge Foil)',
+                    foilOnly: true,
+                    query: 'set%3Ahob+%28cn%3E%3D275+AND+cn%3C%3D284%29&unique=cards',
                 },
                 {
-                    id: 'panel',
-                    label: 'Panel',
+                    id: 'dragon-hoard',
+                    label: 'Dragon Hoard',
                     alwaysShowNormal: true,
-                    query: 'set%3Amsh+%28cn>%3D297+AND+cn<%3D313%29&unique=cards',
+                    query: 'set%3Ahob+%28cn%3E%3D214+AND+cn%3C%3D238%29&unique=cards',
+                },
+                {
+                    id: 'dragon-hoard-surge',
+                    label: 'Dragon Hoard (Surge Foil)',
+                    foilOnly: true,
+                    query: 'set%3Ahob+%28cn%3E%3D250+AND+cn%3C%3D274%29&unique=cards',
+                },
+                {
+                    id: 'dwarvish-language',
+                    label: 'Dwarvish Language',
+                    alwaysShowNormal: true,
+                    query: 'set%3Ahoc+%28cn%3E%3D93+AND+cn%3C%3D97%29&unique=cards',
+                },
+                {
+                    id: 'extended-art',
+                    label: 'Extended Art',
+                    alwaysShowNormal: true,
+                    query: 'set%3Ahob+%28cn%3E%3D285+AND+cn%3C%3D312%29&unique=cards',
+                },
+                {
+                    id: 'classic-artist',
+                    label: 'Middle-earth Classic Artist',
+                    alwaysShowNormal: true,
+                    query: '%28set%3Ahoc+%28cn%3E%3D13+AND+cn%3C%3D52%29%29+OR+%28set%3Ahoc+%28cn%3E%3D53+AND+cn%3C%3D92%29%29&unique=cards',
+                },
+                {
+                    id: 'journey-land',
+                    label: 'Middle-earth Journey Land',
+                    alwaysShowNormal: true,
+                    query: 'set%3Ahob+%28cn%3E%3D194+AND+cn%3C%3D198%29&unique=cards',
                 },
                 {
                     id: 'scene',
                     label: 'Scene',
                     alwaysShowNormal: true,
-                    query: 'set%3Amsh+%28cn>%3D314+AND+cn<%3D351%29&unique=cards',
+                    query: 'set%3Ahob+%28cn%3E%3D199+AND+cn%3C%3D213%29&unique=cards',
                 },
                 {
-                    id: 'source-material',
-                    label: 'Source Material',
+                    id: 'hoc-scene',
+                    label: 'Scene (HOC)',
                     alwaysShowNormal: true,
-                    query: 'set%3Amar+%28cn>%3D41+AND+cn<%3D100%29&unique=cards',
+                    query: 'set%3Ahoc+%28cn%3E%3D1+AND+cn%3C%3D12%29&unique=cards',
                 },
             ],
-            excludeBuckets: ['Under $1'],
         });
     </script>
 </body>

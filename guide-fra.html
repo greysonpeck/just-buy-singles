@@ -8,10 +8,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
-    <title>Catalog: STA Mystical Archive — Just Buy Singles</title>
+    <title>Catalog: Reality Fracture — Just Buy Singles</title>
     <style>
         body {
-            background-image: url('img/catalog-sta.jpg');
+            background-image: url('img/FRA_bg.jpg');
             background-size: cover;
             background-attachment: fixed;
             background-position: center;
@@ -28,27 +28,6 @@
         #page {
             position: relative;
             z-index: 1;
-        }
-        /* Card flip structure — override .both-cards fixed 240px width */
-        .ma-flipper {
-            position: relative;
-            width: 200px;
-            height: 279px; /* 200 × (680/488) */
-            transform-style: preserve-3d;
-            transition: transform 1s;
-        }
-        .ma-flipper.flipped {
-            transform: rotateY(180deg);
-        }
-        .ma-flipper .ma-face {
-            position: absolute;
-            width: 200px;
-            border-radius: 10px;
-            backface-visibility: hidden;
-            display: block;
-        }
-        .ma-flipper .ma-back {
-            transform: rotateY(180deg);
         }
         /* Mode toggle */
         .ma-toggle {
@@ -74,13 +53,10 @@
             background: linear-gradient(to bottom, rgba(35, 35, 45, 0.95), rgba(60, 60, 75, 0.8));
             color: rgba(255,255,255,0.65) !important;
         }
-
-        /* Responsive card width — drives flipper, face images, and price block */
+        /* Responsive card width */
         .ma-card { width: 200px; }
         @media (max-width: 480px) {
             .ma-card { width: 150px; }
-            .ma-flipper, .ma-flipper .ma-face { width: 150px; }
-            .ma-flipper { height: 209px; }
         }
     </style>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1084747507972985"
@@ -91,10 +67,10 @@
 
         <!-- Header -->
         <div class="mb-4">
-            <h1 class="text-3xl sm:text-4xl font-bold tracking-wide">Strixhaven: School of Mages, Mystical Archive</h1>
+            <h1 class="text-3xl sm:text-4xl font-bold tracking-wide">Reality Fracture Price Guide</h1>
             <p class="text-white/60 mt-1 text-sm flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3"><span>TCGPlayer prices via Scryfall<span id="fetch-date"></span></span><span id="catalog-currency"></span></p>
 
-            <!-- Mode toggle -->
+            <!-- Tab toggle -->
             <div id="mode-toggle" class="ma-toggle mt-4"></div>
         </div>
 
@@ -107,18 +83,70 @@
         <!-- Footer -->
         <p class="text-white/30 text-xs mt-12 pb-6">
             Card prices and images via <a href="https://scryfall.com" class="underline hover:text-white/60" target="_blank">Scryfall</a>.
-            Prices are TCGPlayer market price. Etched foil prices shown where available.
+            Prices are TCGPlayer market price. Reality Fracture releases 2026-10-02 — prices may be sparse or missing until cards are in circulation.
         </p>
     </div>
 
     <script src="./src/money.js?v=1.43"></script>
     <script src="./src/catalog.js?v=1.51"></script>
     <script>
-        initCatalog({
-            modes: [
-                { id: 'en', label: 'Standard', query: 'set%3Asta+lang%3Aen+is%3Anonfoil' },
-                { id: 'ja', label: 'Japanese',  query: 'set%3Asta+lang%3Aja&unique=cards' },
-            ]
+        initCategoryCatalog({
+            tabs: [
+                {
+                    id: 'default',
+                    label: 'Default Frame',
+                    alwaysShowNormal: true,
+                    query: '%28set%3Afra+%28rarity%3Ar+OR+rarity%3Am%29+cn%3C%3D194%29+OR+%28set%3Afra+cn%3E%3D195+AND+cn%3C%3D280%29&unique=cards',
+                },
+                {
+                    id: 'borderless-echoed-pairs',
+                    label: 'Borderless Echoed Pairs',
+                    alwaysShowNormal: true,
+                    query: 'set%3Afra+%28cn%3E%3D291+AND+cn%3C%3D320%29&unique=cards',
+                },
+                {
+                    id: 'braintwister',
+                    label: 'Braintwister Series',
+                    alwaysShowNormal: true,
+                    query: 'set%3Afra+%28cn%3E%3D359+AND+cn%3C%3D381%29&unique=cards',
+                },
+                {
+                    id: 'japan-showcase',
+                    label: 'Japan Showcase',
+                    foilOnly: true,
+                    query: 'set%3Afra+%28cn%3E%3D403+AND+cn%3C%3D422%29&unique=cards',
+                },
+                {
+                    id: 'portal-view-land',
+                    label: 'Portal View Land',
+                    alwaysShowNormal: true,
+                    query: 'set%3Afra+%28cn%3E%3D397+AND+cn%3C%3D401%29&unique=cards',
+                },
+                {
+                    id: 'sculptors-stronghold',
+                    label: "Sculptor's Stronghold",
+                    alwaysShowNormal: true,
+                    query: 'set%3Afra+%28cn%3E%3D334+AND+cn%3C%3D358%29&unique=cards',
+                },
+                {
+                    id: 'shattered-mirror',
+                    label: 'Shattered Mirror',
+                    alwaysShowNormal: true,
+                    query: 'set%3Afra+%28cn%3E%3D321+AND+cn%3C%3D333%29&unique=cards',
+                },
+                {
+                    id: 'facet-foil',
+                    label: 'Shattered Mirror Facet Foil',
+                    foilOnly: true,
+                    query: 'set%3Afra+%28cn%3E%3D449+AND+cn%3C%3D461%29&unique=cards',
+                },
+                {
+                    id: 'special-guests',
+                    label: 'Special Guests',
+                    alwaysShowNormal: true,
+                    query: 'set%3Aspg+%28cn%3E%3D159+AND+cn%3C%3D168%29&unique=cards',
+                },
+            ],
         });
     </script>
 </body>

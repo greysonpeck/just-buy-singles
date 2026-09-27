@@ -249,6 +249,52 @@ function priceBlock(card, modeConfig) {
     return normalRow + (hasFoil ? combinedFoilRow(card, alwaysShow) : '');
 }
 
+// Builds the row of toggle buttons (desktop) + <select> dropdown (mobile) shared
+// by initCatalog and initCategoryCatalog. Buttons render as small pills on one
+// line (see .ma-toggle / .ma-toggle button in each guide page's <style> block);
+// the <select> takes over below the mobile breakpoint instead of wrapping.
+// items: [{ id, label }, ...]. onSelect(id) fires on button click or <select> change.
+// Returns the <select> element so callers can keep its value in sync elsewhere.
+function _buildToggleUI(items, onSelect) {
+    _injectSelectStyles();
+    const toggleEl = document.getElementById('mode-toggle');
+
+    const ITEMS_PER_ROW = 5;
+    items.forEach((item, i) => {
+        const btn = document.createElement('button');
+        btn.id        = 'btn-' + item.id;
+        btn.className = i === 0 ? 'ma-btn-active' : 'ma-btn-inactive';
+        btn.textContent = item.label;
+        btn.onclick   = () => onSelect(item.id);
+        toggleEl.appendChild(btn);
+
+        // Force a wrap after every 5th item, regardless of available width —
+        // a zero-height, full-width flex item pushes everything after it onto
+        // a new row (see .ma-toggle's flex-wrap: wrap).
+        const isRowBoundary = (i + 1) % ITEMS_PER_ROW === 0;
+        if (isRowBoundary && i < items.length - 1) {
+            const rowBreak = document.createElement('div');
+            rowBreak.style.flexBasis = '100%';
+            rowBreak.style.height = '0';
+            toggleEl.appendChild(rowBreak);
+        }
+    });
+
+    const select = document.createElement('select');
+    select.className = 'ma-select';
+    items.forEach(item => {
+        const opt = document.createElement('option');
+        opt.value = item.id;
+        opt.textContent = item.label;
+        select.appendChild(opt);
+    });
+    select.value = items[0].id;
+    select.addEventListener('change', () => onSelect(select.value));
+    toggleEl.insertAdjacentElement('beforebegin', select);
+
+    return select;
+}
+
 function initCatalog(config) {
     const modes = config.modes;
 
@@ -261,33 +307,7 @@ function initCatalog(config) {
     currencyMode = localStorage.getItem('currencyMode') || 'USD';
 
     // ── Build toggle UI ────────────────────────────────────────────
-    _injectSelectStyles();
-    const toggleEl = document.getElementById('mode-toggle');
-    modes.forEach((mode, i) => {
-        if (i > 0) {
-            const div = document.createElement('div');
-            div.className = 'ma-divider';
-            toggleEl.appendChild(div);
-        }
-        const btn = document.createElement('button');
-        btn.id        = 'btn-' + mode.id;
-        btn.className = i === 0 ? 'ma-btn-active' : 'ma-btn-inactive';
-        btn.textContent = mode.label;
-        btn.onclick   = () => setMode(mode.id);
-        toggleEl.appendChild(btn);
-    });
-
-    const modeSelect = document.createElement('select');
-    modeSelect.className = 'ma-select';
-    modes.forEach(mode => {
-        const opt = document.createElement('option');
-        opt.value = mode.id;
-        opt.textContent = mode.label;
-        modeSelect.appendChild(opt);
-    });
-    modeSelect.value = modes[0].id;
-    modeSelect.addEventListener('change', () => setMode(modeSelect.value));
-    toggleEl.insertAdjacentElement('beforebegin', modeSelect);
+    const modeSelect = _buildToggleUI(modes, (id) => setMode(id));
 
     // ── Currency toggle ────────────────────────────────────────────
     function renderCurrencyToggle() {
@@ -455,33 +475,7 @@ function initCategoryCatalog(config) {
     currencyMode = localStorage.getItem('currencyMode') || 'USD';
 
     // ── Build tab toggle UI ────────────────────────────────────────
-    _injectSelectStyles();
-    const toggleEl = document.getElementById('mode-toggle');
-    tabs.forEach((tab, i) => {
-        if (i > 0) {
-            const div = document.createElement('div');
-            div.className = 'ma-divider';
-            toggleEl.appendChild(div);
-        }
-        const btn = document.createElement('button');
-        btn.id        = 'btn-' + tab.id;
-        btn.className = i === 0 ? 'ma-btn-active' : 'ma-btn-inactive';
-        btn.textContent = tab.label;
-        btn.onclick   = () => setTab(tab.id);
-        toggleEl.appendChild(btn);
-    });
-
-    const tabSelect = document.createElement('select');
-    tabSelect.className = 'ma-select';
-    tabs.forEach(tab => {
-        const opt = document.createElement('option');
-        opt.value = tab.id;
-        opt.textContent = tab.label;
-        tabSelect.appendChild(opt);
-    });
-    tabSelect.value = tabs[0].id;
-    tabSelect.addEventListener('change', () => setTab(tabSelect.value));
-    toggleEl.insertAdjacentElement('beforebegin', tabSelect);
+    const tabSelect = _buildToggleUI(tabs, (id) => setTab(id));
 
     // ── Currency toggle ────────────────────────────────────────────
     function renderCurrencyToggle() {

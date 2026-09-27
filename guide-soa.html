@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./src/output.css?v=1.48" />
+    <link rel="stylesheet" href="./src/output.css?v=1.54" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -52,18 +52,20 @@
         }
         /* Mode toggle */
         .ma-toggle {
-            display: inline-flex;
-            border-radius: 8px;
-            overflow: hidden;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
         }
         .ma-toggle button {
-            padding: 7px 22px;
-            font-size: 0.875rem;
+            padding: 5px 12px;
+            font-size: 0.75rem;
             font-weight: 600;
             border: none;
+            border-radius: 999px;
             cursor: pointer;
             font-family: inherit;
             color: white;
+            white-space: nowrap;
         }
         .ma-btn-active {
             background: linear-gradient(to bottom, rgba(80, 50, 150, 0.95), rgba(110, 80, 185, 0.8));
@@ -71,11 +73,6 @@
         .ma-btn-inactive {
             background: linear-gradient(to bottom, rgba(35, 35, 45, 0.95), rgba(60, 60, 75, 0.8));
             color: rgba(255,255,255,0.65) !important;
-        }
-        .ma-divider {
-            width: 1px;
-            background: rgba(209,213,219,0.5);
-            flex-shrink: 0;
         }
         /* Responsive card width */
         .ma-card { width: 200px; }
@@ -92,12 +89,12 @@
     <div id="page" class="max-w-[1280px] mx-auto px-4 sm:px-8 py-10">
 
         <!-- Header -->
-        <div class="mb-8">
+        <div class="mb-4">
             <h1 class="text-3xl sm:text-4xl font-bold tracking-wide">Secrets of Strixhaven Price Guide</h1>
-            <p class="text-white/60 mt-1 text-sm flex items-center">TCGPlayer prices via Scryfall<span id="fetch-date"></span><span id="catalog-currency" style="margin-left:12px"></span></p>
+            <p class="text-white/60 mt-1 text-sm flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3"><span>TCGPlayer prices via Scryfall<span id="fetch-date"></span></span><span id="catalog-currency"></span></p>
 
             <!-- Mode toggle -->
-            <div id="mode-toggle" class="ma-toggle mt-4 ring-1 ring-gray-400"></div>
+            <div id="mode-toggle" class="ma-toggle mt-4"></div>
         </div>
 
         <!-- Loading state -->
@@ -114,16 +111,16 @@
     </div>
 
     <script src="./src/money.js?v=1.43"></script>
-    <script src="./src/catalog.js?v=1.48"></script>
+    <script src="./src/catalog.js?v=1.51"></script>
     <script>
         initCategoryCatalog({
             tabs: [
-                { id: 'en',         label: 'Mystical Archive', query: 'set:soa lang:en is:nonfoil',                                 alwaysShowNormal: true },
-                { id: 'ja',         label: 'Japanese STA',     query: 'set:soa lang:ja cn<=130',   showName: true                                      },
-                { id: 'ja_silver',  label: 'Silver Scroll STA',query: 'set:soa lang:ja cn>130',    showName: true, foilOnly: true                              },
-                { id: 'fieldnotes', label: 'Field Notes',      query: 'set:sos (cn>=289 AND cn<=300)'                                                      },
-                { id: 'borderless', label: 'Borderless',       query: '(set:sos cn>=282 cn<=288) OR (set:sos cn>=301 cn<=305)'                             },
                 { id: 'default',    label: 'Default',          query: 'set:sos (rarity:r OR rarity:m) cn<=266'                                             },
+                { id: 'borderless', label: 'Borderless',       query: '(set:sos cn>=282 cn<=288) OR (set:sos cn>=301 cn<=305)'                             },
+                { id: 'fieldnotes', label: 'Field Notes',      query: 'set:sos (cn>=289 AND cn<=300)'                                                      },
+                { id: 'ja',         label: 'Japanese STA',     query: 'set:soa lang:ja cn<=130',   showName: true                                      },
+                { id: 'en',         label: 'Mystical Archive', query: 'set:soa lang:en is:nonfoil',                                 alwaysShowNormal: true },
+                { id: 'ja_silver',  label: 'Silver Scroll STA',query: 'set:soa lang:ja cn>130',    showName: true, foilOnly: true                              },
             ]
         });
     </script>

@@ -508,6 +508,7 @@ document.addEventListener(
             setID = localStorage.getItem("currentSet");
             const moneySet = "set" + setID + "_Money";
             window[moneySet]();
+            _applySlotLabelSizing();
 
             document.getElementById("msrp").innerText = "MSRP: " + (isNaN(msrp) ? msrp : USDollar.format(msrp) + " USD");
 
@@ -588,9 +589,15 @@ document.addEventListener(
         const _lb = document.createElement('div');
         _lb.id = 'main-lightbox';
         _lb.innerHTML = `
-            <div style="position:relative;display:inline-block;">
-                <img id="main-lightbox-img" src="" alt="">
-                <div id="main-lightbox-foil" class="foil-hold" style="display:none;border-radius:10px;width:100%;height:100%;"></div>
+            <div style="display:flex;flex-direction:column;">
+                <div class="flex justify-between items-baseline gap-3 mb-2 w-full text-white">
+                    <span id="main-lightbox-name" class="text-left font-semibold"></span>
+                    <span id="main-lightbox-price" class="text-right font-bold whitespace-nowrap"></span>
+                </div>
+                <div style="position:relative;display:inline-block;">
+                    <img id="main-lightbox-img" src="" alt="">
+                    <div id="main-lightbox-foil" class="foil-hold" style="display:none;border-radius:10px;width:100%;height:100%;"></div>
+                </div>
             </div>`;
         _lb.addEventListener('click', () => _lb.classList.remove('open'));
         document.addEventListener('keydown', e => { if (e.key === 'Escape') _lb.classList.remove('open'); });
@@ -604,6 +611,8 @@ document.addEventListener(
             if (!img?.dataset.lbSrc) return;
 
             document.getElementById('main-lightbox-img').src = img.dataset.lbSrc;
+            document.getElementById('main-lightbox-name').textContent = img.dataset.cardName || '';
+            document.getElementById('main-lightbox-price').textContent = img.dataset.cardPrice || '';
 
             const lbFoil = document.getElementById('main-lightbox-foil');
             const srcFoil = img.closest('.card-revealed')?.querySelector('.foil-hold');
@@ -712,7 +721,7 @@ function changeSet() {
 
     document.getElementById("pricePerBooster").innerText = USDollar.format(boosterValue);
 
-    const _priceGuideUrls = { MSH: 'guide-msh.html', SOS: 'guide-soa.html' };
+    const _priceGuideUrls = { MSH: 'guide-msh.html', SOS: 'guide-soa.html', FRA: 'guide-fra.html', HOB: 'guide-hob.html' };
     const _priceGuideLink = document.getElementById('price-guide-link');
     if (_priceGuideLink) {
         const _url = _priceGuideUrls[currentSet];
@@ -747,10 +756,19 @@ function clearMoney() {
 
     initializeMoney();
 
-    // Slot label size: Collector/Holiday stay small; Play/Set scale up on desktop
+    _applySlotLabelSizing();
+}
+
+// Slot label size: Collector/Holiday stay small; Play/Set scale up on desktop.
+// Called from clearMoney() (full set init) AND boosterToggle() (switching booster
+// type within the same set) — clearSlots()+makeSlot() tear down and rebuild the
+// .slot-label elements fresh on both paths, so this has to re-run every time or
+// the previous booster type's sizing just doesn't get applied until a full reload.
+function _applySlotLabelSizing() {
     const _bt = localStorage.getItem("currentBoosterType");
     const _smallLabels = _bt === "COLLECTOR" || _bt === "HOLIDAY";
     document.querySelectorAll(".slot-label").forEach((label) => {
+        label.classList.remove("text-sm", "sm:text-base");
         if (_smallLabels) {
             label.classList.add("text-sm");
         } else {
@@ -1298,9 +1316,16 @@ function sumTotals() {
             loadingOverlay.classList.remove("z-10", "loader-blur-effect");
             loadingOverlay.classList.add("-z-10", "opacity-0");
 
-            const commonSumElement = document.getElementById("common-sum");
-            if (commonSumElement) commonSumElement.innerText = "$" + commonSum.toFixed(2);
-            commonSum = 0;
+            // Legacy (pre-JSON-engine) sets accumulate commonSum themselves during their
+            // own pull function and rely on this to redisplay it. JSON-driven sets manage
+            // their own "<slot.id>-sum" elements directly in booster-engine.js — commonSum
+            // is never touched for them, so writing it here would clobber a slot whose id
+            // happens to be "common" with a stale "$0.00" (or a real badge/sum) every time.
+            if (!(window.MIGRATED_SETS && window.MIGRATED_SETS.includes(currentSet))) {
+                const commonSumElement = document.getElementById("common-sum");
+                if (commonSumElement) commonSumElement.innerText = "$" + commonSum.toFixed(2);
+                commonSum = 0;
+            }
 
             let thisPack = 0;
 
@@ -1311,15 +1336,6 @@ function sumTotals() {
                     thisPack += num;
                 } else {
                     // Ignore bulk
-                }
-            });
-
-            // Smaller text slot labels if long
-            document.querySelectorAll(".price").forEach((price) => {
-                if (price.innerText === "$0.00") {
-                    price.innerText = "(no data!)";
-                } else {
-                    // fine price
                 }
             });
 
