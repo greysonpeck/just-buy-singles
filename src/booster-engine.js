@@ -203,17 +203,27 @@ function _initSetMoney(code, boosterType, config) {
         makeSlot(slot.id, slot.label, slot.isFoil || false, slot.count || 0);
     }
     if (config.excludedCardsDisclaimer && config.excludedCardsDisclaimer.includes(boosterType)) {
-        const firstCardInfo = document.getElementById('card-section').querySelector('.card-info');
-        if (firstCardInfo) {
-            const totalCard = firstCardInfo.parentElement;
-            totalCard.style.position = 'relative';
-            const disclaimer = document.createElement('p');
-            disclaimer.id = 'serialized-disclaimer';
-            disclaimer.className = 'pt-2 sm:pt-0';
-            disclaimer.style.cssText = 'position:absolute;bottom:100%;left:0.75rem;margin-top:12px;font-size:0.75rem;line-height:1rem;opacity:0.75;padding-bottom:0.5rem;text-align:left;';
-            disclaimer.textContent = 'Serialized cards not included in this simulation.';
-            totalCard.appendChild(disclaimer);
-        }
+        const cardSection = document.getElementById('card-section');
+        // Anchored to #card-section itself, not the first slot's own box — that box is
+        // width:fit-content (sized to one card), so absolutely positioning the disclaimer
+        // inside it constrains its available width to a single card's width, forcing an
+        // awkward narrow wrap. #card-section is the full-width row, so anchoring there
+        // gives it proper room while still rendering in the same visual spot (upper-left,
+        // above the first card).
+        cardSection.style.position = 'relative';
+        const disclaimer = document.createElement('p');
+        disclaimer.id = 'serialized-disclaimer';
+        disclaimer.className = 'pt-2 sm:pt-0';
+        // top:0 + translateY(...) instead of bottom:100% — #card-section has no explicit
+        // height (flex-wrap, sized by its content), and a percentage `bottom` value isn't
+        // reliably resolvable against an auto-height containing block. translateY is based
+        // on the disclaimer's OWN box, so it works regardless of the container's height:
+        // translateY(-100%) puts its bottom edge flush with the container's top edge, and
+        // the "+ 12px" nudges it back down that far to clear whatever sits above (e.g. the
+        // Investigate button).
+        disclaimer.style.cssText = 'position:absolute;top:0;left:0.75rem;transform:translateY(calc(-100% + 12px));font-size:0.75rem;line-height:1rem;opacity:0.75;padding-bottom:0.5rem;text-align:left;white-space:nowrap;';
+        disclaimer.textContent = 'Serialized cards not included in this simulation.';
+        cardSection.appendChild(disclaimer);
     }
 
     localStorage.setItem(cookieKey, boosterValue);
