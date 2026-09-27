@@ -207,7 +207,7 @@ function _initSetMoney(code, boosterType, config) {
         // Give the whole card grid extra headroom so the disclaimer (absolutely positioned
         // above the first slot, below) has clear space to sit in above the cards without
         // overlapping whatever's above #card-section (e.g. the Investigate button).
-        cardSection.style.marginTop = '2rem';
+        cardSection.style.marginTop = '1rem';
 
         const firstCardInfo = cardSection.querySelector('.card-info');
         if (firstCardInfo) {
