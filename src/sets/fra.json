@@ -1,0 +1,933 @@
+{
+  "code": "FRA",
+  "displayName": "REALITY FRACTURE",
+  "backgroundImage": "img/FRA_bg.jpg",
+  "boosterTypes": [
+    "COLLECTOR",
+    "PLAY"
+  ],
+  "excludedCardsDisclaimer": [
+    "COLLECTOR"
+  ],
+  "earlyPricing": {
+    "releasedAt": "2026-10-02",
+    "windowDays": 21,
+    "discount": 0.25
+  },
+  "ghostCard": {
+    "randomQuery": "set%3Afra+unique%3Aprints",
+    "topOutQuery": "set%3Afra+unique%3Aprints+USD%3E%3D15"
+  },
+  "boosters": {
+    "COLLECTOR": {
+      "totalCards": 15,
+      "msrp": "26.99",
+      "defaultUSD": 36,
+      "defaultCAD": 50,
+      "slots": [
+        {
+          "id": "foil-boosterfun",
+          "label": "Foil Booster Fun",
+          "isFoil": true,
+          "cardInfo": [
+            "1 Foil Rare or Mythic Rare Booster Fun Card",
+            "A serialized double rainbow foil Bloodline Recollector appears in less than 1% of Collector Boosters (500 copies total, English only). Not simulated here \u2014 see disclaimer."
+          ],
+          "probabilities": [
+            {
+              "maxRoll": 17.1,
+              "type": "Borderless Echoed Pairs, Rare (Foil)",
+              "rarity": "17.1%",
+              "query": "set%3Afra+rarity%3Ar+%28cn%3E%3D291+AND+cn%3C%3D320%29&unique=cards"
+            },
+            {
+              "maxRoll": 20.8,
+              "type": "Borderless Echoed Pairs, Mythic (Foil)",
+              "rarity": "3.7%",
+              "query": "set%3Afra+rarity%3Am+%28cn%3E%3D291+AND+cn%3C%3D320%29&unique=cards"
+            },
+            {
+              "maxRoll": 42.8,
+              "type": "Sculptor's Stronghold, Rare (Foil)",
+              "rarity": "22%",
+              "query": "set%3Afra+rarity%3Ar+%28cn%3E%3D334+AND+cn%3C%3D358%29&unique=cards"
+            },
+            {
+              "maxRoll": 47.1,
+              "type": "Sculptor's Stronghold, Mythic (Foil)",
+              "rarity": "4.3%",
+              "query": "set%3Afra+rarity%3Am+%28cn%3E%3D334+AND+cn%3C%3D358%29&unique=cards"
+            },
+            {
+              "maxRoll": 65.4,
+              "type": "Braintwister Series, Rare (Foil)",
+              "rarity": "18.3%",
+              "query": "set%3Afra+rarity%3Ar+%28cn%3E%3D359+AND+cn%3C%3D381%29&unique=cards"
+            },
+            {
+              "maxRoll": 67.2,
+              "type": "Braintwister Series, Mythic (Foil)",
+              "rarity": "1.8%",
+              "query": "set%3Afra+rarity%3Am+%28cn%3E%3D359+AND+cn%3C%3D381%29&unique=cards"
+            },
+            {
+              "maxRoll": 73.3,
+              "type": "Portal View Land, Rare (Foil)",
+              "rarity": "6.1%",
+              "query": "set%3Afra+rarity%3Ar+%28cn%3E%3D397+AND+cn%3C%3D401%29&unique=cards"
+            },
+            {
+              "maxRoll": 81.8,
+              "type": "Extended-art, Rare (Foil)",
+              "rarity": "8.5%",
+              "query": "set%3Afra+rarity%3Ar+%28cn%3E%3D423+AND+cn%3C%3D431%29&unique=cards"
+            },
+            {
+              "maxRoll": 83.0,
+              "type": "Extended-art, Mythic (Foil)",
+              "rarity": "1.2%",
+              "query": "set%3Afra+rarity%3Am+%28cn%3E%3D423+AND+cn%3C%3D431%29&unique=cards"
+            },
+            {
+              "maxRoll": 89.1,
+              "type": "Special Guests (Foil)",
+              "rarity": "6.1%",
+              "query": "set%3Aspg+%28cn%3E%3D159+AND+cn%3C%3D168%29&unique=cards"
+            },
+            {
+              "maxRoll": 98.1,
+              "type": "Japan Showcase (Traditional Foil)",
+              "rarity": "9%",
+              "query": "set%3Afra+%28cn%3E%3D403+AND+cn%3C%3D412%29&unique=cards"
+            },
+            {
+              "maxRoll": 99.1,
+              "type": "Japan Showcase (Fracture Foil)",
+              "rarity": "1%",
+              "query": "set%3Afra+%28cn%3E%3D413+AND+cn%3C%3D422%29&unique=cards"
+            },
+            {
+              "maxRoll": 99.7,
+              "type": "Shattered Mirror Facet Foil, Rare",
+              "rarity": "0.6%",
+              "query": "set%3Afra+rarity%3Ar+%28cn%3E%3D449+AND+cn%3C%3D461%29&unique=cards"
+            },
+            {
+              "maxRoll": 100.0,
+              "type": "Shattered Mirror Facet Foil, Mythic",
+              "rarity": "0.3%",
+              "query": "set%3Afra+rarity%3Am+%28cn%3E%3D449+AND+cn%3C%3D461%29&unique=cards"
+            }
+          ]
+        },
+        {
+          "id": "nonfoil-boosterfun-1",
+          "label": "Booster Fun #1",
+          "isFoil": false,
+          "cardInfo": [
+            "1 Non-foil Rare or Mythic Rare Booster Fun Card",
+            "A rare (23.1%) or mythic rare (5%) borderless echoed pairs card, a rare (8.3%) or mythic rare (6.6%) shattered mirror card, a rare (29.8%) or mythic rare (5.8%) sculptor's stronghold card, a rare portal view land (8.3%), or a rare (11.6%) or mythic rare (1.7%) extended-art Reality Fracture (FRA) card."
+          ],
+          "probabilities": [
+            {
+              "maxRoll": 23.1,
+              "type": "Borderless Echoed Pairs, Rare",
+              "rarity": "23.1%",
+              "query": "set%3Afra+rarity%3Ar+%28cn%3E%3D291+AND+cn%3C%3D320%29&unique=cards"
+            },
+            {
+              "maxRoll": 28.1,
+              "type": "Borderless Echoed Pairs, Mythic",
+              "rarity": "5%",
+              "query": "set%3Afra+rarity%3Am+%28cn%3E%3D291+AND+cn%3C%3D320%29&unique=cards"
+            },
+            {
+              "maxRoll": 36.4,
+              "type": "Shattered Mirror, Rare",
+              "rarity": "8.3%",
+              "query": "set%3Afra+rarity%3Ar+%28cn%3E%3D321+AND+cn%3C%3D333%29&unique=cards"
+            },
+            {
+              "maxRoll": 43.0,
+              "type": "Shattered Mirror, Mythic",
+              "rarity": "6.6%",
+              "query": "set%3Afra+rarity%3Am+%28cn%3E%3D321+AND+cn%3C%3D333%29&unique=cards"
+            },
+            {
+              "maxRoll": 72.8,
+              "type": "Sculptor's Stronghold, Rare",
+              "rarity": "29.8%",
+              "query": "set%3Afra+rarity%3Ar+%28cn%3E%3D334+AND+cn%3C%3D358%29&unique=cards"
+            },
+            {
+              "maxRoll": 78.6,
+              "type": "Sculptor's Stronghold, Mythic",
+              "rarity": "5.8%",
+              "query": "set%3Afra+rarity%3Am+%28cn%3E%3D334+AND+cn%3C%3D358%29&unique=cards"
+            },
+            {
+              "maxRoll": 86.9,
+              "type": "Portal View Land, Rare",
+              "rarity": "8.3%",
+              "query": "set%3Afra+rarity%3Ar+%28cn%3E%3D397+AND+cn%3C%3D401%29&unique=cards"
+            },
+            {
+              "maxRoll": 98.5,
+              "type": "Extended-art, Rare",
+              "rarity": "11.6%",
+              "query": "set%3Afra+rarity%3Ar+%28cn%3E%3D423+AND+cn%3C%3D431%29&unique=cards"
+            },
+            {
+              "maxRoll": 100.2,
+              "type": "Extended-art, Mythic",
+              "rarity": "1.7%",
+              "query": "set%3Afra+rarity%3Am+%28cn%3E%3D423+AND+cn%3C%3D431%29&unique=cards"
+            }
+          ]
+        },
+        {
+          "id": "nonfoil-boosterfun-2",
+          "label": "Booster Fun #2",
+          "isFoil": false,
+          "cardInfo": [
+            "1 Non-foil Rare or Mythic Rare Booster Fun Card",
+            "A rare (23.1%) or mythic rare (5%) borderless echoed pairs card, a rare (8.3%) or mythic rare (6.6%) shattered mirror card, a rare (29.8%) or mythic rare (5.8%) sculptor's stronghold card, a rare portal view land (8.3%), or a rare (11.6%) or mythic rare (1.7%) extended-art Reality Fracture (FRA) card."
+          ],
+          "probabilities": [
+            {
+              "maxRoll": 23.1,
+              "type": "Borderless Echoed Pairs, Rare",
+              "rarity": "23.1%",
+              "query": "set%3Afra+rarity%3Ar+%28cn%3E%3D291+AND+cn%3C%3D320%29&unique=cards"
+            },
+            {
+              "maxRoll": 28.1,
+              "type": "Borderless Echoed Pairs, Mythic",
+              "rarity": "5%",
+              "query": "set%3Afra+rarity%3Am+%28cn%3E%3D291+AND+cn%3C%3D320%29&unique=cards"
+            },
+            {
+              "maxRoll": 36.4,
+              "type": "Shattered Mirror, Rare",
+              "rarity": "8.3%",
+              "query": "set%3Afra+rarity%3Ar+%28cn%3E%3D321+AND+cn%3C%3D333%29&unique=cards"
+            },
+            {
+              "maxRoll": 43.0,
+              "type": "Shattered Mirror, Mythic",
+              "rarity": "6.6%",
+              "query": "set%3Afra+rarity%3Am+%28cn%3E%3D321+AND+cn%3C%3D333%29&unique=cards"
+            },
+            {
+              "maxRoll": 72.8,
+              "type": "Sculptor's Stronghold, Rare",
+              "rarity": "29.8%",
+              "query": "set%3Afra+rarity%3Ar+%28cn%3E%3D334+AND+cn%3C%3D358%29&unique=cards"
+            },
+            {
+              "maxRoll": 78.6,
+              "type": "Sculptor's Stronghold, Mythic",
+              "rarity": "5.8%",
+              "query": "set%3Afra+rarity%3Am+%28cn%3E%3D334+AND+cn%3C%3D358%29&unique=cards"
+            },
+            {
+              "maxRoll": 86.9,
+              "type": "Portal View Land, Rare",
+              "rarity": "8.3%",
+              "query": "set%3Afra+rarity%3Ar+%28cn%3E%3D397+AND+cn%3C%3D401%29&unique=cards"
+            },
+            {
+              "maxRoll": 98.5,
+              "type": "Extended-art, Rare",
+              "rarity": "11.6%",
+              "query": "set%3Afra+rarity%3Ar+%28cn%3E%3D423+AND+cn%3C%3D431%29&unique=cards"
+            },
+            {
+              "maxRoll": 100.2,
+              "type": "Extended-art, Mythic",
+              "rarity": "1.7%",
+              "query": "set%3Afra+rarity%3Am+%28cn%3E%3D423+AND+cn%3C%3D431%29&unique=cards"
+            }
+          ]
+        },
+        {
+          "id": "nonfoil-braintwister-commander",
+          "label": "Braintwister or Cmdr.",
+          "isFoil": false,
+          "cardInfo": [
+            "1 Non-foil Rare or Mythic Rare Braintwister Series or Booster Fun Commander (FRC) Card",
+            "A rare (44.8%) or mythic rare (4.5%) braintwister series card, a mythic rare borderless FRC card (3%), or a rare extended-art FRC card (47.8%)."
+          ],
+          "probabilities": [
+            {
+              "maxRoll": 44.8,
+              "type": "Braintwister Series, Rare",
+              "rarity": "44.8%",
+              "query": "set%3Afra+rarity%3Ar+%28cn%3E%3D359+AND+cn%3C%3D381%29&unique=cards"
+            },
+            {
+              "maxRoll": 49.3,
+              "type": "Braintwister Series, Mythic",
+              "rarity": "4.5%",
+              "query": "set%3Afra+rarity%3Am+%28cn%3E%3D359+AND+cn%3C%3D381%29&unique=cards"
+            },
+            {
+              "maxRoll": 52.3,
+              "type": "Mythic Rare Borderless Commander (FRC)",
+              "rarity": "3%",
+              "query": "set%3Afrc+rarity%3Am+%28cn%3E%3D1+AND+cn%3C%3D2%29&unique=cards"
+            },
+            {
+              "maxRoll": 100.1,
+              "type": "Extended-art Commander, Rare (FRC)",
+              "rarity": "47.8%",
+              "query": "set%3Afrc+rarity%3Ar+%28cn%3E%3D88+AND+cn%3C%3D103%29&unique=cards"
+            }
+          ]
+        },
+        {
+          "id": "foil-raremythic",
+          "label": "Foil Rare or Mythic",
+          "isFoil": true,
+          "cardInfo": [
+            "1 Traditional Foil Rare or Mythic",
+            "There are 64 rare (83.1%) and 26 mythic rare (16.9%) cards from Reality Fracture that can appear in this slot."
+          ],
+          "probabilities": [
+            {
+              "maxRoll": 83.1,
+              "type": "Rare",
+              "rarity": "83.1%",
+              "query": "set%3Afra+rarity%3Ar+cn%3C%3D194&unique=cards"
+            },
+            {
+              "maxRoll": 100.0,
+              "type": "Mythic",
+              "rarity": "16.9%",
+              "query": "set%3Afra+rarity%3Am+cn%3C%3D194&unique=cards"
+            }
+          ]
+        },
+        {
+          "id": "foil-echoed-uncommon",
+          "label": "Foil Echoed Pairs, U",
+          "isFoil": true,
+          "count": 3,
+          "echoedPairs": true,
+          "cardInfo": [
+            "3 Traditional Foil Uncommon Echoed Pairs Cards",
+            "There are 66 uncommon echoed pairs cards from Reality Fracture that appear in these slots (86.8%). Can be an uncommon borderless echoed pairs card (13.2%). Includes 2 cards from the same set of echoed pairs."
+          ],
+          "pairProbabilities": [
+            {
+              "maxRoll": 100.0,
+              "type": "Echoed Pairs, Uncommon",
+              "rarity": "100%",
+              "query": "set%3Afra+rarity%3Au+%28cn%3E%3D195+AND+cn%3C%3D280%29&unique=cards"
+            }
+          ],
+          "pairPartnerQuery": "set%3Afra+cn%3D{CN}&unique=cards",
+          "pairMap": {
+            "195": "242",
+            "242": "195",
+            "211": "243",
+            "243": "211",
+            "212": "244",
+            "244": "212",
+            "196": "227",
+            "227": "196",
+            "257": "270",
+            "270": "257",
+            "213": "258",
+            "258": "213",
+            "228": "245",
+            "245": "228",
+            "229": "259",
+            "259": "229",
+            "197": "260",
+            "260": "197",
+            "198": "230",
+            "230": "198",
+            "215": "271",
+            "271": "215",
+            "246": "261",
+            "261": "246",
+            "216": "276",
+            "276": "216",
+            "272": "279",
+            "279": "272",
+            "247": "273",
+            "273": "247",
+            "199": "248",
+            "248": "199",
+            "200": "231",
+            "231": "200",
+            "232": "262",
+            "262": "232",
+            "201": "217",
+            "217": "201",
+            "233": "274",
+            "274": "233",
+            "249": "263",
+            "263": "249",
+            "234": "202",
+            "202": "234",
+            "250": "264",
+            "264": "250",
+            "218": "235",
+            "235": "218",
+            "219": "265",
+            "265": "219",
+            "203": "275",
+            "275": "203",
+            "220": "251",
+            "251": "220",
+            "221": "252",
+            "252": "221",
+            "204": "236",
+            "236": "204",
+            "205": "214",
+            "214": "205",
+            "237": "266",
+            "266": "237",
+            "206": "253",
+            "253": "206",
+            "222": "280",
+            "280": "222",
+            "277": "278",
+            "278": "277",
+            "240": "256",
+            "256": "240",
+            "225": "241",
+            "241": "225",
+            "209": "269",
+            "269": "209",
+            "210": "226",
+            "226": "210",
+            "207": "238",
+            "238": "207",
+            "208": "267",
+            "267": "208",
+            "223": "254",
+            "254": "223",
+            "224": "268",
+            "268": "224",
+            "239": "255",
+            "255": "239"
+          },
+          "probabilities": [
+            {
+              "maxRoll": 86.8,
+              "type": "Echoed Pairs, Uncommon",
+              "rarity": "86.8%",
+              "query": "set%3Afra+rarity%3Au+%28cn%3E%3D195+AND+cn%3C%3D280%29&unique=cards"
+            },
+            {
+              "maxRoll": 100.0,
+              "type": "Borderless Echoed Pairs, Uncommon",
+              "rarity": "13.2%",
+              "query": "set%3Afra+rarity%3Au+%28cn%3E%3D291+AND+cn%3C%3D320%29&unique=cards"
+            }
+          ]
+        },
+        {
+          "id": "foil-uncommon",
+          "label": "Foil Uncommons",
+          "isFoil": true,
+          "count": 2,
+          "cardInfo": [
+            "2 Traditional Foil Uncommons",
+            "There are 43 uncommon cards from Reality Fracture that can appear in this slot. Can be an uncommon braintwister series card (10.4%). Echoed pairs cards do not appear in this slot."
+          ],
+          "probabilities": [
+            {
+              "maxRoll": 89.6,
+              "type": "Uncommon",
+              "rarity": "89.6%",
+              "query": "set%3Afra+rarity%3Au+cn%3C%3D194&unique=cards"
+            },
+            {
+              "maxRoll": 100.0,
+              "type": "Braintwister Series, Uncommon",
+              "rarity": "10.4%",
+              "query": "set%3Afra+rarity%3Au+%28cn%3E%3D359+AND+cn%3C%3D381%29&unique=cards"
+            }
+          ]
+        },
+        {
+          "id": "foil-common",
+          "label": "Foil Commons",
+          "isFoil": true,
+          "count": 4,
+          "cardInfo": [
+            "4 Traditional Foil Commons",
+            "There are 71 common cards and 10 common dual lands from Reality Fracture that can appear in these slots."
+          ],
+          "probabilities": [
+            {
+              "maxRoll": 87.7,
+              "type": "Common",
+              "rarity": "87.7%",
+              "query": "set%3Afra+rarity%3Ac+cn%3C%3D194+-t%3Aland&unique=cards"
+            },
+            {
+              "maxRoll": 100.0,
+              "type": "Common Dual Land",
+              "rarity": "12.3%",
+              "query": "set%3Afra+rarity%3Ac+cn%3C%3D194+t%3Aland&unique=cards"
+            }
+          ]
+        },
+        {
+          "id": "foil-tower-land",
+          "label": "Foil Tower Land",
+          "isFoil": true,
+          "probabilities": [
+            {
+              "maxRoll": 100.0,
+              "type": "Borderless Tower Land",
+              "rarity": "100%",
+              "query": "set%3Afra+%28cn%3E%3D382+AND+cn%3C%3D396%29&unique=cards"
+            }
+          ]
+        }
+      ]
+    },
+    "PLAY": {
+      "totalCards": 14,
+      "msrp": "5.49",
+      "defaultUSD": 6,
+      "defaultCAD": 9,
+      "slots": [
+        {
+          "id": "raremythic",
+          "label": "Rare or Mythic",
+          "isFoil": false,
+          "cardInfo": [
+            "1 Rare or Mythic Rare",
+            "There are 50 rare (74.4%) and 20 mythic rare (14.8%) cards from Reality Fracture that can appear in this slot. Can be a rare (1%) or mythic rare (less than 1%) shattered mirror card, a rare (3.8%) or mythic rare (1%) sculptor's stronghold card, a rare (3.1%) or mythic rare (less than 1%) braintwister series card, or a rare portal view land (1%). Echoed pairs cards do not appear in this slot."
+          ],
+          "probabilities": [
+            {
+              "maxRoll": 74.4,
+              "type": "Rare",
+              "rarity": "74.4%",
+              "query": "set%3Afra+rarity%3Ar+cn%3C%3D194&unique=cards"
+            },
+            {
+              "maxRoll": 89.2,
+              "type": "Mythic",
+              "rarity": "14.8%",
+              "query": "set%3Afra+rarity%3Am+cn%3C%3D194&unique=cards"
+            },
+            {
+              "maxRoll": 90.2,
+              "type": "Shattered Mirror, Rare",
+              "rarity": "1%",
+              "query": "set%3Afra+rarity%3Ar+%28cn%3E%3D321+AND+cn%3C%3D333%29&unique=cards"
+            },
+            {
+              "maxRoll": 90.5,
+              "type": "Shattered Mirror, Mythic",
+              "rarity": "0.3%",
+              "query": "set%3Afra+rarity%3Am+%28cn%3E%3D321+AND+cn%3C%3D333%29&unique=cards"
+            },
+            {
+              "maxRoll": 94.3,
+              "type": "Sculptor's Stronghold, Rare",
+              "rarity": "3.8%",
+              "query": "set%3Afra+rarity%3Ar+%28cn%3E%3D334+AND+cn%3C%3D358%29&unique=cards"
+            },
+            {
+              "maxRoll": 95.3,
+              "type": "Sculptor's Stronghold, Mythic",
+              "rarity": "1%",
+              "query": "set%3Afra+rarity%3Am+%28cn%3E%3D334+AND+cn%3C%3D358%29&unique=cards"
+            },
+            {
+              "maxRoll": 98.4,
+              "type": "Braintwister Series, Rare",
+              "rarity": "3.1%",
+              "query": "set%3Afra+rarity%3Ar+%28cn%3E%3D359+AND+cn%3C%3D381%29&unique=cards"
+            },
+            {
+              "maxRoll": 98.7,
+              "type": "Braintwister Series, Mythic",
+              "rarity": "0.3%",
+              "query": "set%3Afra+rarity%3Am+%28cn%3E%3D359+AND+cn%3C%3D381%29&unique=cards"
+            },
+            {
+              "maxRoll": 99.7,
+              "type": "Portal View Land, Rare",
+              "rarity": "1%",
+              "query": "set%3Afra+rarity%3Ar+%28cn%3E%3D397+AND+cn%3C%3D401%29&unique=cards"
+            }
+          ]
+        },
+        {
+          "id": "foil",
+          "label": "Foil Wildcard",
+          "isFoil": true,
+          "cardInfo": [
+            "1 Traditional Foil Card",
+            "There are 71 common (49.5%), 109 uncommon (40.5%), 64 rare (6%), and 26 mythic rare (1.2%) cards from Reality Fracture that can appear in this slot, plus small chances at borderless echoed pairs, braintwister series, sculptor's stronghold, and portal view land cards of any rarity."
+          ],
+          "probabilities": [
+            {
+              "maxRoll": 49.5,
+              "type": "Common",
+              "rarity": "49.5%",
+              "query": "set%3Afra+rarity%3Ac+cn%3C%3D194&unique=cards"
+            },
+            {
+              "maxRoll": 90.0,
+              "type": "Uncommon",
+              "rarity": "40.5%",
+              "query": "set%3Afra+rarity%3Au+cn%3C%3D194&unique=cards"
+            },
+            {
+              "maxRoll": 96.0,
+              "type": "Rare",
+              "rarity": "6%",
+              "query": "set%3Afra+rarity%3Ar+cn%3C%3D194&unique=cards"
+            },
+            {
+              "maxRoll": 97.2,
+              "type": "Mythic",
+              "rarity": "1.2%",
+              "query": "set%3Afra+rarity%3Am+cn%3C%3D194&unique=cards"
+            },
+            {
+              "maxRoll": 97.5,
+              "type": "Borderless Echoed Pairs, Uncommon",
+              "rarity": "0.3%",
+              "query": "set%3Afra+rarity%3Au+%28cn%3E%3D291+AND+cn%3C%3D320%29&unique=cards"
+            },
+            {
+              "maxRoll": 97.7,
+              "type": "Borderless Echoed Pairs, Rare",
+              "rarity": "0.2%",
+              "query": "set%3Afra+rarity%3Ar+%28cn%3E%3D291+AND+cn%3C%3D320%29&unique=cards"
+            },
+            {
+              "maxRoll": 97.9,
+              "type": "Borderless Echoed Pairs, Mythic",
+              "rarity": "0.2%",
+              "query": "set%3Afra+rarity%3Am+%28cn%3E%3D291+AND+cn%3C%3D320%29&unique=cards"
+            },
+            {
+              "maxRoll": 98.2,
+              "type": "Braintwister Series, Uncommon",
+              "rarity": "0.3%",
+              "query": "set%3Afra+rarity%3Au+%28cn%3E%3D359+AND+cn%3C%3D381%29&unique=cards"
+            },
+            {
+              "maxRoll": 98.4,
+              "type": "Braintwister Series, Rare",
+              "rarity": "0.2%",
+              "query": "set%3Afra+rarity%3Ar+%28cn%3E%3D359+AND+cn%3C%3D381%29&unique=cards"
+            },
+            {
+              "maxRoll": 98.6,
+              "type": "Braintwister Series, Mythic",
+              "rarity": "0.2%",
+              "query": "set%3Afra+rarity%3Am+%28cn%3E%3D359+AND+cn%3C%3D381%29&unique=cards"
+            },
+            {
+              "maxRoll": 98.9,
+              "type": "Sculptor's Stronghold, Rare",
+              "rarity": "0.3%",
+              "query": "set%3Afra+rarity%3Ar+%28cn%3E%3D334+AND+cn%3C%3D358%29&unique=cards"
+            },
+            {
+              "maxRoll": 99.1,
+              "type": "Sculptor's Stronghold, Mythic",
+              "rarity": "0.2%",
+              "query": "set%3Afra+rarity%3Am+%28cn%3E%3D334+AND+cn%3C%3D358%29&unique=cards"
+            },
+            {
+              "maxRoll": 99.4,
+              "type": "Portal View Land, Rare",
+              "rarity": "0.3%",
+              "query": "set%3Afra+rarity%3Ar+%28cn%3E%3D397+AND+cn%3C%3D401%29&unique=cards"
+            }
+          ]
+        },
+        {
+          "id": "echoed-pairs",
+          "label": "Echoed Pairs",
+          "isFoil": false,
+          "count": 3,
+          "echoedPairs": true,
+          "cardInfo": [
+            "3 Echoed Pairs Cards",
+            "The guaranteed pair is 2 uncommon echoed pairs cards from Reality Fracture. The third card is independently rolled and can be an uncommon (88.9%), rare (6.7%), or mythic rare (1.4%) echoed pairs card, or an uncommon (1.7%), rare (0.4%), or mythic rare (0.3%) borderless echoed pairs card."
+          ],
+          "pairProbabilities": [
+            {
+              "maxRoll": 100.0,
+              "type": "Echoed Pairs, Uncommon",
+              "rarity": "100%",
+              "query": "set%3Afra+rarity%3Au+%28cn%3E%3D195+AND+cn%3C%3D280%29&unique=cards"
+            }
+          ],
+          "pairPartnerQuery": "set%3Afra+cn%3D{CN}&unique=cards",
+          "pairMap": {
+            "195": "242",
+            "242": "195",
+            "211": "243",
+            "243": "211",
+            "212": "244",
+            "244": "212",
+            "196": "227",
+            "227": "196",
+            "257": "270",
+            "270": "257",
+            "213": "258",
+            "258": "213",
+            "228": "245",
+            "245": "228",
+            "229": "259",
+            "259": "229",
+            "197": "260",
+            "260": "197",
+            "198": "230",
+            "230": "198",
+            "215": "271",
+            "271": "215",
+            "246": "261",
+            "261": "246",
+            "216": "276",
+            "276": "216",
+            "272": "279",
+            "279": "272",
+            "247": "273",
+            "273": "247",
+            "199": "248",
+            "248": "199",
+            "200": "231",
+            "231": "200",
+            "232": "262",
+            "262": "232",
+            "201": "217",
+            "217": "201",
+            "233": "274",
+            "274": "233",
+            "249": "263",
+            "263": "249",
+            "234": "202",
+            "202": "234",
+            "250": "264",
+            "264": "250",
+            "218": "235",
+            "235": "218",
+            "219": "265",
+            "265": "219",
+            "203": "275",
+            "275": "203",
+            "220": "251",
+            "251": "220",
+            "221": "252",
+            "252": "221",
+            "204": "236",
+            "236": "204",
+            "205": "214",
+            "214": "205",
+            "237": "266",
+            "266": "237",
+            "206": "253",
+            "253": "206",
+            "222": "280",
+            "280": "222",
+            "277": "278",
+            "278": "277",
+            "240": "256",
+            "256": "240",
+            "225": "241",
+            "241": "225",
+            "209": "269",
+            "269": "209",
+            "210": "226",
+            "226": "210",
+            "207": "238",
+            "238": "207",
+            "208": "267",
+            "267": "208",
+            "223": "254",
+            "254": "223",
+            "224": "268",
+            "268": "224",
+            "239": "255",
+            "255": "239"
+          },
+          "probabilities": [
+            {
+              "maxRoll": 88.9,
+              "type": "Echoed Pairs, Uncommon",
+              "rarity": "88.9%",
+              "query": "set%3Afra+rarity%3Au+%28cn%3E%3D195+AND+cn%3C%3D280%29&unique=cards"
+            },
+            {
+              "maxRoll": 95.6,
+              "type": "Echoed Pairs, Rare",
+              "rarity": "6.7%",
+              "query": "set%3Afra+rarity%3Ar+%28cn%3E%3D195+AND+cn%3C%3D280%29&unique=cards"
+            },
+            {
+              "maxRoll": 97.0,
+              "type": "Echoed Pairs, Mythic",
+              "rarity": "1.4%",
+              "query": "set%3Afra+rarity%3Am+%28cn%3E%3D195+AND+cn%3C%3D280%29&unique=cards"
+            },
+            {
+              "maxRoll": 98.7,
+              "type": "Borderless Echoed Pairs, Uncommon",
+              "rarity": "1.7%",
+              "query": "set%3Afra+rarity%3Au+%28cn%3E%3D291+AND+cn%3C%3D320%29&unique=cards"
+            },
+            {
+              "maxRoll": 99.1,
+              "type": "Borderless Echoed Pairs, Rare",
+              "rarity": "0.4%",
+              "query": "set%3Afra+rarity%3Ar+%28cn%3E%3D291+AND+cn%3C%3D320%29&unique=cards"
+            },
+            {
+              "maxRoll": 99.4,
+              "type": "Borderless Echoed Pairs, Mythic",
+              "rarity": "0.3%",
+              "query": "set%3Afra+rarity%3Am+%28cn%3E%3D291+AND+cn%3C%3D320%29&unique=cards"
+            }
+          ]
+        },
+        {
+          "id": "uncommon-guaranteed",
+          "label": "Uncommon",
+          "isFoil": false,
+          "cardInfo": [
+            "1 Uncommon",
+            "There are 43 uncommon cards from Reality Fracture that can appear in this slot. Can be an uncommon braintwister series card (3.8%). Echoed pairs cards do not appear in this slot."
+          ],
+          "probabilities": [
+            {
+              "maxRoll": 96.2,
+              "type": "Uncommon",
+              "rarity": "96.2%",
+              "query": "set%3Afra+rarity%3Au+cn%3C%3D194&unique=cards"
+            },
+            {
+              "maxRoll": 100.0,
+              "type": "Braintwister Series, Uncommon",
+              "rarity": "3.8%",
+              "query": "set%3Afra+rarity%3Au+%28cn%3E%3D359+AND+cn%3C%3D381%29&unique=cards"
+            }
+          ]
+        },
+        {
+          "id": "common-or-uncommon",
+          "label": "Common/Uncommon",
+          "isFoil": false,
+          "cardInfo": [
+            "1 Common or Uncommon",
+            "There are 71 common (23%) and 43 uncommon (74%) cards from Reality Fracture that can appear in this slot. Can be an uncommon braintwister series card (3%). Echoed pairs cards do not appear in this slot."
+          ],
+          "probabilities": [
+            {
+              "maxRoll": 23.0,
+              "type": "Common",
+              "rarity": "23%",
+              "query": "set%3Afra+rarity%3Ac+cn%3C%3D194&unique=cards"
+            },
+            {
+              "maxRoll": 97.0,
+              "type": "Uncommon",
+              "rarity": "74%",
+              "query": "set%3Afra+rarity%3Au+cn%3C%3D194&unique=cards"
+            },
+            {
+              "maxRoll": 100.0,
+              "type": "Braintwister Series, Uncommon",
+              "rarity": "3%",
+              "query": "set%3Afra+rarity%3Au+%28cn%3E%3D359+AND+cn%3C%3D381%29&unique=cards"
+            }
+          ]
+        },
+        {
+          "id": "common",
+          "label": "Commons",
+          "isFoil": false,
+          "count": 6,
+          "cardInfo": [
+            "6 Commons",
+            "There are 71 common cards from Reality Fracture that can appear in these slots. In 1 of 55 Play Boosters, 1 of 10 Special Guests cards will replace a common."
+          ],
+          "probabilities": [
+            {
+              "maxRoll": 100.0,
+              "type": "Common",
+              "rarity": "100%",
+              "query": "set%3Afra+rarity%3Ac+cn%3C%3D194+-%28cn%3E%3D175+AND+cn%3C%3D184%29+-%28cn%3E%3D190+AND+cn%3C%3D194%29&unique=cards"
+            }
+          ],
+          "trailingOverride": {
+            "chance": 1.818,
+            "type": "Special Guests",
+            "query": "set%3Aspg+date%3A2026-10-02&unique=cards"
+          }
+        },
+        {
+          "id": "land",
+          "label": "Land",
+          "isFoil": true,
+          "cardInfo": [
+            "1 Land",
+            "A non-foil or traditional foil default frame basic land, tower basic land, or common dual land."
+          ],
+          "probabilities": [
+            {
+              "maxRoll": 14.6,
+              "type": "Basic Land",
+              "rarity": "14.6%",
+              "query": "set%3Afra+%28cn%3E%3D281+AND+cn%3C%3D290%29&unique=cards",
+              "foilClass": null,
+              "priceKey": "usd"
+            },
+            {
+              "maxRoll": 18.2,
+              "type": "Basic Land (Traditional Foil)",
+              "rarity": "3.6%",
+              "query": "set%3Afra+%28cn%3E%3D281+AND+cn%3C%3D290%29&unique=cards"
+            },
+            {
+              "maxRoll": 40.0,
+              "type": "Tower Basic Land",
+              "rarity": "21.8%",
+              "query": "set%3Afra+%28cn%3E%3D382+AND+cn%3C%3D396%29&unique=cards",
+              "foilClass": null,
+              "priceKey": "usd"
+            },
+            {
+              "maxRoll": 45.5,
+              "type": "Tower Basic Land (Foil)",
+              "rarity": "5.5%",
+              "query": "set%3Afra+%28cn%3E%3D382+AND+cn%3C%3D396%29&unique=cards"
+            },
+            {
+              "maxRoll": 89.1,
+              "type": "Common Dual Land",
+              "rarity": "43.6%",
+              "query": "set%3Afra+rarity%3Ac+cn%3C%3D194+t%3Aland&unique=cards",
+              "foilClass": null,
+              "priceKey": "usd"
+            },
+            {
+              "maxRoll": 100.0,
+              "type": "Common Dual Land (Traditional Foil)",
+              "rarity": "10.9%",
+              "query": "set%3Afra+rarity%3Ac+cn%3C%3D194+t%3Aland&unique=cards"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

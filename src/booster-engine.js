@@ -3,7 +3,7 @@
 
 // List of set codes that have been migrated to JSON configs.
 // Add a code here after its JSON config is verified working.
-window.MIGRATED_SETS = ['FDN', 'FIN', 'EOE', 'SPM', 'TLA', 'ECL', 'TMT', 'SOS', 'MSH', 'LTR', 'HOB'];
+window.MIGRATED_SETS = ['FDN', 'FIN', 'EOE', 'SPM', 'TLA', 'ECL', 'TMT', 'SOS', 'MSH', 'LTR', 'HOB', 'FRA'];
 
 const _configCache = {};
 
@@ -127,6 +127,12 @@ async function loadSetConfig(code) {
     return config;
 }
 
+// Accessor for other scripts (settings.js) that need the already-loaded config
+// for the current set without re-fetching it.
+function getLoadedSetConfig(code) {
+    return _configCache[code];
+}
+
 // Replaces setXxx() functions. Called from DOMContentLoaded set-restore and set-selector buttons.
 async function initSet(code, boosterType) {
     const config = await loadSetConfig(code);
@@ -164,6 +170,8 @@ async function initSet(code, boosterType) {
     _initSetMoney(code, actualType, config);
     clearMoney();
     changeSet();
+
+    maybeInitEarlyPricing(code, config);
 }
 
 // Replaces setXxx_Money() functions. Sets up globals and DOM slots for the given booster type.
@@ -202,7 +210,7 @@ function _initSetMoney(code, boosterType, config) {
             const disclaimer = document.createElement('p');
             disclaimer.id = 'serialized-disclaimer';
             disclaimer.className = 'pt-2 sm:pt-0';
-            disclaimer.style.cssText = 'position:absolute;bottom:100%;left:0.75rem;font-size:0.75rem;line-height:1rem;opacity:0.75;padding-bottom:0.5rem;white-space:nowrap;';
+            disclaimer.style.cssText = 'position:absolute;bottom:100%;left:0.75rem;max-width:360px;font-size:0.75rem;line-height:1rem;opacity:0.75;padding-bottom:0.5rem;text-align:left;';
             disclaimer.textContent = 'Serialized cards not included in this simulation.';
             totalCard.appendChild(disclaimer);
         }
@@ -254,7 +262,9 @@ async function pullBoosterFromConfig(config, boosterType) {
     try {
         for (const slot of boosterConfig.slots) {
             let result;
-            if (slot.count && slot.count > 1) {
+            if (slot.echoedPairs) {
+                result = await _pullEchoedPairSlot(slot, prevReveal);
+            } else if (slot.count && slot.count > 1) {
                 result = await _pullMultiSlot(slot, prevReveal);
             } else {
                 result = await _pullSingleSlot(slot, foilGroupMap, prevReveal);
@@ -271,6 +281,15 @@ async function pullBoosterFromConfig(config, boosterType) {
 }
 
 const _ALL_GRADIENT_CLASSES = ['foil-gradient', 'mana-gradient', 'surge-gradient', 'galaxy-gradient'];
+
+// A card's price is "missing" when Scryfall has no data for that treatment at
+// all (prices[key] is null) — not to be confused with a genuine $0 value,
+// which doesn't happen for real cards. Rendered as a small maroon chip instead
+// of a dollar amount; single-card slots read "No price yet", multi-card slots
+// read "Missing data" (see _pullMultiSlot/_pullEchoedPairSlot).
+function _priceIssueBadgeHTML(label) {
+    return '<span class="inline-flex items-center justify-center whitespace-nowrap px-[5px] py-[3px] rounded-[2px] text-xs font-semibold text-white bg-[#AA0033]/40">' + label + '</span>';
+}
 
 function _tickCardLoaded() {
     cardsRemaining--;
@@ -366,6 +385,10 @@ async function _pullSingleSlot(slot, foilGroupMap, prevReveal) {
     // Get image element
     const imageElement = document.getElementById(slot.id + '-image');
 
+    // Stash name/price for the lightbox header (see scripts.js card-lightbox handler).
+    imageElement.dataset.cardName = card.name;
+    imageElement.dataset.cardPrice = (card.prices[priceKey] == null) ? 'No price yet' : USDollar.format(price);
+
     // Build foil overlay callback — runs after card flips to back, before reveal.
     // Always runs for foil slots (not just when this entry sets foilClass) — otherwise
     // an entry with no foilClass silently leaves whatever gradient the previous pull
@@ -391,7 +414,13 @@ async function _pullSingleSlot(slot, foilGroupMap, prevReveal) {
 
     // Update price/roll elements
     const priceElement = document.getElementById(slot.id + '-price');
-    if (priceElement) priceElement.innerText = USDollar.format(price);
+    if (priceElement) {
+        if (card.prices[priceKey] == null) {
+            priceElement.innerHTML = _priceIssueBadgeHTML('No price yet');
+        } else {
+            priceElement.innerText = USDollar.format(price);
+        }
+    }
     const rollElement = document.getElementById(slot.id + '-roll');
     if (rollElement) rollElement.innerText = 'Roll: ' + roll.toFixed(0);
 
@@ -413,12 +442,65 @@ async function _pullSingleSlot(slot, foilGroupMap, prevReveal) {
 // so timing is predictable regardless of image load order.
 const _MULTI_REVEAL_STAGGER_MS = 150;
 
+// Renders card k of a multi-card slot: resolves price/image, sets up the foil
+// overlay callback, and kicks off the staggered reveal. Shared by _pullMultiSlot
+// and _pullEchoedPairSlot so both stay in sync on rendering behavior.
+// cardRevealGate: the Promise this specific card's reveal waits on.
+// Returns { price, revealPromise, missing } — missing is true when Scryfall has
+// no price data at all for this treatment (as opposed to a genuine $0 value).
+function _renderMultiCard(slot, k, card, entry, cardRevealGate) {
+    const priceKey = entry.priceKey || (slot.isFoil ? 'usd_foil' : 'usd');
+    const missing = card.prices[priceKey] == null;
+    const price = convertCurrency(Number((card.prices[priceKey] || 0) * priceCut));
+
+    let imageUrl;
+    if (card.layout === 'transform' || card.layout === 'modal_dfc' || card.layout === 'reversible_card') {
+        imageUrl = card.card_faces[0].image_uris.normal;
+    } else {
+        imageUrl = card.image_uris.normal;
+    }
+
+    const imageElement = document.getElementById(slot.id + '-image-' + k);
+
+    // Stash name/price for the lightbox header (see scripts.js card-lightbox handler).
+    imageElement.dataset.cardName = card.name;
+    imageElement.dataset.cardPrice = missing ? 'No price yet' : USDollar.format(price);
+
+    // Multi-slot uses parentElement (not .both-cards) for the flip stack
+    const stack = imageElement.parentElement;
+
+    // Build foil overlay callback — mirrors _pullSingleSlot, including always running
+    // for foil slots (not just when this entry sets foilClass) so a plain entry resets
+    // the overlay instead of leaving a previous pull's gradient class stuck on it. In
+    // makeSlot's multi-card DOM, the foil-hold div is inserted right after the front
+    // image (opposite order from the single-card block), so nextElementSibling finds it.
+    let foilCallback = null;
+    if (slot.isFoil) {
+        const overlay = imageElement.nextElementSibling;
+        const foilClassToApply = entry.foilClass !== undefined ? entry.foilClass : 'foil-gradient';
+        foilCallback = () => {
+            _ALL_GRADIENT_CLASSES.forEach(cls => overlay.classList.remove(cls));
+            if (foilClassToApply) {
+                const classes = Array.isArray(foilClassToApply) ? foilClassToApply : [foilClassToApply];
+                classes.forEach(cls => overlay.classList.add(cls));
+            }
+        };
+    }
+
+    const revealPromise = cardImageLoaded(imageElement, imageUrl, stack, true, foilCallback, cardRevealGate);
+
+    if (slot.debugLog) console.log('[' + slot.id + ':' + k + '] ' + card.name + ' — ' + USDollar.format(price));
+
+    return { price, revealPromise, missing };
+}
+
 // Pulls a multi-card slot (e.g., commons, uncommons).
 // prevReveal: Promise from the previous slot (see _pullSingleSlot comment).
 // Returns { revealPromise } for the LAST card in this slot, so the next slot
 // waits for all cards in this slot to reveal before it can reveal.
 async function _pullMultiSlot(slot, prevReveal) {
     let sumPrice = 0;
+    let anyMissing = false; // true if any card in the stack has no price data at all
     let lastCardReveal; // tracks the last card's reveal promise for the return value
 
     for (let k = 1; k <= slot.count; k++) {
@@ -453,39 +535,6 @@ async function _pullMultiSlot(slot, prevReveal) {
         }
         _tickCardLoaded();
 
-        const priceKey = entry.priceKey || (slot.isFoil ? 'usd_foil' : 'usd');
-        const price = convertCurrency(Number((card.prices[priceKey] || 0) * priceCut));
-
-        let imageUrl;
-        if (card.layout === 'transform' || card.layout === 'modal_dfc' || card.layout === 'reversible_card') {
-            imageUrl = card.card_faces[0].image_uris.normal;
-        } else {
-            imageUrl = card.image_uris.normal;
-        }
-
-        const imageElement = document.getElementById(slot.id + '-image-' + k);
-
-        // Multi-slot uses parentElement (not .both-cards) for the flip stack
-        const stack = imageElement.parentElement;
-
-        // Build foil overlay callback — mirrors _pullSingleSlot, including always running
-        // for foil slots (not just when this entry sets foilClass) so a plain entry resets
-        // the overlay instead of leaving a previous pull's gradient class stuck on it. In
-        // makeSlot's multi-card DOM, the foil-hold div is inserted right after the front
-        // image (opposite order from the single-card block), so nextElementSibling finds it.
-        let foilCallback = null;
-        if (slot.isFoil) {
-            const overlay = imageElement.nextElementSibling;
-            const foilClassToApply = entry.foilClass !== undefined ? entry.foilClass : 'foil-gradient';
-            foilCallback = () => {
-                _ALL_GRADIENT_CLASSES.forEach(cls => overlay.classList.remove(cls));
-                if (foilClassToApply) {
-                    const classes = Array.isArray(foilClassToApply) ? foilClassToApply : [foilClassToApply];
-                    classes.forEach(cls => overlay.classList.add(cls));
-                }
-            };
-        }
-
         // Fan each card out from the same prevReveal start using an absolute offset.
         // Card 1 reveals immediately when prevReveal resolves; card 2 reveals 150ms later;
         // card 3 reveals 300ms later; etc. This is more reliable than a cascading chain
@@ -494,10 +543,10 @@ async function _pullMultiSlot(slot, prevReveal) {
             ? prevReveal
             : prevReveal.then(() => waitforme((k - 1) * _MULTI_REVEAL_STAGGER_MS));
 
-        lastCardReveal = cardImageLoaded(imageElement, imageUrl, stack, true, foilCallback, cardRevealGate);
-
-        if (slot.debugLog) console.log('[' + slot.id + ':' + k + '] ' + card.name + ' — ' + USDollar.format(price));
+        const { price, revealPromise, missing } = _renderMultiCard(slot, k, card, entry, cardRevealGate);
+        lastCardReveal = revealPromise;
         sumPrice += price;
+        anyMissing = anyMissing || missing;
         myPrices.push(price);
     }
 
@@ -505,7 +554,13 @@ async function _pullMultiSlot(slot, prevReveal) {
         window[slot.sumVar] = (window[slot.sumVar] || 0) + sumPrice;
     } else {
         const sumElement = document.getElementById(slot.id + '-sum');
-        if (sumElement) sumElement.innerText = '$' + sumPrice.toFixed(2);
+        if (sumElement) {
+            if (anyMissing) {
+                sumElement.innerHTML = _priceIssueBadgeHTML('Missing data');
+            } else {
+                sumElement.innerText = '$' + sumPrice.toFixed(2);
+            }
+        }
     }
 
     // Set static card info for infopop
@@ -518,5 +573,97 @@ async function _pullMultiSlot(slot, prevReveal) {
 
     // Return the last card's reveal promise. Since it has the longest delay, waiting
     // for it guarantees all earlier cards have also revealed.
+    return { revealPromise: lastCardReveal };
+}
+
+// Rolls one entry out of a probability table using the table's own last maxRoll
+// as the ceiling (see _pullSingleSlot for why — some tables intentionally omit
+// probability mass for cards that aren't simulated).
+function _rollProbabilityTable(probs) {
+    const roll = getRandomNumber(0, probs[probs.length - 1].maxRoll);
+    let entry = probs[probs.length - 1];
+    for (const prob of probs) {
+        if (roll <= prob.maxRoll) {
+            entry = prob;
+            break;
+        }
+    }
+    return { entry, roll };
+}
+
+// Pulls an "echoed pair" slot (FRA): 2 of the 3 cards are a matched pair (a card
+// and its named partner, e.g. CN 198 + CN 230), and the third is an independent pull.
+//
+// slot.pairProbabilities — rolled once to pick the pair's rarity/treatment. Scoped to
+//   queries that only ever return cards covered by slot.pairMap (so a partner CN is
+//   always resolvable) — i.e. no borderless entries here, since we don't have a
+//   borderless-to-base CN mapping to find THEIR partners.
+// slot.pairMap — { "195": "242", "242": "195", ... } bidirectional CN -> partner CN.
+// slot.pairPartnerQuery — template string with a "{CN}" placeholder used to fetch the
+//   partner by exact collector number, e.g. "set%3Afra+cn%3D{CN}&unique=cards".
+// slot.probabilities — the full table (including any borderless entries) used for the
+//   third, independent card.
+async function _pullEchoedPairSlot(slot, prevReveal) {
+    const { entry: pairEntry, roll: pairRoll } = _rollProbabilityTable(slot.pairProbabilities);
+    const pairPool = await _getPool(pairEntry.query);
+    const eligible = pairPool.filter(c => slot.pairMap[String(parseInt(c.collector_number, 10))]);
+    if (eligible.length === 0) {
+        throw new Error('[' + slot.id + '] No pairable cards found for query: ' + pairEntry.query);
+    }
+    const cardA = eligible[Math.floor(Math.random() * eligible.length)];
+    const partnerCN = slot.pairMap[String(parseInt(cardA.collector_number, 10))];
+    const cardB = await _getCardFromPool(slot.pairPartnerQuery.replace('{CN}', partnerCN));
+
+    const { entry: soloEntry, roll: soloRoll } = _rollProbabilityTable(slot.probabilities);
+    const cardC = await _getCardFromPool(soloEntry.query);
+
+    _tickCardLoaded();
+    _tickCardLoaded();
+    _tickCardLoaded();
+
+    const picks = [
+        { card: cardC, entry: soloEntry },
+        { card: cardA, entry: pairEntry },
+        { card: cardB, entry: pairEntry },
+    ];
+
+    let sumPrice = 0;
+    let anyMissing = false;
+    let lastCardReveal;
+    for (let k = 1; k <= 3; k++) {
+        const { card, entry } = picks[k - 1];
+        const cardRevealGate = k === 1
+            ? prevReveal
+            : prevReveal.then(() => waitforme((k - 1) * _MULTI_REVEAL_STAGGER_MS));
+
+        const { price, revealPromise, missing } = _renderMultiCard(slot, k, card, entry, cardRevealGate);
+        lastCardReveal = revealPromise;
+        sumPrice += price;
+        anyMissing = anyMissing || missing;
+        myPrices.push(price);
+    }
+
+    if (slot.sumVar) {
+        window[slot.sumVar] = (window[slot.sumVar] || 0) + sumPrice;
+    } else {
+        const sumElement = document.getElementById(slot.id + '-sum');
+        if (sumElement) {
+            if (anyMissing) {
+                sumElement.innerHTML = _priceIssueBadgeHTML('Missing data');
+            } else {
+                sumElement.innerText = '$' + sumPrice.toFixed(2);
+            }
+        }
+    }
+
+    window.cardInfo = window.cardInfo || {};
+    if (slot.cardInfo) {
+        window.cardInfo[slot.id] = slot.cardInfo;
+    }
+    window.cardInfoComments = window.cardInfoComments || {};
+    window.cardInfoComments[slot.id] = slot._comment || null;
+
+    if (slot.debugLog) console.log('[' + slot.id + '] pair roll ' + pairRoll.toFixed(0) + ' -> ' + cardA.name + ' + ' + cardB.name + '; solo roll ' + soloRoll.toFixed(0) + ' -> ' + cardC.name);
+
     return { revealPromise: lastCardReveal };
 }
