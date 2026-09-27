@@ -21,9 +21,10 @@
     <script src="./src/logic-dsk.js?v=1.40"></script>
     <script src="./src/ads.js?v=1.40"></script>
     <script src="./src/booster-engine.js?v=1.54"></script>
+    <script src="./src/early-pricing.js?v=1.01"></script>
 
     <script src="./src/scripts.js?v=1.51"></script>
-    <script src="./src/settings.js?v=1.48"></script>
+    <script src="./src/settings.js?v=1.49"></script>
     <script src="./src/money.js?v=1.40"></script>
     <script src="./src/slider_logic.js?v=1.40"></script>
     <title>Just Buy Singles</title>
@@ -141,9 +142,36 @@
 <p>Each card is generated from a unique query to Scryfall <a target="#" href="https://scryfall.com/search?q=set%3Aeoe+rarity%3Ar+%28CN%3E%3D287+AND+CN%3C%3D302%29">like this</a>. I’ve done my best to translate WotC’s descriptions into accurate Scryfall queries, but things may not be 100% perfect.</p>
 
                 <p id="back-to-main" class="font-bold cursor-pointer underline">Back</p>
-            </div>  
+            </div>
         </div>
     </div>
+
+    <div id="early-pricing-container" class="hidden fixed bg-gray-900/50 top-0 left-0 w-full h-lvh z-30">
+        <div class="flex items-center justify-center h-full w-full p-4">
+        <div id="early-pricing-modal" class="jbs-background mx-auto p-5 sm:p-6 w-full max-w-[92vw] sm:w-[800px] max-h-[90vh] overflow-y-auto rounded-lg shadow-2xl ring-2 ring-white/80 outline-none flex flex-col items-center gap-2 text-center" role="dialog" aria-modal="true" aria-labelledby="early-pricing-title" aria-describedby="early-pricing-desc" tabindex="-1">
+            <p id="early-pricing-title" class="font-bold text-xl sm:text-2xl">Prices are inflated right now.</p>
+            <p id="early-pricing-desc" class="text-sm sm:text-base max-w-[540px]">It's still close to the release date of this set and <span class="font-bold">prices often come down</span> in the weeks after release.</p>
+            <div class="flex flex-wrap justify-center gap-4 pt-4 w-full">
+                <button id="early-pricing-current-btn" type="button" class="early-pricing-option" style="background-image:url('img/pricing-modal-current.png')" aria-label="Use current prices, no adjustment">
+                    <span class="early-pricing-option-scrim"></span>
+                    <span class="early-pricing-option-label">
+                        <span class="block font-bold text-lg sm:text-xl">Use current prices</span>
+                        <span class="block italic text-sm sm:text-base font-medium">Let me dream a little...</span>
+                    </span>
+                </button>
+                <button id="early-pricing-adjusted-btn" type="button" class="early-pricing-option" style="background-image:url('img/pricing-modal-adjusted.png')" aria-label="Use adjusted prices">
+                    <span class="early-pricing-option-scrim"></span>
+                    <span class="early-pricing-option-label">
+                        <span id="early-pricing-adjusted-title" class="block font-bold text-lg sm:text-xl">Use adjusted prices</span>
+                        <span class="block italic text-sm sm:text-base font-medium">Hit me with the reality tax</span>
+                    </span>
+                </button>
+            </div>
+            <p class="text-xs opacity-80 pt-1">You can change this anytime in the price selector.</p>
+        </div>
+        </div>
+    </div>
+
 
 
 

@@ -128,6 +128,26 @@ document.addEventListener("DOMContentLoaded", () => {
     panel.className = 'relative -top-[20%] jbs-background mx-auto p-4 pb-4 w-[250px] bg-emerald-800 rounded-lg shadow-2xl ring-2 ring-white/80 ';
     const msrpEl = document.getElementById('msrp');
     const msrpText = msrpEl ? msrpEl.innerText : 'MSRP: --';
+
+    // Early-release price adjustment toggle — only relevant for a set that's
+    // still inside its earlyPricing window (see early-pricing.js). Read the
+    // live current set from localStorage rather than this closure's own
+    // `currentSet`, which is only refreshed on priceChange() and can go stale
+    // after switching sets without ever saving a price.
+    const _liveSet = localStorage.getItem('currentSet');
+    const _epConfig = typeof getLoadedSetConfig === 'function' ? getLoadedSetConfig(_liveSet) : null;
+    const _epWin = _epConfig ? getEarlyPricingWindow(_epConfig) : null;
+    let earlyPricingRow = '';
+    if (_epWin && _epWin.inWindow) {
+        const _epPct = Math.round(_epWin.discount * 100);
+        const _epChecked = localStorage.getItem('earlyPricingChoice_' + _liveSet) === 'adjusted';
+        earlyPricingRow = `
+      <div class="flex items-center gap-2 mb-4">
+        <input type="checkbox" id="earlyPricingCheckbox" class="cursor-pointer shrink-0" ${_epChecked ? 'checked' : ''} aria-label="Apply early-release price adjustment of ${_epPct} percent">
+        <label for="earlyPricingCheckbox" class="text-xs text-left whitespace-nowrap cursor-pointer">Apply -${_epPct}% adjustment</label>
+      </div>`;
+    }
+
     panel.innerHTML = `
         <div class="flex">
       <span class="text-xl h-[46px] bg-zinc-700 py-6 px-4 ring-1 ring-white flex items-center justify-center rounded-l-sm">$</span>
@@ -137,6 +157,7 @@ document.addEventListener("DOMContentLoaded", () => {
       <div class="flex justify-end mb-4">
         <span class="text-xs opacity-70">${msrpText}</span>
       </div>
+      ${earlyPricingRow}
       <div class="flex justify-end gap-2">
         <button id="cancelBtn" class="px-3 py-2 rounded  bg-none hover:underline cursor-pointer">Cancel</button>
         <button id="saveBtn" class="px-3 py-2 rounded ring-1 ring-white bg-zinc-800 text-white hover:bg-zinc-900 cursor-pointer">Save</button>
@@ -145,6 +166,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     backdrop.appendChild(panel);
     document.body.appendChild(backdrop);
+
+    const earlyPricingCheckbox = panel.querySelector('#earlyPricingCheckbox');
+    if (earlyPricingCheckbox) {
+        earlyPricingCheckbox.addEventListener('change', () => {
+            applyEarlyPricingChoice(_liveSet, earlyPricingCheckbox.checked ? 'adjusted' : 'current', _epConfig);
+        });
+    }
 
     const input = panel.querySelector('#modalInput');
     const saveBtn = panel.querySelector('#saveBtn');
