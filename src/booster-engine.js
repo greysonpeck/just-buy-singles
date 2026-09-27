@@ -210,7 +210,7 @@ function _initSetMoney(code, boosterType, config) {
             const disclaimer = document.createElement('p');
             disclaimer.id = 'serialized-disclaimer';
             disclaimer.className = 'pt-2 sm:pt-0';
-            disclaimer.style.cssText = 'position:absolute;bottom:100%;left:0.75rem;max-width:360px;font-size:0.75rem;line-height:1rem;opacity:0.75;padding-bottom:0.5rem;text-align:left;';
+            disclaimer.style.cssText = 'position:absolute;bottom:100%;left:0.75rem;margin-top:12px;font-size:0.75rem;line-height:1rem;opacity:0.75;padding-bottom:0.5rem;text-align:left;';
             disclaimer.textContent = 'Serialized cards not included in this simulation.';
             totalCard.appendChild(disclaimer);
         }
