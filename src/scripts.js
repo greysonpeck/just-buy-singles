@@ -377,12 +377,10 @@ document.addEventListener(
         currentMoneyElement = document.getElementById("current-money");
         const toggle = document.getElementById("currency");
 
-        const SET_VERSION = 'v7-hob-2';
+        const SET_VERSION = 'v8-fra-1';
         if (localStorage.getItem('setVersion') !== SET_VERSION) {
             localStorage.setItem('setVersion', SET_VERSION);
             localStorage.removeItem('currentSet');
-            localStorage.removeItem('boosterValue_MSH');
-            localStorage.removeItem('boosterValue_CAD_MSH');
             history.replaceState(null, '', window.location.pathname);
         }
 
@@ -394,7 +392,7 @@ document.addEventListener(
         } else if (_startSet === "MH3") {
             setMH3();
         } else {
-            await initSet("HOB");
+            await initSet("FRA");
         }
 
         // Pull the set that's in the cookie
