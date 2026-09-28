@@ -661,14 +661,26 @@
           "echoedPairs": true,
           "cardInfo": [
             "3 Echoed Pairs Cards",
-            "The guaranteed pair is 2 uncommon echoed pairs cards from Reality Fracture. The third card is independently rolled and can be an uncommon (88.9%), rare (6.7%), or mythic rare (1.4%) echoed pairs card, or an uncommon (1.7%), rare (0.4%), or mythic rare (0.3%) borderless echoed pairs card."
+            "There are 66 uncommon (88.9%), 14 rare (6.7%), and 6 mythic rare (1.4%) echoed pairs cards from Reality Fracture that appear in these slots. The guaranteed pair shares this rolled rarity; the third card is independently rolled from the same table, plus a small chance (1.7%/0.4%/0.3%) at an uncommon, rare, or mythic rare borderless echoed pairs card."
           ],
           "pairProbabilities": [
             {
-              "maxRoll": 100.0,
+              "maxRoll": 88.9,
               "type": "Echoed Pairs, Uncommon",
-              "rarity": "100%",
+              "rarity": "88.9%",
               "query": "set%3Afra+rarity%3Au+%28cn%3E%3D195+AND+cn%3C%3D280%29&unique=cards"
+            },
+            {
+              "maxRoll": 95.6,
+              "type": "Echoed Pairs, Rare",
+              "rarity": "6.7%",
+              "query": "set%3Afra+rarity%3Ar+%28cn%3E%3D195+AND+cn%3C%3D280%29&unique=cards"
+            },
+            {
+              "maxRoll": 97.0,
+              "type": "Echoed Pairs, Mythic",
+              "rarity": "1.4%",
+              "query": "set%3Afra+rarity%3Am+%28cn%3E%3D195+AND+cn%3C%3D280%29&unique=cards"
             }
           ],
           "pairPartnerQuery": "set%3Afra+cn%3D{CN}&unique=cards",

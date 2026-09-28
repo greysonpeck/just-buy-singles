@@ -5,6 +5,11 @@
 // Add a code here after its JSON config is verified working.
 window.MIGRATED_SETS = ['FDN', 'FIN', 'EOE', 'SPM', 'TLA', 'ECL', 'TMT', 'SOS', 'MSH', 'LTR', 'HOB', 'FRA'];
 
+// Bump whenever any src/sets/*.json changes — the fetch below has no other cache-busting
+// (unlike the versioned ?v= on script/style tags in index.html), so without this a stale
+// cached config can keep being served after a data fix ships.
+const SETS_CONFIG_VERSION = '1';
+
 const _configCache = {};
 
 // === Card Pool Cache ===
@@ -120,7 +125,7 @@ async function _getCardFromPool(query) {
 
 async function loadSetConfig(code) {
     if (_configCache[code]) return _configCache[code];
-    const response = await fetch('src/sets/' + code.toLowerCase() + '.json');
+    const response = await fetch('src/sets/' + code.toLowerCase() + '.json?v=' + SETS_CONFIG_VERSION);
     if (!response.ok) throw new Error('Failed to load set config for ' + code);
     const config = await response.json();
     _configCache[code] = config;
