@@ -352,8 +352,6 @@
             "271": "215",
             "246": "261",
             "261": "246",
-            "216": "276",
-            "276": "216",
             "272": "279",
             "279": "272",
             "247": "273",
@@ -674,7 +672,7 @@
               "maxRoll": 95.6,
               "type": "Echoed Pairs, Rare",
               "rarity": "6.7%",
-              "query": "set%3Afra+rarity%3Ar+%28cn%3E%3D195+AND+cn%3C%3D280%29&unique=cards"
+              "query": "set%3Afra+rarity%3Ar+%28cn%3E%3D195+AND+cn%3C%3D280%29+-cn%3D216+-cn%3D276&unique=cards"
             },
             {
               "maxRoll": 97.0,
@@ -709,8 +707,6 @@
             "271": "215",
             "246": "261",
             "261": "246",
-            "216": "276",
-            "276": "216",
             "272": "279",
             "279": "272",
             "247": "273",
@@ -783,7 +779,7 @@
               "maxRoll": 95.6,
               "type": "Echoed Pairs, Rare",
               "rarity": "6.7%",
-              "query": "set%3Afra+rarity%3Ar+%28cn%3E%3D195+AND+cn%3C%3D280%29&unique=cards"
+              "query": "set%3Afra+rarity%3Ar+%28cn%3E%3D195+AND+cn%3C%3D280%29+-cn%3D216+-cn%3D276&unique=cards"
             },
             {
               "maxRoll": 97.0,
